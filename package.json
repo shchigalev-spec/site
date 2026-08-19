@@ -1,50 +1,27 @@
 {
-  "name": "site-creator-vinext-starter",
-  "version": "0.1.0",
+  "name": "silent-lab-dual-from-scratch",
   "private": true,
-  "engines": {
-    "node": ">=22.13.0"
-  },
+  "type": "module",
+  "workspaces": ["apps/tech", "apps/engineering"],
   "scripts": {
-    "dev": "cross-env WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
-    "build": "cross-env WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
-    "start": "cross-env WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
-    "test": "npm run build && node --test tests/*.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
-  },
-  "dependencies": {
-    "drizzle-orm": "0.45.2",
-    "gsap": "^3.15.0",
-    "lucide-react": "^1.32.0",
-    "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "install:all": "npm install",
+    "dev:tech": "npm --prefix apps/tech run dev -- --host 127.0.0.1 --port 5173",
+    "dev:engineering": "npm --prefix apps/engineering run dev -- --host 127.0.0.1 --port 5174",
+    "dev:both": "concurrently -k -n TECH,ENGINEERING -c cyan,yellow \"npm run dev:tech\" \"npm run dev:engineering\"",
+    "check:all": "npm run check --workspaces --if-present",
+    "lint:all": "npm run lint --workspaces --if-present",
+    "test:all": "npm run test --workspaces --if-present",
+    "build:all": "npm run build --workspaces --if-present",
+    "verify:all": "node scripts/verify-all.mjs",
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "capture:all": "node scripts/capture-all.mjs",
+    "funnel:verify": "node scripts/funnel-review.mjs",
+    "reviews:build": "node scripts/build-review-evidence.mjs",
+    "comparison:build": "node scripts/build-comparison.mjs"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.37.1",
-    "@eslint/js": "9.39.4",
-    "@next/eslint-plugin-next": "16.2.6",
-    "@openai/sites-vite-plugin": "0.1.0",
-    "@tailwindcss/postcss": "4.2.1",
-    "@types/node": "22.19.19",
-    "@types/react": "19.2.14",
-    "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.2",
-    "@vitejs/plugin-rsc": "0.5.26",
-    "cross-env": "^10.1.0",
-    "drizzle-kit": "0.31.10",
-    "eslint": "9.39.4",
-    "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "7.1.1",
-    "globals": "16.4.0",
-    "react-server-dom-webpack": "19.2.6",
-    "tailwindcss": "4.2.1",
-    "typescript": "5.9.3",
-    "typescript-eslint": "8.59.3",
-    "vinext": "1.0.0-beta.2",
-    "vite": "8.0.13",
-    "wrangler": "4.92.0"
-  },
-  "type": "module"
+    "@playwright/test": "^1.62.1",
+    "concurrently": "^9.2.1",
+    "sharp": "^0.35.3"
+  }
 }

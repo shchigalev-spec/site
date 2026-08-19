@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Лаборатория тишины — инженерная шумоизоляция квартир в Москве. Сначала находим путь шума, затем рассчитываем решение.">
+  <meta name="theme-color" content="#111820">
+  <title>Лаборатория тишины — инженерная шумоизоляция квартир</title>
+  <!--
+    GPT PRO HANDOFF
+    Это полностью автономный HTML-прототип: разметка, стили, контент и JavaScript
+    находятся в одном файле. Внешних библиотек, шрифтов, изображений и запросов нет.
+    При доработке сохранять инженерное позиционирование, диагностический подход,
+    адаптивность, доступность и честные формулировки без выдуманных бизнес-фактов.
+  -->
+  <style>
+    :root {
+      --ink: #111820;
+      --ink-2: #1a232c;
+      --ink-3: #27323a;
+      --paper: #f0efe9;
+      --white: #faf9f4;
+      --muted: #667074;
+      --line: rgba(17, 24, 32, .18);
+      --light-line: rgba(250, 249, 244, .18);
+      --coral: #ff6542;
+      --coral-2: #ff8d73;
+      --aqua: #a8c9c7;
+      --aqua-dark: #698a8b;
+      --display: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+      --body: Inter, "Segoe UI", Arial, sans-serif;
+      --mono: "Cascadia Mono", Consolas, monospace;
+      --pad: clamp(22px, 5vw, 88px);
+      --section: clamp(86px, 10vw, 160px);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: var(--body); }
+    body.locked { overflow: hidden; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    p { line-height: 1.58; }
+    img, canvas { display: block; max-width: 100%; }
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--aqua);
+      outline-offset: 4px;
+    }
+    ::selection { background: var(--coral); color: var(--ink); }
+
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--aqua-dark);
+      font: 600 11px/1.4 var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .on-dark { color: var(--aqua); }
+    .section { padding: var(--section) var(--pad); }
+    .section-dark { background: var(--ink); color: var(--white); }
+    .section-white { background: var(--white); }
+    .section-coral { background: var(--coral); }
+    .section-head { max-width: 1020px; }
+    .section-head h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(48px, 6.2vw, 102px);
+      font-weight: 520;
+      line-height: .98;
+      letter-spacing: -.058em;
+      text-wrap: balance;
+    }
+    .section-head > p:last-child { max-width: 720px; margin: 28px 0 0; color: #4d555a; font-size: clamp(17px, 1.5vw, 22px); }
+    .section-dark .section-head > p:last-child { color: rgba(250, 249, 244, .62); }
+    .button {
+      min-height: 58px;
+      padding: 0 22px;
+      border: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      background: var(--coral);
+      color: var(--ink);
+      font-weight: 720;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .button:hover { background: var(--coral-2); transform: translateY(-2px); }
+    .button-dark { background: var(--ink); color: var(--white); }
+    .button-dark:hover { background: var(--ink-3); }
+    .text-link { display: inline-flex; gap: 20px; align-items: center; padding: 10px 0; border-bottom: 1px solid currentColor; font-weight: 680; }
+    .arrow { font-size: 24px; line-height: 1; }
+
+    /* Header */
+    .header {
+      height: 98px;
+      padding: 0 var(--pad);
+      position: absolute;
+      z-index: 30;
+      inset: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--white);
+      border-bottom: 1px solid var(--light-line);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 760; line-height: .92; letter-spacing: -.03em; }
+    .brand-mark { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--coral); color: var(--coral); font: 600 11px var(--mono); }
+    .nav { display: flex; gap: clamp(18px, 2.2vw, 38px); font-size: 14px; }
+    .nav a { min-height: 44px; display: flex; align-items: center; }
+    .nav a:hover { color: var(--aqua); }
+    .header-cta { padding: 14px 0; background: none; color: var(--white); border: 0; border-bottom: 1px solid var(--coral); cursor: pointer; }
+    .menu-toggle { display: none; width: 46px; height: 46px; background: transparent; color: inherit; border: 1px solid var(--light-line); font-size: 22px; cursor: pointer; }
+
+    /* Hero */
+    .hero { min-height: 100svh; position: relative; overflow: hidden; padding-top: 98px; background: var(--ink); color: var(--white); }
+    .hero-grid { min-height: calc(100svh - 98px); display: grid; grid-template-columns: minmax(0, 58%) minmax(0, 42%); }
+    .hero-copy { z-index: 3; padding: clamp(70px, 10vh, 130px) 4vw 110px var(--pad); }
+    .hero .eyebrow { color: var(--aqua); }
+    .proof-label { margin: 28px 0 18px; color: var(--coral-2); font: 600 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .hero h1 { max-width: 900px; margin: 0; font-family: var(--display); font-size: clamp(51px, 6.1vw, 100px); font-weight: 520; line-height: .93; letter-spacing: -.064em; text-wrap: balance; }
+    .hero-lede { max-width: 670px; margin: 30px 0; color: rgba(250, 249, 244, .7); font-size: clamp(17px, 1.35vw, 21px); }
+    .micro { margin: 13px 0 0; color: rgba(250, 249, 244, .48); font: 10px var(--mono); }
+    .room { position: relative; min-height: 680px; overflow: hidden; background: #303a3d; }
+    .room-wall { position: absolute; inset: 0; background: linear-gradient(112deg, #aba293 0 46%, #d3cbbd 46% 100%); clip-path: polygon(0 0, 100% 8%, 100% 75%, 0 90%); }
+    .room-ceiling { position: absolute; inset: 0; background: #ddd6ca; clip-path: polygon(0 0, 100% 0, 100% 8%, 0 0); }
+    .room-floor { position: absolute; inset: 67% 0 -5%; background: repeating-linear-gradient(105deg, #725940 0 3px, #9a7a59 3px 72px); transform: skewY(-7deg); }
+    .room-window { position: absolute; width: 44%; height: 46%; right: 9%; top: 15%; background: linear-gradient(#2d414e, #718083 62%, #d3916e); border: 9px solid #343331; box-shadow: 0 25px 50px rgba(0, 0, 0, .28); }
+    .room-bed { position: absolute; left: 5%; right: 4%; bottom: 7%; height: 28%; background: #d8d0c2; transform: skewY(-7deg); box-shadow: 0 25px 40px rgba(0, 0, 0, .22); }
+    .room-bed::before, .room-bed::after { content: ""; position: absolute; width: 34%; height: 42%; top: 5%; background: #eee9df; }
+    .room-bed::before { left: 5%; }
+    .room-bed::after { left: 42%; }
+    .scan { position: absolute; z-index: 4; top: 0; bottom: 0; width: 2px; left: 46%; background: var(--coral); box-shadow: 0 0 60px 28px rgba(255, 101, 66, .17); animation: scan 4s ease-in-out infinite alternate; }
+    @keyframes scan { from { left: 8%; opacity: .5; } to { left: 78%; opacity: 1; } }
+    #heroWave { position: absolute; z-index: 5; left: 4%; right: 2%; top: 26%; width: 94%; height: 38%; }
+    .measure { position: absolute; z-index: 6; right: 28px; bottom: 25%; color: var(--white); font: 10px var(--mono); letter-spacing: .1em; }
+    .measure strong { display: block; color: var(--coral); font-size: 30px; }
+    .proof-strip { position: absolute; z-index: 8; left: var(--pad); right: 0; bottom: 0; min-height: 72px; padding: 0 72px 0 0; display: flex; align-items: center; background: rgba(17, 24, 32, .95); border-top: 1px solid var(--light-line); font: 10px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .proof-strip span { padding-right: clamp(18px, 2.2vw, 34px); margin-right: clamp(18px, 2.2vw, 34px); border-right: 1px solid var(--light-line); }
+    .proof-strip span:last-child { border: 0; }
+
+    /* Symptom selector */
+    .symptom-layout { margin-top: 68px; display: grid; grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr); gap: clamp(30px, 5vw, 80px); }
+    .symptom-list { border-top: 1px solid var(--line); }
+    .symptom-button { width: 100%; min-height: 82px; padding: 0 10px; display: grid; grid-template-columns: 44px 1fr auto 28px; align-items: center; gap: 12px; background: transparent; border: 0; border-bottom: 1px solid var(--line); text-align: left; cursor: pointer; }
+    .symptom-button:hover, .symptom-button.active { background: var(--white); }
+    .symptom-button.active .symptom-name { color: var(--coral); }
+    .num, .share { color: var(--muted); font: 11px var(--mono); }
+    .symptom-name { font-size: clamp(18px, 1.6vw, 24px); font-weight: 680; }
+    .profile { min-height: 610px; position: relative; overflow: hidden; padding: clamp(28px, 4vw, 56px); display: flex; flex-direction: column; justify-content: flex-end; background: var(--ink-2); color: var(--white); }
+    .profile > * { position: relative; z-index: 2; }
+    .profile-art { position: absolute; z-index: 1; inset: 0; opacity: .72; background: linear-gradient(145deg, #9b8d7d 0 40%, #58686a 40% 62%, #191f25 62%); }
+    .profile-art::before { content: ""; position: absolute; width: 52%; height: 52%; right: 8%; top: 10%; border: 1px solid rgba(250, 249, 244, .6); box-shadow: inset 0 0 0 9px rgba(17, 24, 32, .38); }
+    .profile-art::after { content: ""; position: absolute; height: 2px; left: 0; right: 0; top: 38%; background: var(--coral); transform: rotate(9deg); box-shadow: 0 30px 0 var(--aqua); }
+    .profile h3 { max-width: 720px; margin: 0; font-family: var(--display); font-size: clamp(38px, 4vw, 66px); font-weight: 520; line-height: 1; letter-spacing: -.045em; }
+    .profile p { max-width: 650px; color: rgba(250, 249, 244, .7); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 26px; }
+    .tags span { padding: 8px 10px; border: 1px solid rgba(250, 249, 244, .28); font-size: 12px; }
+
+    /* Path lab */
+    .path-lab { margin-top: 72px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(330px, .65fr); border-top: 1px solid var(--light-line); }
+    .room-map { min-height: 680px; position: relative; overflow: hidden; background: #202a32; }
+    .map-wall { position: absolute; inset: 8% 7% 13% 11%; background: linear-gradient(90deg, #7d776d, #b4aa9b); clip-path: polygon(9% 11%, 89% 0, 100% 75%, 0 100%); }
+    .map-ceiling { position: absolute; inset: 0; background: #323c43; clip-path: polygon(10% 10%, 92% 0, 100% 12%, 9% 26%); }
+    .map-floor { position: absolute; inset: 63% 0 0; background: repeating-linear-gradient(105deg, #5d4c3e 0 2px, #7b6551 2px 54px); clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%); }
+    .energy { position: absolute; z-index: 3; width: 55%; height: 38%; left: 25%; top: 27%; border: 2px solid transparent; border-left-color: var(--coral); border-bottom-color: var(--coral); border-radius: 50%; transform: rotate(-11deg); }
+    .dot { position: absolute; z-index: 5; width: 40px; height: 40px; display: grid; place-items: center; background: transparent; color: var(--white); border: 1px solid var(--white); border-radius: 50%; font: 11px var(--mono); cursor: pointer; }
+    .dot.active { background: var(--coral); color: var(--ink); border-color: var(--coral); box-shadow: 0 0 0 9px rgba(255, 101, 66, .15); }
+    .dot[data-part="Потолок"] { left: 42%; top: 14%; }
+    .dot[data-part="Стена"] { left: 18%; top: 44%; }
+    .dot[data-part="Пол"] { left: 48%; bottom: 12%; }
+    .dot[data-part="Розетка"] { left: 35%; top: 57%; }
+    .dot[data-part="Окно"] { right: 15%; top: 32%; }
+    .dot[data-part="Вентиляция"] { right: 32%; top: 11%; }
+    .path-panel { padding: 44px 0 0 clamp(28px, 4vw, 64px); }
+    .path-tabs { display: flex; flex-direction: column; }
+    .path-tab { min-height: 59px; padding: 0; display: flex; align-items: center; gap: 18px; background: transparent; color: rgba(250, 249, 244, .58); border: 0; border-bottom: 1px solid rgba(250, 249, 244, .14); text-align: left; cursor: pointer; }
+    .path-tab span { font: 10px var(--mono); }
+    .path-tab.active { color: var(--coral); }
+    .path-result { margin-top: 38px; max-width: 520px; }
+    .path-result h3 { margin: 0; font-family: var(--display); font-size: clamp(31px, 3vw, 48px); font-weight: 520; line-height: 1; }
+    .path-result p { color: rgba(250, 249, 244, .62); }
+
+    /* Process */
+    .process { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: clamp(50px, 8vw, 130px); }
+    .process-visual { min-height: 660px; position: sticky; top: 24px; overflow: hidden; background: linear-gradient(145deg, #9a8e7d, #d6ccbd); }
+    .orbit { position: absolute; width: min(72%, 560px); aspect-ratio: 1; left: 12%; top: 14%; border: 1px solid rgba(17, 24, 32, .35); border-radius: 50%; }
+    .orbit::before, .orbit::after { content: ""; position: absolute; inset: 15%; border: 1px solid rgba(17, 24, 32, .24); border-radius: 50%; }
+    .orbit::after { inset: 32%; background: var(--ink); box-shadow: 0 0 80px rgba(255, 101, 66, .3); }
+    .orbit i { position: absolute; z-index: 2; width: 13px; height: 13px; background: var(--coral); border-radius: 50%; }
+    .orbit i:nth-child(1) { left: 5%; top: 40%; }
+    .orbit i:nth-child(2) { right: 8%; top: 21%; }
+    .orbit i:nth-child(3) { right: 22%; bottom: 5%; }
+    .readout { position: absolute; left: 28px; right: 28px; bottom: 28px; padding-top: 18px; display: flex; justify-content: space-between; border-top: 1px solid rgba(17, 24, 32, .35); font: 10px var(--mono); }
+    .readout strong { color: var(--coral); }
+    .process-copy h2 { margin: 0 0 64px; font-family: var(--display); font-size: clamp(48px, 5.8vw, 90px); font-weight: 520; line-height: .98; letter-spacing: -.058em; }
+    .step { min-height: 175px; padding: 34px 0; display: grid; grid-template-columns: 52px 1fr; gap: 24px; border-top: 1px solid var(--line); }
+    .step > span { color: var(--coral); font: 11px var(--mono); }
+    .step h3 { margin: 0; font-family: var(--display); font-size: clamp(26px, 2.4vw, 40px); font-weight: 560; line-height: 1.04; }
+    .step p { max-width: 560px; margin-bottom: 0; color: #5d6468; }
+
+    /* Services */
+    .service-grid { margin-top: 72px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .service-card { min-height: 330px; padding: clamp(28px, 4vw, 54px); display: flex; flex-direction: column; justify-content: space-between; background: var(--paper); transition: background .2s; }
+    .service-card:hover { background: var(--white); }
+    .service-card .num { color: var(--coral); }
+    .service-card h3 { margin: 26px 0 14px; font-family: var(--display); font-size: clamp(30px, 3vw, 48px); font-weight: 540; line-height: 1; letter-spacing: -.04em; }
+    .service-card p { margin: 0; color: #5b6368; }
+    .service-card b { margin-top: 32px; font-size: 13px; }
+
+    /* Scenario */
+    .scenario { display: grid; grid-template-columns: minmax(320px, .8fr) minmax(0, 1.2fr); gap: clamp(44px, 8vw, 140px); }
+    .scenario-form h2 { margin: 0 0 40px; font-family: var(--display); font-size: clamp(47px, 5.5vw, 86px); font-weight: 520; line-height: .98; letter-spacing: -.055em; }
+    label.field { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; font-size: 13px; font-weight: 680; }
+    select, input, textarea { width: 100%; min-height: 52px; padding: 12px 0; background: transparent; color: var(--ink); border: 0; border-bottom: 1px solid rgba(17, 24, 32, .35); border-radius: 0; }
+    textarea { min-height: 90px; resize: vertical; }
+    .scenario-output { min-height: 670px; padding: clamp(34px, 6vw, 88px); display: flex; flex-direction: column; justify-content: flex-end; background: var(--ink-2); color: var(--white); }
+    .scenario-output h3 { max-width: 690px; margin: 0; font-family: var(--display); font-size: clamp(43px, 5vw, 80px); font-weight: 520; line-height: .97; letter-spacing: -.055em; }
+    .scenario-output > p { color: rgba(250, 249, 244, .62); }
+    .scenario-note { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--light-line); font-size: 13px; }
+    .scenario-output .button { align-self: flex-start; margin-top: 20px; }
+
+    /* Cases */
+    .case-grid { margin-top: 72px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; }
+    .case { min-height: 550px; position: relative; overflow: hidden; display: flex; align-items: flex-end; background: var(--ink-2); color: var(--white); }
+    .case:first-child { min-height: 820px; grid-row: span 2; }
+    .case:nth-child(3) { background: #314247; }
+    .case-art { position: absolute; inset: 0; opacity: .72; background: linear-gradient(135deg, #9d8d7a, #d6cabb 50%, #29343b 50%); }
+    .case-art::before { content: ""; position: absolute; width: 45%; height: 54%; right: 8%; top: 12%; border: 9px solid #313337; background: linear-gradient(#40525b, #d19a75); }
+    .case-art::after { content: ""; position: absolute; height: 2px; left: 0; right: 0; top: 46%; background: var(--coral); transform: rotate(-7deg); }
+    .case-copy { position: relative; z-index: 2; width: 100%; padding: clamp(28px, 4vw, 58px); background: linear-gradient(transparent, rgba(17, 24, 32, .94) 28%); }
+    .case-copy h3 { max-width: 620px; margin: 0; font-family: var(--display); font-size: clamp(30px, 3.5vw, 56px); font-weight: 540; line-height: 1; letter-spacing: -.045em; }
+    .metric { margin: 28px 0 0; display: flex; align-items: center; gap: 18px; }
+    .metric strong { font: 500 clamp(28px, 4vw, 62px)/1 var(--mono); letter-spacing: -.06em; }
+    .case small { display: block; margin-top: 8px; color: rgba(250, 249, 244, .56); font: 10px var(--mono); text-transform: uppercase; }
+    .case-warning { margin-top: 18px; color: var(--coral-2); font-size: 11px; }
+
+    /* Quality */
+    .quality-grid { margin-top: 72px; display: grid; grid-template-columns: 1.15fr .85fr .85fr; gap: 1px; background: var(--light-line); }
+    .quality-grid article { min-height: 210px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; background: var(--ink-2); }
+    .quality-grid article:first-child { min-height: 470px; grid-row: span 2; }
+    .quality-grid article:last-child { grid-column: span 2; background: var(--aqua); color: var(--ink); }
+    .quality-grid h3 { margin: 0; font-family: var(--display); font-size: clamp(28px, 3.3vw, 56px); font-weight: 540; line-height: 1; }
+    .quality-grid p { color: rgba(250, 249, 244, .62); }
+    .quality-grid article:last-child p { color: var(--ink); }
+    .joint { position: relative; height: 240px; margin-top: 30px; border: 1px solid var(--light-line); }
+    .joint::before { content: ""; position: absolute; left: 24%; top: 10%; bottom: 10%; width: 2px; background: var(--coral); }
+    .joint::after { content: ""; position: absolute; left: 24%; right: 8%; top: 56%; height: 2px; background: var(--coral); box-shadow: -1px 0 34px 14px rgba(255, 101, 66, .15); }
+
+    /* FAQ and CTA */
+    .faq { margin-top: 64px; border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { min-height: 88px; display: grid; grid-template-columns: 42px 1fr 32px; align-items: center; gap: 18px; list-style: none; cursor: pointer; font-size: clamp(18px, 1.7vw, 25px); font-weight: 660; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: attr(data-num); color: var(--coral); font: 10px var(--mono); }
+    summary::after { content: "+"; font: 28px var(--display); }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 780px; margin: -8px 0 32px 60px; color: #555e63; }
+    .final-cta { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(40px, 8vw, 130px); align-items: end; }
+    .final-cta h2 { max-width: 950px; margin: 0; font-family: var(--display); font-size: clamp(54px, 7vw, 116px); font-weight: 540; line-height: .92; letter-spacing: -.065em; }
+    .final-cta p { max-width: 560px; font-size: 18px; }
+    .final-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+    .footer { padding: 70px var(--pad) 36px; background: var(--ink); color: var(--white); }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr repeat(2, .8fr); gap: 50px; }
+    .footer h3 { margin: 0 0 20px; font-size: 14px; }
+    .footer a, .footer p { color: rgba(250, 249, 244, .58); font-size: 13px; }
+    .footer nav { display: flex; flex-direction: column; gap: 12px; }
+    .footer-bottom { margin-top: 64px; padding-top: 24px; display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid var(--light-line); color: rgba(250, 249, 244, .38); font: 10px var(--mono); }
+
+    /* Diagnostic modal */
+    .modal { position: fixed; z-index: 100; inset: 0; display: none; background: rgba(17, 24, 32, .86); backdrop-filter: blur(8px); }
+    .modal.open { display: grid; place-items: center; }
+    .dialog { width: min(1080px, calc(100% - 32px)); max-height: calc(100svh - 32px); overflow: auto; background: var(--paper); box-shadow: 0 28px 90px rgba(0, 0, 0, .4); }
+    .dialog-head { min-height: 78px; padding: 0 clamp(20px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; background: var(--ink); color: var(--white); }
+    .dialog-head p { margin: 0; font: 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .close { width: 44px; height: 44px; background: transparent; color: var(--white); border: 1px solid var(--light-line); font-size: 22px; cursor: pointer; }
+    .progress { height: 3px; background: rgba(17, 24, 32, .12); }
+    .progress i { display: block; width: 20%; height: 100%; background: var(--coral); transition: width .25s; }
+    .dialog-body { min-height: 560px; padding: clamp(34px, 5vw, 72px); }
+    .wizard-step { display: none; }
+    .wizard-step.active { display: block; }
+    .wizard-step h2 { max-width: 780px; margin: 0 0 18px; font-family: var(--display); font-size: clamp(40px, 5.5vw, 72px); font-weight: 540; line-height: .98; letter-spacing: -.055em; }
+    .wizard-step > p { max-width: 700px; color: #596166; }
+    .option-grid { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .option { min-height: 86px; padding: 16px; display: flex; align-items: center; gap: 12px; background: var(--white); border: 1px solid var(--line); cursor: pointer; }
+    .option input { width: 18px; min-height: auto; accent-color: var(--coral); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+    .consent { margin-top: 26px; display: flex; align-items: flex-start; gap: 12px; font-size: 12px; color: #596166; }
+    .consent input { width: 18px; min-height: auto; margin-top: 3px; accent-color: var(--coral); }
+    .wizard-actions { margin-top: 42px; display: flex; justify-content: space-between; gap: 20px; }
+    .back { min-height: 54px; padding: 0; background: transparent; border: 0; border-bottom: 1px solid var(--ink); cursor: pointer; }
+    .success { text-align: center; padding-top: 44px; }
+    .success-mark { width: 74px; height: 74px; margin: 0 auto 26px; display: grid; place-items: center; background: var(--coral); border-radius: 50%; font-size: 36px; }
+    .error { min-height: 20px; margin-top: 15px; color: #a72f19; font-size: 13px; }
+
+    @media (max-width: 1050px) {
+      .nav { display: none; }
+      .menu-toggle { display: block; }
+      .header-cta { display: none; }
+      .nav.open { position: absolute; display: flex; inset: 98px 0 auto; padding: 24px var(--pad); flex-direction: column; gap: 0; background: var(--ink); border-bottom: 1px solid var(--light-line); }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy { padding-bottom: 48px; }
+      .room { min-height: 610px; }
+      .proof-strip { position: relative; left: 0; padding: 18px var(--pad); overflow-x: auto; }
+      .proof-strip span { white-space: nowrap; }
+      .symptom-layout, .process, .scenario, .final-cta { grid-template-columns: 1fr; }
+      .path-lab { grid-template-columns: 1fr; }
+      .path-panel { padding: 42px 0 0; }
+      .process-visual { position: relative; min-height: 580px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .quality-grid { grid-template-columns: 1fr 1fr; }
+      .quality-grid article:first-child { grid-column: span 2; min-height: 430px; }
+      .case-grid { grid-template-columns: 1fr; }
+      .case:first-child { grid-row: auto; min-height: 650px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      :root { --pad: 20px; --section: 82px; }
+      .header { height: 80px; }
+      .hero { padding-top: 80px; }
+      .hero h1 { font-size: clamp(48px, 15vw, 70px); }
+      .hero-copy { padding-top: 60px; }
+      .room { min-height: 480px; }
+      .measure { bottom: 18%; }
+      .symptom-layout { display: block; }
+      .profile { min-height: 530px; margin-top: 28px; }
+      .symptom-button { grid-template-columns: 34px 1fr auto; }
+      .symptom-button .arrow { display: none; }
+      .room-map { min-height: 500px; }
+      .path-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+      .path-tab { min-height: 52px; }
+      .process-visual { min-height: 450px; }
+      .process-copy h2 { margin-top: 54px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 280px; }
+      .scenario-output { min-height: 560px; }
+      .case, .case:first-child { min-height: 560px; }
+      .quality-grid { grid-template-columns: 1fr; }
+      .quality-grid article:first-child, .quality-grid article:last-child { grid-column: auto; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+      .dialog { width: 100%; max-height: 100svh; }
+      .dialog-body { min-height: calc(100svh - 81px); }
+      .option-grid, .form-grid { grid-template-columns: 1fr; }
+      .option { min-height: 70px; }
+      .wizard-actions { align-items: stretch; }
+      .wizard-actions .button { flex: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#top" aria-label="Лаборатория тишины — на главную">
+      <span class="brand-mark">LT</span>
+      <span>Лаборатория<br>тишины</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#solutions">Решения</a>
+      <a href="#diagnostics">Диагностика</a>
+      <a href="#process">Как работаем</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <button class="header-cta js-open-diagnostic" type="button">Записаться на диагностику</button>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Шумоизоляция квартир в Москве под ключ</p>
+          <p class="proof-label">15 лет работаем с шумом и вибрацией*</p>
+          <h1>Сначала найдём, как шум попадает в комнату. Потом рассчитаем решение.</h1>
+          <p class="hero-lede">Диагностика, проект, собственная бригада, монтаж и проверка результата. Без покупки материалов вслепую и обещаний абсолютной тишины.</p>
+          <button class="button js-open-diagnostic" type="button">Записаться на бесплатную диагностику <span class="arrow">→</span></button>
+          <p class="micro">Инженер уточнит ситуацию и согласует выезд. *Требует подтверждения владельцем бизнеса.</p>
+        </div>
+        <div class="room" aria-label="Схема распространения звука в комнате">
+          <div class="room-wall"></div>
+          <div class="room-ceiling"></div>
+          <div class="room-floor"></div>
+          <div class="room-window"></div>
+          <div class="room-bed"></div>
+          <div class="scan"></div>
+          <canvas id="heroWave" aria-hidden="true"></canvas>
+          <div class="measure"><strong>PATH / 03</strong>voices → wall → room</div>
+        </div>
+      </div>
+      <div class="proof-strip" aria-label="Принципы работы">
+        <span>Замеры до / после</span>
+        <span>Собственная бригада*</span>
+        <span>Без привязки к производителю</span>
+        <span>Договор и фотофиксация</span>
+      </div>
+    </section>
+
+    <section class="section" id="diagnostics">
+      <div class="section-head">
+        <p class="eyebrow">01 / Начинаем с симптома</p>
+        <h2>Что именно вы слышите?</h2>
+        <p>Один и тот же звук может идти через разные конструкции. Выберите симптом — покажем, что инженер проверит в первую очередь.</p>
+      </div>
+      <div class="symptom-layout">
+        <div class="symptom-list" id="symptomList" aria-label="Типы шума"></div>
+        <article class="profile" aria-live="polite">
+          <div class="profile-art"></div>
+          <p class="eyebrow on-dark" id="profileCategory"></p>
+          <h3 id="profileTitle"></h3>
+          <p id="profileText"></p>
+          <div class="tags" id="profileTags"></div>
+          <button class="text-link js-open-diagnostic" type="button">Собрать профиль шума <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="solutions">
+      <div class="section-head">
+        <p class="eyebrow on-dark">02 / Карта передачи</p>
+        <h2>Шум редко уважает границы одной поверхности.</h2>
+        <p>Нажмите на точку комнаты. Схема показывает, почему решение начинается не с каталога материалов, а с проверки пути.</p>
+      </div>
+      <div class="path-lab">
+        <div class="room-map" aria-label="Интерактивная карта комнаты">
+          <div class="map-wall"></div><div class="map-ceiling"></div><div class="map-floor"></div><div class="energy"></div>
+          <button class="dot active" type="button" data-part="Потолок" aria-label="Потолок">01</button>
+          <button class="dot" type="button" data-part="Стена" aria-label="Стена">02</button>
+          <button class="dot" type="button" data-part="Пол" aria-label="Пол">03</button>
+          <button class="dot" type="button" data-part="Розетка" aria-label="Розетка">04</button>
+          <button class="dot" type="button" data-part="Окно" aria-label="Окно">05</button>
+          <button class="dot" type="button" data-part="Вентиляция" aria-label="Вентиляция">06</button>
+        </div>
+        <div class="path-panel">
+          <div class="path-tabs" id="pathTabs"></div>
+          <div class="path-result" aria-live="polite">
+            <p class="eyebrow on-dark" id="pathLabel"></p>
+            <h3 id="pathTitle"></h3>
+            <p id="pathText"></p>
+            <button class="text-link js-open-diagnostic" type="button">Проверить этот путь <span>→</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="process">
+      <div class="process">
+        <div class="process-visual" aria-hidden="true">
+          <div class="orbit"><i></i><i></i><i></i></div>
+          <div class="readout"><span>ENGINEERING LOOP</span><strong>01—05</strong></div>
+        </div>
+        <div class="process-copy">
+          <p class="eyebrow">03 / Рабочий цикл</p>
+          <h2>От жалобы к проверяемому результату.</h2>
+          <article class="step"><span>01</span><div><h3>Собираем профиль шума</h3><p>Что слышно, когда, откуда, в каких комнатах и на какой стадии находится объект.</p></div></article>
+          <article class="step"><span>02</span><div><h3>Диагностируем путь</h3><p>Проверяем поверхности, примыкания, проходки и возможные обходные маршруты.</p></div></article>
+          <article class="step"><span>03</span><div><h3>Проектируем конструкцию</h3><p>Согласуем слои, толщину, узлы, ограничения и критерий приёмки.</p></div></article>
+          <article class="step"><span>04</span><div><h3>Монтируем и фиксируем</h3><p>Контролируем скрытые этапы до закрытия, сохраняем фото узлов и изменений.</p></div></article>
+          <article class="step"><span>05</span><div><h3>Проверяем результат</h3><p>Сопоставляем итог с согласованным сценарием и фиксируем замечания до приёмки.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-head">
+        <p class="eyebrow">04 / Направления работ</p>
+        <h2>Решение зависит от поверхности, шума и стадии ремонта.</h2>
+        <p>Ни один пункт не является готовой спецификацией. Точный состав появляется только после диагностики основания и смежных узлов.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card"><span class="num">01 / WALL</span><div><h3>Шумоизоляция стен</h3><p>Независимые облицовки, примыкания, розетки и фланговые пути.</p></div><b>Голоса · музыка · телевизор →</b></article>
+        <article class="service-card"><span class="num">02 / CEILING</span><div><h3>Шумоизоляция потолка</h3><p>Проверка перекрытия, подвесов и структурной передачи через стены.</p></div><b>Топот · удары · шум сверху →</b></article>
+        <article class="service-card"><span class="num">03 / FLOOR</span><div><h3>Шумоизоляция пола</h3><p>Плавающий контур, кромочная развязка и контроль жёстких мостов.</p></div><b>Ударный шум · вибрация →</b></article>
+        <article class="service-card"><span class="num">04 / NEIGHBOURS</span><div><h3>Защита от соседей</h3><p>Поиск доминирующего пути и сравнение локального и полного сценариев.</p></div><b>Карта передачи →</b></article>
+        <article class="service-card"><span class="num">05 / STRETCH</span><div><h3>Под натяжной потолок</h3><p>Разделяем акустическую конструкцию и чистовой потолок, заранее координируем закладные.</p></div><b>Проект узлов →</b></article>
+        <article class="service-card"><span class="num">06 / NEW BUILD</span><div><h3>В новостройке</h3><p>Увязываем пол, стены, потолок и инженерию до чистовой отделки.</p></div><b>Проверка проекта →</b></article>
+        <article class="service-card"><span class="num">07 / FINISHED</span><div><h3>В готовой квартире</h3><p>Оцениваем доступ, защиту отделки, демонтаж и локальное вмешательство.</p></div><b>Оценка вмешательства →</b></article>
+        <article class="service-card"><span class="num">08 / DIAGNOSTICS</span><div><h3>Диагностика шума</h3><p>Симптомы, пути, ограничения и инженерный сценарий следующего шага.</p></div><b>Начать профиль →</b></article>
+        <article class="service-card section-coral"><span class="num">09 / PROJECT</span><div><h3>Не знаете, что выбрать?</h3><p>Это нормальная отправная точка. Опишите, что слышите, — разберём задачу без покупки решения вслепую.</p></div><button class="text-link js-open-diagnostic" type="button">Пройти диагностику →</button></article>
+      </div>
+    </section>
+
+    <section class="section section-coral">
+      <div class="scenario">
+        <form class="scenario-form" id="scenarioForm">
+          <p class="eyebrow">05 / Предварительный сценарий</p>
+          <h2>Соберите контекст объекта.</h2>
+          <label class="field">Что слышно?
+            <select id="scenarioNoise"><option value="voices">Голоса и телевизор</option><option value="steps">Топот и удары</option><option value="bass">Басы и музыка</option><option value="street">Улица и транспорт</option><option value="systems">Лифт или вентиляция</option></select>
+          </label>
+          <label class="field">Стадия объекта
+            <select id="scenarioStage"><option value="new">Новостройка до ремонта</option><option value="repair">Идёт ремонт</option><option value="finished">Готовая квартира</option></select>
+          </label>
+          <label class="field">Приоритет
+            <select id="scenarioRoom"><option value="bedroom">Спальня</option><option value="children">Детская</option><option value="office">Кабинет</option><option value="whole">Несколько комнат</option></select>
+          </label>
+        </form>
+        <article class="scenario-output" aria-live="polite">
+          <p class="eyebrow on-dark">Предварительный маршрут</p>
+          <h3 id="scenarioTitle">Сначала проверим перегородку и её периметр.</h3>
+          <p id="scenarioText">Для речи важны не только слои стены, но и розетки, примыкания, пол и потолок.</p>
+          <div class="tags" id="scenarioTags"><span>стена</span><span>розетки</span><span>периметр</span></div>
+          <p class="scenario-note">Это не смета и не обещание результата. Сценарий помогает подготовить диагностику и не заменяет осмотр объекта.</p>
+          <button class="button js-open-diagnostic" type="button">Уточнить сценарий <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="cases">
+      <div class="section-head">
+        <p class="eyebrow on-dark">06 / Логика кейсов</p>
+        <h2>Показываем не только итог, но и найденный путь.</h2>
+        <p>Цифры ниже сохранены как прототипные данные. Перед коммерческой публикацией нужны исходные протоколы, методика и разрешения владельцев объектов.</p>
+      </div>
+      <div class="case-grid">
+        <article class="case"><div class="case-art"></div><div class="case-copy"><p class="eyebrow on-dark">Спальня / монолитная новостройка</p><h3>Голоса через смежную стену</h3><div class="metric"><strong>58</strong><span>→</span><strong>39 dB</strong></div><small>Уровень в контрольной точке</small><p class="case-warning">Требуется сверка по протоколу.</p></div></article>
+        <article class="case"><div class="case-art"></div><div class="case-copy"><p class="eyebrow on-dark">Гостиная / панельный дом</p><h3>Ударный шум сверху</h3><div class="metric"><strong>−16 dB</strong></div><small>Снижение пикового уровня</small><p class="case-warning">Требуется сверка режима измерения.</p></div></article>
+        <article class="case"><div class="case-art"></div><div class="case-copy"><p class="eyebrow on-dark">Домашний кабинет / фасад</p><h3>Уличный шум и слабые узлы окна</h3><div class="metric"><strong>64</strong><span>→</span><strong>43 dB</strong></div><small>Уровень в контрольной точке</small><p class="case-warning">Результат относится к конкретным условиям.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="section-head">
+        <p class="eyebrow on-dark">07 / Контроль скрытых работ</p>
+        <h2>Результат чаще всего теряется в одном незаметном жёстком узле.</h2>
+      </div>
+      <div class="quality-grid">
+        <article><div><p class="eyebrow on-dark">Контрольная точка</p><h3>Примыкание без акустического моста</h3></div><div class="joint"></div></article>
+        <article><span class="num">01</span><div><h3>Основание</h3><p>Проверяем трещины, пустоты, проходки и фактический состав.</p></div></article>
+        <article><span class="num">02</span><div><h3>Развязка</h3><p>Фиксируем ленты, крепления и отсутствие случайных жёстких связей.</p></div></article>
+        <article><span class="num">03</span><div><h3>Закрытие</h3><p>Фотографируем скрытые слои до обшивки и отделки.</p></div></article>
+        <article><span class="num">04</span><div><h3>Приёмка</h3><p>Сверяем выполненный состав с проектом и согласованным сценарием.</p></div></article>
+        <article><h3>Фотофиксация — не украшение отчёта, а способ увидеть узел до того, как он станет недоступен.</h3><p>Точные условия контроля и гарантии фиксируются в договоре.</p></article>
+      </div>
+    </section>
+
+    <section class="section section-white" id="faq">
+      <div class="section-head"><p class="eyebrow">08 / Вопросы</p><h2>Без магии материалов.</h2><p>Короткие ответы на вопросы, которые стоит задать до покупки конструкции.</p></div>
+      <div class="faq">
+        <details><summary data-num="01">Можно ли получить 100% тишину?</summary><p>Нет, обещать абсолютную тишину инженерно некорректно. Задача — найти доминирующие пути, снизить их вклад и заранее зафиксировать способ проверки результата.</p></details>
+        <details><summary data-num="02">Почему нельзя просто купить хорошие панели?</summary><p>Материал работает только внутри правильно собранной конструкции. Если оставить жёсткие связи, розетки или обходной путь через перекрытие, дорогая панель не закроет проблему.</p></details>
+        <details><summary data-num="03">Поможет ли потолок от топота сверху?</summary><p>Иногда да, но сначала нужно проверить вклад стен и примыканий. Удар распространяется по конструкции здания, поэтому решение может выходить за пределы одного потолка.</p></details>
+        <details><summary data-num="04">Можно ли работать в квартире с готовым ремонтом?</summary><p>Можно рассчитать локальный узел, одну поверхность или контур комнаты. До осмотра нельзя честно обещать отсутствие пыли, демонтажа или восстановления отделки.</p></details>
+        <details><summary data-num="05">Сколько пространства займёт конструкция?</summary><p>Это зависит от типа шума, основания и требуемой эффективности. На диагностике сопоставляем акустическую задачу с допустимой потерей площади и высоты.</p></details>
+        <details><summary data-num="06">Как понять: нужна одна стена или вся комната?</summary><p>По карте передачи. Разборчивые голоса чаще допускают локальный сценарий, бас и вибрация чаще требуют проверки всего контура.</p></details>
+        <details><summary data-num="07">Можно ли заранее назвать цену?</summary><p>Точная сумма появляется после определения площади, толщины, узлов, защиты помещения и последовательности монтажа. До диагностики возможен только предварительный сценарий.</p></details>
+        <details><summary data-num="08">Вы привязаны к одному производителю?</summary><p>Нет. Конструкцию подбирают под задачу, основание и ограничения квартиры, а не под каталог одного бренда.</p></details>
+      </div>
+    </section>
+
+    <section class="section section-coral">
+      <div class="final-cta">
+        <div><p class="eyebrow">09 / Первый шаг</p><h2>Не выбирайте материал. Сначала опишите шум.</h2></div>
+        <div class="final-actions"><p>Пять коротких шагов помогут инженеру понять ситуацию до звонка и подготовиться к диагностике.</p><button class="button button-dark js-open-diagnostic" type="button">Начать диагностику <span>→</span></button><small>В автономной HTML-версии форма работает как интерактивный прототип и никуда не отправляет данные.</small></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><a class="brand" href="#top"><span class="brand-mark">LT</span><span>Лаборатория<br>тишины</span></a><p>Инженерная шумоизоляция квартир.<br>Москва.</p></div>
+      <div><h3>Решения</h3><nav><a href="#services">Стены</a><a href="#services">Потолок</a><a href="#services">Пол</a><a href="#diagnostics">Диагностика</a></nav></div>
+      <div><h3>Информация</h3><nav><a href="#process">Как работаем</a><a href="#cases">Кейсы</a><a href="#faq">Вопросы</a><button class="text-link js-open-diagnostic" type="button">Оставить заявку</button></nav></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Лаборатория тишины</span><span>Контакты и реквизиты требуют подтверждения владельцем бизнеса</span></div>
+  </footer>
+
+  <div class="modal" id="diagnosticModal" role="dialog" aria-modal="true" aria-labelledby="wizardTitle">
+    <div class="dialog">
+      <div class="dialog-head"><p>Предварительная диагностика / <span id="stepCounter">шаг 1 из 5</span></p><button class="close" id="closeModal" type="button" aria-label="Закрыть">×</button></div>
+      <div class="progress"><i id="progressBar"></i></div>
+      <form class="dialog-body" id="diagnosticForm" novalidate>
+        <section class="wizard-step active" data-step="1"><p class="eyebrow">01 / Симптом</p><h2 id="wizardTitle">Что вы слышите чаще всего?</h2><p>Выберите один основной симптом. Подробности можно будет добавить дальше.</p><div class="option-grid" id="wizardNoise"></div><p class="error" id="error1"></p></section>
+        <section class="wizard-step" data-step="2"><p class="eyebrow">02 / Путь</p><h2>Откуда и когда приходит шум?</h2><div class="form-grid"><label class="field">Направление<select name="direction"><option value="">Выберите</option><option>Сверху</option><option>Через стену</option><option>Снизу</option><option>С улицы</option><option>Непонятно</option></select></label><label class="field">Когда слышно<select name="pattern"><option value="">Выберите</option><option>Постоянно</option><option>Утром</option><option>Вечером</option><option>Ночью</option><option>Отдельными событиями</option></select></label></div><label class="field">В каких комнатах?<input name="rooms" placeholder="Например: спальня и детская"></label><p class="error" id="error2"></p></section>
+        <section class="wizard-step" data-step="3"><p class="eyebrow">03 / Объект</p><h2>На какой стадии находится квартира?</h2><div class="option-grid"><label class="option"><input type="radio" name="stage" value="Новостройка до ремонта">Новостройка до ремонта</label><label class="option"><input type="radio" name="stage" value="Идёт ремонт">Идёт ремонт</label><label class="option"><input type="radio" name="stage" value="Готовая квартира">Готовая квартира</label></div><div class="form-grid"><label class="field">Тип дома<input name="building" placeholder="Монолит, панель, кирпич..."></label><label class="field">Примерная площадь<input name="area" inputmode="numeric" placeholder="м²"></label></div><p class="error" id="error3"></p></section>
+        <section class="wizard-step" data-step="4"><p class="eyebrow">04 / Контекст</p><h2>Добавьте пояснение.</h2><p>В полной версии здесь можно прикрепить план, фото или запись. В автономном HTML данные не загружаются на сервер.</p><label class="field">Комментарий<textarea name="comment" placeholder="Когда началось, что уже пробовали, что особенно мешает"></textarea></label><label class="field">Файлы для демонстрации<input name="files" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.heic,.mp4,.mov,.m4a,.mp3,.wav"></label><p class="micro" style="color:#667074">До 6 файлов. В этой версии выбранные файлы остаются только в браузере.</p><p class="error" id="error4"></p></section>
+        <section class="wizard-step" data-step="5"><p class="eyebrow">05 / Контакты</p><h2>Как с вами связаться?</h2><div class="form-grid"><label class="field">Имя<input name="name" autocomplete="name" placeholder="Ваше имя"></label><label class="field">Телефон<input name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00"></label></div><label class="field">Email, если удобнее<input name="email" autocomplete="email" type="email" placeholder="name@example.ru"></label><label class="consent"><input name="consent" type="checkbox">Я согласен на обработку указанных данных для связи по заявке. В автономной версии данные никуда не отправляются.</label><p class="error" id="error5"></p></section>
+        <section class="wizard-step success" data-step="6"><div class="success-mark">✓</div><h2>Профиль собран.</h2><p>Это демонстрация готового интерфейса. Для реальной отправки подключите серверный обработчик и CRM.</p><button class="button" id="finishWizard" type="button">Вернуться на сайт <span>→</span></button></section>
+        <div class="wizard-actions" id="wizardActions"><button class="back" id="prevStep" type="button">← Назад</button><button class="button" id="nextStep" type="button">Продолжить <span>→</span></button></div>
+      </form>
+    </div>
+  </div>
+
+  <script type="application/json" id="gpt-project-context">
+    {
+      "project": "Лаборатория тишины",
+      "format": "single-file standalone HTML",
+      "positioning": "Инженерная шумоизоляция квартир в Москве: диагностика пути шума до выбора конструкции",
+      "rules": [
+        "Не обещать абсолютную тишину",
+        "Не выдумывать цены, сроки, гарантии, реквизиты и подтверждения кейсов",
+        "Сохранять адаптивность, семантику, клавиатурную доступность и prefers-reduced-motion",
+        "Все CSS и JavaScript должны оставаться внутри файла, если нужен единый HTML",
+        "Прототипная форма не должна показывать ложную реальную отправку"
+      ],
+      "production_todo": [
+        "телефон, email, юридическое лицо и адрес",
+        "точный состав бесплатной диагностики",
+        "личность, роль и фото инженера",
+        "методика измерений и исходные протоколы кейсов",
+        "подтверждённые сроки, цены, гарантия и границы восстановления отделки",
+        "политика обработки данных, CRM и аналитика"
+      ]
+    }
+  </script>
+
+  <script>
+    (() => {
+      const symptoms = [
+        { id: "steps", name: "Топот сверху", share: "≈40%", category: "Ударный и структурный шум", title: "Проверим не только потолок.", text: "Удар может войти через плиту и продолжить путь по стенам. Один потолок не всегда закрывает контур.", tags: ["плита", "подвесы", "фланговые стены", "проходки"] },
+        { id: "voices", name: "Голоса за стеной", share: "≈25%", category: "Воздушный шум", title: "Найдём слабое место перегородки.", text: "Речь проходит через состав стены, розетки и периметр, а иногда обходит стену по смежным конструкциям.", tags: ["состав стены", "розетки", "примыкания", "пол и потолок"] },
+        { id: "bass", name: "Басы и музыка", share: "≈15%", category: "Низкочастотный шум", title: "Проверим полный контур комнаты.", text: "Длинная низкочастотная волна огибает локальные решения, поэтому одной поверхности часто недостаточно.", tags: ["стены", "перекрытия", "низкие частоты", "примыкания"] },
+        { id: "lift", name: "Лифт и вибрация", share: "≈7%", category: "Структурная вибрация", title: "Проследим путь по бетону.", text: "Вибрация оборудования передаётся по жёстким связям здания и может проявляться далеко от шахты.", tags: ["стена шахты", "плиты", "крепления", "смежные комнаты"] },
+        { id: "street", name: "Дорога и улица", share: "≈7%", category: "Фасадный шум", title: "Проверим весь фасадный узел.", text: "Даже хорошее окно не решает задачу, если звук проходит через монтажный шов, откос или приточный канал.", tags: ["стеклопакет", "монтажный шов", "откосы", "приток"] },
+        { id: "vent", name: "Вентиляция", share: "≈6%", category: "Инженерные системы", title: "Разделим воздух и вибрацию.", text: "Канал может одновременно проводить речь, потоковый шум и вибрацию оборудования.", tags: ["воздуховод", "короб", "проходки", "виброразвязка"] }
+      ];
+
+      const paths = [
+        { part: "Потолок", title: "Перекрытие и подвесы", text: "Ударный шум входит через плиту, но часть энергии может уходить в стены. Проверяем основание, крепления и периметр." },
+        { part: "Стена", title: "Плоскость и фланги", text: "Важен не только индекс стены, но и то, как она соединена с перекрытиями и соседними перегородками." },
+        { part: "Пол", title: "Стяжка и край", text: "Плавающий пол теряет смысл, если стяжка получает жёсткий контакт со стеной или инженерной проходкой." },
+        { part: "Розетка", title: "Малая площадь, большой риск", text: "Сквозные коробки и негерметичные ниши способны заметно ослабить всю перегородку." },
+        { part: "Окно", title: "Не только стеклопакет", text: "Монтажный шов, откосы и приточные устройства могут стать доминирующим путём фасадного шума." },
+        { part: "Вентиляция", title: "Канал связывает помещения", text: "Проверяем передачу речи, аэродинамический шум и вибрацию оборудования как разные задачи." }
+      ];
+
+      const symptomList = document.getElementById("symptomList");
+      const wizardNoise = document.getElementById("wizardNoise");
+      let selectedNoise = "steps";
+
+      symptoms.forEach((item, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "symptom-button";
+        button.dataset.id = item.id;
+        button.innerHTML = `<span class="num">${String(index + 1).padStart(2, "0")}</span><span class="symptom-name">${item.name}</span><span class="share">${item.share}</span><span class="arrow">→</span>`;
+        button.addEventListener("click", () => selectSymptom(item.id));
+        symptomList.appendChild(button);
+
+        const option = document.createElement("label");
+        option.className = "option";
+        option.innerHTML = `<input type="radio" name="noise" value="${item.id}">${item.name}`;
+        wizardNoise.appendChild(option);
+      });
+
+      function selectSymptom(id) {
+        selectedNoise = id;
+        const item = symptoms.find(x => x.id === id) || symptoms[0];
+        document.querySelectorAll(".symptom-button").forEach(button => button.classList.toggle("active", button.dataset.id === id));
+        document.getElementById("profileCategory").textContent = item.category;
+        document.getElementById("profileTitle").textContent = item.title;
+        document.getElementById("profileText").textContent = item.text;
+        document.getElementById("profileTags").innerHTML = item.tags.map(tag => `<span>${tag}</span>`).join("");
+        const radio = wizardNoise.querySelector(`input[value="${id}"]`);
+        if (radio) radio.checked = true;
+      }
+      selectSymptom("steps");
+
+      const pathTabs = document.getElementById("pathTabs");
+      paths.forEach((item, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "path-tab";
+        button.dataset.part = item.part;
+        button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${item.part}`;
+        button.addEventListener("click", () => selectPath(item.part));
+        pathTabs.appendChild(button);
+      });
+      document.querySelectorAll(".dot").forEach(dot => dot.addEventListener("click", () => selectPath(dot.dataset.part)));
+
+      function selectPath(part) {
+        const item = paths.find(x => x.part === part) || paths[0];
+        document.querySelectorAll(".path-tab").forEach(tab => tab.classList.toggle("active", tab.dataset.part === part));
+        document.querySelectorAll(".dot").forEach(dot => dot.classList.toggle("active", dot.dataset.part === part));
+        document.getElementById("pathLabel").textContent = `Путь / ${part}`;
+        document.getElementById("pathTitle").textContent = item.title;
+        document.getElementById("pathText").textContent = item.text;
+      }
+      selectPath("Потолок");
+
+      const scenarioData = {
+        voices: { title: "Сначала проверим перегородку и её периметр.", text: "Для речи важны не только слои стены, но и розетки, примыкания, пол и потолок.", tags: ["стена", "розетки", "периметр"] },
+        steps: { title: "Проследим удар от перекрытия к стенам.", text: "Для топота проверим плиту, подвесы, жёсткие примыкания и фланговые пути.", tags: ["перекрытие", "стены", "подвесы"] },
+        bass: { title: "Сравним локальное решение с контуром комнаты.", text: "Низкие частоты легко обходят одну поверхность, поэтому потребуется более широкая карта проверки.", tags: ["полный контур", "низкие частоты", "развязка"] },
+        street: { title: "Разберём фасадный узел по частям.", text: "Проверим стеклопакет, монтажный шов, откосы и пути поступления воздуха.", tags: ["окно", "откосы", "приток"] },
+        systems: { title: "Разделим структурную и воздушную передачу.", text: "Для лифта и вентиляции важно понять, идёт ли энергия по бетону, каналу или креплениям оборудования.", tags: ["вибрация", "канал", "крепления"] }
+      };
+      function updateScenario() {
+        const noise = document.getElementById("scenarioNoise").value;
+        const stage = document.getElementById("scenarioStage").value;
+        const data = scenarioData[noise];
+        const stageText = stage === "finished" ? " В готовой квартире отдельно оценим демонтаж и защиту отделки." : stage === "new" ? " До ремонта можно заранее согласовать смежные конструкции и инженерию." : " Во время ремонта важно проверить узлы до их закрытия.";
+        document.getElementById("scenarioTitle").textContent = data.title;
+        document.getElementById("scenarioText").textContent = data.text + stageText;
+        document.getElementById("scenarioTags").innerHTML = data.tags.map(tag => `<span>${tag}</span>`).join("");
+      }
+      document.querySelectorAll("#scenarioForm select").forEach(select => select.addEventListener("change", updateScenario));
+
+      const canvas = document.getElementById("heroWave");
+      const ctx = canvas.getContext("2d");
+      function drawWave() {
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        const box = canvas.getBoundingClientRect();
+        canvas.width = Math.max(1, box.width * ratio);
+        canvas.height = Math.max(1, box.height * ratio);
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        ctx.clearRect(0, 0, box.width, box.height);
+        [0, 1, 2].forEach(line => {
+          ctx.beginPath();
+          ctx.strokeStyle = line === 0 ? "#ff6542" : `rgba(250,249,244,${.32 - line * .08})`;
+          ctx.lineWidth = line === 0 ? 2 : 1.4;
+          const center = box.height * (.32 + line * .2);
+          for (let x = 0; x <= box.width; x += 4) {
+            const y = center + Math.sin(x / 31 + line) * (18 + line * 3) + Math.sin(x / 12) * 4;
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        });
+      }
+      drawWave();
+      window.addEventListener("resize", drawWave);
+
+      const nav = document.getElementById("nav");
+      const menuToggle = document.getElementById("menuToggle");
+      menuToggle.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.textContent = open ? "×" : "☰";
+      });
+      nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      }));
+
+      const modal = document.getElementById("diagnosticModal");
+      const form = document.getElementById("diagnosticForm");
+      const steps = [...document.querySelectorAll(".wizard-step")];
+      const actions = document.getElementById("wizardActions");
+      const progress = document.getElementById("progressBar");
+      const stepCounter = document.getElementById("stepCounter");
+      let step = 1;
+      let previousFocus = null;
+
+      function showStep(next) {
+        step = next;
+        steps.forEach(section => section.classList.toggle("active", Number(section.dataset.step) === step));
+        actions.style.display = step === 6 ? "none" : "flex";
+        document.getElementById("prevStep").style.visibility = step === 1 ? "hidden" : "visible";
+        document.getElementById("nextStep").innerHTML = step === 5 ? "Собрать профиль <span>→</span>" : "Продолжить <span>→</span>";
+        progress.style.width = `${Math.min(step, 5) * 20}%`;
+        stepCounter.textContent = step === 6 ? "готово" : `шаг ${step} из 5`;
+        document.querySelector(".dialog").scrollTop = 0;
+      }
+
+      function openModal() {
+        previousFocus = document.activeElement;
+        selectSymptom(selectedNoise);
+        modal.classList.add("open");
+        document.body.classList.add("locked");
+        showStep(1);
+        document.getElementById("closeModal").focus();
+      }
+      function closeModal() {
+        modal.classList.remove("open");
+        document.body.classList.remove("locked");
+        if (previousFocus) previousFocus.focus();
+      }
+      document.querySelectorAll(".js-open-diagnostic").forEach(button => button.addEventListener("click", openModal));
+      document.getElementById("closeModal").addEventListener("click", closeModal);
+      document.getElementById("finishWizard").addEventListener("click", closeModal);
+      modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+      document.addEventListener("keydown", event => { if (event.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+
+      function validateStep() {
+        document.getElementById(`error${step}`)?.replaceChildren();
+        if (step === 1 && !form.querySelector("input[name=noise]:checked")) return error("Выберите основной тип шума.");
+        if (step === 2 && (!form.elements.direction.value || !form.elements.pattern.value || !form.elements.rooms.value.trim())) return error("Заполните направление, время и комнаты.");
+        if (step === 3 && !form.querySelector("input[name=stage]:checked")) return error("Выберите стадию объекта.");
+        if (step === 5) {
+          if (!form.elements.name.value.trim()) return error("Укажите имя.");
+          if (!form.elements.phone.value.trim() && !form.elements.email.value.trim()) return error("Укажите телефон или email.");
+          if (!form.elements.consent.checked) return error("Нужно согласие на обработку данных.");
+        }
+        return true;
+      }
+      function error(message) {
+        const node = document.getElementById(`error${step}`);
+        if (node) node.textContent = message;
+        return false;
+      }
+      document.getElementById("nextStep").addEventListener("click", () => { if (validateStep()) showStep(step === 5 ? 6 : step + 1); });
+      document.getElementById("prevStep").addEventListener("click", () => { if (step > 1) showStep(step - 1); });
+      form.addEventListener("submit", event => event.preventDefault());
+      showStep(1);
+    })();
+  </script>
+</body>
+</html>

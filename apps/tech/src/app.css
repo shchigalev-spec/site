@@ -1,0 +1,286 @@
+@import '@fontsource/geologica/cyrillic-400.css';
+@import '@fontsource/geologica/cyrillic-500.css';
+@import '@fontsource/geologica/cyrillic-600.css';
+@import '@fontsource/geologica/latin-400.css';
+@import '@fontsource/geologica/latin-500.css';
+@import '@fontsource/geologica/latin-600.css';
+@import '@fontsource/onest/cyrillic-400.css';
+@import '@fontsource/onest/cyrillic-500.css';
+@import '@fontsource/onest/cyrillic-600.css';
+@import '@fontsource/onest/latin-400.css';
+@import '@fontsource/onest/latin-500.css';
+@import '@fontsource/onest/latin-600.css';
+@import '@fontsource/ibm-plex-mono/cyrillic-400.css';
+@import '@fontsource/ibm-plex-mono/cyrillic-500.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+
+:root {
+  font-family: 'Onest', system-ui, sans-serif;
+  color: #fffdf8;
+  background: #070908;
+  font-synthesis: none;
+  --ink-950: #070908;
+  --ink-900: #0d1110;
+  --ink-800: #171c1a;
+  --paper-100: #f3efe6;
+  --paper-200: #ded8cd;
+  --white: #fffdf8;
+  --white-64: rgba(255, 253, 248, 0.64);
+  --white-16: rgba(255, 253, 248, 0.16);
+  --signal: #ff654f;
+  --signal-hot: #ff806d;
+  --acoustic: #6c9f96;
+  --acoustic-dark: #315e57;
+  --warning: #e7b36c;
+  --error: #f06b6b;
+  --gutter: clamp(20px, 3.3vw, 64px);
+  --radius-control: 14px;
+  --radius-panel: 24px;
+  --radius-stage: 40px;
+  --header-h: 76px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink-950);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 80% 5%, rgba(108, 159, 150, 0.08), transparent 28%),
+    var(--ink-950);
+  color: var(--white);
+  font-size: clamp(16px, 1.05vw, 19px);
+  line-height: 1.55;
+  overflow-x: clip;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.022;
+  z-index: 100;
+  background-image:
+    repeating-radial-gradient(circle at 17% 22%, rgba(255, 255, 255, 0.7) 0 0.5px, transparent 0.5px 3px),
+    repeating-radial-gradient(circle at 77% 63%, rgba(255, 255, 255, 0.45) 0 0.5px, transparent 0.5px 4px);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--paper-100);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--signal);
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--ink-950);
+}
+
+.shell {
+  width: min(100%, 1920px);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.grid-16 {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  gap: clamp(12px, 1.1vw, 24px);
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.display {
+  font-family: 'Geologica', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.lead {
+  font-size: clamp(1.15rem, 1.65vw, 1.75rem);
+  line-height: 1.35;
+  color: var(--white-64);
+  max-width: 62ch;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 14px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: var(--signal);
+  color: var(--ink-950);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 180ms ease, transform 140ms ease;
+}
+
+.button::after {
+  content: '↗';
+  font-size: 1.15em;
+}
+
+.button:hover {
+  background: var(--signal-hot);
+}
+
+.button:active {
+  transform: scale(0.985);
+}
+
+.button.secondary {
+  border-color: var(--white-16);
+  background: transparent;
+  color: var(--white);
+}
+
+.button.secondary:hover {
+  border-color: var(--acoustic);
+  background: rgba(108, 159, 150, 0.08);
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  gap: clamp(12px, 1.1vw, 24px);
+  align-items: end;
+}
+
+.section-head > .mono {
+  grid-column: 1 / 4;
+  color: var(--acoustic);
+}
+
+.section-head > h2 {
+  grid-column: 4 / 13;
+  margin: 0;
+  font-size: clamp(2.45rem, 5.2vw, 5.8rem);
+}
+
+.section-head > p {
+  grid-column: 13 / -1;
+  margin: 0;
+  color: var(--white-64);
+}
+
+.warm {
+  color: var(--ink-950);
+  background: var(--paper-100);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px !important;
+  max-width: 1px !important;
+  height: 1px !important;
+  min-height: 1px !important;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1023px) {
+  .grid-16,
+  .section-head {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .section-head > .mono {
+    grid-column: 1 / 3;
+  }
+
+  .section-head > h2 {
+    grid-column: 3 / -1;
+  }
+
+  .section-head > p {
+    grid-column: 3 / -1;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --gutter: 18px;
+    --header-h: 64px;
+  }
+
+  .grid-16,
+  .section-head {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .section-head > .mono,
+  .section-head > h2,
+  .section-head > p {
+    grid-column: 1 / -1;
+  }
+
+  .section-head > .mono {
+    margin-bottom: 16px;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

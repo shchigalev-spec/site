@@ -39,3 +39,7 @@ yarn-error.log*
 /outputs/
 /output/
 /work/
+
+# local SSH deploy credentials must never enter the repository
+*.key
+id_*

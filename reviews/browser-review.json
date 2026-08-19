@@ -1,0 +1,75 @@
+{
+  "startedAt": "2026-08-18T22:17:24.833Z",
+  "concepts": {
+    "tech": {
+      "routes": {
+        "/": 200,
+        "/shumoizolyatsiya-kvartiry/": 200,
+        "/shumoizolyatsiya-sten/": 200,
+        "/shumoizolyatsiya-potolka/": 200,
+        "/shumoizolyatsiya-pola/": 200,
+        "/shumoizolyatsiya-ot-sosedey/": 200,
+        "/shumoizolyatsiya-v-novostroyke/": 200,
+        "/shumoizolyatsiya-v-gotovoy-kvartire/": 200,
+        "/diagnostika-shuma/": 200,
+        "/cases/": 200,
+        "/cases/58-39-db/": 200,
+        "/cases/impact-noise-minus-16-db/": 200,
+        "/cases/64-43-db/": 200,
+        "/privacy/": 200,
+        "/privacy-policy/": 200,
+        "/sitemap.xml": 200,
+        "/robots.txt": 200
+      },
+      "desktop": {
+        "passed": true,
+        "overflow": 0,
+        "consoleErrors": []
+      },
+      "mobile": {
+        "passed": true,
+        "overflow": 0,
+        "consoleErrors": []
+      },
+      "reducedMotion": {
+        "passed": true
+      }
+    },
+    "engineering": {
+      "routes": {
+        "/": 200,
+        "/shumoizolyatsiya-kvartiry/": 200,
+        "/shumoizolyatsiya-sten/": 200,
+        "/shumoizolyatsiya-potolka/": 200,
+        "/shumoizolyatsiya-pola/": 200,
+        "/shumoizolyatsiya-ot-sosedey/": 200,
+        "/shumoizolyatsiya-v-novostroyke/": 200,
+        "/shumoizolyatsiya-v-gotovoy-kvartire/": 200,
+        "/diagnostika-shuma/": 200,
+        "/cases/": 200,
+        "/cases/58-39-db/": 200,
+        "/cases/impact-noise-minus-16-db/": 200,
+        "/cases/64-43-db/": 200,
+        "/privacy/": 200,
+        "/privacy-policy/": 200,
+        "/sitemap.xml": 200,
+        "/robots.txt": 200
+      },
+      "desktop": {
+        "passed": true,
+        "overflow": 0,
+        "consoleErrors": []
+      },
+      "mobile": {
+        "passed": true,
+        "overflow": 0,
+        "consoleErrors": []
+      },
+      "reducedMotion": {
+        "passed": true
+      }
+    }
+  },
+  "failures": [],
+  "finishedAt": "2026-08-18T22:18:32.022Z"
+}

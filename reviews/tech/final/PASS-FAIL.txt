@@ -1,0 +1,8 @@
+PASS
+94/100
+
+HARD BLOCKERS: NONE
+
+SIGNAL / TECH проходит обязательный порог 92/100. Финальные desktop, tablet, mobile, hero-state и reduced-motion evidence проверены после исправления scroll/capture race; pinned hero, renovation scroll states, continuity изображений, conversion path и responsive behavior подтверждены.
+
+Неблокирующие замечания: baked signal graphics в части raster imagery, упрощённые mobile renovation/scenario patterns, неполный WAI-ARIA tab pattern у нескольких групп контролов и статичный header progress.

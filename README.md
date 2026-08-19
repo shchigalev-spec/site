@@ -1,44 +1,35 @@
-# Lab of Silence website
+# Лаборатория тишины — два независимых сайта
 
-Russian-language, multi-route service website for engineering apartment
-soundproofing in Moscow. The current application uses the repository's Vinext
-runtime and React Server Components while preserving the SSR, progressive
-enhancement, accessibility, SEO, and Cloudflare-compatible deployment goals of
-the original product brief.
+Clean-room монорепозиторий двух самостоятельных SvelteKit-приложений для одной инженерной услуги:
 
-## Local development
+- `apps/tech` — SIGNAL / TECH, кинематографичная интерактивная лаборатория;
+- `apps/engineering` — QUIET / ENGINEERING, спокойное архитектурное бюро.
 
-1. Install Node.js 22.13 or newer.
-2. Run `npm install`.
-3. Copy `.env.example` to `.env.local` and configure only available values.
-4. Run `npm run dev`.
+Компоненты, стили, дизайн-токены и изображения приложений не разделяются. Общими остаются только подтверждённые факты, назначение маршрутов, SEO-приоритеты, цель конверсии и названия аналитических событий.
 
-`npm run build`, `npm run lint`, and `npm test` are the validation commands.
+## Запуск
 
-## Runtime configuration
+```bash
+npm run install:all
+npm run dev:tech
+npm run dev:engineering
+```
 
-- `NEXT_PUBLIC_SITE_URL`: canonical production origin.
-- `NEXT_PUBLIC_YANDEX_METRICA_ID`: optional Metrica counter.
-- `BITRIX_WEBHOOK_URL`: server-only Bitrix webhook base.
-- `BITRIX_ENTITY_TYPE`: `lead`, `deal`, or `spa:<entityTypeId>`.
-- `BITRIX_FIELD_MAP_JSON`: JSON object mapping internal payload keys to Bitrix
-  field IDs.
+Одновременный запуск: `npm run dev:both`.
 
-Recommended mapped fields: `title`, `name`, `phone`, `email`, `noise`, `stage`,
-`surface`, `direction`, `pattern`, `rooms`, `building`, `area`, `scenario`,
-`route`, `referrer`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`,
-`utm_term`, `timestamp`, and `file_metadata`.
+Локальные адреса: Tech — `http://127.0.0.1:5173`, Engineering — `http://127.0.0.1:5174`.
 
-The Bitrix webhook is never exposed to browser code. In development, missing
-Bitrix variables activate an explicitly logged mock adapter so the form flow
-can be tested. In production, missing configuration or delivery failure returns
-an error and the interface preserves user input; it never shows false success.
-Attachments are validated and represented as metadata until a real Bitrix file
-field mapping is configured.
+## Проверка
 
-## Content controls
+```bash
+npm run check:all
+npm run lint:all
+npm run test:all
+npm run build:all
+npm run funnel:verify
+npm run capture:all
+npm run reviews:build
+npm run comparison:build
+```
 
-Business facts, service routes, case data, FAQs, and noise profiles live under
-`lib/content`. Unverified launch inputs are listed in `docs/CONTENT-TODO.md`.
-Do not replace those TODOs with invented claims.
-
+Факты и контентные ограничения находятся в `docs/`. Арт-направления — в `art-direction/`. Снимки и протоколы браузерной проверки — в `reviews/`. Визуальное сравнение двух концепций генерируется в `comparison/index.html`.
