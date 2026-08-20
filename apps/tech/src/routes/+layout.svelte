@@ -5,6 +5,7 @@
   import { onMount } from 'svelte';
   import TechHeader from '$components/TechHeader.svelte';
   import TechFooter from '$components/TechFooter.svelte';
+  import MobileStickyCta from '$components/MobileStickyCta.svelte';
   import { initAnalytics, track } from '$lib/analytics';
 
   let { children } = $props();
@@ -31,6 +32,8 @@
   });
 </script>
 
+<a class="skip-link" href="#main-content">Перейти к содержанию</a>
 <TechHeader {phone} {email} />
-<main>{@render children()}</main>
+<main id="main-content" tabindex="-1">{@render children()}</main>
+<MobileStickyCta />
 <TechFooter {phone} {email} />

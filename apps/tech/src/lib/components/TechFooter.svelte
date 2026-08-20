@@ -5,6 +5,11 @@
 </script>
 
 <footer class="footer">
+  <picture class="footer-plate" aria-hidden="true">
+    <source media="(max-width: 960px)" srcset="/generated/tech-final-quiet-960.webp" type="image/webp" />
+    <source srcset="/generated/tech-final-quiet.webp" type="image/webp" />
+    <img src="/generated/tech-final-quiet.png" alt="" width="1672" height="941" loading="lazy" decoding="async" />
+  </picture>
   <div class="shell footer-grid">
     <div class="footer-statement">
       <span class="mono">ТИХОЕ СОСТОЯНИЕ / 11</span>
@@ -37,11 +42,27 @@
     min-height: 95svh;
     padding: clamp(110px, 15vw, 240px) 0 38px;
     overflow: hidden;
-    background-image:
-      linear-gradient(90deg, rgba(7, 9, 8, 0.96) 0 42%, rgba(7, 9, 8, 0.3) 70%),
-      image-set(url('/generated/tech-final-quiet.webp') type('image/webp'), url('/generated/tech-final-quiet.png') type('image/png'));
-    background-position: center;
-    background-size: cover;
+    isolation: isolate;
+    background: var(--ink-950);
+  }
+
+  .footer-plate,
+  .footer-plate img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .footer-plate { z-index: -2; }
+  .footer-plate img { object-fit: cover; object-position: center; }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(7, 9, 8, 0.96) 0 42%, rgba(7, 9, 8, 0.3) 70%);
+    pointer-events: none;
   }
 
   .footer::after {
@@ -76,7 +97,8 @@
   .signal-line i:nth-child(3) { height: 2px; background: var(--acoustic); }
 
   @media (max-width: 767px) {
-    .footer { min-height: 100svh; padding-top: 120px; background-position: 62% center; }
+    .footer { min-height: 100svh; padding-top: 120px; }
+    .footer-plate img { object-position: 62% center; }
     .footer-grid { grid-template-columns: repeat(4, 1fr); }
     .footer-statement, .footer-action, nav, .contacts, .legal, .signal-line { grid-column: 1 / -1; }
     .footer-action { margin-top: 24px; }

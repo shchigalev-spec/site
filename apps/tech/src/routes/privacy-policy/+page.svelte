@@ -1,10 +1,13 @@
-<script lang="ts">import { page } from '$app/stores';</script>
+<script lang="ts">
+  import { page } from '$app/stores';
+  import { stableSiteUrl } from '$lib/metadata';
+</script>
 
 <svelte:head>
   <title>Обработка персональных данных — Лаборатория тишины</title>
   <meta name="description" content="Статус обработки данных в форме диагностики Лаборатории тишины." />
   <meta name="robots" content="noindex,follow" />
-  <link rel="canonical" href={`${$page.url.origin}/privacy-policy/`} />
+  <link rel="canonical" href={stableSiteUrl($page.url, '/privacy-policy/')} />
 </svelte:head>
 
 <article class="privacy shell">

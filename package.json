@@ -16,7 +16,8 @@
     "images:optimize": "node scripts/optimize-images.mjs",
     "capture:all": "node scripts/capture-all.mjs",
     "funnel:verify": "node scripts/funnel-review.mjs",
-    "reviews:build": "node scripts/build-review-evidence.mjs",
+    "reviews:legacy:build": "node scripts/build-review-evidence.mjs",
+    "reviews:tech-v2:capture": "node scripts/tech-v2-capture.mjs",
     "comparison:build": "node scripts/build-comparison.mjs"
   },
   "devDependencies": {

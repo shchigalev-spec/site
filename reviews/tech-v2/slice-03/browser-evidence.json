@@ -1,0 +1,294 @@
+{
+  "capturedAt": "2026-08-19T21:26:34.413Z",
+  "origin": "http://127.0.0.1:5173",
+  "slice": "03",
+  "routes": {
+    "/": 200,
+    "/shumoizolyatsiya-kvartiry/": 200,
+    "/shumoizolyatsiya-sten/": 200,
+    "/shumoizolyatsiya-potolka/": 200,
+    "/shumoizolyatsiya-pola/": 200,
+    "/shumoizolyatsiya-ot-sosedey/": 200,
+    "/shumoizolyatsiya-v-novostroyke/": 200,
+    "/shumoizolyatsiya-v-gotovoy-kvartire/": 200,
+    "/diagnostika-shuma/": 200,
+    "/cases/": 200,
+    "/cases/58-39-db/": 200,
+    "/cases/impact-noise-minus-16-db/": 200,
+    "/cases/64-43-db/": 200,
+    "/privacy-policy/": 200,
+    "/privacy/": 200,
+    "/sitemap.xml": 200,
+    "/robots.txt": 200
+  },
+  "desktop": {
+    "errors": [],
+    "brokenImages": [],
+    "overflow": {
+      "amount": 0,
+      "nodes": [
+        "img.svelte-m0tlrl [-58, 1468]",
+        "img.svelte-m0tlrl [-58, 1468]",
+        "g.[object SVGAnimatedString] [1609, 1864]",
+        "rect.[object SVGAnimatedString] [1609, 1864]",
+        "line.[object SVGAnimatedString] [1736, 1736]",
+        "img.svelte-1th5tui [-58, 1498]"
+      ]
+    }
+  },
+  "mobile": {
+    "errors": [],
+    "brokenImages": [],
+    "overflow": {
+      "amount": 0,
+      "nodes": [
+        "img.svelte-m0tlrl [-2, 392]",
+        "img.svelte-m0tlrl [-2, 392]",
+        "svg.[object SVGAnimatedString] [-37, 385]",
+        "g.[object SVGAnimatedString] [344, 480]",
+        "path.[object SVGAnimatedString] [351, 463]",
+        "path.[object SVGAnimatedString] [371, 480]",
+        "path.[object SVGAnimatedString] [344, 447]",
+        "g.[object SVGAnimatedString] [-408, -292]",
+        "rect.[object SVGAnimatedString] [-408, -292]",
+        "line.[object SVGAnimatedString] [-351, -351]",
+        "g.[object SVGAnimatedString] [201, 433]",
+        "g.[object SVGAnimatedString] [426, 433]",
+        "circle.[object SVGAnimatedString] [426, 433]",
+        "g.[object SVGAnimatedString] [177, 460]",
+        "path.[object SVGAnimatedString] [182, 447]",
+        "path.[object SVGAnimatedString] [225, 460]",
+        "path.[object SVGAnimatedString] [182, 447]",
+        "g.[object SVGAnimatedString] [-90, -90]",
+        "path.[object SVGAnimatedString] [182, 447]",
+        "svg.[object SVGAnimatedString] [-31, 380]"
+      ]
+    },
+    "touch": true,
+    "touchInteractions": [
+      "hero state control tapped and state 1 asserted",
+      "menu opened by tap",
+      "menu navigation link tapped and menu close asserted"
+    ]
+  },
+  "pathLab": {
+    "desktop": {
+      "present": true,
+      "stateCount": 6,
+      "states": [
+        "impact",
+        "voices",
+        "bass",
+        "lift",
+        "road",
+        "ventilation"
+      ],
+      "transitionDurationMs": 811,
+      "homeKey": "impact",
+      "arrowKey": "voices",
+      "persistenceBeforeReload": {
+        "query": "bass",
+        "session": "bass"
+      },
+      "persistedKey": "bass",
+      "runningAnimations": 0,
+      "downstream": {
+        "scenarioNoise": "bass",
+        "diagnosisNoise": "Бас и музыка",
+        "diagnosisContextVisible": true,
+        "diagnosisContextText": "КОНТЕКСТ СОХРАНЁН\n\nШум: Бас и музыка\n\nПредполагаемый путь: junction",
+        "diagnosisErrors": []
+      }
+    },
+    "mobile": {
+      "present": true,
+      "selectedByDirectControl": "road",
+      "selectedByNext": "ventilation",
+      "stepText": "6 / 6"
+    }
+  },
+  "construction": {
+    "desktop": {
+      "present": true,
+      "contextCount": 3,
+      "contexts": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "finalSteps": [
+        "7",
+        "7",
+        "7"
+      ],
+      "homeContext": "wall",
+      "arrowContext": "ceiling",
+      "bridgeStep": "3",
+      "controlledStep": "7",
+      "runningAnimations": 0
+    },
+    "mobile": {
+      "present": true,
+      "context": "floor",
+      "controlGroupRole": "group",
+      "expandedStep": "1",
+      "expandedPressed": [
+        "false",
+        "true",
+        "false",
+        "false"
+      ],
+      "bridgeStep": "3",
+      "bridgePressed": [
+        "false",
+        "false",
+        "true",
+        "false"
+      ],
+      "controlledStep": "7",
+      "controlledPressed": [
+        "false",
+        "false",
+        "false",
+        "true"
+      ]
+    }
+  },
+  "mandatoryViewports": {
+    "tablet768": {
+      "width": 768,
+      "height": 1024,
+      "errors": [],
+      "geometry": {
+        "h1": {
+          "x": 25.34375,
+          "y": 221.84375,
+          "width": 599.03125,
+          "height": 197.8125,
+          "top": 221.84375,
+          "right": 624.375,
+          "bottom": 419.65625,
+          "left": 25.34375
+        },
+        "candidates": [
+          {
+            "selector": ".local-assembly",
+            "rect": {
+              "x": 247.0115203857422,
+              "y": 67.44747924804688,
+              "width": 270.3360595703125,
+              "height": 125.69920349121094,
+              "top": 67.44747924804688,
+              "right": 517.3475799560547,
+              "bottom": 193.1466827392578,
+              "left": 247.0115203857422
+            }
+          },
+          {
+            "selector": ".diagnostic-rail li.active",
+            "rect": {
+              "x": 638.796875,
+              "y": 104,
+              "width": 103.484375,
+              "height": 47.34375,
+              "top": 104,
+              "right": 742.28125,
+              "bottom": 151.34375,
+              "left": 638.796875
+            }
+          },
+          {
+            "selector": ".diagnostic-rail li.active",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          }
+        ],
+        "collisions": []
+      }
+    },
+    "mobile320": {
+      "width": 320,
+      "height": 568,
+      "errors": [],
+      "geometry": {
+        "h1": {
+          "x": 18,
+          "y": 142.125,
+          "width": 284,
+          "height": 139.765625,
+          "top": 142.125,
+          "right": 302,
+          "bottom": 281.890625,
+          "left": 18
+        },
+        "candidates": [
+          {
+            "selector": ".local-assembly",
+            "rect": {
+              "x": 159.51832580566406,
+              "y": 64.44249725341797,
+              "width": 45.0631103515625,
+              "height": 18.161788940429688,
+              "top": 64.44249725341797,
+              "right": 204.58143615722656,
+              "bottom": 82.60428619384766,
+              "left": 159.51832580566406
+            }
+          },
+          {
+            "selector": ".diagnostic-rail li.active",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          {
+            "selector": ".diagnostic-rail li.active",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          }
+        ],
+        "collisions": []
+      }
+    }
+  },
+  "reducedMotion": {
+    "errors": [],
+    "h1Visible": true,
+    "diagnosisVisible": true,
+    "infiniteNodes": [],
+    "runningAnimations": [],
+    "heroHeight": "768px",
+    "renovationPosition": "relative",
+    "constructionStep": "7",
+    "mobile": {
+      "errors": [],
+      "summaryVisible": true,
+      "conclusionVisible": true,
+      "runningAnimations": 0
+    }
+  },
+  "failures": []
+}

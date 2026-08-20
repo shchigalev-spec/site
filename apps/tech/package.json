@@ -12,21 +12,21 @@
     "preview": "vite preview --host 0.0.0.0 --port 5173"
   },
   "dependencies": {
-    "@fontsource/geologica": "latest",
-    "@fontsource/ibm-plex-mono": "latest",
-    "@fontsource/onest": "latest",
-    "@sveltejs/adapter-node": "latest",
-    "@sveltejs/kit": "latest",
-    "gsap": "latest",
-    "svelte": "latest",
-    "zod": "latest"
+    "@fontsource/geologica": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@fontsource/onest": "5.3.0",
+    "@sveltejs/adapter-node": "5.5.7",
+    "@sveltejs/kit": "2.70.3",
+    "gsap": "3.15.0",
+    "svelte": "5.56.9",
+    "zod": "4.4.3"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "latest",
-    "@types/node": "latest",
-    "svelte-check": "latest",
-    "typescript": "latest",
-    "vite": "latest",
-    "vitest": "latest"
+    "@sveltejs/vite-plugin-svelte": "7.3.0",
+    "@types/node": "22.19.19",
+    "svelte-check": "4.7.6",
+    "typescript": "5.9.3",
+    "vite": "8.2.1",
+    "vitest": "4.1.11"
   }
 }

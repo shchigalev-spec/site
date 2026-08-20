@@ -1,0 +1,86 @@
+{
+  "capturedAt": "2026-08-19T17:28:35.002Z",
+  "origin": "http://127.0.0.1:5173",
+  "slice": "00",
+  "routes": {
+    "/": 200,
+    "/shumoizolyatsiya-kvartiry/": 200,
+    "/shumoizolyatsiya-sten/": 200,
+    "/shumoizolyatsiya-potolka/": 200,
+    "/shumoizolyatsiya-pola/": 200,
+    "/shumoizolyatsiya-ot-sosedey/": 200,
+    "/shumoizolyatsiya-v-novostroyke/": 200,
+    "/shumoizolyatsiya-v-gotovoy-kvartire/": 200,
+    "/diagnostika-shuma/": 200,
+    "/cases/": 200,
+    "/cases/58-39-db/": 200,
+    "/cases/impact-noise-minus-16-db/": 200,
+    "/cases/64-43-db/": 200,
+    "/privacy-policy/": 200,
+    "/privacy/": 200,
+    "/sitemap.xml": 200,
+    "/robots.txt": 200
+  },
+  "desktop": {
+    "errors": [],
+    "brokenImages": [],
+    "overflow": {
+      "amount": 0,
+      "nodes": [
+        "img.hero-base svelte-zaof9r [-85, 1478]",
+        "img.hero-cutaway svelte-zaof9r [-85, 1478]",
+        "div.scan-plane svelte-zaof9r [1704, 2155]",
+        "span.plane plane-wall svelte-zaof9r [1162, 1458]",
+        "span.plane plane-floor svelte-zaof9r [316, 1470]",
+        "div.layer svelte-1l08euv [749, 1451]",
+        "div.layer svelte-1l08euv [780, 1497]",
+        "img.svelte-1th5tui [-58, 1498]"
+      ]
+    }
+  },
+  "mobile": {
+    "errors": [],
+    "brokenImages": [],
+    "overflow": {
+      "amount": 0,
+      "nodes": [
+        "img.hero-base svelte-zaof9r [-11, 397]",
+        "img.hero-cutaway svelte-zaof9r [-11, 397]",
+        "div.assembly svelte-zaof9r [176, 410]",
+        "i.svelte-zaof9r [216, 409]",
+        "i.svelte-zaof9r [237, 430]",
+        "button.svelte-1afvrc7 [302, 444]",
+        "strong.svelte-1afvrc7 [340, 444]",
+        "em.svelte-1afvrc7 [340, 444]",
+        "button.svelte-1afvrc7 [444, 586]",
+        "span.mono svelte-1afvrc7 [444, 470]",
+        "strong.svelte-1afvrc7 [482, 586]",
+        "em.svelte-1afvrc7 [482, 586]",
+        "button.svelte-1afvrc7 [586, 728]",
+        "span.mono svelte-1afvrc7 [586, 612]",
+        "strong.svelte-1afvrc7 [624, 728]",
+        "em.svelte-1afvrc7 [624, 728]",
+        "button.svelte-1afvrc7 [728, 870]",
+        "span.mono svelte-1afvrc7 [728, 754]",
+        "strong.svelte-1afvrc7 [766, 870]",
+        "em.svelte-1afvrc7 [766, 870]"
+      ]
+    },
+    "touch": true,
+    "touchInteractions": [
+      "hero state control tapped and state 1 asserted",
+      "menu opened by tap",
+      "menu navigation link tapped and menu close asserted"
+    ]
+  },
+  "reducedMotion": {
+    "errors": [],
+    "h1Visible": true,
+    "diagnosisVisible": true,
+    "infiniteNodes": [],
+    "runningAnimations": [],
+    "heroHeight": "768px",
+    "renovationPosition": "relative"
+  },
+  "failures": []
+}
