@@ -1,6 +1,14 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+const v2Root = path.resolve('reviews', 'engineering-v2');
+try {
+  await fs.access(v2Root);
+  throw new Error('Legacy retrospective evidence generation is disabled while Engineering V2 exists. Capture and review each V2 slice independently.');
+} catch (error) {
+  if (error?.code !== 'ENOENT') throw error;
+}
+
 const slices = [
   ['00', 'Foundations', 'Токены, типографика, сетка, header/footer и базовая доступность.'],
   ['01', 'Hero', 'Первый экран, CTA, 4-state Tech scan и Engineering cutaway continuity.'],

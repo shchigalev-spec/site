@@ -15,8 +15,8 @@ export const POST: RequestHandler = async ({ request }) => {
   if (!parsed.data) return json({ ok: false, errors: parsed.errors }, { status: 400 });
 
   try {
-    const result = await createBitrixLead(parsed.data);
-    return json({ ok: true, requestId: result.id }, { status: 201 });
+    await createBitrixLead(parsed.data);
+    return json({ ok: true }, { status: 201 });
   } catch (error) {
     console.error('[engineering diagnosis] submit failed', error);
     return json({ ok: false, message: 'Заявка не принята сервером. Сохраните введённые данные и попробуйте ещё раз или свяжитесь с нами по телефону.' }, { status: 502 });

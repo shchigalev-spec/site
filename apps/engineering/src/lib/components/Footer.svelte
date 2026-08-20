@@ -1,10 +1,13 @@
 <script lang="ts">
   import { env } from '$env/dynamic/public';
   import { track } from '$lib/analytics';
+  import { page } from '$app/stores';
+  import { buildDiagnosisHref } from '$lib/diagnosis-link';
 
   const phone = env.PUBLIC_SITE_PHONE || '';
   const email = env.PUBLIC_SITE_EMAIL || '';
   $: phoneHref = phone ? `tel:${phone.replace(/[^+\d]/g, '')}` : '';
+  $: footerDiagnosisHref = buildDiagnosisHref($page.url, 'footer');
 </script>
 
 <footer class="site-footer">
@@ -20,7 +23,7 @@
   <div class="footer-contacts">
     {#if phone}<a href={phoneHref} on:click={() => track('phone_click', { source: 'footer' })}>{phone}</a>{/if}
     {#if email}<a href={`mailto:${email}`} on:click={() => track('email_click', { source: 'footer' })}>{email}</a>{/if}
-    <a class="text-link" href="/diagnostika-shuma/">Записаться на диагностику</a>
+    <a class="text-link" href={footerDiagnosisHref} on:click={() => track('diagnostic_start', { source: 'footer' })}>Записаться на диагностику</a>
   </div>
   <div class="footer-meta">Москва · Инженерная шумоизоляция квартир и домов</div>
 </footer>
