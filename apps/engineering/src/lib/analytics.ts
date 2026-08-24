@@ -21,7 +21,12 @@ export type AnalyticsEvent =
   | 'scroll_50'
   | 'scroll_90'
   | 'case_open'
-  | 'service_page_view';
+  | 'service_page_view'
+  | 'mobile_sticky_cta_click'
+  | 'hero_motion_complete'
+  | 'path_animation_complete'
+  | 'short_form_submit'
+  | 'full_form_start';
 
 const servicePaths = new Set([
   '/shumoizolyatsiya-kvartiry',

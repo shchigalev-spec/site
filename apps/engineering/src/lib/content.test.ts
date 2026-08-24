@@ -19,4 +19,19 @@ describe('engineering content model', () => {
       expect(allPublicPaths).toContain(path);
     }
   });
+
+  it('keeps the service architecture split into complete surface and situation families', () => {
+    const surfaces = services.filter((service) => service.family === 'surface');
+    const situations = services.filter((service) => service.family === 'situation');
+    expect(surfaces.map((service) => service.diagram)).toEqual(['wall', 'ceiling', 'floor']);
+    expect(situations).toHaveLength(4);
+    expect(situations.every((service) => service.routePath && service.relatedSurfaces?.length === 3)).toBe(true);
+    expect(services.every((service) => service.symptoms.length >= 3 && service.constraints.length >= 3 && service.faq.length >= 2)).toBe(true);
+  });
+
+  it('uses unique service SEO copy and hero imagery', () => {
+    expect(new Set(services.map((service) => service.title)).size).toBe(services.length);
+    expect(new Set(services.map((service) => service.description)).size).toBe(services.length);
+    expect(new Set(services.map((service) => service.image)).size).toBe(services.length);
+  });
 });
