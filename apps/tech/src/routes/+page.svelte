@@ -1,42 +1,39 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import HeroScan from '$components/HeroScan.svelte';
-  import NoiseDeck from '$components/NoiseDeck.svelte';
-  import ApartmentXray from '$components/ApartmentXray.svelte';
-  import ProcessBridge from '$components/ProcessBridge.svelte';
-  import EngineeringAssembly from '$components/EngineeringAssembly.svelte';
-  import RenovationStages from '$components/RenovationStages.svelte';
-  import MeasurementCases from '$components/MeasurementCases.svelte';
-  import ScenarioLab from '$components/ScenarioLab.svelte';
-  import QualityFaq from '$components/QualityFaq.svelte';
-  import DiagnosticForm from '$components/DiagnosticForm.svelte';
+  import AcousticHeroV2 from '$components/AcousticHeroV2.svelte';
+  import ProofStrip from '$components/ProofStrip.svelte';
+  import DeferredChapter from '$components/DeferredChapter.svelte';
+  import { stableSiteUrl } from '$lib/metadata';
 
   export let form: {
     success?: boolean;
     message?: string;
     reference?: string;
     issues?: Record<string, string[]>;
+    values?: Record<string, string>;
   } | null;
+  $: canonicalUrl = stableSiteUrl($page.url, '/');
 </script>
 
 <svelte:head>
   <title>Шумоизоляция квартиры в Москве — Лаборатория тишины</title>
   <meta name="description" content="Сначала найдём, как шум попадает в комнату. Затем рассчитаем инженерное решение по шумоизоляции квартиры и смонтируем своей бригадой." />
-  <link rel="canonical" href={$page.url.origin + '/'} />
+  <link rel="canonical" href={canonicalUrl} />
   <meta property="og:title" content="Лаборатория тишины — сначала найдём путь шума" />
   <meta property="og:description" content="Инженерная шумоизоляция квартир и домов в Москве: диагностика, проектирование, монтаж и проверка результата." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={$page.url.origin + '/'} />
-  <meta property="og:image" content={$page.url.origin + '/generated/tech-og.png'} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={stableSiteUrl($page.url, '/generated/tech-og.png')} />
 </svelte:head>
 
-<HeroScan />
-<NoiseDeck />
-<ApartmentXray />
-<ProcessBridge />
-<EngineeringAssembly />
-<RenovationStages />
-<MeasurementCases />
-<ScenarioLab />
-<QualityFaq />
-<DiagnosticForm {form} />
+<div class="home-page">
+  <AcousticHeroV2 />
+  <ProofStrip />
+  <DeferredChapter chapter="path" anchor="noise-path-lab" rootMargin="200px 0px" loader={() => import('$components/NoisePathLab.svelte')} />
+  <DeferredChapter chapter="construction" anchor="construction" rootMargin="300px 0px" loader={() => import('$components/DiagnosisToConstruction.svelte')} />
+  <DeferredChapter chapter="renovation" anchor="renovation-morph" rootMargin="500px 0px" loader={() => import('$components/RenovationMorphV2.svelte')} />
+  <DeferredChapter chapter="measured" anchor="cases" loader={() => import('$components/MeasuredEvidenceV2.svelte')} />
+  <DeferredChapter chapter="scenario" anchor="scenario-v2" loader={() => import('$components/ScenarioLabV2.svelte')} />
+  <DeferredChapter chapter="quality" loader={() => import('$components/QualityFaq.svelte')} />
+  <DeferredChapter chapter="conversion" anchor="home-short-form" loader={() => import('$components/ShortDiagnosticForm.svelte')} props={{ form }} />
+</div>

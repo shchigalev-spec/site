@@ -17,17 +17,32 @@ export interface NoiseProfile {
 
 export interface ServicePage {
   slug: string;
+  family: 'surface' | 'situation';
   title: string;
   description: string;
   eyebrow: string;
   h1: string;
   lead: string;
+  asset: string;
+  assetAlt: string;
   visualMode: 'section' | 'vertical' | 'layers' | 'lateral' | 'shell' | 'protected';
   problem: string;
   diagnosticFocus: string[];
   approach: string[];
   limitation: string;
   related: { href: string; label: string }[];
+  surface?: 'wall' | 'ceiling' | 'floor';
+  symptom?: string;
+  directRoutes?: string[];
+  flankingRoutes?: string[];
+  stageConstraints?: string[];
+  relatedCase?: { href: string; label: string };
+  faq?: { question: string; answer: string }[];
+  residentialState?: string;
+  decisionRisk?: string;
+  likelyPaths?: string[];
+  interventionConstraints?: string[];
+  relatedSurfaces?: { href: string; label: string }[];
 }
 
 export interface CasePage {
@@ -39,6 +54,14 @@ export interface CasePage {
   resultParts: string[];
   narrative: string;
   measured: string[];
+  known: string[];
+  unknown: string[];
+  symptom: string;
+  hypothesis: string;
+  inspectedZones: string[];
+  engineeringConclusion: string;
+  interventionPrinciples: string[];
+  graphType: 'envelope' | 'peak' | 'band';
   caveat: string;
   asset: string;
 }

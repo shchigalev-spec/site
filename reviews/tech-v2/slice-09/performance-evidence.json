@@ -1,0 +1,153 @@
+{
+  "capturedAt": "2026-08-20T13:37:26.580Z",
+  "origin": "http://127.0.0.1:4173",
+  "desktop": {
+    "name": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "errors": [],
+    "initial": {
+      "lcp": 364,
+      "cls": 0.000039797657154224536
+    },
+    "deferredLoad": {
+      "longTaskCount": 2,
+      "maxLongTaskMs": 75,
+      "longTasksOver200": []
+    },
+    "longTaskCount": 2,
+    "maxLongTaskMs": 101,
+    "longTasksOver200": [],
+    "resourceCount": 64,
+    "imageRequests": [
+      "http://127.0.0.1:4173/generated/tech-v2-hero-clean.avif",
+      "http://127.0.0.1:4173/generated/tech-v2-hero-cutaway.avif",
+      "http://127.0.0.1:4173/generated/tech-v2-apartment-xray-base.avif",
+      "http://127.0.0.1:4173/generated/tech-v2-stage-newbuild.avif",
+      "http://127.0.0.1:4173/generated/tech-v2-stage-renovation.avif",
+      "http://127.0.0.1:4173/generated/tech-v2-stage-finished.avif",
+      "http://127.0.0.1:4173/generated/tech-case-58-39.webp",
+      "http://127.0.0.1:4173/generated/tech-case-impact-16.webp",
+      "http://127.0.0.1:4173/generated/tech-case-64-43.webp",
+      "http://127.0.0.1:4173/generated/tech-v2-quality-control.avif",
+      "http://127.0.0.1:4173/generated/tech-final-quiet.webp"
+    ],
+    "duplicateFormats": [],
+    "runningAnimationsAfterOffscreenHold": [],
+    "finalCls": 0.07822409472053435,
+    "cumulativeLayoutShiftSum": 0.08129808017306861,
+    "interactionCls": 0.003015737756799769,
+    "layoutShifts": [
+      {
+        "start": 4225.9000000059605,
+        "value": 0.000012291847511574075,
+        "step": "path",
+        "sources": [
+          "span.chapter.mono.svelte-1az2m63"
+        ]
+      },
+      {
+        "start": 5471.20000000298,
+        "value": 0.000018450038580246915,
+        "step": "construction",
+        "sources": [
+          "span.chapter.mono.svelte-1az2m63"
+        ]
+      },
+      {
+        "start": 7617.4000000059605,
+        "value": 0.00000601538387345679,
+        "step": "construction",
+        "sources": [
+          "span.sequence-status.mono.svelte-4fwhqd"
+        ]
+      },
+      {
+        "start": 7908,
+        "value": 0.000018699363425925928,
+        "step": "renovation",
+        "sources": [
+          "span.chapter.mono.svelte-1az2m63"
+        ]
+      },
+      {
+        "start": 8900.70000000298,
+        "value": 0.00005045030381944444,
+        "step": "scenario",
+        "sources": [
+          "div.risk-marker.svelte-mmnr49"
+        ]
+      },
+      {
+        "start": 9063,
+        "value": 0.000012457953559027777,
+        "step": "scenario",
+        "sources": [
+          "span.chapter.mono.svelte-1az2m63"
+        ]
+      },
+      {
+        "start": 9184.40000000596,
+        "value": 0.0029281147521219137,
+        "step": "scenario",
+        "sources": [
+          "div.svelte-1niuwsp",
+          "div.svelte-1niuwsp",
+          "div.unknown.svelte-1niuwsp"
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "name": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "errors": [],
+    "initial": {
+      "lcp": 208,
+      "cls": 0
+    },
+    "deferredLoad": {
+      "longTaskCount": 0,
+      "maxLongTaskMs": 0,
+      "longTasksOver200": []
+    },
+    "longTaskCount": 0,
+    "maxLongTaskMs": 0,
+    "longTasksOver200": [],
+    "resourceCount": 64,
+    "imageRequests": [
+      "http://127.0.0.1:4173/generated/tech-v2-hero-mobile-clean.avif",
+      "http://127.0.0.1:4173/generated/tech-v2-hero-mobile-cutaway.avif",
+      "http://127.0.0.1:4173/generated/tech-v2-apartment-xray-base-960.webp",
+      "http://127.0.0.1:4173/generated/tech-v2-stage-mobile-newbuild.avif",
+      "http://127.0.0.1:4173/generated/tech-v2-stage-mobile-renovation.avif",
+      "http://127.0.0.1:4173/generated/tech-case-58-39-960.webp",
+      "http://127.0.0.1:4173/generated/tech-case-impact-16-960.webp",
+      "http://127.0.0.1:4173/generated/tech-case-64-43-960.webp",
+      "http://127.0.0.1:4173/generated/tech-v2-quality-control-960.webp",
+      "http://127.0.0.1:4173/generated/tech-final-quiet-960.webp",
+      "http://127.0.0.1:4173/generated/tech-v2-stage-mobile-finished.avif"
+    ],
+    "duplicateFormats": [],
+    "runningAnimationsAfterOffscreenHold": [],
+    "finalCls": 0.0010826921916062084,
+    "cumulativeLayoutShiftSum": 0.0013814957866685213,
+    "interactionCls": 0.0010826921916062084,
+    "layoutShifts": [
+      {
+        "start": 6680.800000011921,
+        "value": 0.0010826921916062084,
+        "step": "construction",
+        "sources": [
+          "span.sequence-status.mono.svelte-4fwhqd"
+        ]
+      }
+    ]
+  },
+  "failures": []
+}

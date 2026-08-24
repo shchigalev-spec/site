@@ -1,9 +1,8 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import { casePages, findCase } from '$lib/data/site';
+import { findCase } from '$lib/data/site';
 
-export const prerender = true;
-export const entries = () => casePages.map((item) => ({ slug: item.slug }));
+export const prerender = false;
 
 export const load: PageLoad = ({ params }) => {
   const item = findCase(params.slug);

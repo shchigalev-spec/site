@@ -3,6 +3,11 @@ import { formDataToDiagnostic, validateFiles } from '$lib/diagnostic';
 import { sendToBitrix } from '$lib/server/bitrix';
 
 export async function processDiagnostic(formData: FormData) {
+  const values = Object.fromEntries(
+    [...formData.entries()]
+      .filter(([, value]) => typeof value === 'string')
+      .map(([key, value]) => [key, String(value)])
+  );
   const parsed = formDataToDiagnostic(formData);
   const files = formData.getAll('files').filter((value): value is File => value instanceof File && value.size > 0);
   const fileErrors = validateFiles(files);
@@ -12,7 +17,8 @@ export async function processDiagnostic(formData: FormData) {
     return fail(400, {
       success: false,
       message: 'Проверьте отмеченные поля.',
-      issues: { ...fields, files: fileErrors }
+      issues: { ...fields, files: fileErrors },
+      values
     });
   }
 
@@ -29,7 +35,8 @@ export async function processDiagnostic(formData: FormData) {
     return fail(502, {
       success: false,
       message: 'Не удалось передать заявку. Данные сохранены в форме — попробуйте ещё раз или свяжитесь с нами по телефону.',
-      issues: {}
+      issues: {},
+      values
     });
   }
 }

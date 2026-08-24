@@ -1,10 +1,8 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import { findService, servicePages } from '$lib/data/site';
+import { findService } from '$lib/data/site';
 
-export const prerender = true;
-
-export const entries = () => servicePages.map((page) => ({ service: page.slug }));
+export const prerender = false;
 
 export const load: PageLoad = ({ params }) => {
   const service = findService(params.service);

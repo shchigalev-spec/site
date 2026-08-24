@@ -9,9 +9,12 @@ export interface ScenarioInput extends DiagnosticContext {
 
 export interface ScenarioResult {
   probableType: string;
+  candidateRoutes: string[];
+  hypothesis: string;
   inspect: string[];
   scale: string;
   unknowns: string[];
+  uncertainty: string;
   next: string;
 }
 
@@ -60,9 +63,14 @@ export function buildScenario(input: ScenarioInput): ScenarioResult {
 
   return {
     probableType: profile ? `${profile.label}: ${profile.character.toLowerCase()}` : 'Тип шума уточняется по симптому и повторяемости.',
+    candidateRoutes: profile?.likelyPaths.slice(0, 3) ?? ['слышимая поверхность', 'примыкания', 'связанные конструкции'],
+    hypothesis: input.path
+      ? `Выбранная зона «${pathZones[input.path][0]}» становится рабочей гипотезой, но остаётся непроверенной.`
+      : 'Рабочая гипотеза строится по симптому и направлению; доминирующий путь ещё не выбран.',
     inspect: [...inspect].slice(0, 6),
     scale: input.stage ? stageScale[input.stage] : 'Масштаб вмешательства определяется после уточнения стадии объекта.',
     unknowns,
+    uncertainty: unknowns.length > 3 ? 'Высокая: ключевые данные ещё нужно проверить.' : unknowns.length > 1 ? 'Средняя: гипотеза собрана, но требует осмотра.' : 'Остаётся измерительная неопределённость.',
     next: 'Передать сценарий инженеру: менеджер свяжется и согласует следующий коммерческий шаг — выездную диагностику.'
   };
 }

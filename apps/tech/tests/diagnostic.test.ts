@@ -26,6 +26,15 @@ describe('diagnostic validation', () => {
     expect(result.success).toBe(false);
   });
 
+  it('accepts the short homepage payload without invented diagnostic detail', () => {
+    const { direction: _direction, timing: _timing, rooms: _rooms, ...shortPayload } = validPayload;
+    expect(diagnosticSchema.safeParse({ ...shortPayload, formMode: 'short' }).success).toBe(true);
+  });
+
+  it('keeps route, timing and room required in the full diagnostic flow', () => {
+    expect(diagnosticSchema.safeParse({ ...validPayload, formMode: 'full', direction: '', timing: '', rooms: '' }).success).toBe(false);
+  });
+
   it('validates attachment extension, type and size', () => {
     expect(validateFiles([{ name: 'plan.pdf', type: 'application/pdf', size: 1024 }])).toEqual([]);
     expect(validateFiles([{ name: 'archive.exe', type: 'application/octet-stream', size: 1024 }])[0]).toContain('неподдерживаемый');

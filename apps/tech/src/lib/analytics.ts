@@ -20,7 +20,18 @@ export type AnalyticsEvent =
   | 'scroll_50'
   | 'scroll_90'
   | 'case_open'
-  | 'service_page_view';
+  | 'service_page_view'
+  | 'hero_motion_start'
+  | 'hero_motion_complete'
+  | 'route_animation_complete'
+  | 'construction_sequence_complete'
+  | 'renovation_sequence_complete'
+  | 'mobile_sticky_cta_click'
+  | 'short_form_submit'
+  | 'full_form_start'
+  | 'service_route_toggle'
+  | 'situation_phase'
+  | 'diagnosis_stage';
 
 let metricaId = '';
 

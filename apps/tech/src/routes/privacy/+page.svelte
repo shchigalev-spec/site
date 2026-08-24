@@ -1,5 +1,8 @@
-<script lang="ts">import { page } from '$app/stores';</script>
-<svelte:head><title>Обработка персональных данных — Лаборатория тишины</title><meta name="description" content="Информация об обработке данных, передаваемых через форму диагностики." /><link rel="canonical" href={$page.url.href} /></svelte:head>
+<script lang="ts">
+  import { page } from '$app/stores';
+  import { stableSiteUrl } from '$lib/metadata';
+</script>
+<svelte:head><title>Обработка персональных данных — Лаборатория тишины</title><meta name="description" content="Информация об обработке данных, передаваемых через форму диагностики." /><link rel="canonical" href={stableSiteUrl($page.url)} /></svelte:head>
 
 <article class="privacy shell">
   <p class="mono">ПРАВОВАЯ ИНФОРМАЦИЯ</p>

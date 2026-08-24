@@ -1,25 +1,34 @@
 <script lang="ts">
   import { track } from '$lib/analytics';
 
-  const nodes = [
-    { key: 'perimeter', label: 'Периметр', text: 'Проверяем непрерывность контура и зоны, где воздушный путь может обойти основную конструкцию.' },
-    { key: 'fastener', label: 'Крепёж', text: 'Контролируем жёсткие связи и соответствие согласованному узлу до закрытия поверхности.' },
-    { key: 'penetration', label: 'Проходка', text: 'Фиксируем инженерные проходы и герметизацию скрытых зон.' },
-    { key: 'junction', label: 'Примыкание', text: 'Сверяем сопряжение стены, пола и потолка, чтобы не оставить фланговый маршрут.' }
+  const checkpoints = [
+    { key: 'path', title: 'Основание и реальный путь', text: 'До монтажа сверяем основание, примыкания и обходные маршруты. Слышимая поверхность сама по себе ещё не определяет решение.' },
+    { key: 'decoupling', title: 'Развязка', text: 'До закрытия проверяем, что независимый контур не получил случайных жёстких связей с защищаемой конструкцией.' },
+    { key: 'sealing', title: 'Герметизация и проходки', text: 'Контролируем непрерывность контура, акустическую герметизацию и каждую инженерную проходку.' },
+    { key: 'acceptance', title: 'Скрытые работы и приёмка', text: 'Фиксируем критические узлы до закрытия. Порядок контроля и критерии приёмки согласуются до начала работ.' }
   ];
 
   const faqs = [
-    { q: 'Почему нельзя выбрать решение только по слышимой поверхности?', a: 'Звук может войти через соседнее примыкание, перекрытие, розетку или вентиляционный канал. Слышимая плоскость показывает симптом, но не всегда доминирующий путь передачи.' },
-    { q: 'Что происходит после первичной диагностики?', a: 'Менеджер связывается, уточняет симптом и объект. Следующий коммерческий шаг — выездная диагностика, на которой проверяются вероятные маршруты и ограничения.' },
-    { q: 'Можно ли работать в готовой квартире?', a: 'Да, но масштаб демонтажа, защита интерьера, пыль и потеря пространства оцениваются только после осмотра. Заранее обещать «без ремонта» было бы нечестно.' },
-    { q: 'Зачем измерения до и после?', a: 'Они помогают зафиксировать исходное состояние и сопоставить его с результатом. Конкретный порядок и критерии приёмки согласуются до начала работ.' },
-    { q: 'Поможет ли запись шума с телефона?', a: 'Она передаёт контекст: характер, время и повторяемость. Но микрофон телефона не заменяет профессиональный замер.' },
-    { q: 'Почему на сайте нет цены за квадратный метр?', a: 'До понимания пути, конструкций, примыканий и стадии ремонта такая цена создаёт ложную точность. Сначала рассчитывается инженерное решение и только затем объём и бюджет.' },
-    { q: 'От чего зависит потеря пространства?', a: 'От типа шума, оснований, выбранного принципа развязки, критических узлов и допустимых ограничений комнаты.' },
-    { q: 'Как фиксируются гарантия и качество?', a: 'Условия гарантии фиксируются в договоре. Критерии приёмки согласуются до начала работ; скрытые работы и критические узлы фиксируются в процессе.' }
+    { q: 'Можно ли обещать 100% тишину?', a: 'Нет. Результат зависит от источника, конструкций здания, фланговых путей и фонового шума. Мы сначала уменьшаем неизвестность диагностикой и заранее согласуем проверяемый критерий приёмки.' },
+    { q: 'Почему недостаточно наклеить акустические панели?', a: 'Декоративные панели управляют отражениями внутри комнаты, но обычно не перекрывают путь шума через стену, перекрытие, примыкание, розетку или вентиляцию.' },
+    { q: 'Поможет ли потолок от шагов сверху?', a: 'Иногда потолок входит в решение, но ударный шум может распространяться и по стенам. До осмотра нельзя честно назвать одну плоскость достаточной.' },
+    { q: 'Можно ли работать в готовой квартире?', a: 'Можно, если после осмотра понятны защита интерьера, допустимый демонтаж и порядок восстановления отделки. Масштаб вмешательства оценивается по месту.' },
+    { q: 'Сколько пространства потеряет комната?', a: 'Это зависит от основания, типа шума, требуемой развязки и критических узлов. До диагностики точная толщина создала бы ложное обещание.' },
+    { q: 'Достаточно одной стены или нужен весь контур?', a: 'Решение определяется доминирующим и обходными путями передачи. Иногда достаточно одной зоны, иногда требуется связанный контур — это вывод измерения и осмотра, а не универсальное правило.' },
+    { q: 'Когда станет понятна цена?', a: 'После того как определены вероятные маршруты, состояние оснований, стадия ремонта и допустимый масштаб. Тогда можно рассчитать конкретный состав работ без цены «из воздуха».' }
   ];
 
-  let activeNode = 0;
+  let active = 0;
+  let revealed = new Set<number>([0]);
+  let revision = 0;
+
+  function select(index: number) {
+    active = index;
+    if (!revealed.has(index)) {
+      revealed = new Set([...revealed, index]);
+      revision += 1;
+    }
+  }
 
   function toggleFaq(event: Event, question: string) {
     const detail = event.currentTarget as HTMLDetailsElement;
@@ -27,30 +36,43 @@
   }
 </script>
 
-<section class="quality" aria-labelledby="quality-title">
+<section class="quality" aria-labelledby="quality-title" data-reveals={revealed.size}>
   <div class="shell section-head">
     <p class="mono">КОНТРОЛЬ / 08</p>
-    <h2 class="display" id="quality-title">Решение держится на узлах, которые потом не видны.</h2>
-    <p>Выберите точку контроля. Скрытая работа становится частью согласованной приёмки.</p>
+    <h2 class="display" id="quality-title">Проверяем до того,<br />как узел исчезнет.</h2>
+    <p>Четыре контрольные точки идут в одной последовательности. Каждый следующий слой открывается один раз и остаётся в проверенном состоянии.</p>
   </div>
 
-  <div class="shell quality-grid">
-    <div class="node-visual" data-node={nodes[activeNode].key}>
-      <div class="macro-layers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      {#each nodes as node, index}
-        <button class={`hotspot hotspot-${index + 1}`} type="button" aria-pressed={index === activeNode} on:click={() => (activeNode = index)}><span>{index + 1}</span><b>{node.label}</b></button>
-      {/each}
+  <div class="shell quality-sequence">
+    <div class="engineering-plate">
+      <picture>
+        <source media="(max-width: 960px)" srcset="/generated/tech-v2-quality-control-960.webp" type="image/webp" />
+        <source srcset="/generated/tech-v2-quality-control.avif" type="image/avif" />
+        <source srcset="/generated/tech-v2-quality-control.webp" type="image/webp" />
+        <img src="/generated/tech-v2-quality-control.png" alt="Открытый узел стены и потолка с независимым каркасом, заполнением и герметизированной проходкой" width="1536" height="1024" loading="lazy" />
+      </picture>
+      <div class="plate-shade" aria-hidden="true"></div>
+      <div class="checkpoint-markers" aria-label="Контрольные точки узла">
+        {#each checkpoints as item, index}
+          <button class:revealed={revealed.has(index)} type="button" aria-pressed={active === index} on:click={() => select(index)}>
+            <span>{String(index + 1).padStart(2, '0')}</span><b>{item.title}</b>
+          </button>
+        {/each}
+      </div>
+      {#key revision}<i class="inspection-line" aria-hidden="true"></i>{/key}
     </div>
-    <aside class="node-output" aria-live="polite">
-      <span class="mono">УЗЕЛ {String(activeNode + 1).padStart(2, '0')} / 04</span>
-      <h3>{nodes[activeNode].label}</h3>
-      <p>{nodes[activeNode].text}</p>
-      <ul>
-        <li>Контролируем технологию, монтаж и критические узлы.</li>
-        <li>Фиксируем скрытые работы.</li>
-        <li>Критерии приёмки согласуются до начала работ.</li>
-        <li>Условия гарантии фиксируются в договоре.</li>
-      </ul>
+
+    <aside class="checkpoint-output" aria-live="polite" aria-atomic="true">
+      <p class="mono">ТОЧКА {String(active + 1).padStart(2, '0')} / 04</p>
+      <h3>{checkpoints[active].title}</h3>
+      <p>{checkpoints[active].text}</p>
+      <div class="sequence-state">
+        {#each checkpoints as item, index}
+          <button type="button" class:active={active === index} class:done={revealed.has(index)} on:click={() => select(index)}>
+            <span>{String(index + 1).padStart(2, '0')}</span><strong>{item.title}</strong><i>{revealed.has(index) ? 'проверено' : 'открыть'}</i>
+          </button>
+        {/each}
+      </div>
     </aside>
   </div>
 </section>
@@ -58,11 +80,11 @@
 <section class="faq warm" aria-labelledby="faq-title">
   <div class="shell faq-grid">
     <div class="faq-intro">
-      <p class="mono">ЧЕСТНЫЕ ОГРАНИЧЕНИЯ / 09</p>
-      <h2 class="display" id="faq-title">Знаем.<br />Проверяем.<br />Согласуем.</h2>
-      <p>Диагностика уменьшает неизвестность, но не заменяет данные конкретной квартиры общими обещаниями.</p>
+      <p class="mono">СЕМЬ ПРЯМЫХ ОТВЕТОВ / 09</p>
+      <h2 class="display" id="faq-title">Без обещаний<br />до измерения.</h2>
+      <p>Диагностика не создаёт удобную легенду. Она показывает, какие данные уже известны и что ещё нужно проверить.</p>
     </div>
-    <div class="faq-list">
+    <div class="faq-list" data-faq-count={faqs.length}>
       {#each faqs as item, index}
         <details on:toggle={(event) => toggleFaq(event, item.q)}>
           <summary><span class="mono">{String(index + 1).padStart(2, '0')}</span><strong>{item.q}</strong></summary>
@@ -74,41 +96,12 @@
 </section>
 
 <style>
-  .quality { padding: clamp(120px,14vw,240px) 0; background: var(--ink-950); }
-  .quality-grid { min-height: 900px; display: grid; grid-template-columns: repeat(16,1fr); gap: 24px; align-items: center; margin-top: 80px; }
-  .node-visual { grid-column: 1 / 12; position: relative; min-height: 720px; display: grid; place-items: center; border: 1px solid var(--white-16); border-radius: 40px; background: radial-gradient(circle at center,rgba(108,159,150,.11),transparent 58%),var(--ink-900); overflow: hidden; }
-  .macro-layers { width: 66%; aspect-ratio: 1.15; display: grid; perspective: 900px; transform: rotate(-10deg); }
-  .macro-layers i { grid-area: 1/1; border: 1px solid var(--white-16); background: rgba(23,28,26,.7); transform: translate3d(calc(var(--layer) * 34px),calc(var(--layer) * -25px),calc(var(--layer) * 22px)) rotateX(56deg); transition: border-color 350ms ease,transform 500ms ease; }
-  .macro-layers i:nth-child(1) { --layer: -1.5; } .macro-layers i:nth-child(2) { --layer: -.5; border-color: var(--acoustic); } .macro-layers i:nth-child(3) { --layer: .5; border-color: var(--signal); } .macro-layers i:nth-child(4) { --layer: 1.5; }
-  [data-node='fastener'] .macro-layers i { transform: translate3d(calc(var(--layer) * 18px),calc(var(--layer) * -14px),0) rotateX(56deg); }
-  [data-node='penetration'] .macro-layers i:nth-child(3) { border-radius: 50%; transform: scale(.28) rotateX(56deg); }
-  [data-node='junction'] .macro-layers i { border-right-color: var(--signal); }
-  .hotspot { position: absolute; min-width: 44px; min-height: 44px; border: 0; background: transparent; color: var(--white); cursor: pointer; }
-  .hotspot span { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--white-16); border-radius: 50%; background: var(--ink-950); font: 500 .65rem/1 'IBM Plex Mono',monospace; }
-  .hotspot b { position: absolute; left: 50px; top: 10px; font-size: .72rem; font-weight: 500; white-space: nowrap; color: var(--white-64); }
-  .hotspot[aria-pressed='true'] span { border-color: var(--signal); background: var(--signal); color: var(--ink-950); }
-  .hotspot-1 { left: 12%; top: 18%; } .hotspot-2 { right: 23%; top: 15%; } .hotspot-3 { left: 20%; bottom: 16%; } .hotspot-4 { right: 17%; bottom: 20%; }
-  .node-output { grid-column: 13 / -1; }
-  .node-output > .mono { color: var(--acoustic); }
-  .node-output h3 { margin: 20px 0; font-family:'Geologica',sans-serif;font-size:clamp(2rem,3.3vw,4rem);letter-spacing:-.04em; }
-  .node-output p,.node-output li { color: var(--white-64); }
-  .node-output ul { list-style:none;padding:0;margin:35px 0; }
-  .node-output li { padding:12px 0;border-bottom:1px solid var(--white-16);font-size:.82rem; }
-  .node-output li::before { content:'✓';margin-right:10px;color:var(--acoustic); }
-  .faq { padding: clamp(110px,13vw,220px) 0; }
-  .faq-grid { display:grid;grid-template-columns:repeat(16,1fr);gap:24px;align-items:start; }
-  .faq-intro { grid-column:1/7;position:sticky;top:130px; }
-  .faq-intro > .mono { color:var(--acoustic-dark); }
-  .faq-intro h2 { margin:24px 0;font-size:clamp(3.3rem,6.5vw,7.2rem); }
-  .faq-intro > p:last-child { max-width:43ch;color:rgba(7,9,8,.62); }
-  .faq-list { grid-column:8/-1; }
-  details { border-top:1px solid rgba(7,9,8,.18); }
-  details:last-child { border-bottom:1px solid rgba(7,9,8,.18); }
-  summary { display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:baseline;padding:24px 0;cursor:pointer;list-style:none; }
-  summary::-webkit-details-marker { display:none; }
-  summary strong { font-family:'Geologica',sans-serif;font-size:clamp(1.15rem,1.7vw,1.8rem);line-height:1.2;letter-spacing:-.025em; }
-  details[open] summary strong { color:var(--acoustic-dark); }
-  details > p { margin:0 0 26px 68px;max-width:58ch;color:rgba(7,9,8,.66); }
-  @media(max-width:900px){.quality-grid,.faq-grid{grid-template-columns:repeat(8,1fr)}.node-visual{grid-column:1/7}.node-output{grid-column:7/-1}.faq-intro{grid-column:1/4}.faq-list{grid-column:4/-1}}
-  @media(max-width:767px){.quality-grid{display:flex;min-height:0;flex-direction:column;align-items:stretch}.node-visual{min-height:520px}.hotspot b{display:none}.node-output{margin-top:30px}.faq-grid{display:block}.faq-intro{position:static}.faq-list{margin-top:60px}details>p{margin-left:0}}
+  .quality{padding:clamp(110px,13vw,220px) 0;background:var(--ink-950)}.section-head{display:grid;grid-template-columns:repeat(16,minmax(0,1fr));gap:24px;align-items:end}.section-head>.mono{grid-column:1/4;color:var(--acoustic)}.section-head h2{grid-column:4/14;margin:0;font-size:clamp(3.2rem,6.6vw,7.6rem)}.section-head>p:last-child{grid-column:11/-1;margin-top:42px;color:var(--white-64)}
+  .quality-sequence{display:grid;grid-template-columns:repeat(16,minmax(0,1fr));gap:24px;align-items:center;margin-top:clamp(60px,8vw,120px)}.engineering-plate{grid-column:1/12;position:relative;min-height:730px;border-radius:34px;overflow:hidden;background:var(--ink-900);isolation:isolate}.engineering-plate picture,.engineering-plate picture img{position:absolute;inset:0;width:100%;height:100%}.engineering-plate img{object-fit:cover}.plate-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,9,8,.58),transparent 48%),linear-gradient(0deg,rgba(7,9,8,.48),transparent 48%)}.checkpoint-markers{position:absolute;inset:0;z-index:2}.checkpoint-markers button{position:absolute;display:grid;grid-template-columns:42px max-content;gap:10px;align-items:center;min-height:46px;border:0;background:transparent;color:var(--white);cursor:pointer}.checkpoint-markers button:nth-child(1){left:7%;bottom:12%}.checkpoint-markers button:nth-child(2){left:29%;top:18%}.checkpoint-markers button:nth-child(3){right:8%;bottom:28%}.checkpoint-markers button:nth-child(4){right:9%;top:12%}.checkpoint-markers span{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--white-64);border-radius:50%;background:rgba(7,9,8,.76);font:500 .65rem 'IBM Plex Mono',monospace}.checkpoint-markers b{padding:8px 10px;background:rgba(7,9,8,.72);font-size:.7rem;font-weight:500}.checkpoint-markers button.revealed span{border-color:var(--acoustic)}.checkpoint-markers button[aria-pressed='true'] span{border-color:var(--signal);background:var(--signal);color:var(--ink-950)}.inspection-line{position:absolute;z-index:3;left:4%;right:4%;height:1px;top:50%;background:linear-gradient(90deg,transparent,var(--signal),transparent);animation:inspect-once 560ms ease-out both;pointer-events:none}
+  .checkpoint-output{grid-column:12/-1;padding-left:12px}.checkpoint-output>.mono{color:var(--signal)}.checkpoint-output h3{margin:18px 0;font-family:'Geologica',sans-serif;font-size:clamp(2.2rem,3.4vw,4.2rem);line-height:1;letter-spacing:-.045em}.checkpoint-output>p:not(.mono){min-height:105px;color:var(--white-64)}.sequence-state{margin-top:32px;border-top:1px solid var(--white-16)}.sequence-state button{width:100%;display:grid;grid-template-columns:36px 1fr auto;gap:8px;align-items:center;min-height:64px;padding:10px 0;border:0;border-bottom:1px solid var(--white-16);background:transparent;color:var(--white-64);text-align:left;cursor:pointer}.sequence-state span,.sequence-state i{font:500 .6rem 'IBM Plex Mono',monospace}.sequence-state strong{font-size:.72rem;font-weight:500}.sequence-state i{font-style:normal;color:var(--white-64)}.sequence-state button.done i{color:var(--acoustic)}.sequence-state button.active strong{color:var(--white)}
+  .faq{padding:clamp(110px,13vw,220px) 0}.faq-grid{display:grid;grid-template-columns:repeat(16,minmax(0,1fr));gap:24px;align-items:start}.faq-intro{grid-column:1/7;position:sticky;top:130px}.faq-intro>.mono{color:var(--acoustic-dark)}.faq-intro h2{margin:24px 0;font-size:clamp(3.3rem,6.5vw,7.2rem)}.faq-intro>p:last-child{max-width:43ch;color:rgba(7,9,8,.62)}.faq-list{grid-column:8/-1}details{border-top:1px solid rgba(7,9,8,.18)}details:last-child{border-bottom:1px solid rgba(7,9,8,.18)}summary{display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:baseline;padding:25px 0;cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}summary strong{font-family:'Geologica',sans-serif;font-size:clamp(1.15rem,1.7vw,1.8rem);line-height:1.2;letter-spacing:-.025em}details[open] summary strong{color:var(--acoustic-dark)}details>p{margin:0 0 28px 68px;max-width:60ch;color:rgba(7,9,8,.66)}
+  @keyframes inspect-once{from{opacity:0;transform:scaleX(.1)}45%{opacity:1}to{opacity:0;transform:scaleX(1)}}
+  @media(max-width:1000px){.section-head,.quality-sequence,.faq-grid{grid-template-columns:repeat(8,minmax(0,1fr))}.section-head>.mono{grid-column:1/3}.section-head h2{grid-column:3/-1}.section-head>p:last-child{grid-column:3/8}.engineering-plate{grid-column:1/7}.checkpoint-output{grid-column:7/-1}.faq-intro{grid-column:1/4}.faq-list{grid-column:4/-1}.checkpoint-markers b{display:none}}
+  @media(max-width:767px){.section-head{display:block}.section-head h2{margin-top:20px;font-size:clamp(3rem,14vw,5.4rem)}.section-head>p:last-child{margin-top:25px}.quality-sequence{display:flex;flex-direction:column;align-items:stretch}.engineering-plate{min-height:520px}.checkpoint-output{padding:0}.checkpoint-output>p:not(.mono){min-height:0}.faq-grid{display:block}.faq-intro{position:static}.faq-list{margin-top:60px}details>p{margin-left:0}.sequence-state button{min-height:60px}}
+  @media(prefers-reduced-motion:reduce){.inspection-line{display:none}}
 </style>

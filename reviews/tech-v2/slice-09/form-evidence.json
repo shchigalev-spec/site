@@ -1,0 +1,130 @@
+{
+  "capturedAt": "2026-08-20T13:47:37.319Z",
+  "origins": {
+    "productionOrigin": "http://127.0.0.1:4173",
+    "serverErrorOrigin": "http://127.0.0.1:4176",
+    "developmentOrigin": "http://127.0.0.1:5175"
+  },
+  "clientFileValidation": {
+    "message": "payload.exe: неподдерживаемый формат",
+    "submitDisabled": true
+  },
+  "productionGuard": {
+    "beforeSubmit": {
+      "valid": true,
+      "action": "http://127.0.0.1:4173/?",
+      "invalid": []
+    },
+    "response": {
+      "status": 200,
+      "url": "http://127.0.0.1:4173/?"
+    },
+    "heading": "Не удалось отправить",
+    "message": "Не удалось передать заявку. Данные сохранены в форме — попробуйте ещё раз или свяжитесь с нами по телефону.",
+    "preserved": {
+      "heard": "Топот и ударный шум сверху",
+      "stage": "renovation",
+      "name": "Тест формы",
+      "phone": "+7 999 000-00-00",
+      "email": "form-review@example.test",
+      "consent": true
+    }
+  },
+  "serverError": {
+    "beforeSubmit": {
+      "valid": true,
+      "action": "http://127.0.0.1:4176/?",
+      "invalid": []
+    },
+    "response": {
+      "status": 200,
+      "url": "http://127.0.0.1:4176/?"
+    },
+    "heading": "Не удалось отправить",
+    "message": "Не удалось передать заявку. Данные сохранены в форме — попробуйте ещё раз или свяжитесь с нами по телефону.",
+    "preserved": {
+      "heard": "Топот и ударный шум сверху",
+      "stage": "renovation",
+      "name": "Тест формы",
+      "phone": "+7 999 000-00-00",
+      "email": "form-review@example.test",
+      "consent": true
+    }
+  },
+  "developmentSuccess": {
+    "heading": "Заявка принята",
+    "message": "Заявка принята. Менеджер свяжется с вами и согласует следующий шаг — выездную диагностику.",
+    "mockLabelExposed": false
+  },
+  "analytics": {
+    "goals": [
+      {
+        "event": "page_view",
+        "payload": {
+          "concept": "tech",
+          "path": "/",
+          "page_type": "home"
+        }
+      },
+      {
+        "event": "hero_motion_start",
+        "payload": {
+          "concept": "tech",
+          "path": "/",
+          "page_type": "home"
+        }
+      },
+      {
+        "event": "hero_motion_complete",
+        "payload": {
+          "concept": "tech",
+          "path": "/",
+          "page_type": "home"
+        }
+      },
+      {
+        "event": "renovation_sequence_complete",
+        "payload": {
+          "concept": "tech",
+          "path": "/",
+          "page_type": "home",
+          "stage": "finished",
+          "mode": "scroll"
+        }
+      },
+      {
+        "event": "scroll_50",
+        "payload": {
+          "concept": "tech",
+          "path": "/",
+          "page_type": "home"
+        }
+      },
+      {
+        "event": "scroll_90",
+        "payload": {
+          "concept": "tech",
+          "path": "/",
+          "page_type": "home"
+        }
+      },
+      {
+        "event": "form_started",
+        "payload": {
+          "concept": "tech",
+          "path": "/",
+          "page_type": "home",
+          "form_mode": "short"
+        }
+      }
+    ],
+    "containsPersonalData": false,
+    "formStartedPayload": {
+      "concept": "tech",
+      "path": "/",
+      "page_type": "home",
+      "form_mode": "short"
+    }
+  },
+  "failures": []
+}

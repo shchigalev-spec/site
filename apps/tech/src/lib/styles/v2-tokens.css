@@ -1,0 +1,48 @@
+:root {
+  --tech-v2-ink: #080b0a;
+  --tech-v2-ink-raised: #111614;
+  --tech-v2-ink-soft: #1a211f;
+  --tech-v2-paper: #f0ebe0;
+  --tech-v2-paper-deep: #d9d1c4;
+  --tech-v2-white: #fffdf8;
+  --tech-v2-coral: #ff684f;
+  --tech-v2-coral-hot: #ff806c;
+  --tech-v2-teal: #7aa89f;
+  --tech-v2-teal-dark: #365f58;
+  --tech-v2-amber: #d7aa6d;
+
+  --tech-v2-hairline: rgba(255, 253, 248, 0.16);
+  --tech-v2-hairline-dark: rgba(8, 11, 10, 0.16);
+  --tech-v2-copy-muted: rgba(255, 253, 248, 0.68);
+  --tech-v2-copy-quiet: rgba(255, 253, 248, 0.46);
+
+  --tech-v2-gutter: clamp(18px, 3.35vw, 64px);
+  --tech-v2-section-y: clamp(88px, 10vw, 176px);
+  --tech-v2-section-y-compact: clamp(64px, 7vw, 112px);
+  --tech-v2-copy: min(64ch, 100%);
+  --tech-v2-measure: min(1920px, 100%);
+
+  --tech-v2-radius-control: 10px;
+  --tech-v2-radius-object: clamp(20px, 2.2vw, 36px);
+  --tech-v2-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+
+  --tech-v2-micro: 150ms;
+  --tech-v2-control: 280ms;
+  --tech-v2-decay: 360ms;
+  --tech-v2-route: 880ms;
+  --tech-v2-cutaway: 900ms;
+  --tech-v2-assembly: 820ms;
+  --tech-v2-scene: 1000ms;
+  --tech-v2-page: 380ms;
+  --tech-v2-ease: cubic-bezier(0.22, 0.72, 0.2, 1);
+  --tech-v2-ease-in: cubic-bezier(0.45, 0, 0.72, 0.2);
+  --tech-v2-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --tech-v2-gutter: 18px;
+    --tech-v2-section-y: 76px;
+    --tech-v2-section-y-compact: 56px;
+  }
+}

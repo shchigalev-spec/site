@@ -18,16 +18,23 @@ function buildEndpoint(webhook: string) {
 function description(payload: DiagnosticPayload, files: File[]) {
   return [
     `Что слышно: ${payload.heard}`,
-    `Направление: ${payload.direction}`,
-    `Когда: ${payload.timing}`,
-    `Комнаты: ${payload.rooms}`,
+    payload.direction && `Направление: ${payload.direction}`,
+    payload.timing && `Когда: ${payload.timing}`,
+    payload.rooms && `Комнаты: ${payload.rooms}`,
     `Стадия: ${payload.stage}`,
     payload.building && `Тип дома: ${payload.building}`,
     payload.area && `Проблемная площадь: ${payload.area}`,
     payload.comment && `Комментарий: ${payload.comment}`,
     payload.path && `Предполагаемый путь: ${payload.path}`,
     payload.spaceLoss && `Допустимая потеря пространства: ${payload.spaceLoss}`,
+    payload.sourceContext && `Контекст источника: ${payload.sourceContext}`,
+    payload.utmSource && `UTM source: ${payload.utmSource}`,
+    payload.utmMedium && `UTM medium: ${payload.utmMedium}`,
+    payload.utmCampaign && `UTM campaign: ${payload.utmCampaign}`,
+    payload.utmContent && `UTM content: ${payload.utmContent}`,
+    payload.utmTerm && `UTM term: ${payload.utmTerm}`,
     files.length && `Количество приложений: ${files.length}`,
+    `Форма: ${payload.formMode}`,
     'Концепт сайта: tech'
   ].filter(Boolean).join('\n');
 }

@@ -8,10 +8,23 @@
   let menuOpen = false;
   let menuTrigger: HTMLButtonElement;
   let menuPanel: HTMLElement;
+  let pageProgress = 0;
+  let currentChapter = '01 / ДИАГНОСТИКА';
+  let elevated = false;
+
+  const chapters = [
+    { selectors: ['[data-v2-hero]'], label: '01 / ДИАГНОСТИКА' },
+    { selectors: ['#noise-path-lab', '#noise-deck', '#xray'], label: '02 / СИМПТОМ И ПУТЬ' },
+    { selectors: ['#construction', '#diagnosis-construction', '.process', '.assembly-section'], label: '03 / КОНСТРУКЦИЯ' },
+    { selectors: ['#renovation-morph', '.stages'], label: '04 / СТАДИЯ РЕМОНТА' },
+    { selectors: ['#measured-evidence', '#cases'], label: '05 / ИЗМЕРЕНИЯ' },
+    { selectors: ['#scenario-v2', '#scenario'], label: '06 / МОЙ СЦЕНАРИЙ' },
+    { selectors: ['#conversion-close', '.diagnostic'], label: '07 / ДИАГНОСТИКА' }
+  ];
 
   const nav = [
-    { href: '/#noise-deck', label: 'Симптомы' },
-    { href: '/#xray', label: 'Пути' },
+    { href: '/#noise-path-lab', label: 'Симптом и путь' },
+    { href: '/#construction', label: 'Конструкция' },
     { href: '/#cases', label: 'Результаты' },
     { href: '/cases/', label: 'Кейсы' },
     { href: '/diagnostika-shuma/', label: 'Диагностика' }
@@ -20,6 +33,7 @@
   function setMenu(open: boolean, returnFocus = false) {
     menuOpen = open;
     document.documentElement.style.overflow = open ? 'hidden' : '';
+    document.documentElement.toggleAttribute('data-menu-open', open);
     if (open) setTimeout(() => menuPanel?.querySelector<HTMLAnchorElement>('a')?.focus());
     else if (returnFocus) menuTrigger?.focus();
   }
@@ -41,20 +55,44 @@
       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     };
     window.addEventListener('keydown', handleKeydown);
+    let frame = 0;
+    const updateProgress = () => {
+      frame = 0;
+      const maximum = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      pageProgress = Math.max(0, Math.min(1, window.scrollY / maximum));
+      elevated = window.scrollY > 28;
+      const observationLine = window.innerHeight * .42;
+      let active = chapters[0].label;
+      for (const chapter of chapters) {
+        const elements = chapter.selectors.flatMap((selector) => [...document.querySelectorAll<HTMLElement>(selector)]);
+        if (elements.some((element) => element.getBoundingClientRect().top <= observationLine)) active = chapter.label;
+      }
+      currentChapter = active;
+    };
+    const scheduleProgress = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateProgress);
+    };
+    updateProgress();
+    window.addEventListener('scroll', scheduleProgress, { passive: true });
+    window.addEventListener('resize', scheduleProgress);
     return () => {
       window.removeEventListener('keydown', handleKeydown);
+      window.removeEventListener('scroll', scheduleProgress);
+      window.removeEventListener('resize', scheduleProgress);
+      if (frame) window.cancelAnimationFrame(frame);
       document.documentElement.style.overflow = '';
+      document.documentElement.removeAttribute('data-menu-open');
     };
   });
 </script>
 
-<header class="site-header" data-open={menuOpen}>
+<header class="site-header" class:elevated data-open={menuOpen} style={`--page-progress:${pageProgress}`}>
   <a class="brand" href="/" aria-label="Лаборатория тишины — на главную">
     <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
     <span>Лаборатория<br />тишины</span>
   </a>
 
-  <span class="chapter mono" aria-hidden="true">АКУСТИЧЕСКАЯ ЛАБОРАТОРИЯ</span>
+  <span class="chapter mono" aria-live="polite">{currentChapter}</span>
 
   <div class="header-actions">
     <a class="header-cta" href="/diagnostika-shuma/" on:click={() => track('diagnostic_start', { source: 'header' })}>
@@ -85,7 +123,7 @@
     </nav>
   {/if}
 
-  <div class="header-progress" aria-hidden="true"><span></span></div>
+  <div class="header-progress" role="progressbar" aria-label="Прогресс страницы" aria-valuemin="0" aria-valuemax="100" aria-valuenow={Math.round(pageProgress * 100)}><span></span></div>
 </header>
 
 <style>
@@ -107,9 +145,12 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(to bottom, rgba(7, 9, 8, 0.86), rgba(7, 9, 8, 0));
+    background: linear-gradient(to bottom, rgba(7, 9, 8, 0.72), rgba(7, 9, 8, 0));
     pointer-events: none;
+    transition: background var(--tech-v2-control) ease, backdrop-filter var(--tech-v2-control) ease;
   }
+
+  .site-header.elevated::before { background: rgba(8, 11, 10, .9); backdrop-filter: blur(16px); }
 
   .brand {
     display: inline-flex;
@@ -167,6 +208,8 @@
   .header-cta:hover { border-color: var(--signal); }
 
   .menu-trigger {
+    position: relative;
+    z-index: 3;
     width: 44px;
     height: 44px;
     border: 1px solid var(--white-16);
@@ -199,7 +242,7 @@
 
   .site-menu {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 10px;
     right: 10px;
     width: min(520px, calc(100vw - 20px));
@@ -232,9 +275,12 @@
 
   .header-progress span {
     display: block;
-    width: 28%;
+    width: 100%;
     height: 100%;
+    transform: scaleX(var(--page-progress));
+    transform-origin: left;
     background: linear-gradient(90deg, var(--signal), var(--acoustic));
+    transition: transform 80ms linear;
   }
 
   @media (max-width: 767px) {

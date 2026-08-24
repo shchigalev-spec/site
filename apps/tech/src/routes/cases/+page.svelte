@@ -2,16 +2,18 @@
   import { page } from '$app/stores';
   import { casePages } from '$lib/data/site';
   import { track } from '$lib/analytics';
+  import { stableSiteUrl } from '$lib/metadata';
+  $: canonicalUrl = stableSiteUrl($page.url);
 </script>
 
 <svelte:head>
   <title>Кейсы шумоизоляции с измеренными результатами</title>
   <meta name="description" content="Три достигнутых результата шумоизоляции: 58 dB → 39 dB, снижение пика 71 dB на 16 dB и 64 dB → 43 dB." />
-  <link rel="canonical" href={$page.url.origin + $page.url.pathname} />
+  <link rel="canonical" href={canonicalUrl} />
   <meta property="og:title" content="Измеренные результаты — Лаборатория тишины" />
   <meta property="og:description" content="Результаты до и после без вымышленных адресов, цен и систем." />
-  <meta property="og:url" content={$page.url.href} />
-  <meta property="og:image" content={$page.url.origin + '/generated/tech-og.png'} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={stableSiteUrl($page.url, '/generated/tech-og.png')} />
 </svelte:head>
 
 <section class="cases-hero">
