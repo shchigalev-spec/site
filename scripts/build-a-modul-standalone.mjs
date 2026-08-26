@@ -112,7 +112,7 @@ const javascriptLoader = `(0,eval)(${JSON.stringify(javascript.trim()).replaceAl
 
 css = css.replace(/\/(?:generated|brand)\/[A-Za-z0-9_./-]+/g, (path) => assetMap[path] ?? path);
 html = html.replace(styleMatch[0], `<style>${css.trim().replaceAll('</style', '<\\/style')}</style>`);
-html = html.replace(scriptMatch[0], `<script>${assetRuntime(assetMap).trim()}</script><script>${javascriptLoader}</script>`);
+html = html.replace(scriptMatch[0], `<script>${assetRuntime(assetMap).trim()}</script><script type="module">${javascriptLoader}</script>`);
 html = html.replace(/<link\b[^>]*rel="modulepreload"[^>]*>/gi, '');
 
 if (/\b(?:src|href)="\.?\/assets\//.test(html)) throw new Error('Standalone build still references emitted Vite assets.');
