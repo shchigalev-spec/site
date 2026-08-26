@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#173c34" />
+    <meta name="description" content="Автономная интерактивная версия лендинга «Ависта Модуль». Открывается без сервера и подключения к интернету." />
+    <title>Модульные здания под ключ — Ависта Модуль · автономная версия</title>
+    <style>
+{{INLINE_CSS}}
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К основному содержанию</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Ависта Модуль — к началу страницы">
+        <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand__copy"><strong>АВИСТА МОДУЛЬ</strong><small>объекты заводской готовности</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+        <span></span><span></span><span></span><span class="sr-only">Открыть меню</span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Основная навигация">
+        <a href="#diagnosis">Диагностика</a>
+        <a href="#system">Состав объекта</a>
+        <a href="#logistics">Логистика</a>
+        <a href="#factory">Производство</a>
+        <a href="#case">Подход</a>
+      </nav>
+      <div class="header-actions">
+        <span class="offline-chip"><span></span> автономная версия</span>
+        <a class="button button--small button--pink" href="#diagnosis">Получить контур КП</a>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <div class="route-picker" role="tablist" aria-label="Тип модульного объекта">
+            <button type="button" role="tab" aria-selected="true" data-route="general">Все объекты</button>
+            <button type="button" role="tab" aria-selected="false" data-route="shift">Вахтовые поселки</button>
+            <button type="button" role="tab" aria-selected="false" data-route="office">Офисы и АБК</button>
+            <button type="button" role="tab" aria-selected="false" data-route="dorm">Общежития</button>
+          </div>
+          <p class="eyebrow" id="hero-eyebrow">Модульные здания под ключ по России</p>
+          <h1 id="hero-title">Спроектируем, произведём и запустим модульный объект в вашем регионе.</h1>
+          <p class="hero__support" id="hero-support">От отдельного АБК до комплекса зданий: проектирование, производство, инженерия, доставка, монтаж и комплектация под одним договором.</p>
+          <div class="hero__actions">
+            <div>
+              <a class="button button--primary" href="#diagnosis">Получить КП за 1 рабочий день</a>
+              <p class="qualification">После получения основных исходных данных.</p>
+            </div>
+            <a class="button button--outline" href="#full-brief" data-mode-link="tender">Пригласить в тендер</a>
+          </div>
+          <div class="hero__meta" aria-label="Параметры предложения">
+            <p><span>Регион</span><strong>Россия / маршрут уточняем до расчёта</strong></p>
+            <p><span>Контур</span><strong>Проект → производство → запуск</strong></p>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-live="polite">
+          <figure>
+            <img id="route-hero-image" src="{{GENERAL_HERO}}" alt="Визуализация модульного комплекса на удалённой производственной площадке" width="1600" height="900" />
+            <figcaption id="route-hero-caption">Визуализация состава объекта — не документальная фотография</figcaption>
+          </figure>
+          <div class="visual-topline"><span id="route-index">01</span><span>архитектурная визуализация</span></div>
+          <div class="visual-toggle" role="group" aria-label="Состояние объекта">
+            <button type="button" class="is-active" aria-pressed="true" data-hero-state="hero">Контур</button>
+            <button type="button" aria-pressed="false" data-hero-state="final">Готовый объект</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="scope-line" aria-label="Зона ответственности Ависты">
+        <span>Проектирование</span><span>Производство</span><span>Инженерия</span><span>Доставка</span><span>Монтаж</span><span>Комплектация</span>
+      </div>
+
+      <section class="diagnosis section section--green" id="diagnosis" aria-labelledby="diagnosis-title">
+        <div class="section-heading section-heading--light">
+          <p class="eyebrow">Мини-бриф · 4 шага</p>
+          <h2 id="diagnosis-title">Соберём исходный контур объекта.</h2>
+          <p>Никаких цен и сроков без исходных данных. Ответы формируют понятное резюме для следующего инженерного разговора.</p>
+        </div>
+
+        <div class="brief-shell">
+          <div class="brief-progress" aria-label="Прогресс мини-брифа">
+            <span class="brief-progress__fill" data-brief-progress></span>
+          </div>
+          <div class="brief-counter" aria-live="polite"><span data-brief-step>01</span> / 04</div>
+
+          <form id="mini-brief" novalidate>
+            <fieldset class="brief-step is-active" data-step="0">
+              <legend>Что нужно построить?</legend>
+              <div class="choice-grid">
+                <label><input type="radio" name="object" value="Вахтовый поселок" /><span><strong>Вахтовый поселок</strong><small>Жильё, быт, управление и инфраструктура</small></span></label>
+                <label><input type="radio" name="object" value="Офис или АБК" /><span><strong>Офис или АБК</strong><small>Рабочие и административно-бытовые пространства</small></span></label>
+                <label><input type="radio" name="object" value="Общежитие" /><span><strong>Общежитие</strong><small>Проживание персонала и бытовые функции</small></span></label>
+                <label><input type="radio" name="object" value="Другой объект" /><span><strong>Другой объект</strong><small>Опишем функцию и соберём состав вместе</small></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="brief-step" data-step="1" hidden>
+              <legend>Какой масштаб рассматриваете?</legend>
+              <div class="input-grid">
+                <label>Ориентир по численности<input type="number" name="people" min="1" inputmode="numeric" placeholder="Например, 150" /></label>
+                <label>Ориентир по площади, м²<input type="number" name="area" min="1" inputmode="numeric" placeholder="Если уже известна" /></label>
+              </div>
+              <p class="form-note">Можно указать один из ориентиров. Точный состав уточняется после анализа исходных данных.</p>
+            </fieldset>
+
+            <fieldset class="brief-step" data-step="2" hidden>
+              <legend>Где находится площадка?</legend>
+              <label class="field-label">Регион проекта
+                <select name="region">
+                  <option value="">Выберите регион</option>
+                  <option>Москва и Московская область</option>
+                  <option>Красноярский край</option>
+                  <option>Урал</option>
+                  <option>Дальний Восток</option>
+                  <option>Сибирь</option>
+                  <option>Курганская область</option>
+                  <option>Другой регион России</option>
+                </select>
+              </label>
+              <p class="form-note">Маршрут, перегрузки и ограничения площадки проверяются до фиксации предложения.</p>
+            </fieldset>
+
+            <fieldset class="brief-step" data-step="3" hidden>
+              <legend>На какой стадии проект?</legend>
+              <div class="choice-grid choice-grid--compact">
+                <label><input type="radio" name="stage" value="Формируем задачу" /><span><strong>Формируем задачу</strong><small>Нужна помощь с составом</small></span></label>
+                <label><input type="radio" name="stage" value="Есть техническое задание" /><span><strong>Есть ТЗ</strong><small>Можно передать исходные файлы</small></span></label>
+                <label><input type="radio" name="stage" value="Идёт тендер" /><span><strong>Идёт тендер</strong><small>Есть процедура и срок подачи</small></span></label>
+                <label><input type="radio" name="stage" value="Проект уточняется" /><span><strong>Проект уточняется</strong><small>Нужно сверить границы работ</small></span></label>
+              </div>
+            </fieldset>
+
+            <div class="brief-error" role="alert" aria-live="assertive"></div>
+            <div class="brief-actions">
+              <button type="button" class="button button--muted" data-brief-back hidden>Назад</button>
+              <button type="button" class="button button--light" data-brief-next>Следующий шаг</button>
+            </div>
+          </form>
+
+          <section class="brief-result" hidden aria-live="polite">
+            <p class="eyebrow">Контур собран</p>
+            <h3>Можно переходить к исходным данным.</h3>
+            <dl data-brief-summary></dl>
+            <div class="brief-actions">
+              <button type="button" class="button button--muted" data-brief-restart>Изменить ответы</button>
+              <a class="button button--light" href="#full-brief">Продолжить офлайн</a>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="evidence section" aria-labelledby="evidence-title">
+        <div class="section-heading">
+          <p class="eyebrow">Производственный контур</p>
+          <h2 id="evidence-title">Масштаб, на который можно опереться.</h2>
+          <p>Факты перенесены из реестра официальных источников «Ависта Модуль».</p>
+        </div>
+        <div class="evidence-rail">
+          <article><span>01</span><strong>С 2007 года</strong><p>проектируем и производим</p></article>
+          <article><span>02</span><strong>58</strong><p>вахтовых поселков</p></article>
+          <article><span>03</span><strong>27 000+</strong><p>произведённых модулей</p></article>
+          <article><span>04</span><strong>2 000+</strong><p>построенных зданий</p></article>
+          <article><span>05</span><strong>305 120 м²</strong><p>построенных объектов</p></article>
+          <article><span>06</span><strong>до 750</strong><p>модулей в месяц</p></article>
+        </div>
+      </section>
+
+      <section class="story section section--sand" id="system" aria-labelledby="story-title">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow">Путь объекта</p><h2 id="story-title">От площадки до эксплуатации.</h2></div>
+          <p>Переключайте этапы: это четыре самостоятельные Codex-визуализации, а не одна статичная обложка.</p>
+        </div>
+        <div class="story-layout">
+          <div class="story-tabs" role="tablist" aria-label="Этапы объекта">
+            <button type="button" role="tab" aria-selected="true" data-story="0"><span>01 / 04</span><strong>Площадка</strong><small>Границы, подъезд и точки подключения</small></button>
+            <button type="button" role="tab" aria-selected="false" data-story="1"><span>02 / 04</span><strong>Сборка</strong><small>Первые модули и логика размещения</small></button>
+            <button type="button" role="tab" aria-selected="false" data-story="2"><span>03 / 04</span><strong>Запуск</strong><small>Готовность инженерии и маршрутов</small></button>
+            <button type="button" role="tab" aria-selected="false" data-story="3"><span>04 / 04</span><strong>Эксплуатация</strong><small>Связанный и благоустроенный комплекс</small></button>
+          </div>
+          <figure class="story-visual">
+            <img id="story-image" src="{{GENERAL_EMPTY}}" alt="Визуализация подготовленной площадки для модульного объекта" width="1600" height="900" />
+            <figcaption><strong id="story-caption-title">Площадка</strong><span id="story-caption">Начинаем с подготовленной площадки, границ объекта и исходных инженерных подключений.</span><small>Концептуальная визуализация — не рабочая документация</small></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="configurator section" aria-labelledby="configurator-title">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow">Предварительный конфигуратор</p><h2 id="configurator-title">Соберите логический состав — без фиктивной цены.</h2></div>
+          <p>Результат показывает зоны внимания. Коммерческие параметры появляются только после инженерной проверки исходных данных.</p>
+        </div>
+        <div class="configurator-grid">
+          <form class="configurator-controls" id="configurator-form">
+            <label>Тип объекта
+              <select name="type">
+                <option>Вахтовый поселок</option><option>Офис или АБК</option><option>Общежитие</option><option>Другой объект</option>
+              </select>
+            </label>
+            <label>Ориентир по численности: <output for="config-people" data-people-output>150 человек</output>
+              <input id="config-people" type="range" name="people" min="20" max="500" step="10" value="150" />
+            </label>
+            <label>Регион
+              <select name="region"><option>Россия</option><option>Красноярский край</option><option>Дальний Восток</option><option>Сибирь</option><option>Урал</option></select>
+            </label>
+            <fieldset class="toggle-list"><legend>Что включить в контур</legend>
+              <label><input type="checkbox" name="scope" value="Инженерные системы" checked /><span>Инженерные системы</span></label>
+              <label><input type="checkbox" name="scope" value="Доставка и монтаж" checked /><span>Доставка и монтаж</span></label>
+              <label><input type="checkbox" name="scope" value="Мебель и комплектация" /><span>Мебель и комплектация</span></label>
+            </fieldset>
+          </form>
+          <aside class="configurator-result" aria-live="polite">
+            <p class="eyebrow">Рабочий контур</p>
+            <h3 data-config-title>Вахтовый поселок · 150 человек</h3>
+            <ol data-config-zones>
+              <li><span>01</span>Функциональный состав</li><li><span>02</span>Инженерные нагрузки</li><li><span>03</span>Маршрут поставки</li><li><span>04</span>Монтажная очередность</li>
+            </ol>
+            <p data-config-note>Проверим регион, логистику и выбранные границы работ до подготовки предложения.</p>
+            <a class="button button--primary" href="#full-brief" data-config-transfer>Передать этот контур</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="logistics section section--ink" id="logistics" aria-labelledby="logistics-title">
+        <div class="section-heading section-heading--light section-heading--split">
+          <div><p class="eyebrow">Логистика до расчёта</p><h2 id="logistics-title">Маршрут — часть проектного решения.</h2></div>
+          <p>Режимы показывают разные транспортные сценарии. Это иллюстрации, а не расчёт конкретного маршрута.</p>
+        </div>
+        <div class="mode-tabs" role="tablist" aria-label="Виды транспорта">
+          <button type="button" role="tab" aria-selected="true" data-logistics="road">Авто</button>
+          <button type="button" role="tab" aria-selected="false" data-logistics="rail">Железная дорога</button>
+          <button type="button" role="tab" aria-selected="false" data-logistics="sea">Море</button>
+          <button type="button" role="tab" aria-selected="false" data-logistics="winter">Зимник</button>
+        </div>
+        <div class="logistics-layout">
+          <figure><img id="logistics-image" src="{{LOGISTICS_ROAD}}" alt="Визуализация автомобильной перевозки готового модуля" width="1600" height="900" /><figcaption>Иллюстративная визуализация — не расчёт маршрута</figcaption></figure>
+          <div class="logistics-copy" aria-live="polite"><span id="logistics-number">01</span><h3 id="logistics-mode">Автомобильная доставка</h3><p id="logistics-description">Проверяем габариты, ограничения дорог, точки перегрузки, подъезд к площадке и очередность машин.</p><ul id="logistics-checks"><li>габариты и ограничения</li><li>подъезд и разгрузка</li><li>очередность партий</li></ul></div>
+        </div>
+      </section>
+
+      <section class="factory section" id="factory" aria-labelledby="factory-title">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow">7 стадий производства</p><h2 id="factory-title">Модуль проходит последовательный заводской контур.</h2></div>
+          <p>Каждый этап показан отдельной визуализацией. Переключение не означает нормативную длительность процесса.</p>
+        </div>
+        <div class="factory-layout">
+          <div class="factory-tabs" role="tablist" aria-label="Стадии производства">
+            <button type="button" role="tab" aria-selected="true" data-factory="0"><span>01</span>Металл</button>
+            <button type="button" role="tab" aria-selected="false" data-factory="1"><span>02</span>Каркас</button>
+            <button type="button" role="tab" aria-selected="false" data-factory="2"><span>03</span>Контур</button>
+            <button type="button" role="tab" aria-selected="false" data-factory="3"><span>04</span>Инженерия</button>
+            <button type="button" role="tab" aria-selected="false" data-factory="4"><span>05</span>Отделка</button>
+            <button type="button" role="tab" aria-selected="false" data-factory="5"><span>06</span>Контроль</button>
+            <button type="button" role="tab" aria-selected="false" data-factory="6"><span>07</span>Отгрузка</button>
+          </div>
+          <figure class="factory-visual"><img id="factory-image" src="{{FACTORY_METAL}}" alt="Визуализация подготовки металла для модульного производства" width="1600" height="900" /><figcaption><span id="factory-stage">01 / 07</span><strong id="factory-caption">Подготовка металла</strong><small>Иллюстративная визуализация производственного процесса</small></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="case section section--sand" id="case" aria-labelledby="case-title">
+        <figure class="case-visual"><img src="{{GENERAL_CASE}}" alt="Архитектурная визуализация модульного комплекса в удалённом регионе" width="1600" height="900" /><figcaption>Иллюстративная визуализация — не фотография объекта</figcaption></figure>
+        <div class="case-copy">
+          <p class="eyebrow">Инженерный подход</p>
+          <h2 id="case-title">Предложение описывает запуск объекта, а не только поставку модулей.</h2>
+          <p>Состав, инженерные границы и маршрут фиксируются до расчёта. Поэтому в рабочем контуре одновременно появляются площадка, функции, производство, логистика и монтажная очередность.</p>
+          <ul><li>Проектирование</li><li>Производство</li><li>Инженерия</li><li>Доставка и монтаж</li></ul>
+          <a class="text-link" href="#full-brief">Передать исходные данные <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="faq section" aria-labelledby="faq-title">
+        <div class="section-heading"><p class="eyebrow">Вопросы до расчёта</p><h2 id="faq-title">Что обычно уточняем на старте.</h2></div>
+        <div class="faq-list">
+          <details><summary>Что нужно для предварительного коммерческого предложения?<span aria-hidden="true">+</span></summary><p>Тип объекта, ориентир по численности или площади, регион и желаемый ввод. Остальные исходные данные менеджер уточнит после заявки.</p></details>
+          <details><summary>Можно ли включить доставку и монтаж?<span aria-hidden="true">+</span></summary><p>Да. Состав работ фиксируется для конкретного проекта и отражается в предложении.</p></details>
+          <details><summary>Работаете ли вы с тендерами?<span aria-hidden="true">+</span></summary><p>Да. В тендерном режиме обычно нужны название процедуры, срок подачи и доступные исходные файлы.</p></details>
+          <details><summary>Почему в автономной версии нет отправки заявки?<span aria-hidden="true">+</span></summary><p>Этот файл работает без сервера и CRM. Он проверяет поля и показывает собранное резюме локально, но не передаёт персональные данные.</p></details>
+        </div>
+      </section>
+
+      <section class="lead section section--pink" id="full-brief" aria-labelledby="lead-title">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow">Полный бриф · офлайн-демо</p><h2 id="lead-title">Зафиксируйте исходные данные локально.</h2></div>
+          <p>Форма интерактивна, но не подключена к серверу. Введённые данные остаются только в открытой странице и исчезнут после её закрытия.</p>
+        </div>
+        <form id="offline-lead-form" class="lead-form" novalidate>
+          <label>Тип объекта<input name="objectType" required autocomplete="off" placeholder="Например, вахтовый поселок" /></label>
+          <label>Регион<input name="region" required autocomplete="off" placeholder="Регион и ближайший населённый пункт" /></label>
+          <label>Численность или площадь<input name="scale" autocomplete="off" placeholder="Например, 150 человек" /></label>
+          <label>Стадия проекта<select name="mode"><option>Формируем задачу</option><option>Есть техническое задание</option><option>Идёт тендер</option><option>Проект уточняется</option></select></label>
+          <label class="lead-form__wide">Контакт для резюме<input name="contact" required autocomplete="off" placeholder="Телефон или e-mail — данные не отправятся" /></label>
+          <label class="lead-form__wide">Комментарий<textarea name="comment" rows="4" placeholder="Состав, желаемый ввод, ограничения площадки"></textarea></label>
+          <label class="check-row lead-form__wide"><input type="checkbox" name="offlineConfirmed" required /><span>Понимаю, что это автономная демонстрация и данные не будут отправлены.</span></label>
+          <div class="lead-form__footer lead-form__wide"><button class="button button--ink" type="submit">Проверить и собрать резюме</button><p>Для реальной заявки: <a href="tel:+78003336131">8 (800) 333-61-31</a> · <a href="mailto:zakaz@a-modul.ru">zakaz@a-modul.ru</a></p></div>
+          <div class="offline-result lead-form__wide" role="status" aria-live="polite" hidden></div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="brand brand--footer"><span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand__copy"><strong>АВИСТА МОДУЛЬ</strong><small>автономная интерактивная версия</small></span></div>
+      <p>Проектирование · производство · инженерия · доставка · монтаж · комплектация</p>
+      <div><a href="tel:+78003336131">8 (800) 333-61-31</a><a href="mailto:zakaz@a-modul.ru">zakaz@a-modul.ru</a><a href="#top">Наверх ↑</a></div>
+    </footer>
+
+    <script>
+{{INLINE_JS}}
+    </script>
+  </body>
+</html>

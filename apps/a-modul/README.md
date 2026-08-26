@@ -28,6 +28,12 @@ npm --prefix apps/a-modul run test
 npm --prefix apps/a-modul run build
 ```
 
+## Standalone HTML
+
+Run `npm run build:a-modul:standalone` from the repository root. The generated `standalone/a-modul-direct.html` is a single self-contained file with inline CSS, JavaScript, fonts, and Codex-generated AVIF artwork. It opens directly from the filesystem without a local server or internet connection.
+
+The standalone lead form is intentionally an offline demonstration: it validates locally and never reports a CRM success or transmits entered data.
+
 Use `A_MODUL_CRM_MODE=mock` only with the development server for deterministic local success/error testing. Production builds reject mock success.
 
 ## Production adapter-node
