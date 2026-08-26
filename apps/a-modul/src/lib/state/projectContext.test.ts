@@ -40,4 +40,20 @@ describe('project context invariants', () => {
     expect(cleared.selectedZones).toEqual([]);
     expect(cleared.capacity).toBe('');
   });
+
+  it('carries only published case inputs without inventing capacity or zones', async () => {
+    const context = await import('./projectContext');
+    context.applyPublishedCaseContext({ objectType: 'shift', region: 'far-east' });
+
+    const unpublishedCapacity = get(context.projectContext);
+    expect(unpublishedCapacity.objectType).toBe('shift');
+    expect(unpublishedCapacity.region).toBe('far-east');
+    expect(unpublishedCapacity.capacity).toBe('');
+    expect(unpublishedCapacity.selectedZones).toEqual([]);
+
+    context.applyPublishedCaseContext({ objectType: 'dorm', region: 'russia', capacity: '300' });
+    const publishedCapacity = get(context.projectContext);
+    expect(publishedCapacity.capacity).toBe('300');
+    expect(publishedCapacity.selectedZones).toEqual([]);
+  });
 });

@@ -18,6 +18,8 @@
     "test:a-modul": "npm --prefix apps/a-modul run test",
     "build:a-modul": "npm --prefix apps/a-modul run build",
     "build:a-modul:standalone": "node scripts/build-a-modul-standalone.mjs",
+    "verify:a-modul:standalone": "node scripts/verify-a-modul-standalone.mjs",
+    "verify:a-modul:performance": "node scripts/verify-a-modul-performance.mjs",
     "preview:a-modul": "npm --prefix apps/a-modul run preview",
     "verify:all": "node scripts/verify-all.mjs",
     "images:optimize": "node scripts/optimize-images.mjs",

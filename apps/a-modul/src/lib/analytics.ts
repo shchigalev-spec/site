@@ -4,9 +4,9 @@ import { landingRoutePaths, regionVariantSlugs, typeVariantSlugs } from '$lib/co
 export const analyticsEvents = [
   'page_view', 'hero_brief_start', 'hero_brief_complete', 'object_type_select', 'capacity_select',
   'region_select', 'commissioning_date_select', 'configurator_start', 'configurator_complete',
-  'case_filter_change', 'case_open', 'logistics_map_start', 'logistics_route_complete',
+  'case_filter_change', 'case_open', 'logistics_map_start', 'logistics_mode_change', 'logistics_route_complete',
   'bim_interaction_start', 'bim_interaction_complete', 'production_sequence_start',
-  'production_sequence_complete', 'price_scope_open', 'leasing_click', 'tender_start',
+  'production_sequence_complete', 'lower_object_stage_change', 'price_scope_open', 'leasing_click', 'tender_start', 'final_cta_start',
   'tender_submit_success', 'form_start', 'file_attach', 'form_validation_error',
   'form_submit_success', 'form_submit_error', 'phone_click', 'email_click', 'scroll_50', 'scroll_90'
 ] as const;

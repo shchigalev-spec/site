@@ -6,6 +6,28 @@ export type CapacityMetric = 'people' | 'workplaces' | 'area';
 export type RegionId = '' | 'moskva' | 'krasnoyarsk' | 'ural' | 'far-east' | 'siberia' | 'kurgan' | 'russia';
 export type DiagnosisMode = 'standard' | 'tender' | 'leasing';
 
+export const commissioningOptions = [
+  { value: 'Срочно', label: 'Срочно' },
+  { value: '1–3 месяца', label: '1–3 месяца' },
+  { value: '3–6 месяцев', label: '3–6 месяцев' },
+  { value: '6–12 месяцев', label: '6–12 месяцев' }
+] as const;
+
+export function isExactCommissioningMonth(value: string) {
+  return /^\d{4}-(0[1-9]|1[0-2])$/.test(value);
+}
+
+export function isValidCommissioning(value: string) {
+  return commissioningOptions.some((option) => option.value === value) || isExactCommissioningMonth(value);
+}
+
+export function commissioningLabel(value: string) {
+  if (!value) return 'не указан';
+  if (!isExactCommissioningMonth(value)) return value;
+  return new Intl.DateTimeFormat('ru-RU', { month: 'long', year: 'numeric', timeZone: 'UTC' })
+    .format(new Date(`${value}-01T00:00:00Z`));
+}
+
 export type ProjectEditedFields = {
   objectType: boolean;
   capacity: boolean;
@@ -135,7 +157,7 @@ function sanitize(raw: Partial<ProjectContext> & { userEdited?: boolean }): Proj
     : [];
   const requestedCapacity = typeof raw.capacity === 'string' ? raw.capacity : '';
   const capacity = definition
-    ? capacityOptions.includes(requestedCapacity) ? requestedCapacity : requestedCapacity ? 'custom' : capacityOptions[0]
+    ? capacityOptions.includes(requestedCapacity) ? requestedCapacity : requestedCapacity ? 'custom' : ''
     : requestedCapacity;
   const customCapacity = typeof raw.customCapacity === 'string'
     ? raw.customCapacity.slice(0, 12)
@@ -158,7 +180,7 @@ function sanitize(raw: Partial<ProjectContext> & { userEdited?: boolean }): Proj
     region,
     selectedZones,
     zonesObjectType,
-    commissioning: typeof raw.commissioning === 'string' ? raw.commissioning.slice(0, 20) : '',
+    commissioning: typeof raw.commissioning === 'string' && isValidCommissioning(raw.commissioning) ? raw.commissioning : '',
     mode: raw.mode === 'tender' || raw.mode === 'leasing' ? raw.mode : 'standard',
     typeIntent: typeof raw.typeIntent === 'string' ? raw.typeIntent.slice(0, 80) : '',
     transferRevision: Number.isSafeInteger(raw.transferRevision) && Number(raw.transferRevision) >= 0 ? Number(raw.transferRevision) : 0,
@@ -249,6 +271,29 @@ export function setCustomCapacity(customCapacity: string) {
 
 export function setRegion(region: RegionId) {
   update((current) => ({ ...current, region, edited: { ...current.edited, region: true } }));
+}
+
+export function applyPublishedCaseContext(input: { objectType: ObjectTypeId; region: RegionId; capacity?: string }) {
+  const definition = definitionFor(input.objectType);
+  const capacity = input.capacity && definition.capacityOptions.includes(input.capacity) ? input.capacity : '';
+  update((current) => ({
+    ...current,
+    objectType: input.objectType,
+    metric: definition.metric,
+    capacity,
+    customCapacity: '',
+    region: input.region,
+    selectedZones: [],
+    zonesObjectType: input.objectType,
+    typeIntent: '',
+    edited: {
+      ...current.edited,
+      objectType: true,
+      capacity: Boolean(capacity),
+      region: true,
+      zones: true
+    }
+  }));
 }
 
 export function toggleProjectZone(zone: string) {

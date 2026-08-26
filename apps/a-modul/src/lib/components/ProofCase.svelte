@@ -5,12 +5,12 @@
 {#if mode === 'both' || mode === 'case'}<section class="dominant-case chapter" id="case" aria-labelledby="case-title">
   <div class="dominant-case__visual">
     <picture>
-      <source media="(max-width: 760px)" type="image/avif" srcset="/generated/a-modul-case-kamchatka-mobile.avif" />
-      <source media="(max-width: 760px)" type="image/webp" srcset="/generated/a-modul-case-kamchatka-mobile.webp" />
-      <source type="image/avif" srcset="/generated/a-modul-case-kamchatka-desktop.avif" />
-      <img src="/generated/a-modul-case-kamchatka-desktop.webp" width="1600" height="900" alt="Архитектурная визуализация состава удалённого модульного посёлка" loading="lazy" />
+      <source media="(max-width: 760px)" type="image/avif" srcset="/generated/a-modul-case-kamchatka-v2-mobile.avif" />
+      <source media="(max-width: 760px)" type="image/webp" srcset="/generated/a-modul-case-kamchatka-v2-mobile.webp" />
+      <source type="image/avif" srcset="/generated/a-modul-case-kamchatka-v2-desktop.avif" />
+      <img src="/generated/a-modul-case-kamchatka-v2-desktop.webp" width="1920" height="1080" alt="Концептуальная визуализация удалённого зимнего модульного посёлка в Камчатском крае" loading="lazy" />
     </picture>
-    <span class="visualization-label">Визуализация по открытым данным кейса — не фотография объекта</span>
+    <span class="visualization-label">Визуализация объекта. Факты приведены по реализованному проекту.</span>
   </div>
 
   <div class="dominant-case__copy">
@@ -26,6 +26,7 @@
       <div><dt>Контур «Ависты»</dt><dd>Проектирование, производство, инженерная и мебельная комплектация, доставка, строительно-монтажные работы</dd></div>
       <div><dt>Период работ</dt><dd>Февраль 2022 — февраль 2023</dd></div>
     </dl>
+    <a class="dominant-case__source" href="https://a-modul.ru/object/vakhtoviy-poselok-na-odnom-iz-krupneyshikh-mestorozhdeniy-zolota/" target="_blank" rel="noreferrer">Официальный кейс на a-modul.ru ↗</a>
     <a class="button button--primary" href="#project-brief">Разобрать мой проект</a>
   </div>
 </section>

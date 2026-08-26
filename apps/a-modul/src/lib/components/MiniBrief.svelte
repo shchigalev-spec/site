@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { trackEvent } from '$lib/analytics';
+  import CommissioningSelector from '$lib/components/CommissioningSelector.svelte';
   import {
     applyLandingDefaults, clearObjectType, commitProjectTransfer, initProjectContext, metricLabel, metricUnit, objectTypeDefinitions, projectContext, regionOptions,
     setCommissioning, setCustomCapacity, setDiagnosisMode, setMetric, setObjectType, setRegion,
@@ -47,6 +48,7 @@
       if (!dirty.capacity) briefCapacity = value.capacity === 'custom' ? value.customCapacity : value.capacity;
       if (!dirty.region) briefRegion = value.region;
       commissioning = value.commissioning;
+      syncCommissioningFields(value.commissioning);
     });
     return () => {
       mounted = false;
@@ -92,9 +94,20 @@
 
   function changeCommissioning(value: string) {
     commissioning = value;
+    syncCommissioningFields(value);
     clearError('commissioning');
     setCommissioning(value);
     trackEvent('commissioning_date_select', { has_value: Boolean(value) });
+  }
+
+  function syncCommissioningFields(value: string) {
+    if (typeof document === 'undefined') return;
+    for (const selector of ['#project-brief input[name="commissioning"]', '#full-brief input[name="desiredCommissioningDate"]']) {
+      const input = document.querySelector<HTMLInputElement>(selector);
+      if (!input) continue;
+      input.value = value;
+      input.setAttribute('value', value);
+    }
   }
 
   function handleSubmit(event: SubmitEvent) {
@@ -103,14 +116,16 @@
       objectType: briefObjectType ? '' : 'Выберите тип объекта.',
       capacity: Number(briefCapacity) > 0 ? '' : `Укажите значение: ${metricLabel(briefMetric).toLowerCase()}.`,
       region: briefRegion ? '' : 'Выберите регион проекта.',
-      commissioning: commissioning ? '' : 'Укажите желаемый месяц ввода.'
+      commissioning: commissioning ? '' : 'Укажите желаемый срок ввода.'
     };
     errors = nextErrors;
     const firstError = (Object.entries(nextErrors) as [keyof typeof nextErrors, string][]).find(([, message]) => message)?.[0];
     if (firstError) {
       const form = event.currentTarget as HTMLFormElement;
-      const targetName = firstError === 'capacity' ? briefMetric : firstError;
-      (form.elements.namedItem(targetName) as HTMLElement | null)?.focus();
+      const target = firstError === 'commissioning'
+        ? form.querySelector<HTMLElement>('[data-commissioning-control] button')
+        : form.elements.namedItem(firstError === 'capacity' ? briefMetric : firstError) as HTMLElement | null;
+      target?.focus();
       checked = false;
       return;
     }
@@ -124,7 +139,7 @@
 
 <section class="brief" id="project-brief" aria-labelledby="brief-title">
   <div class="brief__intro">
-    <p class="eyebrow">Шаг 01 / диагностика</p>
+    <p class="eyebrow">Шаг 01 / исходные данные</p>
     <h2 id="brief-title">Зафиксируем контур объекта.</h2>
     <p>Четырёх параметров достаточно, чтобы определить следующий инженерный шаг и подготовить предварительное КП после получения основных исходных данных.</p>
     {#if typeLabel}<p class="brief__mode"><span>Контекст запроса</span> {typeLabel}</p>{/if}
@@ -165,15 +180,23 @@
       <span class="field__error" id="brief-region-error">{errors.region}</span>
     </label>
 
-    <label class="field">
-      <span>Желаемый ввод</span>
-      <input type="month" name="commissioning" value={commissioning} oninput={(event) => changeCommissioning(event.currentTarget.value)} required aria-invalid={errors.commissioning ? 'true' : 'false'} aria-describedby="brief-commissioning-error" />
+    <div class="field field--commissioning">
+      <span>Планируемый ввод в эксплуатацию</span>
+      <CommissioningSelector bind:value={commissioning} inputName="commissioning" invalid={Boolean(errors.commissioning)} errorId="brief-commissioning-error" onValueChange={changeCommissioning} />
       <span class="field__error" id="brief-commissioning-error">{errors.commissioning}</span>
-    </label>
+    </div>
 
     <div class="brief__carry" role="status" aria-live="polite">
       <span>Контекст передан</span>
-      <p>{typeLabel || objectTypeDefinitions.find((item) => item.id === $projectContext.objectType)?.label} · {metricLabel($projectContext.metric)}: {$projectContext.capacity === 'custom' ? $projectContext.customCapacity || 'нужно уточнить' : $projectContext.capacity} {metricUnit($projectContext.metric)} · {regionOptions.find((item) => item.value === $projectContext.region)?.label}</p>
+      <p>
+        {typeLabel || objectTypeDefinitions.find((item) => item.id === $projectContext.objectType)?.label || 'Тип объекта нужно уточнить'} ·
+        {#if $projectContext.capacity}
+          {metricLabel($projectContext.metric)}: {$projectContext.capacity === 'custom' ? $projectContext.customCapacity || 'нужно уточнить' : $projectContext.capacity} {metricUnit($projectContext.metric)}
+        {:else}
+          {metricLabel($projectContext.metric)} нужно уточнить
+        {/if} ·
+        {regionOptions.find((item) => item.value === $projectContext.region)?.label || 'Регион нужно уточнить'}
+      </p>
       <p>{$projectContext.selectedZones.length ? $projectContext.selectedZones.join(' · ') : 'Функциональный состав нужно уточнить.'}</p>
     </div>
 

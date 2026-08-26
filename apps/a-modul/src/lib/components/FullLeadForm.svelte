@@ -4,6 +4,7 @@
   import { goto } from '$app/navigation';
   import { getAttribution, trackEvent } from '$lib/analytics';
   import { diagnosisHref } from '$lib/navigation';
+  import CommissioningSelector from '$lib/components/CommissioningSelector.svelte';
   import { isPlausiblePhone, isValidEmail, projectStageOptions, regionVariantSlugs, scopeOptions, typeVariantSlugs } from '$lib/content/lead-options';
   import {
     applyLandingDefaults, clearObjectType, initProjectContext, objectTypeDefinitions, projectContext, regionOptions, setDiagnosisMode, setObjectType,
@@ -74,8 +75,22 @@
     personnelCount = context.metric === 'area' ? '' : capacity;
     area = context.metric === 'area' ? capacity : '';
     desiredCommissioningDate = context.commissioning;
+    syncDesiredCommissioningField(context.commissioning);
     formRegion = context.region;
     if (context.mode === 'leasing') leasingInterest = true;
+  }
+
+  function changeDesiredCommissioning(value: string) {
+    desiredCommissioningDate = value;
+    syncDesiredCommissioningField(value);
+  }
+
+  function syncDesiredCommissioningField(value: string) {
+    if (typeof document === 'undefined') return;
+    const input = document.querySelector<HTMLInputElement>('#full-brief input[name="desiredCommissioningDate"]');
+    if (!input) return;
+    input.value = value;
+    input.setAttribute('value', value);
   }
 
   onMount(() => {
@@ -270,7 +285,7 @@
       <label class="field"><span>Тип объекта *</span><select name="objectType" bind:value={formObjectType} onchange={(event) => changeFormObjectType(event.currentTarget.value)} aria-invalid={fieldErrors.objectType ? 'true' : 'false'} aria-describedby="full-object-error"><option value="">Выберите тип объекта</option>{#each objectTypeDefinitions as item}<option value={item.id}>{item.label}</option>{/each}</select><span class="field__error" id="full-object-error">{fieldErrors.objectType ?? ''}</span></label>
       <label class="field"><span>{formMetric === 'workplaces' ? 'Рабочие места' : 'Численность персонала'}</span><input type="number" min="1" name="personnelCount" inputmode="numeric" bind:value={personnelCount} aria-invalid={fieldErrors.personnelCount || fieldErrors.capacity ? 'true' : 'false'} aria-describedby="personnel-count-error" /><span class="field__error" id="personnel-count-error">{fieldErrors.personnelCount ?? fieldErrors.capacity ?? ''}</span></label>
       <label class="field"><span>Ориентировочная площадь, м²</span><input type="number" min="1" step="0.01" name="area" inputmode="decimal" bind:value={area} aria-invalid={fieldErrors.area || fieldErrors.capacity ? 'true' : 'false'} aria-describedby="area-error" /><span class="field__error" id="area-error">{fieldErrors.area ?? fieldErrors.capacity ?? ''}</span></label>
-      <label class="field"><span>Желаемый ввод</span><input type="month" name="desiredCommissioningDate" bind:value={desiredCommissioningDate} aria-invalid={fieldErrors.desiredCommissioningDate ? 'true' : 'false'} aria-describedby="commissioning-error" /><span class="field__error" id="commissioning-error">{fieldErrors.desiredCommissioningDate ?? ''}</span></label>
+      <div class="field field--commissioning"><span>Планируемый ввод в эксплуатацию</span><CommissioningSelector bind:value={desiredCommissioningDate} inputName="desiredCommissioningDate" invalid={Boolean(fieldErrors.desiredCommissioningDate)} errorId="commissioning-error" onValueChange={changeDesiredCommissioning} /><span class="field__error" id="commissioning-error">{fieldErrors.desiredCommissioningDate ?? ''}</span></div>
       <label class="field"><span>Стадия проекта</span><select name="projectStage" bind:value={projectStage} aria-invalid={fieldErrors.projectStage ? 'true' : 'false'} aria-describedby="project-stage-error"><option value="">Не выбрана</option>{#each projectStageOptions as stage}<option value={stage}>{stage}</option>{/each}</select><span class="field__error" id="project-stage-error">{fieldErrors.projectStage ?? ''}</span></label>
     {/if}
 

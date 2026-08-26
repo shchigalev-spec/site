@@ -51,8 +51,8 @@
     {#each routes as route}<a href={route.href} aria-current={currentPath === route.href ? 'page' : undefined}>{route.label}</a>{/each}
   </nav>
   <a class="header-phone" href={publicContacts.phoneHref} onclick={() => trackEvent('phone_click', { placement: 'header' })}>{publicContacts.phoneDisplay}</a>
-  <a class="button button--header desktop-cta" href={diagnosisHref(page.url, 'standard')}>Начать диагностику</a>
-  <button bind:this={toggle} class="mobile-menu-toggle" type="button" aria-expanded={open} aria-controls="mobile-menu" onclick={() => setOpen(!open)}>
+  <a class="button button--header desktop-cta" href={diagnosisHref(page.url, 'standard')}>Рассчитать стоимость</a>
+  <button bind:this={toggle} class="mobile-menu-toggle" type="button" aria-expanded={open} aria-controls={open ? 'mobile-menu' : undefined} onclick={() => setOpen(!open)}>
     <span aria-hidden="true">{open ? '×' : '≡'}</span><span>{open ? 'Закрыть' : 'Меню'}</span>
   </button>
   {#if open}
@@ -60,7 +60,7 @@
       <nav aria-label="Разделы сайта">
         {#each routes as route}<a href={route.href} aria-current={currentPath === route.href ? 'page' : undefined} onclick={() => setOpen(false)}>{route.label}</a>{/each}
         <a href={publicContacts.phoneHref} onclick={() => trackEvent('phone_click', { placement: 'mobile-menu' })}>{publicContacts.phoneDisplay}</a>
-        <a class="button button--primary" href={diagnosisHref(page.url, 'standard')} onclick={() => setOpen(false)}>Начать диагностику</a>
+        <a class="button button--primary" href={diagnosisHref(page.url, 'standard')} onclick={() => setOpen(false)}>Рассчитать стоимость</a>
       </nav>
     </div>
   {/if}

@@ -77,6 +77,20 @@ describe('parseLead', () => {
     expect(result.errors.deadline).toBeTruthy();
   });
 
+  it('accepts commissioning shortcuts and an exact month, but rejects unknown values', () => {
+    for (const commissioning of ['Срочно', '1–3 месяца', '3–6 месяцев', '6–12 месяцев', '2027-02']) {
+      const form = standardLead();
+      form.set('desiredCommissioningDate', commissioning);
+      const result = parseLead(form);
+      expect(result.errors.desiredCommissioningDate).toBeUndefined();
+      expect(result.lead?.fields.desiredCommissioningDate).toBe(commissioning);
+    }
+
+    const invalid = standardLead();
+    invalid.set('desiredCommissioningDate', 'когда получится');
+    expect(parseLead(invalid).errors.desiredCommissioningDate).toBeTruthy();
+  });
+
   it('discards unknown query variants before forwarding', () => {
     const form = standardLead();
     form.set('landingRoute', '/unknown/');

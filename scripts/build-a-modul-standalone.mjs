@@ -33,7 +33,8 @@ async function collectFiles(directory) {
 async function createAssetMap() {
   const roots = [
     { directory: join(appRoot, 'static', 'generated'), prefix: '/generated' },
-    { directory: join(appRoot, 'static', 'brand'), prefix: '/brand' }
+    { directory: join(appRoot, 'static', 'brand'), prefix: '/brand' },
+    { directory: join(appRoot, 'static', 'data'), prefix: '/data' }
   ];
   const map = {};
   for (const root of roots) {
@@ -65,7 +66,7 @@ const __A_MODUL_OFFLINE_ASSETS__ = Object.freeze(${serialized});
 const __aModulResolveAsset = (value) => typeof value === 'string' && __A_MODUL_OFFLINE_ASSETS__[value] ? __A_MODUL_OFFLINE_ASSETS__[value] : value;
 const __aModulSetAttribute = Element.prototype.setAttribute;
 Element.prototype.setAttribute = function(name, value) {
-  return __aModulSetAttribute.call(this, name, name === 'src' || name === 'srcset' ? __aModulResolveAsset(String(value)) : value);
+  return __aModulSetAttribute.call(this, name, name === 'src' || name === 'srcset' || name === 'href' ? __aModulResolveAsset(String(value)) : value);
 };
 for (const [prototype, property] of [[HTMLImageElement.prototype, 'src'], [HTMLImageElement.prototype, 'srcset'], [HTMLSourceElement.prototype, 'srcset']]) {
   const descriptor = Object.getOwnPropertyDescriptor(prototype, property);
@@ -79,8 +80,8 @@ for (const [prototype, property] of [[HTMLImageElement.prototype, 'src'], [HTMLI
 }
 const __aModulHydrateAssets = (root) => {
   if (!(root instanceof Element || root instanceof Document)) return;
-  for (const element of root.querySelectorAll('[src], [srcset]')) {
-    for (const attribute of ['src', 'srcset']) {
+  for (const element of root.querySelectorAll('[src], [srcset], [href]')) {
+    for (const attribute of ['src', 'srcset', 'href']) {
       const value = element.getAttribute(attribute);
       const resolved = __aModulResolveAsset(value);
       if (resolved !== value) __aModulSetAttribute.call(element, attribute, resolved);
@@ -90,7 +91,7 @@ const __aModulHydrateAssets = (root) => {
 new MutationObserver((records) => {
   for (const record of records) for (const node of record.addedNodes) if (node instanceof Element) {
     __aModulHydrateAssets(node);
-    for (const attribute of ['src', 'srcset']) {
+    for (const attribute of ['src', 'srcset', 'href']) {
       const value = node.getAttribute(attribute);
       const resolved = __aModulResolveAsset(value);
       if (resolved !== value) __aModulSetAttribute.call(node, attribute, resolved);

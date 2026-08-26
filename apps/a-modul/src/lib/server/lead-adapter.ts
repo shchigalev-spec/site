@@ -221,6 +221,7 @@ function isPositiveNumber(value: string): boolean {
 }
 
 function isValidMonth(value: string): boolean {
+  if (['Срочно', '1–3 месяца', '3–6 месяцев', '6–12 месяцев'].includes(value)) return true;
   if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(value)) return false;
   const year = Number(value.slice(0, 4));
   return year >= 2000 && year <= 2200;
@@ -375,7 +376,7 @@ export function parseLead(formData: FormData): ParseLeadResult {
   if (fields.region && !REGIONS.has(fields.region)) errors.region = 'Выберите регион из списка.';
   if (fields.projectStage && !PROJECT_STAGES.has(fields.projectStage)) errors.projectStage = 'Выберите стадию проекта из списка.';
   if (fields.desiredCommissioningDate && !isValidMonth(fields.desiredCommissioningDate)) {
-    errors.desiredCommissioningDate = 'Укажите корректный месяц ввода.';
+    errors.desiredCommissioningDate = 'Укажите корректный срок ввода.';
   }
 
   const definition = objectTypeDefinitions.find((item) => item.id === fields.objectType);

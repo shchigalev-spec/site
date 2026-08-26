@@ -1,0 +1,38 @@
+[
+  {
+    "name": "start",
+    "requestedProgress": 0,
+    "targetScrollY": 89,
+    "scrollY": 89,
+    "stage": 0,
+    "progress": 0,
+    "visiblePlate": "assembly__plate assembly__plate--empty visible"
+  },
+  {
+    "name": "foundations",
+    "requestedProgress": 0.32,
+    "targetScrollY": 366.76,
+    "scrollY": 367,
+    "stage": 1,
+    "progress": 32,
+    "visiblePlate": "assembly__plate assembly__plate--foundations visible"
+  },
+  {
+    "name": "assembly",
+    "requestedProgress": 0.62,
+    "targetScrollY": 627.16,
+    "scrollY": 627,
+    "stage": 2,
+    "progress": 62,
+    "visiblePlate": "assembly__plate assembly__plate--assembly visible"
+  },
+  {
+    "name": "end",
+    "requestedProgress": 0.96,
+    "targetScrollY": 922.28,
+    "scrollY": 922,
+    "stage": 3,
+    "progress": 96,
+    "visiblePlate": "assembly__plate assembly__plate--operational visible"
+  }
+]

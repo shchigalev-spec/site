@@ -1,0 +1,582 @@
+{
+  "capturedAt": "2026-08-26T17:11:19.350Z",
+  "base": "http://127.0.0.1:5175",
+  "routeStatuses": {
+    "/modulnye-zdaniya/": 200,
+    "/vahtovye-poselki/": 200,
+    "/modulnye-ofisy-abk/": 200,
+    "/modulnye-obshchezhitiya/": 200,
+    "/privacy-policy/": 200,
+    "/robots.txt": 200,
+    "/sitemap.xml": 200
+  },
+  "desktop": {
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "documentHeight": 19523,
+    "h1Count": 1,
+    "h1Visible": true,
+    "primaryCtaVisible": true,
+    "finalCtaVisible": true,
+    "mapAsset": "/data/russia-federal-subjects.svg",
+    "mapTitle": "Карта России с границами субъектов и выбранным регионом",
+    "finderCasesLabel": "Открытая база / 03 проверенных проекта",
+    "factoryTabs": 6,
+    "lowerTabs": 5,
+    "disclosures": 7,
+    "images": [
+      {
+        "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+        "complete": true,
+        "naturalWidth": 68
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-lower-operational-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-case-dormitories-300-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-factory-v2-engineering-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-v2-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-final-cta-v2-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+        "complete": true,
+        "naturalWidth": 68
+      }
+    ]
+  },
+  "responsive": {
+    "mobile-320": {
+      "clientWidth": 320,
+      "scrollWidth": 320,
+      "documentHeight": 27368,
+      "h1Count": 1,
+      "h1Visible": true,
+      "primaryCtaVisible": true,
+      "finalCtaVisible": true,
+      "mapAsset": "/data/russia-federal-subjects.svg",
+      "mapTitle": "Карта России с границами субъектов и выбранным регионом",
+      "finderCasesLabel": "Открытая база / 03 проверенных проекта",
+      "factoryTabs": 6,
+      "lowerTabs": 5,
+      "disclosures": 7,
+      "images": [
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+          "complete": true,
+          "naturalWidth": 1920
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-lower-prepared-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-v2-frame-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-final-cta-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        }
+      ],
+      "mapVisibility": {
+        "fullSvg": true,
+        "destinationVisible": true
+      }
+    },
+    "mobile-390": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "documentHeight": 26057,
+      "h1Count": 1,
+      "h1Visible": true,
+      "primaryCtaVisible": true,
+      "finalCtaVisible": true,
+      "mapAsset": "/data/russia-federal-subjects.svg",
+      "mapTitle": "Карта России с границами субъектов и выбранным регионом",
+      "finderCasesLabel": "Открытая база / 03 проверенных проекта",
+      "factoryTabs": 6,
+      "lowerTabs": 5,
+      "disclosures": 7,
+      "images": [
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+          "complete": true,
+          "naturalWidth": 1920
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-lower-prepared-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-v2-frame-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-final-cta-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        }
+      ],
+      "mapVisibility": {
+        "fullSvg": true,
+        "destinationVisible": true
+      }
+    },
+    "intermediate-768": {
+      "clientWidth": 768,
+      "scrollWidth": 768,
+      "documentHeight": 21733,
+      "h1Count": 1,
+      "h1Visible": true,
+      "primaryCtaVisible": true,
+      "finalCtaVisible": true,
+      "mapAsset": "/data/russia-federal-subjects.svg",
+      "mapTitle": "Карта России с границами субъектов и выбранным регионом",
+      "finderCasesLabel": "Открытая база / 03 проверенных проекта",
+      "factoryTabs": 6,
+      "lowerTabs": 5,
+      "disclosures": 7,
+      "images": [
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+          "complete": true,
+          "naturalWidth": 1920
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-lower-prepared-desktop.avif",
+          "complete": true,
+          "naturalWidth": 1920
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-v2-frame-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-final-cta-v2-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        }
+      ]
+    }
+  },
+  "specializedHeroes": {
+    "shift": {
+      "expectedAsset": "a-modul-shift-hero-v2",
+      "currentSrc": "http://127.0.0.1:5175/generated/a-modul-shift-hero-v2-desktop.avif",
+      "naturalWidth": 1920
+    },
+    "office": {
+      "expectedAsset": "a-modul-office-hero-v2",
+      "currentSrc": "http://127.0.0.1:5175/generated/a-modul-office-hero-v2-desktop.avif",
+      "naturalWidth": 1920
+    },
+    "dormitory": {
+      "expectedAsset": "a-modul-dormitory-hero-v2",
+      "currentSrc": "http://127.0.0.1:5175/generated/a-modul-dormitory-hero-v2-desktop.avif",
+      "naturalWidth": 1920
+    }
+  },
+  "mapDefault": {
+    "destinationPoints": 0,
+    "countryMap": "/data/russia-federal-subjects.svg"
+  },
+  "mapRussia": {
+    "destinationPoints": 0,
+    "selected": "Россия",
+    "result": "Уточнить регион в России",
+    "modes": [
+      "Авто",
+      "Ж/д",
+      "Комбинированная"
+    ]
+  },
+  "mapSelected": {
+    "destinationPoints": 1,
+    "selected": "Дальний Восток",
+    "result": "Точка расчёта → Дальний Восток",
+    "modes": [
+      "Авто",
+      "Ж/д",
+      "Море / вода",
+      "Зимник",
+      "Комбинированная"
+    ],
+    "caseTitle": "Вахтовый посёлок на Камчатке",
+    "source": "https://a-modul.ru/shift_camps/"
+  },
+  "logisticsExternalRegion": {
+    "selected": "Москва и Московская область",
+    "modes": [
+      "Авто",
+      "Ж/д",
+      "Комбинированная"
+    ],
+    "activeMode": "Авто",
+    "sourceMode": "Авто"
+  },
+  "finder": {
+    "title": "Вахтовый посёлок для золоторудного проекта",
+    "comparisonPanels": 2,
+    "source": "https://a-modul.ru/object/vakhtoviy-poselok-na-odnom-iz-krupneyshikh-mestorozhdeniy-zolota/",
+    "disclosure": "Визуализация объекта. Факты приведены по реализованному проекту.",
+    "carriedHref": "#project-brief"
+  },
+  "finderCarry": {
+    "capacity": "",
+    "summary": "Контекст передан Вахтовый посёлок · Численность нужно уточнить · Дальний Восток Функциональный состав нужно уточнить."
+  },
+  "finderUnknownData": {
+    "score": "Ближайший аналог · совпало 3 из 5",
+    "matches": "отрасль — Горнодобывающая; тип объекта — Общежитие; масштаб объекта — 300 человек",
+    "differences": "климат: запрос «Холодный регион», кейс «не опубликовано»; удалённость: запрос «Обычный подъезд», кейс «не опубликовано» Локальность не переносится: официальная страница содержит географическое расхождение.",
+    "unknownOptions": 0
+  },
+  "factory": {
+    "active": "03Инженерия",
+    "facts": [
+      "25 000 м²",
+      "до 750",
+      "до 25"
+    ]
+  },
+  "lower": {
+    "active": "05 Эксплуатация",
+    "tabs": 5
+  },
+  "reducedMotion": {
+    "heroStage": 3,
+    "heroPosition": "relative",
+    "assemblyPosition": "relative",
+    "routeAnimationDuration": "1e-05s",
+    "lowerAnimation": "none",
+    "motionPreference": true
+  },
+  "performance": {
+    "navigation": {
+      "domContentLoaded": 519.3000000007451,
+      "loadEvent": 703.3999999985099,
+      "responseEnd": 71.39999999850988,
+      "transferSize": 162701
+    },
+    "resources": 147,
+    "transferredBytes": 6438996,
+    "decodedBodyBytes": 6396096,
+    "images": 26
+  },
+  "defects": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  }
+}
