@@ -1,0 +1,801 @@
+{
+  "generatedAt": "2026-08-26T01:15:45.960Z",
+  "origin": "http://127.0.0.1:5175",
+  "pass": true,
+  "assertions": [],
+  "runtimeDefects": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "expectedFailureSignals": [
+    "forms: Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "forms: Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)",
+    "forms: Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)"
+  ],
+  "results": {
+    "routes": {
+      "/modulnye-zdaniya/": {
+        "status": 200
+      },
+      "/vahtovye-poselki/": {
+        "status": 200
+      },
+      "/modulnye-ofisy-abk/": {
+        "status": 200
+      },
+      "/modulnye-obshchezhitiya/": {
+        "status": 200
+      }
+    },
+    "viewports": {
+      "desktop1440": {
+        "/modulnye-zdaniya/": {
+          "title": "Модульные здания под ключ по России — Ависта Модуль",
+          "description": "Проектирование, производство, инженерия, доставка, монтаж и комплектация модульных зданий под одним договором.",
+          "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные здания под ключ по России — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-general-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 815.40625,
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 9637
+        },
+        "/vahtovye-poselki/": {
+          "title": "Вахтовые поселки под ключ по России — Ависта Модуль",
+          "description": "Проектирование и запуск вахтовых поселков: общежития, столовые, АБК, БПК, медпункты, инженерия, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/vahtovye-poselki/",
+          "robots": "index,follow",
+          "ogTitle": "Вахтовые поселки под ключ по России — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-shift-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Вахтовый поселок под ключ — от проекта до заселения.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 696.15625,
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 9126
+        },
+        "/modulnye-ofisy-abk/": {
+          "title": "Модульные офисы и АБК под ключ — Ависта Модуль",
+          "description": "Модульные офисы и административно-бытовые комплексы: планировка, производство, инженерия, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/modulnye-ofisy-abk/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные офисы и АБК под ключ — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-office-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Модульные офисы и АБК под задачу, численность и регион.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 682.765625,
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 6635
+        },
+        "/modulnye-obshchezhitiya/": {
+          "title": "Модульные общежития под ключ — Ависта Модуль",
+          "description": "Модульные общежития для персонала: вместимость, планировка, инженерия, мебель, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/modulnye-obshchezhitiya/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные общежития под ключ — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-dormitory-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Модульное общежитие с инженерией, мебелью и монтажом.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 719.421875,
+          "width": 1440,
+          "scrollWidth": 1440,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 6781
+        }
+      },
+      "tablet768": {
+        "/modulnye-zdaniya/": {
+          "title": "Модульные здания под ключ по России — Ависта Модуль",
+          "description": "Проектирование, производство, инженерия, доставка, монтаж и комплектация модульных зданий под одним договором.",
+          "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные здания под ключ по России — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-general-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 743.40625,
+          "width": 768,
+          "scrollWidth": 768,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 9521
+        },
+        "/vahtovye-poselki/": {
+          "title": "Вахтовые поселки под ключ по России — Ависта Модуль",
+          "description": "Проектирование и запуск вахтовых поселков: общежития, столовые, АБК, БПК, медпункты, инженерия, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/vahtovye-poselki/",
+          "robots": "index,follow",
+          "ogTitle": "Вахтовые поселки под ключ по России — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-shift-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Вахтовый поселок под ключ — от проекта до заселения.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 680.09375,
+          "width": 768,
+          "scrollWidth": 768,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 9010
+        },
+        "/modulnye-ofisy-abk/": {
+          "title": "Модульные офисы и АБК под ключ — Ависта Модуль",
+          "description": "Модульные офисы и административно-бытовые комплексы: планировка, производство, инженерия, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/modulnye-ofisy-abk/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные офисы и АБК под ключ — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-office-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Модульные офисы и АБК под задачу, численность и регион.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 680.09375,
+          "width": 768,
+          "scrollWidth": 768,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 6519
+        },
+        "/modulnye-obshchezhitiya/": {
+          "title": "Модульные общежития под ключ — Ависта Модуль",
+          "description": "Модульные общежития для персонала: вместимость, планировка, инженерия, мебель, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/modulnye-obshchezhitiya/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные общежития под ключ — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-dormitory-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Модульное общежитие с инженерией, мебелью и монтажом.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 711.75,
+          "width": 768,
+          "scrollWidth": 768,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 6665
+        }
+      },
+      "mobile390": {
+        "/modulnye-zdaniya/": {
+          "title": "Модульные здания под ключ по России — Ависта Модуль",
+          "description": "Проектирование, производство, инженерия, доставка, монтаж и комплектация модульных зданий под одним договором.",
+          "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные здания под ключ по России — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-general-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 611.078125,
+          "width": 390,
+          "scrollWidth": 390,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 9521
+        },
+        "/vahtovye-poselki/": {
+          "title": "Вахтовые поселки под ключ по России — Ависта Модуль",
+          "description": "Проектирование и запуск вахтовых поселков: общежития, столовые, АБК, БПК, медпункты, инженерия, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/vahtovye-poselki/",
+          "robots": "index,follow",
+          "ogTitle": "Вахтовые поселки под ключ по России — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-shift-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Вахтовый поселок под ключ — от проекта до заселения.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 566.828125,
+          "width": 390,
+          "scrollWidth": 390,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 9010
+        },
+        "/modulnye-ofisy-abk/": {
+          "title": "Модульные офисы и АБК под ключ — Ависта Модуль",
+          "description": "Модульные офисы и административно-бытовые комплексы: планировка, производство, инженерия, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/modulnye-ofisy-abk/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные офисы и АБК под ключ — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-office-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Модульные офисы и АБК под задачу, численность и регион.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 557.03125,
+          "width": 390,
+          "scrollWidth": 390,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 6519
+        },
+        "/modulnye-obshchezhitiya/": {
+          "title": "Модульные общежития под ключ — Ависта Модуль",
+          "description": "Модульные общежития для персонала: вместимость, планировка, инженерия, мебель, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/modulnye-obshchezhitiya/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные общежития под ключ — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-dormitory-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Модульное общежитие с инженерией, мебелью и монтажом.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 566.828125,
+          "width": 390,
+          "scrollWidth": 390,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 6665
+        }
+      },
+      "mobile320": {
+        "/modulnye-zdaniya/": {
+          "title": "Модульные здания под ключ по России — Ависта Модуль",
+          "description": "Проектирование, производство, инженерия, доставка, монтаж и комплектация модульных зданий под одним договором.",
+          "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные здания под ключ по России — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-general-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 451.625,
+          "width": 320,
+          "scrollWidth": 320,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 9521
+        },
+        "/vahtovye-poselki/": {
+          "title": "Вахтовые поселки под ключ по России — Ависта Модуль",
+          "description": "Проектирование и запуск вахтовых поселков: общежития, столовые, АБК, БПК, медпункты, инженерия, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/vahtovye-poselki/",
+          "robots": "index,follow",
+          "ogTitle": "Вахтовые поселки под ключ по России — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-shift-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Вахтовый поселок под ключ — от проекта до заселения.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 475.71875,
+          "width": 320,
+          "scrollWidth": 320,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 9010
+        },
+        "/modulnye-ofisy-abk/": {
+          "title": "Модульные офисы и АБК под ключ — Ависта Модуль",
+          "description": "Модульные офисы и административно-бытовые комплексы: планировка, производство, инженерия, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/modulnye-ofisy-abk/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные офисы и АБК под ключ — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-office-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Модульные офисы и АБК под задачу, численность и регион.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 450.75,
+          "width": 320,
+          "scrollWidth": 320,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 6519
+        },
+        "/modulnye-obshchezhitiya/": {
+          "title": "Модульные общежития под ключ — Ависта Модуль",
+          "description": "Модульные общежития для персонала: вместимость, планировка, инженерия, мебель, доставка и монтаж.",
+          "canonical": "https://a-modul.ru/modulnye-obshchezhitiya/",
+          "robots": "index,follow",
+          "ogTitle": "Модульные общежития под ключ — Ависта Модуль",
+          "ogImage": "https://a-modul.ru/generated/a-modul-dormitory-og.jpg",
+          "structured": [
+            "Organization",
+            "ProfessionalService",
+            "Service",
+            "BreadcrumbList",
+            "FAQPage"
+          ],
+          "h1": "Модульное общежитие с инженерией, мебелью и монтажом.",
+          "h1Count": 1,
+          "h1Visible": true,
+          "ctaVisible": true,
+          "ctaTop": 470.734375,
+          "width": 320,
+          "scrollWidth": 320,
+          "overflowElements": [],
+          "brokenImages": [],
+          "intrinsicImageDefects": [],
+          "unlabeledControls": [],
+          "overlay": false,
+          "textLength": 6665
+        }
+      }
+    },
+    "variants": {
+      "/modulnye-zdaniya/?type=kpp": {
+        "status": 200,
+        "h1": "Модульный КПП под режим площадки и регион.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?type=stolovaya": {
+        "status": 200,
+        "h1": "Модульная столовая под численность и режим площадки.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?type=bpk": {
+        "status": 200,
+        "h1": "Модульный БПК под численность, эксплуатацию и регион.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?type=prorabskaya": {
+        "status": 200,
+        "h1": "Модульная прорабская под состав команды и площадку.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?type=office": {
+        "status": 200,
+        "h1": "Модульный офис под число рабочих мест и регион.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?type=abk": {
+        "status": 200,
+        "h1": "Модульный АБК под задачу, численность и регион.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?type=other": {
+        "status": 200,
+        "h1": "Соберём контур модульного объекта под задачу и регион.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?region=moskva": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?region=krasnoyarsk": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?region=ural": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?region=dalniy-vostok": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?region=sibir": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?region=kurgan": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?region=rossiya": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/vahtovye-poselki/?region=dalniy-vostok": {
+        "status": 200,
+        "h1": "Вахтовый поселок под ключ — от проекта до заселения.",
+        "canonical": "https://a-modul.ru/vahtovye-poselki/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-obshchezhitiya/?region=sibir": {
+        "status": 200,
+        "h1": "Модульное общежитие с инженерией, мебелью и монтажом.",
+        "canonical": "https://a-modul.ru/modulnye-obshchezhitiya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?mode=tender": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      },
+      "/modulnye-zdaniya/?mode=leasing": {
+        "status": 200,
+        "h1": "Спроектируем, произведём и запустим модульный объект в вашем регионе.",
+        "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+        "robots": "noindex,follow"
+      }
+    },
+    "forms": {
+      "standardResponse": {
+        "status": 201,
+        "body": "{\"ok\":true,\"code\":\"ACCEPTED\",\"reference\":\"AMD-20260826-FA3CF5BA\",\"message\":\"Заявка принята. Менеджер уточнит исходные данные. Предварительное КП подготовим в течение одного рабочего дня после получения необходимых вводных.\"}"
+      },
+      "standardSuccess": true,
+      "attribution": {
+        "utm_source": "qa",
+        "utm_campaign": "milestone-c",
+        "yclid": "qa-yclid",
+        "route": "/modulnye-zdaniya/",
+        "landing_variant": "/modulnye-zdaniya/"
+      },
+      "serverFailurePreservesState": true,
+      "tenderResponse": {
+        "status": 201,
+        "body": "{\"ok\":true,\"code\":\"ACCEPTED\",\"reference\":\"AMD-20260826-A0EFFE01\",\"message\":\"Заявка принята. Менеджер уточнит исходные данные. Предварительное КП подготовим в течение одного рабочего дня после получения необходимых вводных.\"}"
+      },
+      "tenderSuccess": true,
+      "poisonedAttributionSanitized": true,
+      "analyticsEvents": [
+        "page_view",
+        "hero_brief_start",
+        "tender_start",
+        "object_type_select",
+        "capacity_select",
+        "region_select",
+        "commissioning_date_select",
+        "hero_brief_complete",
+        "scroll_50",
+        "price_scope_open",
+        "scroll_90",
+        "configurator_start",
+        "configurator_complete",
+        "case_filter_change",
+        "case_open",
+        "logistics_map_start",
+        "logistics_route_complete",
+        "bim_interaction_start",
+        "bim_interaction_complete",
+        "production_sequence_start",
+        "production_sequence_complete",
+        "leasing_click",
+        "phone_click",
+        "email_click",
+        "form_start",
+        "form_validation_error",
+        "file_attach",
+        "form_submit_success",
+        "form_submit_error",
+        "tender_submit_success"
+      ],
+      "invalidPayloads": {
+        "standard": 422,
+        "tender": 422
+      }
+    },
+    "focusOrder": {
+      "desktop": {
+        "standard": {
+          "name": "objectType",
+          "inViewport": true,
+          "scrollY": 16395
+        },
+        "tender": {
+          "name": "company",
+          "inViewport": true,
+          "scrollY": 16394
+        },
+        "leasing": {
+          "name": "objectType",
+          "inViewport": true,
+          "scrollY": 16395
+        }
+      },
+      "mobile": {
+        "standard": {
+          "name": "objectType",
+          "inViewport": true,
+          "scrollY": 23132
+        },
+        "tender": {
+          "name": "company",
+          "inViewport": true,
+          "scrollY": 23164
+        },
+        "leasing": {
+          "name": "objectType",
+          "inViewport": true,
+          "scrollY": 23365
+        }
+      }
+    },
+    "motion": {
+      "hero": {
+        "start": 0,
+        "mid": 2,
+        "end": 3,
+        "pausedOffscreenAt": 1
+      },
+      "bim": {
+        "start": 0,
+        "mid": 3,
+        "end": 6,
+        "pausedOffscreenAt": 1
+      },
+      "factory": {
+        "frames": [
+          {
+            "name": "start",
+            "stage": 0,
+            "source": "/generated/a-modul-factory-metal-desktop.webp"
+          },
+          {
+            "name": "mid",
+            "stage": 3,
+            "source": "/generated/a-modul-factory-engineering-desktop.webp"
+          },
+          {
+            "name": "end",
+            "stage": 6,
+            "source": "/generated/a-modul-factory-shipment-desktop.webp"
+          }
+        ],
+        "controlledByUser": true,
+        "loop": false
+      }
+    },
+    "routeFinals": {
+      "desktop1440:/modulnye-zdaniya/": {
+        "count": 4,
+        "src": "/generated/a-modul-general-final-desktop.webp",
+        "currentSrc": "http://127.0.0.1:5175/generated/a-modul-general-final-desktop.avif",
+        "alt": "Визуализация завершённого модульного комплекса с благоустроенным двором и связанными входами",
+        "stage": "3"
+      },
+      "desktop1440:/vahtovye-poselki/": {
+        "count": 5,
+        "src": "/generated/a-modul-shift-final-desktop.webp",
+        "currentSrc": "http://127.0.0.1:5175/generated/a-modul-shift-final-desktop.avif",
+        "alt": "Визуализация завершённого вахтового поселка с крытыми переходами и благоустроенными маршрутами",
+        "stage": "4"
+      },
+      "desktop1440:/modulnye-ofisy-abk/": {
+        "count": 3,
+        "src": "/generated/a-modul-office-final-desktop.webp",
+        "currentSrc": "http://127.0.0.1:5175/generated/a-modul-office-final-desktop.avif",
+        "alt": "Визуализация завершённого модульного АБК с доступным входом и благоустроенной площадкой",
+        "stage": "2"
+      },
+      "desktop1440:/modulnye-obshchezhitiya/": {
+        "count": 3,
+        "src": "/generated/a-modul-dormitory-final-desktop.webp",
+        "currentSrc": "http://127.0.0.1:5175/generated/a-modul-dormitory-final-desktop.avif",
+        "alt": "Визуализация завершённого модульного общежития с крытыми переходами и благоустроенным двором",
+        "stage": "2"
+      },
+      "mobile390:/modulnye-zdaniya/": {
+        "count": 4,
+        "src": "/generated/a-modul-general-final-desktop.webp",
+        "currentSrc": "http://127.0.0.1:5175/generated/a-modul-general-final-mobile.avif",
+        "alt": "Визуализация завершённого модульного комплекса с благоустроенным двором и связанными входами",
+        "stage": "3"
+      },
+      "mobile390:/vahtovye-poselki/": {
+        "count": 5,
+        "src": "/generated/a-modul-shift-final-desktop.webp",
+        "currentSrc": "http://127.0.0.1:5175/generated/a-modul-shift-final-mobile.avif",
+        "alt": "Визуализация завершённого вахтового поселка с крытыми переходами и благоустроенными маршрутами",
+        "stage": "4"
+      },
+      "mobile390:/modulnye-ofisy-abk/": {
+        "count": 3,
+        "src": "/generated/a-modul-office-final-desktop.webp",
+        "currentSrc": "http://127.0.0.1:5175/generated/a-modul-office-final-mobile.avif",
+        "alt": "Визуализация завершённого модульного АБК с доступным входом и благоустроенной площадкой",
+        "stage": "2"
+      },
+      "mobile390:/modulnye-obshchezhitiya/": {
+        "count": 3,
+        "src": "/generated/a-modul-dormitory-final-desktop.webp",
+        "currentSrc": "http://127.0.0.1:5175/generated/a-modul-dormitory-final-mobile.avif",
+        "alt": "Визуализация завершённого модульного общежития с крытыми переходами и благоустроенным двором",
+        "stage": "2"
+      }
+    },
+    "seo": {
+      "sitemapLocs": [
+        "https://a-modul.ru/modulnye-zdaniya/",
+        "https://a-modul.ru/vahtovye-poselki/",
+        "https://a-modul.ru/modulnye-ofisy-abk/",
+        "https://a-modul.ru/modulnye-obshchezhitiya/"
+      ]
+    },
+    "reducedMotion": {
+      "scrollBehavior": "auto",
+      "transition": "1e-05s",
+      "heroStage": "3",
+      "bimStage": "6"
+    }
+  }
+}

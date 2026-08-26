@@ -1,0 +1,372 @@
+{
+  "generatedAt": "2026-08-26T01:03:18.973Z",
+  "origin": "http://127.0.0.1:4175",
+  "supplementalViewports": {
+    "mobile360": {
+      "/modulnye-zdaniya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/vahtovye-poselki/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-ofisy-abk/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-obshchezhitiya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      }
+    },
+    "mobile375": {
+      "/modulnye-zdaniya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/vahtovye-poselki/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-ofisy-abk/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-obshchezhitiya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      }
+    },
+    "mobile430": {
+      "/modulnye-zdaniya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 430,
+        "scrollWidth": 430,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/vahtovye-poselki/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 430,
+        "scrollWidth": 430,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-ofisy-abk/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 430,
+        "scrollWidth": 430,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-obshchezhitiya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 430,
+        "scrollWidth": 430,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      }
+    },
+    "tablet1024": {
+      "/modulnye-zdaniya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/vahtovye-poselki/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-ofisy-abk/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-obshchezhitiya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      }
+    },
+    "desktop1920": {
+      "/modulnye-zdaniya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 1920,
+        "scrollWidth": 1920,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/vahtovye-poselki/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 1920,
+        "scrollWidth": 1920,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-ofisy-abk/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 1920,
+        "scrollWidth": 1920,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      },
+      "/modulnye-obshchezhitiya/": {
+        "statusReady": true,
+        "h1Count": 1,
+        "h1Visible": true,
+        "ctaVisible": true,
+        "clientWidth": 1920,
+        "scrollWidth": 1920,
+        "brokenLoadedImages": [],
+        "intrinsicDefects": []
+      }
+    }
+  },
+  "accessibility": {
+    "duplicateIds": [],
+    "unlabeled": [],
+    "undersizedTargets": [],
+    "invalidImageAlternatives": [],
+    "menuClosed": true,
+    "focusReturned": true,
+    "landmarks": {
+      "header": 1,
+      "main": 1,
+      "footer": 1,
+      "nav": 1
+    },
+    "filePicker": {
+      "fileAccessibleName": "Исходные файлы — Выбрать файлы",
+      "pointerStatus": "pointer-check.pdf",
+      "keyboardStatus": "keyboard-check.pdf",
+      "focusState": {
+        "outlineStyle": "solid",
+        "outlineWidth": 3
+      }
+    }
+  },
+  "reducedMotion": {
+    "scrollBehavior": "auto",
+    "maxDurationMs": 0.01,
+    "heroStage": "3",
+    "bimStage": "6"
+  },
+  "performance": {
+    "methodology": "Three-run mobile 4G acceptance profile at native test-runner CPU, plus a disclosed 4x CPU diagnostic stress run. Release thresholds apply to the acceptance profile; stress data is preserved without reclassifying it as a field device measurement.",
+    "profile": {
+      "viewport": "390x844@2x",
+      "latencyMs": 150,
+      "downloadMbps": 1.6,
+      "uploadMbps": 0.75,
+      "cpuSlowdown": 1,
+      "trials": 3
+    },
+    "trials": [
+      {
+        "trial": 1,
+        "lcp": 1232,
+        "lcpElement": "<div class=\"hero__copy\"><p class=\"eyebrow\">Модульные здания под ключ по России</p> <h1 id=\"hero-title\">Спроектируем, произведём и запустим модульный объект в вашем регионе.</h1> <p class=\"hero__support\">От отдельного АБК до комплекса зданий",
+        "cls": 0.0010049276659415695,
+        "longTasks": [
+          88
+        ],
+        "fcp": 1128,
+        "ttfb": 6.699999988079071,
+        "transferBytes": 422251,
+        "resourceCount": 29,
+        "maxLongTask": 88,
+        "totalBlockingTime": 38,
+        "duplicateImageRequests": []
+      },
+      {
+        "trial": 2,
+        "lcp": 1196,
+        "lcpElement": "<div class=\"hero__copy\"><p class=\"eyebrow\">Модульные здания под ключ по России</p> <h1 id=\"hero-title\">Спроектируем, произведём и запустим модульный объект в вашем регионе.</h1> <p class=\"hero__support\">От отдельного АБК до комплекса зданий",
+        "cls": 0.0010049276659415695,
+        "longTasks": [
+          84
+        ],
+        "fcp": 1040,
+        "ttfb": 7.699999988079071,
+        "transferBytes": 422251,
+        "resourceCount": 29,
+        "maxLongTask": 84,
+        "totalBlockingTime": 34,
+        "duplicateImageRequests": []
+      },
+      {
+        "trial": 3,
+        "lcp": 1204,
+        "lcpElement": "<div class=\"hero__copy\"><p class=\"eyebrow\">Модульные здания под ключ по России</p> <h1 id=\"hero-title\">Спроектируем, произведём и запустим модульный объект в вашем регионе.</h1> <p class=\"hero__support\">От отдельного АБК до комплекса зданий",
+        "cls": 0.0010049276659415695,
+        "longTasks": [
+          86
+        ],
+        "fcp": 1048,
+        "ttfb": 9.300000011920929,
+        "transferBytes": 422251,
+        "resourceCount": 29,
+        "maxLongTask": 86,
+        "totalBlockingTime": 36,
+        "duplicateImageRequests": []
+      }
+    ],
+    "median": {
+      "lcp": 1204,
+      "cls": 0.0010049276659415695,
+      "fcp": 1048,
+      "ttfb": 7.699999988079071,
+      "totalBlockingTime": 36
+    },
+    "stress": {
+      "profile": {
+        "viewport": "390x844@2x",
+        "latencyMs": 150,
+        "downloadMbps": 1.6,
+        "uploadMbps": 0.75,
+        "cpuSlowdown": 4,
+        "trials": 1,
+        "diagnosticOnly": true
+      },
+      "trials": [
+        {
+          "trial": 1,
+          "lcp": 1772,
+          "lcpElement": "<div class=\"hero__copy\"><p class=\"eyebrow\">Модульные здания под ключ по России</p> <h1 id=\"hero-title\">Спроектируем, произведём и запустим модульный объект в вашем регионе.</h1> <p class=\"hero__support\">От отдельного АБК до комплекса зданий",
+          "cls": 0.0010049276659415695,
+          "longTasks": [
+            278,
+            157
+          ],
+          "fcp": 1732,
+          "ttfb": 9.300000011920929,
+          "transferBytes": 422251,
+          "resourceCount": 29,
+          "maxLongTask": 278,
+          "totalBlockingTime": 335,
+          "duplicateImageRequests": []
+        }
+      ]
+    }
+  },
+  "lazyBim": {
+    "firstBimAsset": "a-modul-general-hero-empty-site-mobile.avif",
+    "requestedBeforeBim": false,
+    "requestedAfterBim": true
+  },
+  "productionFormFailure": {
+    "message": "Заявка не отправлена.Приём заявок временно не настроен. Введённые данные сохранены — свяжитесь с нами по телефону или электронной почте.Номер попытки: AMD-20260826-C1A2A5EF",
+    "contactPreserved": true,
+    "fakeSuccessVisible": false,
+    "responseStatus": 503,
+    "expectedConsoleSignal": "Chromium logs the intentional 503 resource response; this scenario separately asserts no page error or failed transport."
+  },
+  "invalidPayloads": {
+    "standard": 422,
+    "tender": 422
+  },
+  "bodySizeLimit": {
+    "payloadMiB": 46,
+    "expectedStatus": 413,
+    "actualStatus": 413
+  },
+  "pass": true,
+  "assertions": [],
+  "runtimeDefects": {
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "pageErrors": [],
+    "failedRequests": []
+  }
+}

@@ -1,0 +1,61 @@
+Milestone D final deterministic commands
+Workspace: C:\Users\Admin\Desktop\lab-silence-a-modul-direct-v2
+Branch: feature/a-modul-direct-landing-v2
+
+$ npm run check:a-modul
+svelte-check found 0 errors and 0 warnings
+EXIT 0
+
+$ npm run lint:a-modul
+svelte-check found 0 errors and 0 warnings
+EXIT 0
+
+$ npm run test:a-modul
+RUN v4.1.11 C:/Users/Admin/Desktop/lab-silence-a-modul-direct-v2/apps/a-modul
+Test Files  5 passed (5)
+Tests       20 passed (20)
+Duration    2.88s
+EXIT 0
+
+$ npm run build:a-modul
+vite v8.2.1 built SSR and client environments
+200 SSR modules transformed; 204 client modules transformed
+primary CSS 64.77 kB (16.43 kB gzip)
+adapter-node completed; /api/leads entry 20.86 kB (6.62 kB gzip)
+Using @sveltejs/adapter-node — done
+EXIT 0
+
+$ node --check scripts/verify-a-modul-milestone-a.mjs
+EXIT 0
+$ node --check scripts/verify-a-modul-milestone-b.mjs
+EXIT 0
+$ node --check scripts/verify-a-modul-milestone-c.mjs
+EXIT 0
+$ node --check scripts/verify-a-modul-release.mjs
+EXIT 0
+$ node --check scripts/prepare-a-modul-r2-assets.mjs
+EXIT 0
+
+$ node scripts/verify-a-modul-release.mjs http://127.0.0.1:4175 milestone-d
+PASS true
+Assertions 0
+Runtime defects 0
+Median mobile-4G LCP 1204 ms
+Median CLS 0.0010049276659415695
+Median FCP 1048 ms
+Median TTFB 7.7 ms
+Median TBT 36 ms
+BODY_SIZE_LIMIT smoke 46 MiB -> 413
+File chooser pointer and keyboard activation PASS
+Generated 2026-08-26T01:03:18.973Z
+EXIT 0
+
+$ node scripts/verify-a-modul-milestone-c.mjs http://127.0.0.1:5175 milestone-d
+PASS true
+Assertions 0
+Runtime defects 0
+Factory states 0 -> 3 -> 6, distinct generated assets
+Route final states general 4/4, shift 5/5, office 3/3, dormitory 3/3 on desktop and mobile
+Reduced motion Hero 3 and BIM 6
+Generated 2026-08-26T01:15:45.960Z
+EXIT 0

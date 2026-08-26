@@ -1,0 +1,17 @@
+PASS
+
+# Conversion review — Slice 00, Cycle 1
+
+Inspected the live route `http://127.0.0.1:5175/modulnye-zdaniya/` in the native browser, including its rendered status copy and route map. Inspected the current desktop and mobile captures, start/mid/end and diff evidence, `playwright-trace.zip` inventory, `capture-results.json`, `TEST-RESULTS.md`, `DIFF-SUMMARY.md`, and the exact Slice 00 `SPEC.md`. Cross-checked the complete master specification with `docs/A-MODUL-SEARCH-INTENT.md`, `docs/A-MODUL-SOURCE-FACTS.md`, `docs/A-MODUL-CONTENT-TODO.md`, `docs/A-MODUL-IMAGE-BIBLE.md`, and `docs/A-MODUL-REVIEW-PROTOCOL.md`.
+
+The Slice 00 conversion foundation passes for the following concrete reasons:
+
+- Route priority is credible and traceable: shift/construction camps (39.7%), general modular buildings (25.4%), offices (12.4%), dormitories (8.3%), and ABK (5.5%) are mapped to the required four indexable routes, with offices and ABK deliberately consolidated into one relevant route. The plan correctly excludes broad low-ticket household `бытовка` traffic from the first test.
+- Query vocabulary is route-specific and commercially useful. Each route is tied to natural Russian demand language, while the shared modifier set covers production, construction, turnkey scope, manufacturer/factory, price/cost/calculation, ordering, project/planning, and region instead of relying on abstract brand language.
+- The central position is consistent across the plan and live audit surface: Avista is framed as controlling launch of the complete modular object, not merely selling a module. The planned response explicitly includes composition, scope, logistics logic, budget contour, missing inputs, and the next engineering step.
+- Region and type planning is bounded and safe for acquisition: the seven region values and the object-type values are explicit allowlists; region is planned as visible, server-rendered, preserved through forms/analytics, canonicalized to the base route, and excluded from sitemap/indexable duplicates. Type variants are similarly canonicalized and may carry relevant object/form/analytics context; `haski` remains disabled without a deliberate campaign decision.
+- The CTA contract is unambiguous: the primary one-day CTA is qualified as a preliminary proposal after receipt of basic inputs; major CTAs enter diagnosis; the tender CTA selects a distinct tender flow; and logistics has a contextual CTA. The query-to-decision sequence specifies the compact initial inputs and the handoff into a fuller brief without demanding fake engineering precision.
+- Commercial clarity is addressed through scope completeness rather than a universal square-metre price. The plan commits to answering price/cost intent, clarifying launch boundaries and missing inputs, comparing full object-launch scope, and avoiding unsupported prices, logistics quotes, exact module counts, or final-estimate promises.
+- Slice isolation is explicit and visible. The running page identifies itself as `SLICE 00 / SOURCE CONTROL`, says product screens follow only after the foundation is checked, and contains no product hero, mini-brief, CTA implementation, generated asset family, proof rail, or assembly motion belonging to Slice 01.
+
+No Slice 00 conversion defect was found that requires correction before the next gate. This verdict approves the planning foundation only; it does not approve the future product hero, route implementations, forms, or interactions.

@@ -1,0 +1,174 @@
+{
+  "slice": "slice-00",
+  "target": "http://127.0.0.1:5175/modulnye-zdaniya/",
+  "capturedAt": "2026-08-25T12:13:40.305Z",
+  "desktop": {
+    "title": "Ависта Модуль — подготовка Direct-системы",
+    "h1Count": 1,
+    "landmarks": {
+      "header": 1,
+      "main": 1,
+      "footer": 1
+    },
+    "viewportWidth": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "documentHeight": 1836,
+    "midScrollY": 418,
+    "endScrollY": 836,
+    "keyboard": {
+      "skipFocus": {
+        "activeElement": "skip-link",
+        "hash": ""
+      },
+      "skipTarget": {
+        "activeElement": "main",
+        "hash": "#main",
+        "scrollY": 80
+      },
+      "wordmarkFocus": {
+        "activeElement": "wordmark",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(255, 77, 126)",
+        "outlineOffset": "4px"
+      }
+    },
+    "contrast": [
+      {
+        "selector": ".audit-copy .eyebrow",
+        "foreground": "rgb(255, 77, 126)",
+        "background": "rgb(24, 23, 27)",
+        "ratio": 5.619006167026523
+      },
+      {
+        "selector": ".route-map li span",
+        "foreground": "rgb(73, 45, 125)",
+        "background": "rgb(216, 208, 223)",
+        "ratio": 7.165853454866613
+      },
+      {
+        "selector": ".source-strip span",
+        "foreground": "rgb(164, 157, 168)",
+        "background": "rgb(24, 23, 27)",
+        "ratio": 6.767386092120612
+      },
+      {
+        "selector": ".principle .eyebrow",
+        "foreground": "rgb(255, 141, 174)",
+        "background": "rgb(73, 45, 125)",
+        "ratio": 4.948455093702374
+      },
+      {
+        "selector": "footer",
+        "foreground": "rgb(164, 157, 168)",
+        "background": "rgb(24, 23, 27)",
+        "ratio": 6.767386092120612
+      }
+    ]
+  },
+  "mobile": {
+    "viewportWidth": 390,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "documentHeight": 2052,
+    "h1": {
+      "clientWidth": 335,
+      "scrollWidth": 335
+    },
+    "sourceCells": [
+      {
+        "index": 0,
+        "clientWidth": 194,
+        "scrollWidth": 194
+      },
+      {
+        "index": 1,
+        "clientWidth": 195,
+        "scrollWidth": 195
+      },
+      {
+        "index": 2,
+        "clientWidth": 194,
+        "scrollWidth": 194
+      },
+      {
+        "index": 3,
+        "clientWidth": 194,
+        "scrollWidth": 194
+      }
+    ],
+    "minInteractiveTarget": {
+      "tag": "A",
+      "width": 101.84375,
+      "height": 44
+    }
+  },
+  "mobile320": {
+    "viewportWidth": 320,
+    "clientWidth": 320,
+    "scrollWidth": 320,
+    "h1": {
+      "clientWidth": 275,
+      "scrollWidth": 275
+    },
+    "sourceCells": [
+      {
+        "index": 0,
+        "clientWidth": 320,
+        "scrollWidth": 320
+      },
+      {
+        "index": 1,
+        "clientWidth": 320,
+        "scrollWidth": 320
+      },
+      {
+        "index": 2,
+        "clientWidth": 320,
+        "scrollWidth": 320
+      },
+      {
+        "index": 3,
+        "clientWidth": 320,
+        "scrollWidth": 320
+      }
+    ]
+  },
+  "classicScrollbarClient305": {
+    "viewportWidth": 305,
+    "clientWidth": 305,
+    "scrollWidth": 305,
+    "h1": {
+      "clientWidth": 262,
+      "scrollWidth": 262
+    },
+    "sourceCells": [
+      {
+        "index": 0,
+        "clientWidth": 305,
+        "scrollWidth": 305
+      },
+      {
+        "index": 1,
+        "clientWidth": 305,
+        "scrollWidth": 305
+      },
+      {
+        "index": 2,
+        "clientWidth": 305,
+        "scrollWidth": 305
+      },
+      {
+        "index": 3,
+        "clientWidth": 305,
+        "scrollWidth": 305
+      }
+    ]
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  }
+}
