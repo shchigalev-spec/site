@@ -1,94 +1,127 @@
-import { createHash } from 'node:crypto';
-import { readFile, writeFile } from 'node:fs/promises';
-import { dirname, resolve } from 'node:path';
+import { build } from 'vite';
+import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { dirname, extname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const sourceDirectory = resolve(repositoryRoot, 'apps/a-modul/standalone/src');
-const outputPath = resolve(repositoryRoot, 'apps/a-modul/standalone/a-modul-direct.html');
+const appRoot = join(repositoryRoot, 'apps', 'a-modul');
+const buildDirectory = join(appRoot, '.standalone-build');
+const outputFile = join(appRoot, 'standalone', 'a-modul-direct.html');
+const configFile = join(appRoot, 'vite.standalone.config.ts');
 
-const textSources = {
-  INLINE_CSS: resolve(sourceDirectory, 'styles.css'),
-  INLINE_JS: resolve(sourceDirectory, 'app.js')
+const mimeTypes = {
+  '.avif': 'image/avif',
+  '.webp': 'image/webp',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.woff2': 'font/woff2'
 };
 
-const binarySources = {
-  FONT_GEOLOGICA_CYRILLIC: ['font/woff2', 'node_modules/@fontsource/geologica/files/geologica-cyrillic-500-normal.woff2'],
-  FONT_GEOLOGICA_LATIN: ['font/woff2', 'node_modules/@fontsource/geologica/files/geologica-latin-500-normal.woff2'],
-  FONT_ONEST_CYRILLIC_400: ['font/woff2', 'node_modules/@fontsource/onest/files/onest-cyrillic-400-normal.woff2'],
-  FONT_ONEST_LATIN_400: ['font/woff2', 'node_modules/@fontsource/onest/files/onest-latin-400-normal.woff2'],
-  FONT_ONEST_CYRILLIC_600: ['font/woff2', 'node_modules/@fontsource/onest/files/onest-cyrillic-600-normal.woff2'],
-  FONT_ONEST_LATIN_600: ['font/woff2', 'node_modules/@fontsource/onest/files/onest-latin-600-normal.woff2'],
-  FONT_MONO_CYRILLIC: ['font/woff2', 'node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-cyrillic-500-normal.woff2'],
-  FONT_MONO_LATIN: ['font/woff2', 'node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2'],
-  GENERAL_HERO: ['image/avif', 'apps/a-modul/static/generated/a-modul-general-hero-operational-object-desktop.avif'],
-  GENERAL_EMPTY: ['image/avif', 'apps/a-modul/static/generated/a-modul-general-hero-empty-site-desktop.avif'],
-  GENERAL_PARTIAL: ['image/avif', 'apps/a-modul/static/generated/a-modul-general-hero-partial-settlement-desktop.avif'],
-  GENERAL_FINAL: ['image/avif', 'apps/a-modul/static/generated/a-modul-general-final-desktop.avif'],
-  SHIFT_HERO: ['image/avif', 'apps/a-modul/static/generated/a-modul-shift-hero-operational-camp-desktop.avif'],
-  SHIFT_FINAL: ['image/avif', 'apps/a-modul/static/generated/a-modul-shift-final-desktop.avif'],
-  OFFICE_HERO: ['image/avif', 'apps/a-modul/static/generated/a-modul-office-hero-desktop.avif'],
-  OFFICE_FINAL: ['image/avif', 'apps/a-modul/static/generated/a-modul-office-final-desktop.avif'],
-  DORM_HERO: ['image/avif', 'apps/a-modul/static/generated/a-modul-dormitory-hero-desktop.avif'],
-  DORM_FINAL: ['image/avif', 'apps/a-modul/static/generated/a-modul-dormitory-final-desktop.avif'],
-  GENERAL_CASE: ['image/avif', 'apps/a-modul/static/generated/a-modul-general-case-desktop.avif'],
-  LOGISTICS_ROAD: ['image/avif', 'apps/a-modul/static/generated/a-modul-logistics-road-desktop.avif'],
-  LOGISTICS_RAIL: ['image/avif', 'apps/a-modul/static/generated/a-modul-logistics-rail-desktop.avif'],
-  LOGISTICS_SEA: ['image/avif', 'apps/a-modul/static/generated/a-modul-logistics-sea-desktop.avif'],
-  LOGISTICS_WINTER: ['image/avif', 'apps/a-modul/static/generated/a-modul-logistics-winter-road-desktop.avif'],
-  FACTORY_METAL: ['image/avif', 'apps/a-modul/static/generated/a-modul-factory-metal-desktop.avif'],
-  FACTORY_FRAME: ['image/avif', 'apps/a-modul/static/generated/a-modul-factory-frame-desktop.avif'],
-  FACTORY_ENVELOPE: ['image/avif', 'apps/a-modul/static/generated/a-modul-factory-envelope-desktop.avif'],
-  FACTORY_ENGINEERING: ['image/avif', 'apps/a-modul/static/generated/a-modul-factory-engineering-desktop.avif'],
-  FACTORY_FINISHING: ['image/avif', 'apps/a-modul/static/generated/a-modul-factory-finishing-desktop.avif'],
-  FACTORY_CONTROL: ['image/avif', 'apps/a-modul/static/generated/a-modul-factory-control-desktop.avif'],
-  FACTORY_SHIPMENT: ['image/avif', 'apps/a-modul/static/generated/a-modul-factory-shipment-desktop.avif']
+async function collectFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const absolute = join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...await collectFiles(absolute));
+    else files.push(absolute);
+  }
+  return files;
+}
+
+async function createAssetMap() {
+  const roots = [
+    { directory: join(appRoot, 'static', 'generated'), prefix: '/generated' },
+    { directory: join(appRoot, 'static', 'brand'), prefix: '/brand' }
+  ];
+  const map = {};
+  for (const root of roots) {
+    for (const file of await collectFiles(root.directory)) {
+      const extension = extname(file).toLowerCase();
+      const mime = mimeTypes[extension];
+      if (!mime) continue;
+      const key = `${root.prefix}/${relative(root.directory, file).replaceAll('\\', '/')}`;
+      map[key] = `data:${mime};base64,${(await readFile(file)).toString('base64')}`;
+    }
+  }
+  return map;
+}
+
+function findTag(html, pattern, label) {
+  const match = html.match(pattern);
+  if (!match) throw new Error(`Standalone build: ${label} not found in Vite output.`);
+  return match;
+}
+
+function builtFile(webPath) {
+  return join(buildDirectory, webPath.replace(/^\.\//, '').replace(/^\//, ''));
+}
+
+function assetRuntime(assetMap) {
+  const serialized = JSON.stringify(assetMap).replaceAll('</script', '<\\/script');
+  return `
+const __A_MODUL_OFFLINE_ASSETS__ = Object.freeze(${serialized});
+const __aModulResolveAsset = (value) => typeof value === 'string' && __A_MODUL_OFFLINE_ASSETS__[value] ? __A_MODUL_OFFLINE_ASSETS__[value] : value;
+const __aModulSetAttribute = Element.prototype.setAttribute;
+Element.prototype.setAttribute = function(name, value) {
+  return __aModulSetAttribute.call(this, name, name === 'src' || name === 'srcset' ? __aModulResolveAsset(String(value)) : value);
 };
-
-let output = await readFile(resolve(sourceDirectory, 'index.html'), 'utf8');
-
-for (const [token, path] of Object.entries(textSources)) {
-  output = output.replaceAll(`{{${token}}}`, await readFile(path, 'utf8'));
+for (const [prototype, property] of [[HTMLImageElement.prototype, 'src'], [HTMLImageElement.prototype, 'srcset'], [HTMLSourceElement.prototype, 'srcset']]) {
+  const descriptor = Object.getOwnPropertyDescriptor(prototype, property);
+  if (!descriptor?.set || !descriptor.get) continue;
+  Object.defineProperty(prototype, property, {
+    configurable: descriptor.configurable,
+    enumerable: descriptor.enumerable,
+    get: descriptor.get,
+    set(value) { descriptor.set.call(this, __aModulResolveAsset(String(value))); }
+  });
+}
+const __aModulHydrateAssets = (root) => {
+  if (!(root instanceof Element || root instanceof Document)) return;
+  for (const element of root.querySelectorAll('[src], [srcset]')) {
+    for (const attribute of ['src', 'srcset']) {
+      const value = element.getAttribute(attribute);
+      const resolved = __aModulResolveAsset(value);
+      if (resolved !== value) __aModulSetAttribute.call(element, attribute, resolved);
+    }
+  }
+};
+new MutationObserver((records) => {
+  for (const record of records) for (const node of record.addedNodes) if (node instanceof Element) {
+    __aModulHydrateAssets(node);
+    for (const attribute of ['src', 'srcset']) {
+      const value = node.getAttribute(attribute);
+      const resolved = __aModulResolveAsset(value);
+      if (resolved !== value) __aModulSetAttribute.call(node, attribute, resolved);
+    }
+  }
+}).observe(document.documentElement, { childList: true, subtree: true });
+`;
 }
 
-for (const [token, [mimeType, relativePath]] of Object.entries(binarySources)) {
-  const bytes = await readFile(resolve(repositoryRoot, relativePath));
-  const dataUrl = `data:${mimeType};base64,${bytes.toString('base64')}`;
-  output = output.replaceAll(`{{${token}}}`, dataUrl);
-}
+await build({ configFile });
 
-const unresolvedTokens = [...output.matchAll(/{{[A-Z0-9_]+}}/g)].map((match) => match[0]);
-if (unresolvedTokens.length > 0) {
-  throw new Error(`Unresolved standalone tokens: ${[...new Set(unresolvedTokens)].join(', ')}`);
-}
+let html = await readFile(join(buildDirectory, 'index.html'), 'utf8');
+const scriptMatch = findTag(html, /<script\b[^>]*type="module"[^>]*src="([^"]+)"[^>]*><\/script>/i, 'module script');
+const styleMatch = findTag(html, /<link\b[^>]*rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/i, 'stylesheet');
+const javascript = await readFile(builtFile(scriptMatch[1]), 'utf8');
+let css = await readFile(builtFile(styleMatch[1]), 'utf8');
+const assetMap = await createAssetMap();
+const javascriptLoader = `(0,eval)(${JSON.stringify(javascript.trim()).replaceAll('</script', '<\\/script')});`;
 
-if (/<script\s+[^>]*src=|<link\s+[^>]*rel=["']stylesheet|url\(["']?https?:/i.test(output)) {
-  throw new Error('Standalone output contains a runtime stylesheet, script, or CSS URL dependency.');
-}
+css = css.replace(/\/(?:generated|brand)\/[A-Za-z0-9_./-]+/g, (path) => assetMap[path] ?? path);
+html = html.replace(styleMatch[0], `<style>${css.trim().replaceAll('</style', '<\\/style')}</style>`);
+html = html.replace(scriptMatch[0], `<script>${assetRuntime(assetMap).trim()}</script><script>${javascriptLoader}</script>`);
+html = html.replace(/<link\b[^>]*rel="modulepreload"[^>]*>/gi, '');
 
-if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/.test(output) || /<form\s+[^>]*action=/i.test(output)) {
-  throw new Error('Standalone output contains a network API or form action.');
-}
+if (/\b(?:src|href)="\.?\/assets\//.test(html)) throw new Error('Standalone build still references emitted Vite assets.');
+if (!html.includes('data:image/avif;base64,') || !html.includes('data:font/woff2;base64,')) throw new Error('Standalone build did not inline visual assets or fonts.');
+if (!html.includes('aModulStandalone')) throw new Error('Standalone application marker is missing from bundle.');
 
-const requiredInteractionMarkers = [
-  'data-route="general"',
-  'id="mini-brief"',
-  'id="configurator-form"',
-  'data-logistics="road"',
-  'data-factory="6"',
-  'id="offline-lead-form"',
-  "document.documentElement.dataset.standalone = 'ready'"
-];
-for (const marker of requiredInteractionMarkers) {
-  if (!output.includes(marker)) throw new Error(`Missing standalone interaction marker: ${marker}`);
-}
+await mkdir(dirname(outputFile), { recursive: true });
+await writeFile(outputFile, html);
+await rm(buildDirectory, { recursive: true, force: true });
 
-await writeFile(outputPath, output, 'utf8');
-
-const outputBytes = Buffer.byteLength(output);
-const hash = createHash('sha256').update(output).digest('hex');
-console.log(`Standalone HTML: ${outputPath}`);
-console.log(`Bytes: ${outputBytes}`);
-console.log(`SHA-256: ${hash}`);
-console.log(`Embedded AVIF images: ${(output.match(/data:image\/avif;base64,/g) ?? []).length}`);
-console.log(`Embedded WOFF2 fonts: ${(output.match(/data:font\/woff2;base64,/g) ?? []).length}`);
+const megabytes = (Buffer.byteLength(html) / 1024 / 1024).toFixed(2);
+console.log(`Standalone A-Modul built: ${outputFile} (${megabytes} MiB, ${Object.keys(assetMap).length} embedded assets).`);

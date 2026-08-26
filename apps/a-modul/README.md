@@ -30,7 +30,7 @@ npm --prefix apps/a-modul run build
 
 ## Standalone HTML
 
-Run `npm run build:a-modul:standalone` from the repository root. The generated `standalone/a-modul-direct.html` is a single self-contained file with inline CSS, JavaScript, fonts, and Codex-generated AVIF artwork. It opens directly from the filesystem without a local server or internet connection.
+Run `npm run build:a-modul:standalone` from the repository root. The generated `apps/a-modul/standalone/a-modul-direct.html` is a single self-contained copy of the general local route, built from the same Svelte components and CSS with inline JavaScript, fonts, and Codex-generated artwork. It opens directly from the filesystem without a local server or internet connection.
 
 The standalone lead form is intentionally an offline demonstration: it validates locally and never reports a CRM success or transmits entered data.
 
