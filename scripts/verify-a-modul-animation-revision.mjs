@@ -66,14 +66,13 @@ await page.waitForTimeout(140);
 const seismicAuto = await page.evaluate(() => ({
   active: document.querySelector('#seismic')?.classList.contains('is-active') ?? false,
   signalAnimation: getComputedStyle(document.querySelector('.seismic-proof__signal svg')).animationName,
-  copyAnimation: getComputedStyle(document.querySelector('.seismic-proof__copy')).animationName
+  copyAnimation: getComputedStyle(document.querySelector('.seismic-proof__copy')).animationName,
+  iterationCount: getComputedStyle(document.querySelector('.seismic-proof__copy')).animationIterationCount,
+  replayButtons: document.querySelectorAll('.seismic-proof__replay').length
 }));
-await page.waitForTimeout(1100);
-await page.getByRole('button', { name: 'Повторить толчок' }).click();
-await page.waitForTimeout(120);
-const replayStart = await page.evaluate(() => [...document.querySelectorAll('#seismic *')].flatMap((element) => element.getAnimations()).map((animation) => Number(animation.currentTime ?? 0)));
+const quakeStart = await page.evaluate(() => [...document.querySelectorAll('#seismic *')].flatMap((element) => element.getAnimations()).map((animation) => Number(animation.currentTime ?? 0)));
 await page.waitForTimeout(220);
-const replayAdvance = await page.evaluate(() => [...document.querySelectorAll('#seismic *')].flatMap((element) => element.getAnimations()).map((animation) => Number(animation.currentTime ?? 0)));
+const quakeAdvance = await page.evaluate(() => [...document.querySelectorAll('#seismic *')].flatMap((element) => element.getAnimations()).map((animation) => Number(animation.currentTime ?? 0)));
 await page.locator('#seismic').screenshot({ path: resolve(output, 'seismic-quake.png') });
 
 const pageFacts = await page.evaluate(() => ({
@@ -93,24 +92,24 @@ const reducedMotion = await reducedPage.evaluate(() => ({
   heroStage: Number(document.querySelector('.assembly')?.getAttribute('data-stage')),
   bimStage: Number(document.querySelector('.bim__sequence')?.getAttribute('data-stage')),
   quakeActive: document.querySelector('#seismic')?.classList.contains('is-active') ?? false,
-  replayDisabled: document.querySelector('.seismic-proof__replay')?.hasAttribute('disabled') ?? false
+  replayButtons: document.querySelectorAll('.seismic-proof__replay').length
 }));
 await reducedPage.screenshot({ path: resolve(output, 'reduced-motion-static.png'), fullPage: false });
 await reducedContext.close();
 await browser.close();
 
-const results = { capturedAt: new Date().toISOString(), heroRange, hero, bimInitial, bimAfterClick, bimAfterWait, bimButton, seismicAuto, replayStart, replayAdvance, pageFacts, reducedMotion, defects };
+const results = { capturedAt: new Date().toISOString(), heroRange, hero, bimInitial, bimAfterClick, bimAfterWait, bimButton, seismicAuto, quakeStart, quakeAdvance, pageFacts, reducedMotion, defects };
 await writeFile(resolve(output, 'qa-results.json'), `${JSON.stringify(results, null, 2)}\n`, 'utf8');
 process.stdout.write(`${JSON.stringify(results, null, 2)}\n`);
 
 const opacityValid = Object.values(hero).every((state) => state.opacities.every((value) => value >= 0 && value <= 1) && state.opacities.filter((value) => value > .001).length <= 2 && state.transforms.every((value) => value === 'none'))
   && hero.start.opacities[0] === 1 && hero.finish.opacities[3] === 1;
-const replayAdvances = replayStart.length > 0 && replayAdvance.some((value, index) => value > (replayStart[index] ?? 0));
+const quakeAdvances = quakeStart.length > 0 && quakeAdvance.some((value, index) => value > (quakeStart[index] ?? 0));
 const failed = !opacityValid
   || hero.start.stage !== 0 || hero.finish.stage !== 3
   || bimInitial !== 0 || bimAfterClick !== 1 || bimAfterWait !== 1 || !bimButton.includes('Следующий этап')
-  || !seismicAuto.active || seismicAuto.signalAnimation !== 'quake-shock' || seismicAuto.copyAnimation !== 'quake-copy' || !replayAdvances
+  || !seismicAuto.active || seismicAuto.signalAnimation !== 'quake-shock' || seismicAuto.copyAnimation !== 'quake-copy' || seismicAuto.iterationCount !== 'infinite' || seismicAuto.replayButtons !== 0 || !quakeAdvances
   || pageFacts.externalMainSiteLinks !== 0 || pageFacts.horizontalOverflow
-  || !reducedMotion.preference || reducedMotion.heroStage !== 3 || reducedMotion.bimStage !== 6 || reducedMotion.quakeActive || !reducedMotion.replayDisabled
+  || !reducedMotion.preference || reducedMotion.heroStage !== 3 || reducedMotion.bimStage !== 6 || reducedMotion.quakeActive || reducedMotion.replayButtons !== 0
   || Object.values(defects).some((items) => items.length > 0);
 if (failed) process.exitCode = 1;

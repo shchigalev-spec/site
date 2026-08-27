@@ -6,20 +6,6 @@
   let seismicSection = $state<HTMLElement>();
   let quakeActive = $state(false);
   let reducedMotion = $state(false);
-  let hasPlayed = $state(false);
-  let restartFrame = 0;
-
-  function triggerQuake() {
-    if (reducedMotion) return;
-    quakeActive = false;
-    if (restartFrame) window.cancelAnimationFrame(restartFrame);
-    restartFrame = window.requestAnimationFrame(() => {
-      restartFrame = window.requestAnimationFrame(() => {
-        quakeActive = true;
-        hasPlayed = true;
-      });
-    });
-  }
 
   onMount(() => {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -31,14 +17,13 @@
     preference.addEventListener('change', syncPreference);
 
     const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting) && !hasPlayed) triggerQuake();
+      quakeActive = !reducedMotion && entries.some((entry) => entry.isIntersecting);
     }, { threshold: .45 });
     if (seismicSection) observer.observe(seismicSection);
 
     return () => {
       preference.removeEventListener('change', syncPreference);
       observer.disconnect();
-      if (restartFrame) window.cancelAnimationFrame(restartFrame);
     };
   });
 </script>
@@ -88,7 +73,6 @@
     <p class="eyebrow">Сейсмическое доказательство / опубликованный факт</p>
     <h2 id="seismic-title">Объекты «Ависты» на Камчатке выдержали землетрясение магнитудой 8,8 без разрушений.</h2>
     <p>Сейсмическую активность региона учитываем на этапе проектирования.</p>
-    <button class="seismic-proof__replay" type="button" onclick={triggerQuake} disabled={reducedMotion}>{reducedMotion ? 'Анимация отключена' : 'Повторить толчок'}<span aria-hidden="true">↯</span></button>
     <span>Факт относится к опубликованным объектам на Камчатке и не заменяет расчёт для новой площадки.</span>
   </div>
 </section>

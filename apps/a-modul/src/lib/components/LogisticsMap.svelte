@@ -116,7 +116,6 @@
       <div class="logistics__map-meta">
         <span>Границы субъектов сохранены</span>
         <span>Линия — предварительная связка, не маршрут</span>
-        <a href="https://commons.wikimedia.org/wiki/File:Map_of_federal_subjects_of_Russian_Federation.svg" target="_blank" rel="noreferrer">Карта: CC BY-SA 3.0</a>
       </div>
     </div>
 
