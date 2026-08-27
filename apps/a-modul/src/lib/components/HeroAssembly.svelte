@@ -8,6 +8,16 @@
     { label: 'Запуск', detail: 'Инженерия, стыковка и готовый объект в эксплуатации', position: 0.94, image: 'operational' }
   ] as const;
 
+  const stakePoints = [
+    { x: 412, y: 706 }, { x: 612, y: 616 }, { x: 812, y: 526 }, { x: 1012, y: 436 }, { x: 1214, y: 348 },
+    { x: 522, y: 760 }, { x: 720, y: 671 }, { x: 920, y: 582 }, { x: 1118, y: 494 }, { x: 1312, y: 408 }
+  ] as const;
+
+  const stakeCords = [
+    'M412 706 612 616 812 526 1012 436 1214 348 1312 408 1118 494 920 582 720 671 522 760Z',
+    'M612 616 720 671', 'M812 526 920 582', 'M1012 436 1118 494'
+  ] as const;
+
   const mobileStageIndexes = [0, 2, 3];
   let activeStage = $state(0);
   let progress = $state(0);
@@ -123,11 +133,18 @@
       </picture>
     {/each}
 
-    <svg class="assembly__technical" class:assembly__technical--complete={activeStage === 3} viewBox="0 0 1600 900" aria-hidden="true">
-      <g class="technical__datum">
-        <path d="M412 706 1214 348" />
-        <path d="M522 760 1312 408" />
-        <path d="m515 658 110 48M699 576l112 48M885 493l114 49M1073 410l115 50" />
+    <svg class="assembly__technical" viewBox="0 0 1600 900" aria-hidden="true">
+      <g class="technical__staking" style={`opacity: ${plateOpacities[0]}`}>
+        {#each stakeCords as cord}<path class="stake__cord" d={cord} />{/each}
+        {#each stakePoints as stake, index}
+          <g class="stake" transform={`translate(${stake.x} ${stake.y})`}>
+            <ellipse class="stake__ground" cx="0" cy="15" rx="8" ry="3" />
+            <path class="stake__post" d="M0 16V-25" />
+            <path class="stake__flag" d="M1-24 18-18 1-11Z" />
+            <circle class="stake__node" cx="0" cy="0" r="4" />
+            {#if index === 0 || index === 4 || index === 5 || index === 9}<text x="10" y="8">ОСЬ {index < 5 ? 'А' : 'Б'}{index === 0 || index === 5 ? '1' : '5'}</text>{/if}
+          </g>
+        {/each}
       </g>
       <g class="technical__zones" style={`opacity: ${plateOpacities[1]}`}>
           <polygon points="610,596 807,507 994,581 796,674" />

@@ -42,8 +42,10 @@ async function heroState(progress) {
   }));
 }
 
+const heroStart = await heroState(0);
+await page.locator('.hero').screenshot({ path: resolve(output, 'hero-staking.png') });
 const hero = {
-  start: await heroState(0),
+  start: heroStart,
   transitionOne: await heroState(.28),
   transitionTwo: await heroState(.64),
   finish: await heroState(.96)
