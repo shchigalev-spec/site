@@ -31,8 +31,13 @@
     for (let segment = 0; segment < stages.length - 1; segment += 1) {
       const start = stages[segment].position;
       const end = stages[segment + 1].position;
-      if (currentProgress > end) continue;
-      const mix = smoothstep((currentProgress - start) / Math.max(.01, end - start));
+      const midpoint = (start + end) / 2;
+      const transitionHalfWidth = Math.min(.085, (end - start) * .3);
+      const transitionStart = midpoint - transitionHalfWidth;
+      const transitionEnd = midpoint + transitionHalfWidth;
+      if (currentProgress > transitionEnd) continue;
+      if (currentProgress < transitionStart) return index === segment ? 1 : 0;
+      const mix = smoothstep((currentProgress - transitionStart) / Math.max(.01, transitionEnd - transitionStart));
       if (index === segment) return 1 - mix;
       if (index === segment + 1) return mix;
       return 0;
@@ -61,7 +66,7 @@
       previousMotionTime = 0;
       return;
     }
-    const blend = 1 - Math.exp(-elapsed / 145);
+    const blend = 1 - Math.exp(-elapsed / 175);
     progress += distance * blend;
     activeStage = stageForProgress(progress);
     motionFrame = window.requestAnimationFrame(animateTowardsTarget);

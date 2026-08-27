@@ -865,8 +865,8 @@ body { background: var(--graphite); }
     linear-gradient(90deg, rgb(8 11 15 / 54%) 0, rgb(8 11 15 / 18%) 38%, transparent 62%),
     linear-gradient(180deg, rgb(4 8 14 / 8%), transparent 56%, rgb(4 8 14 / 50%));
 }
-.assembly__plate { transition: none; will-change: opacity; }
-.assembly__plate img { object-position: center; }
+.assembly__plate { transform: translateZ(0); backface-visibility: hidden; transition: none; will-change: opacity; }
+.assembly__plate img { object-position: center; transform: translateZ(0); backface-visibility: hidden; filter: none; }
 .assembly__hud { top: 1rem; right: 1.25rem; left: auto; gap: 2rem; padding: .6rem .75rem; background: rgb(17 19 23 / 58%); backdrop-filter: blur(10px); }
 .assembly__progress { position: absolute; z-index: 7; right: 0; bottom: 0; left: 0; height: 3px; background: rgb(255 255 255 / 22%); }
 .assembly__progress span { display: block; height: 100%; background: var(--magenta); }
