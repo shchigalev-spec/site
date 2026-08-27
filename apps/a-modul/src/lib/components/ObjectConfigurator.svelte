@@ -118,8 +118,10 @@
             <ul>{#each $projectContext.selectedZones as zone}<li>{zone}</li>{/each}</ul>
           {:else}<p>Функциональные зоны пока не выбраны.</p>{/if}
         </div>
-        <div class="output__missing"><span>Нужно уточнить</span><p>{missingInputs.join(', ')}.</p></div>
-        <p class="output__next"><span>Следующий шаг</span>{currentType.next}</p>
+        <div class="output__guidance">
+          <div class="output__missing"><span>Нужно уточнить</span><p>{missingInputs.join(', ')}.</p></div>
+          <p class="output__next"><span>Следующий шаг</span>{currentType.next}</p>
+        </div>
         <a class="button button--primary" href="#full-brief" onclick={complete}>Передать контур в полную заявку</a>
       {:else}
         <div class="output__index"><span>Предварительный контур</span><strong>00<small> функций зафиксировано</small></strong></div>

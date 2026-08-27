@@ -1,0 +1,399 @@
+{
+  "capturedAt": "2026-08-27T18:59:35.898Z",
+  "results": {
+    "problem-900x536": {
+      "hero": {
+        "horizontalOverflow": false,
+        "assembly": {
+          "top": 89,
+          "right": 899.984375,
+          "bottom": 537,
+          "left": 0,
+          "width": 899.984375,
+          "height": 448
+        },
+        "caption": {
+          "top": 429.8125,
+          "right": 899.984375,
+          "bottom": 487.40625,
+          "left": 0,
+          "width": 899.984375,
+          "height": 57.59375
+        },
+        "stages": {
+          "top": 487.40625,
+          "right": 899.984375,
+          "bottom": 537,
+          "left": 0,
+          "width": 899.984375,
+          "height": 49.59375
+        },
+        "copy": {
+          "top": 89,
+          "right": 612,
+          "bottom": 429.796875,
+          "left": 0,
+          "width": 612,
+          "height": 340.796875
+        },
+        "assemblyClipped": false,
+        "copyOverlapsCaption": false,
+        "brokenImages": []
+      },
+      "configurator": {
+        "horizontalOverflow": false,
+        "section": {
+          "top": -309.734375,
+          "right": 900,
+          "bottom": 1706.96875,
+          "left": 0,
+          "width": 900,
+          "height": 2016.703125,
+          "clientHeight": 2016,
+          "scrollHeight": 2016,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "workspace": {
+          "top": 142.125,
+          "right": 900,
+          "bottom": 1705.96875,
+          "left": 0,
+          "width": 900,
+          "height": 1563.84375,
+          "clientHeight": 1563,
+          "scrollHeight": 1563,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "controls": {
+          "top": 143.125,
+          "right": 900,
+          "bottom": 930.125,
+          "left": 0,
+          "width": 900,
+          "height": 787,
+          "clientHeight": 787,
+          "scrollHeight": 787,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "output": {
+          "top": 930.125,
+          "right": 900,
+          "bottom": 1705.96875,
+          "left": 0,
+          "width": 900,
+          "height": 775.84375,
+          "clientHeight": 776,
+          "scrollHeight": 776,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "fitsAvailableViewport": false,
+        "sectionClipped": false
+      }
+    },
+    "problem-1637x621": {
+      "hero": {
+        "horizontalOverflow": false,
+        "assembly": {
+          "top": 89,
+          "right": 1637,
+          "bottom": 622,
+          "left": 0,
+          "width": 1637,
+          "height": 533
+        },
+        "caption": {
+          "top": 514.8125,
+          "right": 1637,
+          "bottom": 572.40625,
+          "left": 0,
+          "width": 1637,
+          "height": 57.59375
+        },
+        "stages": {
+          "top": 572.40625,
+          "right": 1637,
+          "bottom": 622,
+          "left": 0,
+          "width": 1637,
+          "height": 49.59375
+        },
+        "copy": {
+          "top": 89,
+          "right": 851.234375,
+          "bottom": 514.796875,
+          "left": 0,
+          "width": 851.234375,
+          "height": 425.796875
+        },
+        "assemblyClipped": false,
+        "copyOverlapsCaption": false,
+        "brokenImages": []
+      },
+      "configurator": {
+        "horizontalOverflow": false,
+        "section": {
+          "top": 88.1875,
+          "right": 1637,
+          "bottom": 621.1875,
+          "left": 0,
+          "width": 1637,
+          "height": 533,
+          "clientHeight": 532,
+          "scrollHeight": 532,
+          "overflowX": "hidden",
+          "overflowY": "hidden",
+          "hasInternalScroll": false
+        },
+        "workspace": {
+          "top": 227.703125,
+          "right": 1637,
+          "bottom": 620.1875,
+          "left": 0,
+          "width": 1637,
+          "height": 392.484375,
+          "clientHeight": 391,
+          "scrollHeight": 391,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "controls": {
+          "top": 228.703125,
+          "right": 1023.125,
+          "bottom": 620.1875,
+          "left": 0,
+          "width": 1023.125,
+          "height": 391.484375,
+          "clientHeight": 391,
+          "scrollHeight": 391,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "output": {
+          "top": 228.703125,
+          "right": 1637,
+          "bottom": 620.1875,
+          "left": 1023.125,
+          "width": 613.875,
+          "height": 391.484375,
+          "clientHeight": 391,
+          "scrollHeight": 391,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "fitsAvailableViewport": true,
+        "sectionClipped": false
+      }
+    },
+    "desktop-1440x900": {
+      "hero": {
+        "horizontalOverflow": false,
+        "assembly": {
+          "top": 89,
+          "right": 1439.984375,
+          "bottom": 901,
+          "left": 0,
+          "width": 1439.984375,
+          "height": 812
+        },
+        "caption": {
+          "top": 753,
+          "right": 1439.984375,
+          "bottom": 837,
+          "left": 0,
+          "width": 1439.984375,
+          "height": 84
+        },
+        "stages": {
+          "top": 837,
+          "right": 1439.984375,
+          "bottom": 901,
+          "left": 0,
+          "width": 1439.984375,
+          "height": 64
+        },
+        "copy": {
+          "top": 89,
+          "right": 748.796875,
+          "bottom": 753,
+          "left": 0,
+          "width": 748.796875,
+          "height": 664
+        },
+        "assemblyClipped": false,
+        "copyOverlapsCaption": false,
+        "brokenImages": []
+      },
+      "configurator": {
+        "horizontalOverflow": false,
+        "section": {
+          "top": 88,
+          "right": 1440,
+          "bottom": 900,
+          "left": 0,
+          "width": 1440,
+          "height": 812,
+          "clientHeight": 811,
+          "scrollHeight": 811,
+          "overflowX": "hidden",
+          "overflowY": "hidden",
+          "hasInternalScroll": false
+        },
+        "workspace": {
+          "top": 313.359375,
+          "right": 1440,
+          "bottom": 899,
+          "left": 0,
+          "width": 1440,
+          "height": 585.640625,
+          "clientHeight": 585,
+          "scrollHeight": 585,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "controls": {
+          "top": 314.359375,
+          "right": 900,
+          "bottom": 899,
+          "left": 0,
+          "width": 900,
+          "height": 584.640625,
+          "clientHeight": 585,
+          "scrollHeight": 585,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "output": {
+          "top": 314.359375,
+          "right": 1440,
+          "bottom": 899,
+          "left": 900,
+          "width": 540,
+          "height": 584.640625,
+          "clientHeight": 585,
+          "scrollHeight": 585,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "fitsAvailableViewport": true,
+        "sectionClipped": false
+      }
+    },
+    "mobile-390x844": {
+      "hero": {
+        "horizontalOverflow": false,
+        "assembly": {
+          "top": 77,
+          "right": 390,
+          "bottom": 844,
+          "left": 0,
+          "width": 390,
+          "height": 767
+        },
+        "caption": {
+          "top": 571.65625,
+          "right": 390,
+          "bottom": 774.8125,
+          "left": 0,
+          "width": 390,
+          "height": 203.15625
+        },
+        "stages": {
+          "top": 774.8125,
+          "right": 390,
+          "bottom": 844,
+          "left": 0,
+          "width": 390,
+          "height": 69.1875
+        },
+        "copy": {
+          "top": 77,
+          "right": 390,
+          "bottom": 546.515625,
+          "left": 0,
+          "width": 390,
+          "height": 469.515625
+        },
+        "assemblyClipped": false,
+        "copyOverlapsCaption": false,
+        "brokenImages": []
+      },
+      "configurator": {
+        "horizontalOverflow": false,
+        "section": {
+          "top": -205.546875,
+          "right": 390,
+          "bottom": 2529.984375,
+          "left": 0,
+          "width": 390,
+          "height": 2735.53125,
+          "clientHeight": 2735,
+          "scrollHeight": 2735,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "workspace": {
+          "top": 308.796875,
+          "right": 390,
+          "bottom": 2528.984375,
+          "left": 0,
+          "width": 390,
+          "height": 2220.1875,
+          "clientHeight": 2219,
+          "scrollHeight": 2219,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "controls": {
+          "top": 309.796875,
+          "right": 390,
+          "bottom": 1550.796875,
+          "left": 0,
+          "width": 390,
+          "height": 1241,
+          "clientHeight": 1241,
+          "scrollHeight": 1241,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "output": {
+          "top": 1550.796875,
+          "right": 390,
+          "bottom": 2528.984375,
+          "left": 0,
+          "width": 390,
+          "height": 978.1875,
+          "clientHeight": 978,
+          "scrollHeight": 978,
+          "overflowX": "visible",
+          "overflowY": "visible",
+          "hasInternalScroll": false
+        },
+        "fitsAvailableViewport": false,
+        "sectionClipped": false
+      }
+    }
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "failures": []
+}
