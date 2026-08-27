@@ -868,6 +868,7 @@ body { background: var(--graphite); }
 }
 .assembly__plate { transform: translateZ(0); backface-visibility: hidden; transition: none; will-change: opacity; }
 .assembly__plate img { object-position: center; transform: translateZ(0); backface-visibility: hidden; filter: none; }
+.assembly__transition-veil { position: absolute; z-index: 2; inset: 0; background: linear-gradient(105deg, rgb(12 18 27 / 96%), rgb(28 43 60 / 88%) 58%, rgb(45 65 84 / 82%)); pointer-events: none; transform: translateZ(0); will-change: opacity; }
 .assembly__hud { top: 1rem; right: 1.25rem; left: auto; gap: 2rem; padding: .6rem .75rem; background: rgb(17 19 23 / 58%); backdrop-filter: blur(10px); }
 .assembly__progress { position: absolute; z-index: 7; right: 0; bottom: 0; left: 0; height: 3px; background: rgb(255 255 255 / 22%); }
 .assembly__progress span { display: block; height: 100%; background: var(--magenta); }

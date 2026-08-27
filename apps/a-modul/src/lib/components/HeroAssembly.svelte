@@ -25,27 +25,16 @@
     return next * next * (3 - 2 * next);
   }
 
-  function calculatePlateOpacity(index: number, currentProgress: number, currentStage: number, isMobile: boolean, reduce: boolean) {
-    if (isMobile || reduce) return currentStage === index ? 1 : 0;
-    if (currentProgress <= stages[0].position) return index === 0 ? 1 : 0;
-    for (let segment = 0; segment < stages.length - 1; segment += 1) {
-      const start = stages[segment].position;
-      const end = stages[segment + 1].position;
-      const midpoint = (start + end) / 2;
-      const transitionHalfWidth = Math.min(.085, (end - start) * .3);
-      const transitionStart = midpoint - transitionHalfWidth;
-      const transitionEnd = midpoint + transitionHalfWidth;
-      if (currentProgress > transitionEnd) continue;
-      if (currentProgress < transitionStart) return index === segment ? 1 : 0;
-      const mix = smoothstep((currentProgress - transitionStart) / Math.max(.01, transitionEnd - transitionStart));
-      if (index === segment) return 1 - mix;
-      if (index === segment + 1) return mix;
-      return 0;
-    }
-    return index === stages.length - 1 ? 1 : 0;
+  function calculateTransitionVeil(currentProgress: number, isMobile: boolean, reduce: boolean) {
+    if (isMobile || reduce) return 0;
+    const midpoints = stages.slice(0, -1).map((stage, index) => (stage.position + stages[index + 1].position) / 2);
+    const nearest = Math.min(...midpoints.map((midpoint) => Math.abs(currentProgress - midpoint)));
+    const radius = .115;
+    return smoothstep(1 - clamp(nearest / radius)) * .86;
   }
 
-  let plateOpacities = $derived(stages.map((_, index) => calculatePlateOpacity(index, progress, activeStage, mobile, reducedMotion)));
+  let plateOpacities = $derived(stages.map((_, index) => activeStage === index ? 1 : 0));
+  let transitionVeil = $derived(calculateTransitionVeil(progress, mobile, reducedMotion));
 
   function stageForProgress(value: number) {
     if (value < .18) return 0;
@@ -160,6 +149,7 @@
         <img src="/generated/{stage.asset}-desktop.webp" width="1600" height="900" alt="" fetchpriority={index === 0 ? 'high' : 'auto'} />
       </picture>
     {/each}
+    <div class="assembly__transition-veil" style={`opacity: ${transitionVeil}`} aria-hidden="true"></div>
 
     <div class="assembly__hud" aria-hidden="true">
       <span>СЕВЕРНЫЙ КОНТУР · СЦЕНА {String(mobile ? mobileStageIndexes.indexOf(activeStage) + 1 : activeStage + 1).padStart(2, '0')}</span>
