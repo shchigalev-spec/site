@@ -22,15 +22,22 @@ const response = await page.goto(`${base}/modulnye-zdaniya/?qa=animation-revisio
 if (!response?.ok()) throw new Error(`Route returned ${response?.status() ?? 'no response'}`);
 await page.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; });
 
-const heroRange = await page.evaluate(() => {
+const heroGeometry = await page.evaluate(() => {
   const hero = document.querySelector('.hero');
-  if (!hero) return 0;
-  return Math.max(1, hero.getBoundingClientRect().top + window.scrollY + hero.clientHeight - window.innerHeight + 88);
+  if (!hero) return { start: 0, range: 1 };
+  return {
+    start: hero.getBoundingClientRect().top + window.scrollY,
+    range: Math.max(1, hero.clientHeight - window.innerHeight + 88)
+  };
 });
+const heroRange = heroGeometry.range;
 
 async function heroState(progress) {
-  await page.evaluate(({ range, value }) => window.scrollTo(0, range * value), { range: heroRange, value: progress });
-  await page.waitForTimeout(240);
+  await page.evaluate(({ start, range, value }) => window.scrollTo(0, start + range * value), { start: heroGeometry.start, range: heroRange, value: progress });
+  await page.waitForFunction((expected) => {
+    const actual = Number(document.querySelector('.assembly')?.getAttribute('data-progress'));
+    return Math.abs(actual - expected * 100) <= 2;
+  }, progress, { timeout: 1800 });
   return page.evaluate(() => ({
     stage: Number(document.querySelector('.assembly')?.getAttribute('data-stage')),
     progress: Number(document.querySelector('.assembly')?.getAttribute('data-progress')),
@@ -67,6 +74,8 @@ const seismicAuto = await page.evaluate(() => ({
   active: document.querySelector('#seismic')?.classList.contains('is-active') ?? false,
   signalAnimation: getComputedStyle(document.querySelector('.seismic-proof__signal svg')).animationName,
   copyAnimation: getComputedStyle(document.querySelector('.seismic-proof__copy')).animationName,
+  signalDuration: getComputedStyle(document.querySelector('.seismic-proof__signal svg')).animationDuration,
+  copyDuration: getComputedStyle(document.querySelector('.seismic-proof__copy')).animationDuration,
   iterationCount: getComputedStyle(document.querySelector('.seismic-proof__copy')).animationIterationCount,
   replayButtons: document.querySelectorAll('.seismic-proof__replay').length
 }));
@@ -102,13 +111,14 @@ const results = { capturedAt: new Date().toISOString(), heroRange, hero, bimInit
 await writeFile(resolve(output, 'qa-results.json'), `${JSON.stringify(results, null, 2)}\n`, 'utf8');
 process.stdout.write(`${JSON.stringify(results, null, 2)}\n`);
 
-const opacityValid = Object.values(hero).every((state) => state.opacities.every((value) => value >= 0 && value <= 1) && state.opacities.filter((value) => value > .001).length <= 2 && state.transforms.every((value) => value === 'none'))
+const identityTransforms = new Set(['none', 'matrix(1, 0, 0, 1, 0, 0)', 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)']);
+const opacityValid = Object.values(hero).every((state) => state.opacities.every((value) => value >= 0 && value <= 1) && state.opacities.filter((value) => value > .001).length <= 2 && state.transforms.every((value) => identityTransforms.has(value)))
   && hero.start.opacities[0] === 1 && hero.finish.opacities[3] === 1;
 const quakeAdvances = quakeStart.length > 0 && quakeAdvance.some((value, index) => value > (quakeStart[index] ?? 0));
 const failed = !opacityValid
   || hero.start.stage !== 0 || hero.finish.stage !== 3
   || bimInitial !== 0 || bimAfterClick !== 1 || bimAfterWait !== 1 || !bimButton.includes('Следующий этап')
-  || !seismicAuto.active || seismicAuto.signalAnimation !== 'quake-shock' || seismicAuto.copyAnimation !== 'quake-copy' || seismicAuto.iterationCount !== 'infinite' || seismicAuto.replayButtons !== 0 || !quakeAdvances
+  || !seismicAuto.active || seismicAuto.signalAnimation !== 'quake-shock' || seismicAuto.copyAnimation !== 'quake-copy' || seismicAuto.signalDuration !== '4.8s' || seismicAuto.copyDuration !== '4.8s' || seismicAuto.iterationCount !== 'infinite' || seismicAuto.replayButtons !== 0 || !quakeAdvances
   || pageFacts.externalMainSiteLinks !== 0 || pageFacts.horizontalOverflow
   || !reducedMotion.preference || reducedMotion.heroStage !== 3 || reducedMotion.bimStage !== 6 || reducedMotion.quakeActive || reducedMotion.replayButtons !== 0
   || Object.values(defects).some((items) => items.length > 0);

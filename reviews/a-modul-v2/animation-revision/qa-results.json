@@ -1,6 +1,6 @@
 {
-  "capturedAt": "2026-08-27T10:05:21.381Z",
-  "heroRange": 956,
+  "capturedAt": "2026-08-27T18:18:58.114Z",
+  "heroRange": 867,
   "hero": {
     "start": {
       "stage": 0,
@@ -12,56 +12,56 @@
         0
       ],
       "transforms": [
-        "none",
-        "none",
-        "none",
-        "none"
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
       ],
-      "scrollY": 0,
-      "heroTop": 89,
+      "scrollY": 89,
+      "heroTop": 0,
       "heroHeight": 1779
     },
     "transitionOne": {
       "stage": 1,
-      "progress": 21,
+      "progress": 27,
       "opacities": [
-        0.361172,
-        0.638828,
+        0,
+        1,
         0,
         0
       ],
       "transforms": [
-        "none",
-        "none",
-        "none",
-        "none"
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
       ],
-      "scrollY": 268,
-      "heroTop": -179,
+      "scrollY": 332,
+      "heroTop": -243,
       "heroHeight": 1779
     },
     "transitionTwo": {
       "stage": 2,
-      "progress": 60,
+      "progress": 62,
       "opacities": [
         0,
-        0.118982,
-        0.881018,
+        0,
+        1,
         0
       ],
       "transforms": [
-        "none",
-        "none",
-        "none",
-        "none"
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
       ],
-      "scrollY": 612,
-      "heroTop": -523,
+      "scrollY": 644,
+      "heroTop": -555,
       "heroHeight": 1779
     },
     "finish": {
       "stage": 3,
-      "progress": 96,
+      "progress": 94,
       "opacities": [
         0,
         0,
@@ -69,13 +69,13 @@
         1
       ],
       "transforms": [
-        "none",
-        "none",
-        "none",
-        "none"
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
       ],
-      "scrollY": 918,
-      "heroTop": -829,
+      "scrollY": 921,
+      "heroTop": -832,
       "heroHeight": 1779
     }
   },
@@ -86,23 +86,27 @@
   "seismicAuto": {
     "active": true,
     "signalAnimation": "quake-shock",
-    "copyAnimation": "quake-copy"
+    "copyAnimation": "quake-copy",
+    "signalDuration": "4.8s",
+    "copyDuration": "4.8s",
+    "iterationCount": "infinite",
+    "replayButtons": 0
   },
-  "replayStart": [
-    116.74000000846618,
-    116.74000000846618,
-    116.74000000846618,
-    116.74000000846618,
-    116.74000000846618,
-    116.74000000846618
+  "quakeStart": [
+    83.40000000334769,
+    83.40000000334769,
+    83.40000000334769,
+    83.40000000334769,
+    83.40000000334769,
+    83.40000000334769
   ],
-  "replayAdvance": [
-    350.040000008466,
-    350.040000008466,
-    350.040000008466,
-    350.040000008466,
-    350.040000008466,
-    350.040000008466
+  "quakeAdvance": [
+    383.32600000334696,
+    383.32600000334696,
+    383.32600000334696,
+    383.32600000334696,
+    383.32600000334696,
+    383.32600000334696
   ],
   "pageFacts": {
     "externalMainSiteLinks": 0,
@@ -114,7 +118,7 @@
     "heroStage": 3,
     "bimStage": 6,
     "quakeActive": false,
-    "replayDisabled": true
+    "replayButtons": 0
   },
   "defects": {
     "consoleErrors": [],
