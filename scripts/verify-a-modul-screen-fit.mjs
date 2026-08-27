@@ -13,8 +13,8 @@ const routes = [
   '/modulnye-obshchezhitiya/'
 ];
 const screenSelectors = [
-  '.brief', '.evidence', '.lower-object', '.configurator', '.risk', '.logistics',
-  '.finder', '.bim', '.factory', '.price-scope', '.dominant-case', '.seismic-proof',
+  '.brief', '.evidence', '.published-projects', '.configurator', '.client-proof', '.logistics',
+  '.finder', '.project-team', '.factory', '.price-scope', '.dominant-case', '.seismic-proof',
   '.proposal-process', '.final-cta', '.route-case', '.route-visuals'
 ];
 const defects = { consoleErrors: [], pageErrors: [], failedRequests: [], brokenImages: [] };
@@ -96,9 +96,11 @@ for (const viewport of [{ width: 1920, height: 900 }, { width: 1440, height: 900
       });
       for (const [selector, filename] of [
         ['.evidence', 'desktop-evidence-fit.png'],
+        ['.published-projects', 'desktop-published-projects-fit.png'],
         ['.configurator', 'desktop-configurator-fit.png'],
+        ['.client-proof', 'desktop-client-proof-fit.png'],
         ['.logistics', 'desktop-logistics-fit.png'],
-        ['.bim', 'desktop-bim-fit.png']
+        ['.project-team', 'desktop-project-team-fit.png']
       ]) {
         await page.locator(selector).scrollIntoViewIfNeeded();
         await page.waitForTimeout(120);
@@ -120,6 +122,16 @@ const mobile = await mobilePage.evaluate(() => ({
 }));
 defects.brokenImages.push(...mobile.brokenImages.map((src) => `390x844: ${src}`));
 await mobilePage.screenshot({ path: resolve(output, 'mobile-390-unchanged.png') });
+for (const [selector, filename] of [
+  ['.published-projects', 'mobile-published-projects.png'],
+  ['.client-proof', 'mobile-client-proof.png'],
+  ['.project-team', 'mobile-project-team.png']
+]) {
+  await mobilePage.locator(selector).scrollIntoViewIfNeeded();
+  await mobilePage.locator(`${selector} img`).evaluateAll((images) => Promise.all(images.map((image) => image.decode().catch(() => undefined))));
+  await mobilePage.waitForTimeout(100);
+  await mobilePage.screenshot({ path: resolve(output, filename) });
+}
 await mobileContext.close();
 await browser.close();
 

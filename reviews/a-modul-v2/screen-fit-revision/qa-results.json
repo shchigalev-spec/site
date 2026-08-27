@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-27T18:54:23.769Z",
+  "capturedAt": "2026-08-27T19:20:34.850Z",
   "routeStatuses": {
     "/modulnye-zdaniya/": 200,
     "/vahtovye-poselki/": 200,
@@ -32,8 +32,8 @@
           "fits": true
         },
         {
-          "selector": ".lower-object",
-          "id": "",
+          "selector": ".published-projects",
+          "id": "published-projects",
           "height": 812,
           "available": 811,
           "headroom": -1,
@@ -48,8 +48,8 @@
           "fits": true
         },
         {
-          "selector": ".risk",
-          "id": "risk",
+          "selector": ".client-proof",
+          "id": "client-proof",
           "height": 812,
           "available": 811,
           "headroom": -1,
@@ -72,8 +72,8 @@
           "fits": true
         },
         {
-          "selector": ".bim",
-          "id": "bim",
+          "selector": ".project-team",
+          "id": "project-team",
           "height": 812,
           "available": 811,
           "headroom": -1,
@@ -171,8 +171,8 @@
           "fits": true
         },
         {
-          "selector": ".bim",
-          "id": "bim",
+          "selector": ".project-team",
+          "id": "project-team",
           "height": 812,
           "available": 811,
           "headroom": -1,
@@ -388,8 +388,8 @@
           "fits": true
         },
         {
-          "selector": ".lower-object",
-          "id": "",
+          "selector": ".published-projects",
+          "id": "published-projects",
           "height": 812,
           "available": 811,
           "headroom": -1,
@@ -404,8 +404,8 @@
           "fits": true
         },
         {
-          "selector": ".risk",
-          "id": "risk",
+          "selector": ".client-proof",
+          "id": "client-proof",
           "height": 812,
           "available": 811,
           "headroom": -1,
@@ -428,8 +428,8 @@
           "fits": true
         },
         {
-          "selector": ".bim",
-          "id": "bim",
+          "selector": ".project-team",
+          "id": "project-team",
           "height": 812,
           "available": 811,
           "headroom": -1,
@@ -527,8 +527,8 @@
           "fits": true
         },
         {
-          "selector": ".bim",
-          "id": "bim",
+          "selector": ".project-team",
+          "id": "project-team",
           "height": 812,
           "available": 811,
           "headroom": -1,

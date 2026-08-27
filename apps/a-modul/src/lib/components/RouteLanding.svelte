@@ -11,7 +11,7 @@
   import ShiftLogic from '$lib/components/ShiftLogic.svelte';
   import ObjectConfigurator from '$lib/components/ObjectConfigurator.svelte';
   import LogisticsMap from '$lib/components/LogisticsMap.svelte';
-  import BimSequence from '$lib/components/BimSequence.svelte';
+  import ProjectTeam from '$lib/components/ProjectTeam.svelte';
   import FactorySequence from '$lib/components/FactorySequence.svelte';
   import PriceScope from '$lib/components/PriceScope.svelte';
   import ProofCase from '$lib/components/ProofCase.svelte';
@@ -76,7 +76,7 @@
     <ObjectConfigurator />
     <LogisticsMap />
     <ProofCase mode="case" />
-    <BimSequence />
+    <ProjectTeam />
     <FactorySequence />
     <PriceScope />
     <ProofCase mode="seismic" />

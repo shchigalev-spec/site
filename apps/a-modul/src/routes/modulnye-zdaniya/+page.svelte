@@ -2,11 +2,11 @@
   import HeroAssembly from '$lib/components/HeroAssembly.svelte';
   import MiniBrief from '$lib/components/MiniBrief.svelte';
   import ObjectConfigurator from '$lib/components/ObjectConfigurator.svelte';
-  import RiskChain from '$lib/components/RiskChain.svelte';
-  import LowerObjectSequence from '$lib/components/LowerObjectSequence.svelte';
+  import ClientReviews from '$lib/components/ClientReviews.svelte';
+  import PublishedProjects from '$lib/components/PublishedProjects.svelte';
   import LogisticsMap from '$lib/components/LogisticsMap.svelte';
   import ProjectFinder from '$lib/components/ProjectFinder.svelte';
-  import BimSequence from '$lib/components/BimSequence.svelte';
+  import ProjectTeam from '$lib/components/ProjectTeam.svelte';
   import FactorySequence from '$lib/components/FactorySequence.svelte';
   import PriceScope from '$lib/components/PriceScope.svelte';
   import ProofCase from '$lib/components/ProofCase.svelte';
@@ -125,13 +125,13 @@
     </div>
   </section>
 
-  <LowerObjectSequence />
+  <PublishedProjects />
 
   <ObjectConfigurator />
-  <RiskChain />
+  <ClientReviews />
   <LogisticsMap />
   <ProjectFinder />
-  <BimSequence />
+  <ProjectTeam />
   <FactorySequence />
   <PriceScope />
   <ProofCase />

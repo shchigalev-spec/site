@@ -4,7 +4,8 @@
   "embedded": {
     "generatedAvif": true,
     "fonts": true,
-    "russiaMap": true
+    "russiaMap": true,
+    "officialProof": true
   },
   "desktop": {
     "title": "Модульные здания под ключ по России — Ависта Модуль",
@@ -13,11 +14,13 @@
     "primaryCtaVisible": true,
     "clientWidth": 1440,
     "scrollWidth": 1440,
-    "imageCount": 19,
+    "imageCount": 25,
     "mapImages": 1,
     "finderPresent": true,
     "factoryTabs": 6,
-    "lowerTabs": 5,
+    "publishedProjects": 4,
+    "clientProofPresent": true,
+    "projectTeam": 4,
     "finalCtaPresent": true,
     "brokenImages": []
   },
@@ -28,11 +31,13 @@
     "primaryCtaVisible": true,
     "clientWidth": 390,
     "scrollWidth": 390,
-    "imageCount": 19,
+    "imageCount": 25,
     "mapImages": 1,
     "finderPresent": true,
     "factoryTabs": 6,
-    "lowerTabs": 5,
+    "publishedProjects": 4,
+    "clientProofPresent": true,
+    "projectTeam": 4,
     "finalCtaPresent": true,
     "brokenImages": []
   },

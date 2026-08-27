@@ -56,7 +56,9 @@ async function inspectViewport(width, height, label) {
       mapImages: document.querySelectorAll('#logistics svg image, .logistics-map svg image').length,
       finderPresent: Boolean(document.querySelector('#finder')),
       factoryTabs: document.querySelectorAll('#factory [role="tab"]').length,
-      lowerTabs: document.querySelectorAll('.lower-object [role="tab"]').length,
+      publishedProjects: document.querySelectorAll('.published-projects__card').length,
+      clientProofPresent: Boolean(document.querySelector('#client-proof')),
+      projectTeam: document.querySelectorAll('.project-team__grid article').length,
       finalCtaPresent: Boolean(document.querySelector('.final-cta')),
       brokenImages: [...document.images]
         .filter((image) => image.complete && image.naturalWidth === 0)
@@ -82,8 +84,6 @@ async function inspectViewport(width, height, label) {
 
     const factoryTabs = page.locator('#factory [role="tab"]');
     if (await factoryTabs.count()) await factoryTabs.last().click();
-    const lowerTabs = page.locator('.lower-object [role="tab"]');
-    if (await lowerTabs.count()) await lowerTabs.last().click();
   } else {
     await page.screenshot({ path: resolve(outputDirectory, 'standalone-mobile-390.png') });
   }
@@ -98,7 +98,8 @@ const results = {
   embedded: {
     generatedAvif: html.includes('data:image/avif;base64,'),
     fonts: html.includes('data:font/woff2;base64,'),
-    russiaMap: html.includes('data:image/svg+xml;base64,') && html.includes('/data/russia-federal-subjects.svg')
+    russiaMap: html.includes('data:image/svg+xml;base64,') && html.includes('/data/russia-federal-subjects.svg'),
+    officialProof: html.includes('"/official/project-amikan.png":"data:image/png;base64,') && html.includes('"/official/team-korenev.jpg":"data:image/jpeg;base64,')
   },
   desktop: await inspectViewport(1440, 1000, 'desktop'),
   mobile: await inspectViewport(390, 844, 'mobile'),
@@ -114,7 +115,9 @@ results.pass = Object.values(results.embedded).every(Boolean)
   && results.desktop.scrollWidth <= results.desktop.clientWidth
   && results.desktop.finderPresent
   && results.desktop.factoryTabs === 6
-  && results.desktop.lowerTabs === 5
+  && results.desktop.publishedProjects === 4
+  && results.desktop.clientProofPresent
+  && results.desktop.projectTeam === 4
   && results.desktop.finalCtaPresent
   && results.mobile.h1Count === 1
   && results.mobile.h1Visible

@@ -34,7 +34,8 @@ async function createAssetMap() {
   const roots = [
     { directory: join(appRoot, 'static', 'generated'), prefix: '/generated' },
     { directory: join(appRoot, 'static', 'brand'), prefix: '/brand' },
-    { directory: join(appRoot, 'static', 'data'), prefix: '/data' }
+    { directory: join(appRoot, 'static', 'data'), prefix: '/data' },
+    { directory: join(appRoot, 'static', 'official'), prefix: '/official' }
   ];
   const map = {};
   for (const root of roots) {
@@ -111,7 +112,7 @@ let css = await readFile(builtFile(styleMatch[1]), 'utf8');
 const assetMap = await createAssetMap();
 const javascriptLoader = `(0,eval)(${JSON.stringify(javascript.trim()).replaceAll('</script', '<\\/script')});`;
 
-css = css.replace(/\/(?:generated|brand)\/[A-Za-z0-9_./-]+/g, (path) => assetMap[path] ?? path);
+css = css.replace(/\/(?:generated|brand|official)\/[A-Za-z0-9_./-]+/g, (path) => assetMap[path] ?? path);
 html = html.replace(styleMatch[0], `<style>${css.trim().replaceAll('</style', '<\\/style')}</style>`);
 html = html.replace(scriptMatch[0], `<script>${assetRuntime(assetMap).trim()}</script><script type="module">${javascriptLoader}</script>`);
 html = html.replace(/<link\b[^>]*rel="modulepreload"[^>]*>/gi, '');
