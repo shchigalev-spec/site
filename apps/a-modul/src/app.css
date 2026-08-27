@@ -869,7 +869,7 @@ body { background: var(--graphite); }
 .assembly__plate img { object-position: center; }
 .assembly__hud { top: 1rem; right: 1.25rem; left: auto; gap: 2rem; padding: .6rem .75rem; background: rgb(17 19 23 / 58%); backdrop-filter: blur(10px); }
 .assembly__progress { position: absolute; z-index: 7; right: 0; bottom: 0; left: 0; height: 3px; background: rgb(255 255 255 / 22%); }
-.assembly__progress span { display: block; height: 100%; background: var(--magenta); transition: width 120ms linear; }
+.assembly__progress span { display: block; height: 100%; background: var(--magenta); }
 .assembly__caption { min-height: 5.25rem; padding: .8rem 1.25rem; color: var(--warm); background: rgb(17 19 23 / 94%); border-top: 1px solid var(--line-dark); }
 .assembly__caption .mono-label { color: var(--pink-accessible); }
 .assembly__caption strong { max-width: 36rem; }

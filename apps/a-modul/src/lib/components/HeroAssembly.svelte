@@ -14,7 +14,10 @@
   let reducedMotion = $state(false);
   let mobile = $state(false);
   let root = $state<HTMLElement>();
-  let frame = 0;
+  let targetProgress = 0;
+  let readFrame = 0;
+  let motionFrame = 0;
+  let previousMotionTime = 0;
 
   const clamp = (value: number) => Math.max(0, Math.min(1, value));
   function smoothstep(value: number) {
@@ -46,19 +49,50 @@
     return 3;
   }
 
-  function updateFromScroll() {
-    frame = 0;
+  function animateTowardsTarget(time: number) {
+    motionFrame = 0;
+    if (mobile || reducedMotion) return;
+    const elapsed = previousMotionTime ? Math.min(16.7, time - previousMotionTime) : 16.7;
+    previousMotionTime = time;
+    const distance = targetProgress - progress;
+    if (Math.abs(distance) <= .0005) {
+      progress = targetProgress;
+      activeStage = stageForProgress(progress);
+      previousMotionTime = 0;
+      return;
+    }
+    const blend = 1 - Math.exp(-elapsed / 145);
+    progress += distance * blend;
+    activeStage = stageForProgress(progress);
+    motionFrame = window.requestAnimationFrame(animateTowardsTarget);
+  }
+
+  function startMotion() {
+    if (!motionFrame) motionFrame = window.requestAnimationFrame(animateTowardsTarget);
+  }
+
+  function updateFromScroll(immediate = false) {
     if (mobile || reducedMotion || !root) return;
     const story = root.closest<HTMLElement>('.hero');
     if (!story) return;
     const rect = story.getBoundingClientRect();
     const available = Math.max(1, story.offsetHeight - window.innerHeight + 88);
-    progress = Math.max(0, Math.min(1, -rect.top / available));
-    activeStage = stageForProgress(progress);
+    targetProgress = Math.max(0, Math.min(1, -rect.top / available));
+    if (immediate) {
+      progress = targetProgress;
+      activeStage = stageForProgress(progress);
+      previousMotionTime = 0;
+      return;
+    }
+    startMotion();
   }
 
   function requestUpdate() {
-    if (!frame) frame = window.requestAnimationFrame(updateFromScroll);
+    if (readFrame) return;
+    readFrame = window.requestAnimationFrame(() => {
+      readFrame = 0;
+      updateFromScroll();
+    });
   }
 
   function selectStage(index: number) {
@@ -89,7 +123,7 @@
       } else if (mobile && !mobileStageIndexes.includes(activeStage)) {
         activeStage = 2;
       } else {
-        updateFromScroll();
+        updateFromScroll(true);
       }
     };
 
@@ -105,7 +139,8 @@
       mobilePreference.removeEventListener('change', syncPreferences);
       window.removeEventListener('scroll', requestUpdate);
       window.removeEventListener('resize', requestUpdate);
-      if (frame) window.cancelAnimationFrame(frame);
+      if (readFrame) window.cancelAnimationFrame(readFrame);
+      if (motionFrame) window.cancelAnimationFrame(motionFrame);
     };
   });
 </script>
