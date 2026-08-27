@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-27T15:38:13.924Z",
+  "capturedAt": "2026-08-27T17:41:24.105Z",
   "routeStatuses": {
     "/modulnye-zdaniya/": 200,
     "/vahtovye-poselki/": 200,
@@ -646,6 +646,20 @@
     "horizontalOverflow": false,
     "h1Visible": true,
     "brokenImages": []
+  },
+  "configuratorStress": {
+    "controls": {
+      "clientHeight": 585,
+      "scrollHeight": 585,
+      "overflowY": "visible",
+      "hasInternalScroll": false
+    },
+    "output": {
+      "clientHeight": 585,
+      "scrollHeight": 585,
+      "overflowY": "visible",
+      "hasInternalScroll": false
+    }
   },
   "failedSections": [],
   "defects": {

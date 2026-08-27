@@ -26,6 +26,7 @@ await api.dispose();
 
 const browser = await chromium.launch({ headless: true });
 const results = {};
+let configuratorStress = null;
 
 function observe(page, label) {
   page.on('console', (message) => { if (message.type() === 'error') defects.consoleErrors.push(`${label}: ${message.text()}`); });
@@ -73,6 +74,25 @@ for (const viewport of [{ width: 1920, height: 900 }, { width: 1440, height: 900
     results[label] = measurements;
 
     if (route === '/modulnye-zdaniya/' && viewport.width === 1920) {
+      await page.getByRole('button', { name: 'Общежитие', exact: true }).click();
+      await page.getByRole('button', { name: '100', exact: true }).click();
+      for (const checkbox of await page.locator('.zone-grid input[type="checkbox"]').all()) {
+        if (!(await checkbox.isChecked())) await checkbox.check();
+      }
+      configuratorStress = await page.evaluate(() => {
+        const inspect = (selector) => {
+          const element = document.querySelector(selector);
+          if (!element) return null;
+          const style = getComputedStyle(element);
+          return {
+            clientHeight: element.clientHeight,
+            scrollHeight: element.scrollHeight,
+            overflowY: style.overflowY,
+            hasInternalScroll: element.scrollHeight > element.clientHeight + 1 && ['auto', 'scroll'].includes(style.overflowY)
+          };
+        };
+        return { controls: inspect('.configurator__controls'), output: inspect('.configurator__output') };
+      });
       for (const [selector, filename] of [
         ['.evidence', 'desktop-evidence-fit.png'],
         ['.configurator', 'desktop-configurator-fit.png'],
@@ -103,13 +123,15 @@ await mobileContext.close();
 await browser.close();
 
 const failedSections = Object.entries(results).flatMap(([label, item]) => item.sections.filter((section) => !section.fits).map((section) => ({ label, ...section })));
-const report = { capturedAt: new Date().toISOString(), routeStatuses, results, mobile, failedSections, defects };
+const report = { capturedAt: new Date().toISOString(), routeStatuses, results, mobile, configuratorStress, failedSections, defects };
 await writeFile(resolve(output, 'qa-results.json'), `${JSON.stringify(report, null, 2)}\n`, 'utf8');
-process.stdout.write(`${JSON.stringify({ routeStatuses, failedSections, mobile, defects }, null, 2)}\n`);
+process.stdout.write(`${JSON.stringify({ routeStatuses, failedSections, mobile, configuratorStress, defects }, null, 2)}\n`);
 
 if (Object.values(routeStatuses).some((status) => status !== 200)
   || failedSections.length
   || Object.values(results).some((item) => item.horizontalOverflow)
   || mobile.horizontalOverflow
   || !mobile.h1Visible
+  || configuratorStress?.controls?.hasInternalScroll
+  || configuratorStress?.output?.hasInternalScroll
   || Object.values(defects).some((items) => items.length)) process.exitCode = 1;

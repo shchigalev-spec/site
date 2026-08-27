@@ -1225,25 +1225,51 @@ html, body { overflow-x: clip; }
   .lower-object__caption { padding: .85rem 1rem; }
   .lower-object__caption strong { font-size: clamp(1.25rem, 2.8vh, 1.85rem); }
 
-  .configurator .chapter__heading { gap: 2rem; }
-  .configurator__controls,
-  .configurator__output {
+  .configurator .chapter__heading {
+    align-items: end;
+    gap: 1.5rem;
+    padding-block: 1.15rem;
+  }
+  .configurator .chapter__heading h2 { max-width: 14ch; font-size: clamp(2.3rem, 5.2vh, 3.25rem); }
+  .configurator__controls {
+    display: grid;
     min-height: 0;
-    padding-block: 1.1rem;
-    overflow-y: auto;
-    scrollbar-gutter: stable;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 .75rem;
+    align-content: center;
+    padding-block: .65rem;
+    overflow: visible;
   }
   .configurator__controls fieldset,
-  .configurator__region { padding-block: .75rem 1rem; }
-  .choice-grid { margin-top: .6rem; }
+  .configurator__region { padding-block: .5rem .65rem; }
+  .configurator__controls fieldset:first-child,
+  .configurator__controls fieldset:last-child { grid-column: 1 / -1; }
+  .choice-grid { margin-top: .4rem; }
   .choice-grid button,
-  .zone-grid label { min-height: 2.65rem; padding: .55rem .65rem; }
-  .zone-grid { margin-top: .6rem; }
-  .configurator__output { gap: .8rem; }
-  .output__index { padding-bottom: .55rem; }
-  .output__index strong { font-size: 2rem; }
-  .configurator__output dl div { padding: .55rem 0; }
-  .output__next { padding-top: .7rem; }
+  .zone-grid label { min-height: 2.35rem; padding: .4rem .55rem; }
+  .configurator__region { gap: .35rem; }
+  .configurator__region select { min-height: 2.35rem; }
+  .zone-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .4rem; margin-top: .4rem; }
+  .zone-grid label { gap: .45rem; font-size: .82rem; line-height: 1.2; }
+  .configurator__output {
+    display: grid;
+    min-height: 0;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    gap: .5rem;
+    align-content: center;
+    padding-block: .85rem;
+    overflow: visible;
+  }
+  .output__index { padding-bottom: .45rem; }
+  .output__index strong { font-size: 1.75rem; }
+  .configurator__output h3 { font-size: clamp(1.75rem, 4.2vh, 2.6rem); }
+  .configurator__output dl div { padding: .4rem 0; }
+  .output__zones ul { gap: .3rem; margin-top: .4rem; }
+  .output__zones li { padding: .35rem .45rem; font-size: .74rem; }
+  .output__missing p,
+  .output__next { margin-top: .35rem; font-size: .78rem; line-height: 1.4; }
+  .output__next { gap: .3rem; padding-top: .5rem; }
+  .configurator__output .button { margin-top: 0; }
 
   .risk {
     display: grid;
