@@ -12,12 +12,9 @@
     { label: 'Объект', detail: 'Завершаем единый контур до операционного результата', asset: 'a-modul-general-hero-operational-object' }
   ];
 
-  let active = 0;
-  let playing = false;
-  let reducedMotion = false;
-  let timers: number[] = [];
-  let interactionStarted = false;
-  let root: HTMLElement;
+  let active = $state(0);
+  let reducedMotion = $state(false);
+  let interactionStarted = $state(false);
 
   function startInteraction() {
     if (interactionStarted) return;
@@ -29,65 +26,31 @@
     trackEvent('bim_interaction_complete', { stage: stages.length });
   }
 
-  function clearTimeline() {
-    timers.forEach((timer) => window.clearTimeout(timer));
-    timers = [];
-    playing = false;
-  }
-
   function selectStage(index: number) {
     startInteraction();
-    clearTimeline();
     active = index;
     if (index === stages.length - 1) completeInteraction();
   }
 
-  function play() {
-    startInteraction();
-    clearTimeline();
-    if (reducedMotion) {
-      active = stages.length - 1;
-      completeInteraction();
-      return;
-    }
-    playing = true;
-    active = 0;
-    stages.slice(1).forEach((_, index) => {
-      const stage = index + 1;
-      timers.push(window.setTimeout(() => {
-        active = stage;
-        if (stage === stages.length - 1) { playing = false; completeInteraction(); }
-      }, stage * 1600));
-    });
-  }
-
-  function togglePlayback() {
-    if (playing) clearTimeline();
-    else play();
+  function advance() {
+    selectStage(active === stages.length - 1 ? 0 : active + 1);
   }
 
   onMount(() => {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const sync = () => {
       reducedMotion = preference.matches;
-      clearTimeline();
       if (reducedMotion) active = stages.length - 1;
     };
     sync();
     preference.addEventListener('change', sync);
-    const observer = new IntersectionObserver((entries) => {
-      if (!entries[0]?.isIntersecting && playing) clearTimeline();
-    }, { threshold: 0.1 });
-    observer.observe(root);
     return () => {
       preference.removeEventListener('change', sync);
-      observer.disconnect();
-      clearTimeline();
     };
   });
 </script>
 
-<section bind:this={root} class="bim chapter" id="bim" aria-labelledby="bim-title">
+<section class="bim chapter" id="bim" aria-labelledby="bim-title">
   <div class="chapter__heading chapter__heading--split">
     <div>
       <p class="eyebrow">BIM → объект / управляемая последовательность</p>
@@ -143,7 +106,7 @@
       </div>
       <div class="bim__caption">
         <div role="status" aria-live="polite" aria-atomic="true"><span class="mono-label">{stages[active].label}</span><strong>{stages[active].detail}</strong></div>
-        <button class="bim__play" type="button" onclick={togglePlayback} aria-pressed={playing}>{playing ? 'Остановить последовательность' : reducedMotion ? 'Итог показан' : 'Показать весь путь'}<span aria-hidden="true">→</span></button>
+        <button class="bim__play" type="button" onclick={advance} disabled={reducedMotion}>{reducedMotion ? 'Итоговая стадия показана' : active === stages.length - 1 ? 'Вернуться к генплану' : `Следующий этап: ${stages[active + 1].label}`}<span aria-hidden="true">→</span></button>
       </div>
     </div>
   </div>

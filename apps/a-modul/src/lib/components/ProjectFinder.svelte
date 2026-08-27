@@ -16,8 +16,6 @@
     image: string;
     alt: string;
     facts: string[];
-    sourceUrl: string;
-    sourceLabel: string;
     differenceNote: string;
   };
 
@@ -29,8 +27,6 @@
       image: 'a-modul-case-kamchatka-v2',
       alt: 'Концептуальная визуализация зимнего модульного посёлка в удалённом северном регионе',
       facts: ['Камчатский край', '2 476,36 м²', '105 одиночных модулей с крыльцами + функциональные здания', 'поставка с учётом выходов судов из Петропавловска-Камчатского'],
-      sourceUrl: 'https://a-modul.ru/object/vakhtoviy-poselok-na-odnom-iz-krupneyshikh-mestorozhdeniy-zolota/',
-      sourceLabel: 'Официальный кейс: Камчатка',
       differenceNote: 'Численность персонала в открытом кейсе не опубликована — её нельзя переносить на новый объект.'
     },
     {
@@ -40,8 +36,6 @@
       image: 'a-modul-case-dormitories-300',
       alt: 'Концептуальная визуализация трёх двухэтажных модульных общежитий',
       facts: ['3 общежития', '300 человек', '3 200,4 м²', '180 модулей / поставка транспаками'],
-      sourceUrl: 'https://a-modul.ru/object/obshhezhitija-dlja-prozhivanija-300-chelovek/',
-      sourceLabel: 'Официальный кейс: общежития',
       differenceNote: 'Локальность не переносится: официальная страница содержит географическое расхождение.'
     },
     {
@@ -51,8 +45,6 @@
       image: 'a-modul-abk-case',
       alt: 'Концептуальная визуализация двухэтажного административно-бытового комплекса',
       facts: ['Новокузнецк', '427 м²', '28 модулей', 'общая кровля, входные группы, инженерные сети, мебель и оборудование'],
-      sourceUrl: 'https://a-modul.ru/object/administrativno-bytovoy-kompleks-abk/',
-      sourceLabel: 'Официальный кейс: АБК',
       differenceNote: 'Число рабочих мест и климатические параметры в открытом кейсе не опубликованы.'
     }
   ];
@@ -146,7 +138,7 @@
       <p class="eyebrow">Открытая база / 03 проверенных проекта</p>
       <h2 id="finder-title">Найдите ближайший опубликованный аналог.</h2>
     </div>
-    <p>Совпадение фильтров не заменяет инженерное сравнение. Поэтому рядом с результатом всегда показаны совпадения, различия и ссылка на первоисточник.</p>
+    <p>Совпадение фильтров не заменяет инженерное сравнение. Поэтому рядом с результатом всегда показаны совпадения и проверенные различия.</p>
   </div>
 
   <div class="finder__filters" role="group" aria-label="Фильтры проектов">
@@ -190,7 +182,6 @@
         <p class="finder__difference">{selectedCase.differenceNote}</p>
       {/if}
 
-      <a class="finder__source" href={selectedCase.sourceUrl} target="_blank" rel="noreferrer">{selectedCase.sourceLabel} ↗</a>
       <a class="button button--light" href="#project-brief" onclick={carryCaseContext}>Сопоставить с моим проектом</a>
     </div>
   </article>

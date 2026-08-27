@@ -1,5 +1,46 @@
 <script lang="ts">
-  export let mode: 'both' | 'case' | 'seismic' = 'both';
+  import { onMount } from 'svelte';
+
+  let { mode = 'both' } = $props<{ mode?: 'both' | 'case' | 'seismic' }>();
+
+  let seismicSection = $state<HTMLElement>();
+  let quakeActive = $state(false);
+  let reducedMotion = $state(false);
+  let hasPlayed = $state(false);
+  let restartFrame = 0;
+
+  function triggerQuake() {
+    if (reducedMotion) return;
+    quakeActive = false;
+    if (restartFrame) window.cancelAnimationFrame(restartFrame);
+    restartFrame = window.requestAnimationFrame(() => {
+      restartFrame = window.requestAnimationFrame(() => {
+        quakeActive = true;
+        hasPlayed = true;
+      });
+    });
+  }
+
+  onMount(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const syncPreference = () => {
+      reducedMotion = preference.matches;
+      if (reducedMotion) quakeActive = false;
+    };
+    syncPreference();
+    preference.addEventListener('change', syncPreference);
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting) && !hasPlayed) triggerQuake();
+    }, { threshold: .45 });
+    if (seismicSection) observer.observe(seismicSection);
+
+    return () => {
+      preference.removeEventListener('change', syncPreference);
+      observer.disconnect();
+      if (restartFrame) window.cancelAnimationFrame(restartFrame);
+    };
+  });
 </script>
 
 {#if mode === 'both' || mode === 'case'}<section class="dominant-case chapter" id="case" aria-labelledby="case-title">
@@ -26,22 +67,28 @@
       <div><dt>Контур «Ависты»</dt><dd>Проектирование, производство, инженерная и мебельная комплектация, доставка, строительно-монтажные работы</dd></div>
       <div><dt>Период работ</dt><dd>Февраль 2022 — февраль 2023</dd></div>
     </dl>
-    <a class="dominant-case__source" href="https://a-modul.ru/object/vakhtoviy-poselok-na-odnom-iz-krupneyshikh-mestorozhdeniy-zolota/" target="_blank" rel="noreferrer">Официальный кейс на a-modul.ru ↗</a>
     <a class="button button--primary" href="#project-brief">Разобрать мой проект</a>
   </div>
 </section>
 {/if}
 
-{#if mode === 'both' || mode === 'seismic'}<section class="seismic-proof" id="seismic" aria-labelledby="seismic-title">
+{#if mode === 'both' || mode === 'seismic'}<section bind:this={seismicSection} class="seismic-proof" class:is-active={quakeActive} id="seismic" aria-labelledby="seismic-title">
   <div class="seismic-proof__signal" aria-hidden="true">
     <svg viewBox="0 0 900 180" preserveAspectRatio="none">
-      <path d="M0 95h75l18-8 12 18 16-58 18 103 22-77 18 35 24-14h78l14-9 18 27 17-91 24 139 18-72 18 18 28-11h112l17-8 17 22 13-61 19 96 24-57 23 17h180" />
+      <path class="seismic-proof__baseline" d="M0 95h900" />
+      <path class="seismic-proof__wave" d="M0 95h75l18-8 12 18 16-58 18 103 22-77 18 35 24-14h78l14-9 18 27 17-91 24 139 18-72 18 18 28-11h112l17-8 17 22 13-61 19 96 24-57 23 17h180" />
+      <g class="seismic-proof__epicenter">
+        <circle cx="452" cy="95" r="10" />
+        <circle cx="452" cy="95" r="26" />
+        <circle cx="452" cy="95" r="48" />
+      </g>
     </svg>
   </div>
   <div class="seismic-proof__copy">
     <p class="eyebrow">Сейсмическое доказательство / опубликованный факт</p>
     <h2 id="seismic-title">Объекты «Ависты» на Камчатке выдержали землетрясение магнитудой 8,8 без разрушений.</h2>
     <p>Сейсмическую активность региона учитываем на этапе проектирования.</p>
+    <button class="seismic-proof__replay" type="button" onclick={triggerQuake} disabled={reducedMotion}>{reducedMotion ? 'Анимация отключена' : 'Повторить толчок'}<span aria-hidden="true">↯</span></button>
     <span>Факт относится к опубликованным объектам на Камчатке и не заменяет расчёт для новой площадки.</span>
   </div>
 </section>

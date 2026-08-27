@@ -1,0 +1,125 @@
+{
+  "capturedAt": "2026-08-27T09:44:54.361Z",
+  "heroRange": 956,
+  "hero": {
+    "start": {
+      "stage": 0,
+      "progress": 0,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "transforms": [
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "scrollY": 0,
+      "heroTop": 89,
+      "heroHeight": 1779
+    },
+    "transitionOne": {
+      "stage": 1,
+      "progress": 21,
+      "opacities": [
+        0.361172,
+        0.638828,
+        0,
+        0
+      ],
+      "transforms": [
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "scrollY": 268,
+      "heroTop": -179,
+      "heroHeight": 1779
+    },
+    "transitionTwo": {
+      "stage": 2,
+      "progress": 60,
+      "opacities": [
+        0,
+        0.118982,
+        0.881018,
+        0
+      ],
+      "transforms": [
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "scrollY": 612,
+      "heroTop": -523,
+      "heroHeight": 1779
+    },
+    "finish": {
+      "stage": 3,
+      "progress": 96,
+      "opacities": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "transforms": [
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "scrollY": 918,
+      "heroTop": -829,
+      "heroHeight": 1779
+    }
+  },
+  "bimInitial": 0,
+  "bimAfterClick": 1,
+  "bimAfterWait": 1,
+  "bimButton": "Следующий этап: Модули\n→",
+  "seismicAuto": {
+    "active": true,
+    "signalAnimation": "quake-shock",
+    "copyAnimation": "quake-copy"
+  },
+  "replayStart": [
+    116.6889999925429,
+    116.6889999925429,
+    116.6889999925429,
+    116.6889999925429,
+    116.6889999925429,
+    116.6889999925429
+  ],
+  "replayAdvance": [
+    350.0249999925433,
+    350.0249999925433,
+    350.0249999925433,
+    350.0249999925433,
+    350.0249999925433,
+    350.0249999925433
+  ],
+  "pageFacts": {
+    "externalMainSiteLinks": 0,
+    "horizontalOverflow": false,
+    "brokenImages": []
+  },
+  "reducedMotion": {
+    "preference": true,
+    "heroStage": 3,
+    "bimStage": 6,
+    "quakeActive": false,
+    "replayDisabled": true
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  }
+}

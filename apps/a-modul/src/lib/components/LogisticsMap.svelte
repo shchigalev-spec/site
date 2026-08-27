@@ -27,12 +27,12 @@
     { id: 'russia', label: 'Россия', highlight: { x: 825, y: 590, rx: 710, ry: 350 }, modes: ['road', 'rail', 'combined'], note: 'Сначала зафиксируйте точный регион: страна не является точкой назначения. Морской маршрут и зимник рассматриваются только после выбора конкретной территории.', caseTitle: 'Поиск по всей базе', caseNote: 'Подбор начнётся с типа объекта, отрасли и условий площадки.' }
   ];
 
-  const modes: { id: ModeId; title: string; support: string; sourceUrl: string; sourceLabel: string }[] = [
-    { id: 'road', title: 'Авто', support: 'Режим для проверки габаритов, подъезда и последовательности партий.', sourceUrl: 'https://a-modul.ru/dostavka/', sourceLabel: 'Официальная страница доставки' },
-    { id: 'rail', title: 'Ж/д', support: 'Допустимость зависит от габаритов, упаковки и схемы перегрузки.', sourceUrl: 'https://a-modul.ru/dostavka/', sourceLabel: 'Официальная страница доставки' },
-    { id: 'sea', title: 'Море / вода', support: 'Режим для восточных и смешанных маршрутов; не назначается внутренним регионам автоматически.', sourceUrl: 'https://a-modul.ru/shift_camps/', sourceLabel: 'Официальная страница вахтовых посёлков' },
-    { id: 'winter', title: 'Зимник', support: 'Только сезонный сценарий для удалённых площадок после проверки доступности.', sourceUrl: 'https://a-modul.ru/shift_camps/', sourceLabel: 'Официальная страница вахтовых посёлков' },
-    { id: 'combined', title: 'Комбинированная', support: 'Последовательность плеч и точки перегрузки определяются в отдельном расчёте.', sourceUrl: 'https://a-modul.ru/dostavka/', sourceLabel: 'Официальная страница доставки' }
+  const modes: { id: ModeId; title: string; support: string }[] = [
+    { id: 'road', title: 'Авто', support: 'Режим для проверки габаритов, подъезда и последовательности партий.' },
+    { id: 'rail', title: 'Ж/д', support: 'Допустимость зависит от габаритов, упаковки и схемы перегрузки.' },
+    { id: 'sea', title: 'Море / вода', support: 'Режим для восточных и смешанных маршрутов; не назначается внутренним регионам автоматически.' },
+    { id: 'winter', title: 'Зимник', support: 'Только сезонный сценарий для удалённых площадок после проверки доступности.' },
+    { id: 'combined', title: 'Комбинированная', support: 'Последовательность плеч и точки перегрузки определяются в отдельном расчёте.' }
   ];
 
   let section: HTMLElement;
@@ -145,7 +145,6 @@
           <div class="logistics__mode-source">
             <strong>{activeModeData.title}</strong>
             <p>{activeModeData.support}</p>
-            <a href={activeModeData.sourceUrl} target="_blank" rel="noreferrer">{activeModeData.sourceLabel} ↗</a>
           </div>
         </div>
 

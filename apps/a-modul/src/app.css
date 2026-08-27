@@ -484,7 +484,8 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
 .bim__caption > div { display: grid; gap: .45rem; }
 .bim__caption strong { line-height: 1.4; }
 .bim__play { display: flex; min-height: 3rem; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem .9rem; border: 1px solid var(--line-dark); color: var(--warm); background: transparent; cursor: pointer; }
-.bim__play[aria-pressed='true'] { border-color: var(--technical); }
+.bim__play:hover:not(:disabled), .bim__play:focus-visible { border-color: var(--technical); }
+.bim__play:disabled { color: #8f969f; cursor: default; }
 
 .factory { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(22rem, .75fr); color: var(--warm); background: var(--graphite); }
 .factory__visual { position: relative; min-height: 52rem; overflow: hidden; }
@@ -555,11 +556,50 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
 .seismic-proof__signal { position: absolute; inset: 0; display: grid; place-items: center; opacity: .26; }
 .seismic-proof__signal svg { width: 100%; height: 70%; }
 .seismic-proof__signal path { fill: none; stroke: var(--technical); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.seismic-proof__baseline { opacity: .32; }
+.seismic-proof__wave { stroke-linejoin: bevel; }
+.seismic-proof__epicenter circle { fill: none; stroke: var(--pink-accessible); stroke-width: 2; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; }
 .seismic-proof__copy { position: relative; z-index: 2; max-width: 78rem; }
 .seismic-proof__copy .eyebrow { color: #ff9ab7; }
 .seismic-proof__copy h2 { max-width: 20ch; font-size: clamp(2.8rem, 5.5vw, 6.5rem); }
 .seismic-proof__copy > p:not(.eyebrow) { max-width: 48rem; margin: 2rem 0 0; font-size: clamp(1.15rem, 1.8vw, 1.6rem); }
+.seismic-proof__replay { display: inline-flex; min-height: 3rem; align-items: center; gap: 1rem; margin-top: 2rem; padding: .7rem 1rem; border: 1px solid rgb(255 255 255 / 38%); color: var(--warm); background: rgb(17 19 23 / 30%); font: inherit; cursor: pointer; }
+.seismic-proof__replay span { color: var(--pink-accessible); font-size: 1.35rem; }
+.seismic-proof__replay:hover:not(:disabled), .seismic-proof__replay:focus-visible { border-color: var(--pink-accessible); }
+.seismic-proof__replay:disabled { color: #b6bbc1; cursor: default; }
 .seismic-proof__copy > span { display: block; max-width: 48rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgb(255 255 255 / 24%); color: #ded6e7; font-size: .8rem; line-height: 1.5; }
+
+.seismic-proof.is-active .seismic-proof__signal svg { animation: quake-shock 900ms linear both; }
+.seismic-proof.is-active .seismic-proof__copy { animation: quake-copy 900ms linear both; }
+.seismic-proof.is-active .seismic-proof__wave { stroke-dasharray: 1500; stroke-dashoffset: 1500; animation: quake-draw 1100ms cubic-bezier(.2, .8, .25, 1) forwards; }
+.seismic-proof.is-active .seismic-proof__epicenter circle { animation: quake-ring 900ms ease-out both; }
+.seismic-proof.is-active .seismic-proof__epicenter circle:nth-child(2) { animation-delay: 80ms; }
+.seismic-proof.is-active .seismic-proof__epicenter circle:nth-child(3) { animation-delay: 160ms; }
+
+@keyframes quake-shock {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  8% { transform: translate3d(-9px, 2px, 0); }
+  17% { transform: translate3d(8px, -2px, 0); }
+  27% { transform: translate3d(-6px, 1px, 0); }
+  39% { transform: translate3d(5px, -1px, 0); }
+  53% { transform: translate3d(-3px, 1px, 0); }
+  69% { transform: translate3d(2px, 0, 0); }
+  84% { transform: translate3d(-1px, 0, 0); }
+}
+@keyframes quake-copy {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  12% { transform: translate3d(-4px, 1px, 0); }
+  24% { transform: translate3d(4px, -1px, 0); }
+  38% { transform: translate3d(-3px, 0, 0); }
+  55% { transform: translate3d(2px, 0, 0); }
+  74% { transform: translate3d(-1px, 0, 0); }
+}
+@keyframes quake-draw { to { stroke-dashoffset: 0; } }
+@keyframes quake-ring {
+  0% { opacity: 0; transform: scale(.35); }
+  35% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.85); }
+}
 
 .milestone-boundary { display: grid; min-height: 32rem; grid-template-columns: 1fr minmax(18rem, .65fr) auto; gap: 3rem; align-items: center; padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 5vw, 5.5rem); color: var(--graphite); background: var(--technical); }
 .milestone-boundary .eyebrow { color: #4d396c; }
@@ -825,8 +865,7 @@ body { background: var(--graphite); }
     linear-gradient(90deg, rgb(8 11 15 / 54%) 0, rgb(8 11 15 / 18%) 38%, transparent 62%),
     linear-gradient(180deg, rgb(4 8 14 / 8%), transparent 56%, rgb(4 8 14 / 50%));
 }
-.assembly__plate { transition: opacity 420ms cubic-bezier(.22, 1, .36, 1), transform 700ms cubic-bezier(.22, 1, .36, 1); transform: scale(1.012); }
-.assembly__plate.visible { transform: scale(1); }
+.assembly__plate { transition: none; will-change: opacity; }
 .assembly__plate img { object-position: center; }
 .assembly__technical { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 2px 4px rgb(0 0 0 / 45%)); pointer-events: none; }
 .technical__datum path { fill: none; stroke: rgb(213 245 240 / 48%); stroke-width: 2; stroke-dasharray: 9 10; vector-effect: non-scaling-stroke; }
@@ -834,8 +873,6 @@ body { background: var(--graphite); }
 .technical__labels text { fill: #f4f1ea; font-family: 'IBM Plex Mono', monospace; font-size: 18px; letter-spacing: .06em; paint-order: stroke; stroke: rgb(17 19 23 / 84%); stroke-width: 5px; }
 .technical__connections path { fill: none; stroke: #ff6f86; stroke-width: 3; stroke-dasharray: 14 10; vector-effect: non-scaling-stroke; }
 .technical__connections circle { fill: #f4f1ea; stroke: #c9103f; stroke-width: 3; vector-effect: non-scaling-stroke; }
-.technical__module rect { fill: rgb(201 16 63 / 74%); stroke: #f4f1ea; stroke-width: 2; vector-effect: non-scaling-stroke; }
-.technical__module path { fill: none; stroke: #f4f1ea; stroke-width: 2; stroke-dasharray: none; vector-effect: non-scaling-stroke; }
 .technical__status path { fill: rgb(17 19 23 / 45%); stroke: #95c8c3; stroke-width: 2; vector-effect: non-scaling-stroke; }
 .technical__status rect { fill: #c9103f; stroke: #f4f1ea; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
 .technical__status text { fill: #f4f1ea; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .04em; paint-order: stroke; stroke: rgb(17 19 23 / 88%); stroke-width: 4px; }
@@ -930,6 +967,7 @@ body { background: var(--graphite); }
   .assembly { position: relative; top: auto; height: 100%; min-height: 0; grid-template-rows: minmax(0, 1fr) auto auto; }
   .assembly__viewport { min-height: 0; }
   .assembly__plate img { object-position: 58% center; }
+  .assembly__plate { transition: opacity 220ms ease-out; }
   .assembly__hud { top: .65rem; right: .65rem; font-size: .58rem; }
   .assembly__technical { min-width: 72rem; transform: translateX(-28%); transform-origin: center; }
   .assembly__caption { min-height: 4.85rem; padding: .65rem .8rem; }
@@ -1003,7 +1041,6 @@ html, body { overflow-x: clip; }
 .logistics__mode-buttons { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .logistics__mode-buttons button { min-height: 2.65rem; }
 .logistics__mode-source { display: grid; gap: .35rem; padding: .9rem; border: 1px solid var(--line-dark); background: #1d2229; }
-.logistics__mode-source a, .finder__source, .dominant-case__source { color: var(--pink-accessible); font-size: .78rem; text-underline-offset: .2em; }
 .logistics__case strong { font-family: 'Geologica', sans-serif; font-size: 1.05rem; font-weight: 540; }
 .logistics__empty { padding: 1rem 0; border-block: 1px solid var(--line-dark); }
 .logistics__panel .button { margin-top: 1rem; }
@@ -1019,7 +1056,6 @@ html, body { overflow-x: clip; }
 .finder__comparison > div:first-child { border-left-color: var(--technical); }
 .finder__comparison strong { font-family: 'IBM Plex Mono', monospace; font-size: .65rem; letter-spacing: .06em; text-transform: uppercase; }
 .finder__comparison p { margin: 0; color: #4f555c; font-size: .82rem; line-height: 1.5; }
-.finder__source { width: fit-content; color: #77102d; }
 
 .factory { grid-template-columns: minmax(0, 1.28fr) minmax(24rem, .72fr); }
 .factory__visual { min-height: 43rem; }
@@ -1109,4 +1145,6 @@ html, body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .map__route { stroke-dashoffset: 0; }
   .lower-object__visual picture, .factory__visual picture { animation: none; }
+  .seismic-proof__wave { stroke-dasharray: none; stroke-dashoffset: 0; }
+  .seismic-proof__epicenter { display: none; }
 }
