@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-27T17:41:24.105Z",
+  "capturedAt": "2026-08-27T18:05:03.994Z",
   "routeStatuses": {
     "/modulnye-zdaniya/": 200,
     "/vahtovye-poselki/": 200,
@@ -20,13 +20,15 @@
           "id": "project-brief",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
           "selector": ".evidence",
           "id": "evidence",
-          "height": 812,
+          "height": 748,
           "available": 811,
+          "headroom": 63,
           "fits": true
         },
         {
@@ -34,6 +36,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -41,6 +44,7 @@
           "id": "configurator",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -48,6 +52,7 @@
           "id": "risk",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -55,6 +60,7 @@
           "id": "logistics",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -62,6 +68,7 @@
           "id": "finder",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -69,6 +76,7 @@
           "id": "bim",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -76,6 +84,7 @@
           "id": "factory",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -83,6 +92,7 @@
           "id": "price-scope",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -90,6 +100,7 @@
           "id": "case",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -97,6 +108,7 @@
           "id": "seismic",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -104,6 +116,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -111,6 +124,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         }
       ],
@@ -129,13 +143,15 @@
           "id": "project-brief",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
           "selector": ".evidence",
           "id": "",
-          "height": 812,
+          "height": 748,
           "available": 811,
+          "headroom": 63,
           "fits": true
         },
         {
@@ -143,6 +159,7 @@
           "id": "configurator",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -150,6 +167,7 @@
           "id": "logistics",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -157,6 +175,7 @@
           "id": "bim",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -164,6 +183,7 @@
           "id": "factory",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -171,6 +191,7 @@
           "id": "price-scope",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -178,6 +199,7 @@
           "id": "case",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -185,6 +207,7 @@
           "id": "seismic",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -192,6 +215,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -199,6 +223,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         }
       ],
@@ -217,13 +242,15 @@
           "id": "project-brief",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
           "selector": ".evidence",
           "id": "",
-          "height": 812,
+          "height": 748,
           "available": 811,
+          "headroom": 63,
           "fits": true
         },
         {
@@ -231,6 +258,7 @@
           "id": "factory",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -238,6 +266,7 @@
           "id": "price-scope",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -245,6 +274,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -252,6 +282,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -259,6 +290,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         }
       ],
@@ -277,13 +309,15 @@
           "id": "project-brief",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
           "selector": ".evidence",
           "id": "",
-          "height": 812,
+          "height": 748,
           "available": 811,
+          "headroom": 63,
           "fits": true
         },
         {
@@ -291,6 +325,7 @@
           "id": "logistics",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -298,6 +333,7 @@
           "id": "price-scope",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -305,6 +341,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -312,6 +349,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -319,6 +357,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         }
       ],
@@ -337,13 +376,15 @@
           "id": "project-brief",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
           "selector": ".evidence",
           "id": "evidence",
-          "height": 812,
+          "height": 748,
           "available": 811,
+          "headroom": 63,
           "fits": true
         },
         {
@@ -351,6 +392,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -358,6 +400,7 @@
           "id": "configurator",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -365,6 +408,7 @@
           "id": "risk",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -372,6 +416,7 @@
           "id": "logistics",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -379,6 +424,7 @@
           "id": "finder",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -386,6 +432,7 @@
           "id": "bim",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -393,6 +440,7 @@
           "id": "factory",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -400,6 +448,7 @@
           "id": "price-scope",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -407,6 +456,7 @@
           "id": "case",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -414,6 +464,7 @@
           "id": "seismic",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -421,6 +472,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -428,6 +480,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         }
       ],
@@ -446,13 +499,15 @@
           "id": "project-brief",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
           "selector": ".evidence",
           "id": "",
-          "height": 812,
+          "height": 748,
           "available": 811,
+          "headroom": 63,
           "fits": true
         },
         {
@@ -460,6 +515,7 @@
           "id": "configurator",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -467,6 +523,7 @@
           "id": "logistics",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -474,6 +531,7 @@
           "id": "bim",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -481,6 +539,7 @@
           "id": "factory",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -488,6 +547,7 @@
           "id": "price-scope",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -495,6 +555,7 @@
           "id": "case",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -502,6 +563,7 @@
           "id": "seismic",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -509,6 +571,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -516,6 +579,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         }
       ],
@@ -534,13 +598,15 @@
           "id": "project-brief",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
           "selector": ".evidence",
           "id": "",
-          "height": 812,
+          "height": 748,
           "available": 811,
+          "headroom": 63,
           "fits": true
         },
         {
@@ -548,6 +614,7 @@
           "id": "factory",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -555,6 +622,7 @@
           "id": "price-scope",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -562,6 +630,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -569,6 +638,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -576,6 +646,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         }
       ],
@@ -594,13 +665,15 @@
           "id": "project-brief",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
           "selector": ".evidence",
           "id": "",
-          "height": 812,
+          "height": 748,
           "available": 811,
+          "headroom": 63,
           "fits": true
         },
         {
@@ -608,6 +681,7 @@
           "id": "logistics",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -615,6 +689,7 @@
           "id": "price-scope",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -622,6 +697,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -629,6 +705,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         },
         {
@@ -636,6 +713,7 @@
           "id": "",
           "height": 812,
           "available": 811,
+          "headroom": -1,
           "fits": true
         }
       ],

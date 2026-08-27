@@ -57,7 +57,8 @@ for (const viewport of [{ width: 1920, height: 900 }, { width: 1440, height: 900
           id: element.id,
           height: Math.round(rect.height * 10) / 10,
           available: Math.round(available * 10) / 10,
-          fits: rect.height <= available + 1
+          headroom: Math.round((available - rect.height) * 10) / 10,
+          fits: rect.height <= available - (selector === '.evidence' ? 48 : -1)
         };
       }));
       return {

@@ -1180,14 +1180,14 @@ html, body { overflow-x: clip; }
   .commissioning__options button { min-height: 2.45rem; padding-block: .45rem; }
 
   .evidence {
-    height: var(--chapter-screen);
+    height: calc(var(--chapter-screen) - 4rem);
     min-height: 0;
     max-height: none;
   }
-  .evidence__heading { padding: 2rem clamp(2rem, 3.2vw, 3.5rem); }
-  .evidence__heading h2 { font-size: clamp(2.45rem, 6.2vh, 3.75rem); line-height: .98; }
-  .evidence__heading > p:not(.eyebrow) { margin-top: .85rem; }
-  .evidence__rail article { min-height: 6.2rem; padding: .75rem 1rem; }
+  .evidence__heading { padding: 1.65rem clamp(2rem, 3.2vw, 3.5rem); }
+  .evidence__heading h2 { font-size: clamp(2.35rem, 5.8vh, 3.55rem); line-height: .98; }
+  .evidence__heading > p:not(.eyebrow) { margin-top: .7rem; }
+  .evidence__rail article { min-height: 5.65rem; padding: .65rem 1rem; }
   .evidence__rail strong { font-size: clamp(1.35rem, 3vh, 2rem); }
 
   .lower-object,
