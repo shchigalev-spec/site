@@ -2,20 +2,10 @@
   import { onMount } from 'svelte';
 
   const stages = [
-    { label: 'Площадка', detail: 'Исходные данные и подготовленное пятно застройки', position: 0.04, image: 'empty' },
-    { label: 'Основания', detail: 'Планировочная сетка, оси и подготовленные точки опирания', position: 0.32, image: 'foundations' },
-    { label: 'Доставка и монтаж', detail: 'Модульные группы доставляются и устанавливаются в проектной последовательности', position: 0.68, image: 'assembly' },
-    { label: 'Запуск', detail: 'Инженерия, стыковка и готовый объект в эксплуатации', position: 0.94, image: 'operational' }
-  ] as const;
-
-  const stakePoints = [
-    { x: 412, y: 706 }, { x: 612, y: 616 }, { x: 812, y: 526 }, { x: 1012, y: 436 }, { x: 1214, y: 348 },
-    { x: 522, y: 760 }, { x: 720, y: 671 }, { x: 920, y: 582 }, { x: 1118, y: 494 }, { x: 1312, y: 408 }
-  ] as const;
-
-  const stakeCords = [
-    'M412 706 612 616 812 526 1012 436 1214 348 1312 408 1118 494 920 582 720 671 522 760Z',
-    'M612 616 720 671', 'M812 526 920 582', 'M1012 436 1118 494'
+    { label: 'Площадка', detail: 'Исходные данные и геодезическая разбивка пятна застройки', position: 0.04, asset: 'a-modul-general-hero-v3-stakeout' },
+    { label: 'Основания', detail: 'Подготовленные точки опирания в границах разбитого пятна', position: 0.32, asset: 'a-modul-general-hero-v2-foundations' },
+    { label: 'Доставка и монтаж', detail: 'Модульные группы доставляются и устанавливаются в проектной последовательности', position: 0.68, asset: 'a-modul-general-hero-v2-assembly' },
+    { label: 'Запуск', detail: 'Инженерия, стыковка и готовый объект в эксплуатации', position: 0.94, asset: 'a-modul-general-hero-v2-operational' }
   ] as const;
 
   const mobileStageIndexes = [0, 2, 3];
@@ -27,8 +17,6 @@
   let frame = 0;
 
   const clamp = (value: number) => Math.max(0, Math.min(1, value));
-  let assemblyProgress = $derived(clamp((progress - .45) / .43));
-
   function smoothstep(value: number) {
     const next = clamp(value);
     return next * next * (3 - 2 * next);
@@ -125,47 +113,13 @@
 <figure bind:this={root} class="assembly" data-stage={activeStage} data-progress={Math.round(progress * 100)} aria-labelledby="assembly-caption">
   <div class="assembly__viewport">
     {#each stages as stage, index}
-      <picture class:visible={activeStage === index} class="assembly__plate assembly__plate--{stage.image}" style={`opacity: ${plateOpacities[index]}`} aria-hidden="true">
-        {#if index !== 1}<source media="(max-width: 820px)" type="image/avif" srcset="/generated/a-modul-general-hero-v2-{stage.image}-mobile.avif" />{/if}
-        {#if index !== 1}<source media="(max-width: 820px)" type="image/webp" srcset="/generated/a-modul-general-hero-v2-{stage.image}-mobile.webp" />{/if}
-        <source type="image/avif" srcset="/generated/a-modul-general-hero-v2-{stage.image}-desktop.avif" />
-        <img src="/generated/a-modul-general-hero-v2-{stage.image}-desktop.webp" width="1600" height="900" alt="" fetchpriority={index === 0 ? 'high' : 'auto'} />
+      <picture class:visible={activeStage === index} class="assembly__plate" style={`opacity: ${plateOpacities[index]}`} aria-hidden="true">
+        <source media="(max-width: 820px)" type="image/avif" srcset="/generated/{stage.asset}-mobile.avif" />
+        <source media="(max-width: 820px)" type="image/webp" srcset="/generated/{stage.asset}-mobile.webp" />
+        <source type="image/avif" srcset="/generated/{stage.asset}-desktop.avif" />
+        <img src="/generated/{stage.asset}-desktop.webp" width="1600" height="900" alt="" fetchpriority={index === 0 ? 'high' : 'auto'} />
       </picture>
     {/each}
-
-    <svg class="assembly__technical" viewBox="0 0 1600 900" aria-hidden="true">
-      <g class="technical__staking" style={`opacity: ${plateOpacities[0]}`}>
-        {#each stakeCords as cord}<path class="stake__cord" d={cord} />{/each}
-        {#each stakePoints as stake, index}
-          <g class="stake" transform={`translate(${stake.x} ${stake.y})`}>
-            <ellipse class="stake__ground" cx="0" cy="15" rx="8" ry="3" />
-            <path class="stake__post" d="M0 16V-25" />
-            <path class="stake__flag" d="M1-24 18-18 1-11Z" />
-            <circle class="stake__node" cx="0" cy="0" r="4" />
-            {#if index === 0 || index === 4 || index === 5 || index === 9}<text x="10" y="8">ОСЬ {index < 5 ? 'А' : 'Б'}{index === 0 || index === 5 ? '1' : '5'}</text>{/if}
-          </g>
-        {/each}
-      </g>
-      <g class="technical__zones" style={`opacity: ${plateOpacities[1]}`}>
-          <polygon points="610,596 807,507 994,581 796,674" />
-          <polygon points="836,492 1030,404 1184,468 991,557" />
-          <polygon points="1046,394 1193,327 1318,379 1170,447" />
-      </g>
-      <g class="technical__labels" style={`opacity: ${plateOpacities[1]}`}>
-          <text x="695" y="588">ЖИЛАЯ ГРУППА</text><text x="926" y="482">АБК / БЫТ</text><text x="1120" y="382">ИНЖЕНЕРИЯ</text>
-      </g>
-      <g class="technical__connections" style={`opacity: ${plateOpacities[2]}`}>
-          <path d="M735 616 925 530 1113 453 1265 386" style={`stroke-dashoffset: ${Math.round((1 - assemblyProgress) * 220)}`} />
-          <circle cx="735" cy="616" r="7"/><circle cx="925" cy="530" r="7"/><circle cx="1113" cy="453" r="7"/><circle cx="1265" cy="386" r="7"/>
-      </g>
-      <g class="technical__status" style={`opacity: ${plateOpacities[3]}`}>
-        <path d="M1090 690h305v118h-305z"/>
-        <text x="1115" y="724">ПЛАНИРОВОЧНАЯ ЛЕГЕНДА</text>
-        <rect x="1116" y="745" width="12" height="12"/><text x="1138" y="756">ЖИЛАЯ ГРУППА</text>
-        <rect x="1248" y="745" width="12" height="12"/><text x="1270" y="756">АБК</text>
-        <rect x="1116" y="776" width="12" height="12"/><text x="1138" y="787">ИНЖЕНЕРИЯ</text>
-      </g>
-    </svg>
 
     <div class="assembly__hud" aria-hidden="true">
       <span>СЕВЕРНЫЙ КОНТУР · СЦЕНА {String(mobile ? mobileStageIndexes.indexOf(activeStage) + 1 : activeStage + 1).padStart(2, '0')}</span>

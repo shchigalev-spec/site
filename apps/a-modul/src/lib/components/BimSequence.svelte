@@ -3,9 +3,9 @@
   import { trackEvent } from '$lib/analytics';
 
   const stages = [
-    { label: 'Генплан', detail: 'Фиксируем площадку, связи и ограничения', asset: 'a-modul-general-hero-empty-site' },
-    { label: 'Состав', detail: 'Собираем функциональные группы в проектной модели', asset: 'a-modul-general-hero-empty-site' },
-    { label: 'Модули', detail: 'Разделяем объект на производимые и транспортируемые элементы', asset: 'a-modul-general-hero-empty-site' },
+    { label: 'Генплан', detail: 'Фиксируем площадку, связи и ограничения', asset: 'a-modul-bim-integrated-genplan' },
+    { label: 'Состав', detail: 'Переносим функциональные группы в реальную разбивку площадки', asset: 'a-modul-bim-integrated-functional-layout' },
+    { label: 'Модули', detail: 'Собираем производимую сетку из реальных базовых рам', asset: 'a-modul-bim-integrated-module-grid' },
     { label: 'Производство', detail: 'Связываем рабочую документацию с маршрутами изготовления', asset: 'a-modul-factory' },
     { label: 'Доставка', detail: 'Комплектуем партии под подтверждённую схему маршрута', asset: 'a-modul-general-hero-partial-settlement' },
     { label: 'Монтаж', detail: 'Стыкуем группы, переходы и инженерные подключения', asset: 'a-modul-general-hero-partial-settlement' },
@@ -69,30 +69,6 @@
           <img src={`/generated/${stage.asset}-desktop.webp`} width="1600" height="900" alt="" loading="lazy" />
         </picture>
       {/each}
-
-      {#if active <= 2}
-        <svg class="bim__overlay" viewBox="0 0 1000 560" aria-hidden="true">
-          <path d="M152 430 554 196 875 342 469 530Z" />
-          <path d="m248 374 404 185M340 320l405 184M431 267l408 185" />
-          <path d="m238 480 404-234M356 526l403-232M469 535l383-221" />
-          {#if active === 1}
-            <g><path d="m515 310 151-88 109 50-151 88Z" /><path d="m348 405 124-72 94 43-124 72Z" /><path d="m225 457 97-57 74 34-98 57Z" /></g>
-          {/if}
-          {#if active === 2}
-            <g class="bim__module-blocks">
-              <path d="m514 310 70-41 48 22-70 41Z" /><path d="m590 268 70-41 48 22-70 41Z" /><path d="m430 359 70-41 48 22-70 41Z" />
-              <path d="m347 407 61-36 43 20-62 36Z" /><path d="m414 368 61-36 43 20-62 36Z" /><path d="m267 454 58-34 40 19-58 33Z" />
-            </g>
-          {/if}
-        </svg>
-      {/if}
-
-      {#if active === 4}
-        <svg class="bim__transport" viewBox="0 0 1000 560" aria-hidden="true">
-          <path d="M80 470 C280 420 480 455 730 336" />
-          <g transform="translate(350 380)"><rect x="0" y="0" width="110" height="42" rx="3" /><rect x="112" y="15" width="42" height="27" rx="3" /><circle cx="28" cy="50" r="9" /><circle cx="127" cy="50" r="9" /></g>
-        </svg>
-      {/if}
 
       <div class="bim__hud"><span>ЭТАП {String(active + 1).padStart(2, '0')}</span><span>{stages[active].label}</span></div>
       <span class="visualization-label">Процессная визуализация</span>

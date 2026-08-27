@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-08-27T10:49:55.203Z",
+  "desktopFacts": {
+    "removedOverlayCount": 0,
+    "heroSource": "/generated/a-modul-general-hero-v3-stakeout-desktop.webp",
+    "bimSources": [
+      "/generated/a-modul-bim-integrated-genplan-desktop.webp",
+      "/generated/a-modul-bim-integrated-functional-layout-desktop.webp",
+      "/generated/a-modul-bim-integrated-module-grid-desktop.webp"
+    ],
+    "horizontalOverflow": false,
+    "brokenImages": []
+  },
+  "mobileFacts": {
+    "heroStage": 0,
+    "horizontalOverflow": false,
+    "brokenImages": []
+  },
+  "reducedFacts": {
+    "preference": true,
+    "heroStage": 3,
+    "bimStage": 6
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  }
+}

@@ -465,14 +465,6 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
 .bim__plate.visible { opacity: 1; }
 .bim__plate img { width: 100%; height: 100%; object-fit: cover; }
 .bim__viewport::after { position: absolute; z-index: 3; inset: 0; background: linear-gradient(180deg, rgb(0 0 0 / 30%), transparent 40%, rgb(0 0 0 / 28%)); content: ''; pointer-events: none; }
-.bim__overlay { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 0 9px rgb(168 225 212 / 35%)); }
-.bim__overlay > path { fill: none; stroke: var(--technical); stroke-width: 2; stroke-dasharray: 8 9; }
-.bim__overlay g path { fill: rgb(73 45 125 / 48%); stroke: var(--pink-accessible); stroke-width: 2; }
-.bim__module-blocks path { fill: rgb(168 225 212 / 48%); stroke: var(--technical); }
-.bim__transport { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 0 8px rgb(228 10 70 / 35%)); }
-.bim__transport > path { fill: none; stroke: var(--pink-accessible); stroke-width: 4; stroke-dasharray: 9 10; }
-.bim__transport rect { fill: rgb(73 45 125 / 75%); stroke: var(--warm); stroke-width: 2; }
-.bim__transport circle { fill: var(--graphite); stroke: var(--warm); stroke-width: 2; }
 .bim__hud { position: absolute; z-index: 5; top: 1.25rem; right: 1.25rem; left: 1.25rem; display: flex; justify-content: space-between; color: var(--warm); font-family: 'IBM Plex Mono', monospace; font-size: .7rem; text-transform: uppercase; }
 .bim__viewport .visualization-label { right: auto; left: 1rem; }
 .bim__controls { display: grid; grid-template-rows: 1fr auto; color: var(--warm); background: var(--graphite); }
@@ -867,21 +859,6 @@ body { background: var(--graphite); }
 }
 .assembly__plate { transition: none; will-change: opacity; }
 .assembly__plate img { object-position: center; }
-.assembly__technical { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 2px 4px rgb(0 0 0 / 45%)); pointer-events: none; }
-.technical__staking { transition: opacity 120ms linear; }
-.stake__cord { fill: none; stroke: rgb(244 241 234 / 82%); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-.stake__post { fill: none; stroke: #d91a49; stroke-width: 4; stroke-linecap: round; vector-effect: non-scaling-stroke; }
-.stake__flag { fill: #c9103f; stroke: #f4f1ea; stroke-width: 1.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-.stake__ground { fill: rgb(17 19 23 / 52%); stroke: #d5f2ee; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
-.stake__node { fill: #f4f1ea; stroke: #c9103f; stroke-width: 2; vector-effect: non-scaling-stroke; }
-.stake text { fill: #f4f1ea; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .05em; paint-order: stroke; stroke: rgb(17 19 23 / 88%); stroke-width: 4px; }
-.technical__zones polygon { fill: rgb(149 200 195 / 16%); stroke: #d5f2ee; stroke-width: 2; vector-effect: non-scaling-stroke; }
-.technical__labels text { fill: #f4f1ea; font-family: 'IBM Plex Mono', monospace; font-size: 18px; letter-spacing: .06em; paint-order: stroke; stroke: rgb(17 19 23 / 84%); stroke-width: 5px; }
-.technical__connections path { fill: none; stroke: #ff6f86; stroke-width: 3; stroke-dasharray: 14 10; vector-effect: non-scaling-stroke; }
-.technical__connections circle { fill: #f4f1ea; stroke: #c9103f; stroke-width: 3; vector-effect: non-scaling-stroke; }
-.technical__status path { fill: rgb(17 19 23 / 45%); stroke: #95c8c3; stroke-width: 2; vector-effect: non-scaling-stroke; }
-.technical__status rect { fill: #c9103f; stroke: #f4f1ea; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
-.technical__status text { fill: #f4f1ea; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .04em; paint-order: stroke; stroke: rgb(17 19 23 / 88%); stroke-width: 4px; }
 .assembly__hud { top: 1rem; right: 1.25rem; left: auto; gap: 2rem; padding: .6rem .75rem; background: rgb(17 19 23 / 58%); backdrop-filter: blur(10px); }
 .assembly__progress { position: absolute; z-index: 7; right: 0; bottom: 0; left: 0; height: 3px; background: rgb(255 255 255 / 22%); }
 .assembly__progress span { display: block; height: 100%; background: var(--magenta); transition: width 120ms linear; }
@@ -974,7 +951,6 @@ body { background: var(--graphite); }
   .assembly__plate img { object-position: 58% center; }
   .assembly__plate { transition: opacity 220ms ease-out; }
   .assembly__hud { top: .65rem; right: .65rem; font-size: .58rem; }
-  .assembly__technical { min-width: 72rem; transform: translateX(-28%); transform-origin: center; }
   .assembly__caption { min-height: 4.85rem; padding: .65rem .8rem; }
   .assembly__caption strong { max-width: 17rem; font-size: .78rem; }
   .assembly__stages { grid-template-columns: repeat(3, minmax(0, 1fr)); }
