@@ -521,14 +521,17 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
 
 .price-scope { color: var(--graphite); background: var(--warm); }
 .price-scope .eyebrow { color: var(--purple); }
-.price-scope__matrix { border-top: 1px solid var(--line-light); }
-.matrix__row { display: grid; grid-template-columns: minmax(18rem, 1fr) minmax(12rem, .55fr) minmax(14rem, .65fr); }
-.matrix__row > * { display: flex; min-height: 4.5rem; align-items: center; padding: .9rem clamp(1rem, 3vw, 3rem); border-right: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
-.matrix__row > *:last-child { border-right: 0; }
-.matrix__row > span:first-child { gap: 2rem; }
-.matrix__row i { color: var(--magenta); font-family: 'IBM Plex Mono', monospace; font-size: .65rem; font-style: normal; }
-.matrix__row > span:last-child { color: var(--purple); background: rgb(73 45 125 / 7%); }
-.matrix__head > * { min-height: 3.25rem; color: #625c65; font-family: 'IBM Plex Mono', monospace; font-size: .65rem; letter-spacing: .06em; text-transform: uppercase; }
+.price-scope__risks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-light); }
+.price-scope__risks article { display: grid; min-width: 0; min-height: 15rem; align-content: start; gap: .9rem; padding: 1.4rem clamp(1rem, 2.4vw, 2.5rem); border-right: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+.price-scope__risks article:last-child { border-right: 0; }
+.price-scope__risks span { color: var(--magenta); font-family: 'IBM Plex Mono', monospace; font-size: .65rem; }
+.price-scope__risks h3 { max-width: 18ch; margin: 1.4rem 0 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.25rem, 1.65vw, 1.75rem); font-weight: 500; line-height: 1.08; letter-spacing: -.025em; }
+.price-scope__risks p { margin: 0; color: #5d5760; font-size: .88rem; line-height: 1.5; }
+.price-scope__chain { display: grid; grid-template-columns: minmax(9rem, .25fr) minmax(0, 1fr); gap: 2rem; align-items: center; padding: 1.25rem clamp(1.25rem, 5vw, 5.5rem); border-bottom: 1px solid var(--line-light); }
+.price-scope__chain .mono-label { color: var(--purple); }
+.price-scope__chain p { display: flex; min-width: 0; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; margin: 0; }
+.price-scope__chain strong { font-size: .92rem; font-weight: 500; }
+.price-scope__chain i { color: var(--magenta); font-style: normal; }
 .price-scope__footer { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: center; padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 5vw, 5.5rem); }
 .price-scope__footer > div { display: grid; max-width: 45rem; gap: .65rem; }
 .price-scope__footer .mono-label { color: var(--purple); }
@@ -696,12 +699,10 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
   .route-visuals__visual { min-height: 36rem; }
   .route-visuals__tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .route-visuals__tabs [role='tabpanel'] { grid-column: 1 / -1; }
-  .price-scope__matrix { padding: 0 clamp(1.25rem, 5vw, 5.5rem) 3rem; }
-  .price-scope__matrix .matrix__head { display: none; }
-  .matrix__row { display: grid; grid-template-columns: 1fr; margin-top: .75rem; border: 1px solid var(--line-light); }
-  .matrix__row > * { min-height: 0; padding: .8rem; border-right: 0; }
-  .matrix__row > span:nth-child(2)::before { margin-right: .5rem; color: #625c65; content: 'Только модуль:'; }
-  .matrix__row > span:last-child::before { margin-right: .5rem; color: #625c65; font-weight: 400; content: 'Запуск объекта:'; }
+  .price-scope__risks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .price-scope__risks article { min-height: 13rem; }
+  .price-scope__risks article:nth-child(even) { border-right: 0; }
+  .price-scope__chain { grid-template-columns: 1fr; gap: .75rem; }
   .price-scope__footer { grid-template-columns: 1fr; }
   .price-scope__footer .button { justify-self: start; }
   .milestone-boundary { grid-template-columns: 1fr; }
@@ -767,7 +768,10 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
   .factory__facts p { min-height: 5rem; border-right: 0; border-bottom: 1px solid var(--line-dark); }
   .factory__copy, .dominant-case__copy { padding: 4rem 1.25rem; }
   .factory__stages { grid-template-columns: 1fr 1fr; }
-  .price-scope__matrix { padding-inline: 1.25rem; }
+  .price-scope__risks { grid-template-columns: 1fr; padding-inline: 1.25rem; border-top: 0; }
+  .price-scope__risks article { min-height: 0; padding: 1.25rem 0; border-right: 0; border-top: 1px solid var(--line-light); }
+  .price-scope__risks h3 { margin-top: .5rem; }
+  .price-scope__chain { padding-inline: 1.25rem; }
   .dominant-case__copy dl div { grid-template-columns: 1fr; gap: .35rem; }
   .seismic-proof { min-height: 38rem; }
   .visualization-label { font-size: .7rem; }
@@ -1374,8 +1378,9 @@ html, body { overflow-x: clip; }
     padding-block: 1.35rem;
   }
   .price-scope .chapter__heading { padding-block: 1.25rem; }
-  .matrix__row > * { min-height: 3.25rem; padding-block: .4rem; }
-  .matrix__head > * { min-height: 2.5rem; }
+  .price-scope__risks article { min-height: 10.5rem; padding-block: 1rem; }
+  .price-scope__risks h3 { margin-top: .65rem; }
+  .price-scope__chain { padding-block: .8rem; }
   .price-scope__footer { gap: 1.5rem; padding-block: 1rem; }
   .proposal-process li { min-height: 8rem; gap: 1rem; padding: .9rem 1rem; }
 

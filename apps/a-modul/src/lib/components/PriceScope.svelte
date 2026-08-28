@@ -3,15 +3,23 @@
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { diagnosisHref } from '$lib/navigation';
-  const rows = [
-    { item: 'Исходные данные и проект', module: 'не входят', launch: 'фиксируем состав и границы' },
-    { item: 'Производство модулей', module: 'входит', launch: 'входит' },
-    { item: 'Внутренняя инженерия', module: 'нужно уточнить', launch: 'согласуем по зданию' },
-    { item: 'Комплектация и мебель', module: 'нужно уточнить', launch: 'согласуем по функции' },
-    { item: 'Упаковка и доставка', module: 'не входят', launch: 'считаем по маршруту' },
-    { item: 'Основание и площадка', module: 'не входят', launch: 'определяем ответственность' },
-    { item: 'Монтаж и стыковка', module: 'не входят', launch: 'включаем в общий график' },
-    { item: 'Пусконаладка', module: 'не входит', launch: 'уточняем по договору' }
+  const risks = [
+    {
+      title: 'Чужой проект приходится перепроверять',
+      detail: 'До производства нужно подтвердить нагрузки, оси, инженерные вводы и узлы стыковки. Иначе корректировки переходят на площадку.'
+    },
+    {
+      title: 'Границы ответственности расходятся',
+      detail: 'Основание, доставка, монтаж и подключения могут оказаться между договорами — без одного ответственного за общий результат.'
+    },
+    {
+      title: 'Несовпадение обнаруживается при монтаже',
+      detail: 'Если площадка, модули и инженерия проверялись отдельно, доработка начинается в момент, когда график уже запущен.'
+    },
+    {
+      title: 'Стартовая экономия превращается в задержку',
+      detail: 'Дополнительные согласования, повторная поставка и мобилизация могут сдвинуть ввод объекта и изменить итоговый бюджет.'
+    }
   ];
 
   let section: HTMLElement;
@@ -29,30 +37,32 @@
 <section bind:this={section} class="price-scope chapter" id="price-scope" aria-labelledby="price-title">
   <div class="chapter__heading chapter__heading--split">
     <div>
-      <p class="eyebrow">Полнота цены / без универсального ₽ за м²</p>
-      <h2 id="price-title">Сравнивайте не цену модуля, а стоимость запуска объекта.</h2>
+      <p class="eyebrow">Риски на стыках / до выхода в производство</p>
+      <h2 id="price-title">Экономия на одном этапе может сорвать общий график.</h2>
     </div>
-    <p>Одна цифра без состава работ не показывает, кто отвечает за проект, маршрут, площадку, монтаж и готовность здания к эксплуатации.</p>
+    <p>Когда проект, производство, доставка и монтаж разделены между участниками, недостающая работа не исчезает. Она возвращается в виде доработок и новых согласований.</p>
   </div>
 
-  <div class="price-scope__matrix" role="table" aria-label="Сравнение цены модуля и стоимости запуска объекта">
-    <div class="matrix__row matrix__head" role="row">
-      <span role="columnheader">Контур</span><span role="columnheader">Только модуль</span><span role="columnheader">Запуск объекта</span>
-    </div>
-    {#each rows as row, index}
-      <div class="matrix__row" role="row">
-        <span role="cell"><i>{String(index + 1).padStart(2, '0')}</i>{row.item}</span>
-        <span role="cell">{row.module}</span>
-        <span role="cell"><strong>{row.launch}</strong></span>
-      </div>
+  <div class="price-scope__risks" aria-label="Риски раздельной реализации проекта">
+    {#each risks as risk, index}
+      <article>
+        <span>{String(index + 1).padStart(2, '0')}</span>
+        <h3>{risk.title}</h3>
+        <p>{risk.detail}</p>
+      </article>
     {/each}
+  </div>
+
+  <div class="price-scope__chain" aria-label="Возможная цепочка проектного риска">
+    <span class="mono-label">Цепочка риска</span>
+    <p><strong>Неполные исходные данные</strong><i>→</i><strong>несогласованный стык</strong><i>→</i><strong>доработка на площадке</strong><i>→</i><strong>сдвиг запуска</strong></p>
   </div>
 
   <div class="price-scope__footer">
     <div>
-      <span class="mono-label">Опция финансирования</span>
-      <p>Возможна поставка в лизинг.</p>
+      <span class="mono-label">До выбора схемы работ</span>
+      <p>Проверим исходные данные, границы ответственности и критические стыки — до запуска производства.</p>
     </div>
-    <a class="button button--primary" href={diagnosisHref(page.url, 'leasing', '#full-brief')} onclick={() => trackEvent('leasing_click', { placement: 'price-scope' })}>Уточнить лизинговую схему</a>
+    <a class="button button--primary" href={diagnosisHref(page.url, 'standard', '#project-brief')} onclick={() => trackEvent('final_cta_start', { placement: 'risk-scope' })}>Проверить риски проекта</a>
   </div>
 </section>
