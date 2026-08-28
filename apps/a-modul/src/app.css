@@ -1364,15 +1364,20 @@ html, body { overflow-x: clip; }
   .seismic-proof__copy > p:not(.eyebrow) { margin-top: 1rem; }
   .seismic-proof__copy > span { margin-top: 1.35rem; }
 
-  .price-scope,
-  .proposal-process {
+  .price-scope {
     min-height: var(--chapter-screen);
+  }
+  .proposal-process {
+    min-height: 0;
+  }
+  .proposal-process .chapter__heading {
+    padding-block: 1.35rem;
   }
   .price-scope .chapter__heading { padding-block: 1.25rem; }
   .matrix__row > * { min-height: 3.25rem; padding-block: .4rem; }
   .matrix__head > * { min-height: 2.5rem; }
   .price-scope__footer { gap: 1.5rem; padding-block: 1rem; }
-  .proposal-process li { min-height: 8.5rem; gap: 1rem; padding: .9rem 1rem; }
+  .proposal-process li { min-height: 8rem; gap: 1rem; padding: .9rem 1rem; }
 
   .faq summary { min-height: 4rem; padding-block: 1rem; }
   .full-brief__intro,
