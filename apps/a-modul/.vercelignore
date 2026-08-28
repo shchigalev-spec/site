@@ -1,0 +1,8 @@
+.svelte-kit/
+.standalone-build/
+artifacts/
+build/
+node_modules/
+standalone/
+.env*
+!.env.example
