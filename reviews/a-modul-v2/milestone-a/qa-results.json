@@ -1,0 +1,296 @@
+{
+  "milestone": "A",
+  "target": "http://127.0.0.1:5175/modulnye-zdaniya/",
+  "capturedAt": "2026-08-25T13:55:13.111Z",
+  "rootRedirect": {
+    "status": 307,
+    "location": "/modulnye-zdaniya/"
+  },
+  "viewportResults": {
+    "desktop1440": {
+      "status": "complete",
+      "title": "Модульные здания под ключ по России — Ависта Модуль",
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "clientWidth": 1440
+      },
+      "scrollWidth": 1440,
+      "documentHeight": 3164,
+      "h1Count": 1,
+      "h1Visible": true,
+      "h1Box": {
+        "top": 227.1875,
+        "right": 648,
+        "bottom": 667.0625,
+        "left": 72,
+        "width": 576,
+        "height": 439.875
+      },
+      "primaryCtaVisible": true,
+      "primaryCtaBox": {
+        "top": 815.40625,
+        "right": 359.078125,
+        "bottom": 867.40625,
+        "left": 72,
+        "width": 287.078125,
+        "height": 52
+      },
+      "primaryCtaText": "Получить КП за 1 рабочий день",
+      "ctaQualifierVisible": true,
+      "ctaQualifierBox": {
+        "top": 874.59375,
+        "right": 359.078125,
+        "bottom": 892.0625,
+        "left": 72,
+        "width": 287.078125,
+        "height": 17.46875
+      },
+      "ctaQualifierText": "После получения основных исходных данных.",
+      "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+      "overflowElements": [],
+      "brokenImages": [],
+      "intrinsicImageDefects": [],
+      "missingLabels": [],
+      "smallTargets": [],
+      "landmarks": {
+        "header": 1,
+        "main": 1,
+        "footer": 1
+      },
+      "assemblyStage": "0",
+      "activeStageText": "01 Площадка"
+    },
+    "tablet768": {
+      "status": "complete",
+      "title": "Модульные здания под ключ по России — Ависта Модуль",
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "clientWidth": 768
+      },
+      "scrollWidth": 768,
+      "documentHeight": 4628,
+      "h1Count": 1,
+      "h1Visible": true,
+      "h1Box": {
+        "top": 245.9375,
+        "right": 624,
+        "bottom": 625.8125,
+        "left": 46.078125,
+        "width": 577.921875,
+        "height": 379.875
+      },
+      "primaryCtaVisible": true,
+      "primaryCtaBox": {
+        "top": 743.40625,
+        "right": 333.15625,
+        "bottom": 795.40625,
+        "left": 46.078125,
+        "width": 287.078125,
+        "height": 52
+      },
+      "primaryCtaText": "Получить КП за 1 рабочий день",
+      "ctaQualifierVisible": true,
+      "ctaQualifierBox": {
+        "top": 802.59375,
+        "right": 333.15625,
+        "bottom": 820.0625,
+        "left": 46.078125,
+        "width": 287.078125,
+        "height": 17.46875
+      },
+      "ctaQualifierText": "После получения основных исходных данных.",
+      "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+      "overflowElements": [],
+      "brokenImages": [],
+      "intrinsicImageDefects": [],
+      "missingLabels": [],
+      "smallTargets": [],
+      "landmarks": {
+        "header": 1,
+        "main": 1,
+        "footer": 1
+      },
+      "assemblyStage": "0",
+      "activeStageText": "01 Площадка"
+    },
+    "mobile390": {
+      "status": "complete",
+      "title": "Модульные здания под ключ по России — Ависта Модуль",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "clientWidth": 390
+      },
+      "scrollWidth": 390,
+      "documentHeight": 5451,
+      "h1Count": 1,
+      "h1Visible": true,
+      "h1Box": {
+        "top": 186.390625,
+        "right": 366.609375,
+        "bottom": 451.890625,
+        "left": 23.390625,
+        "width": 343.21875,
+        "height": 265.5
+      },
+      "primaryCtaVisible": true,
+      "primaryCtaBox": {
+        "top": 611.078125,
+        "right": 366.609375,
+        "bottom": 663.078125,
+        "left": 23.390625,
+        "width": 343.21875,
+        "height": 52
+      },
+      "primaryCtaText": "Получить КП за 1 рабочий день",
+      "ctaQualifierVisible": true,
+      "ctaQualifierBox": {
+        "top": 670.265625,
+        "right": 366.609375,
+        "bottom": 687.734375,
+        "left": 23.390625,
+        "width": 343.21875,
+        "height": 17.46875
+      },
+      "ctaQualifierText": "После получения основных исходных данных.",
+      "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+      "overflowElements": [],
+      "brokenImages": [],
+      "intrinsicImageDefects": [],
+      "missingLabels": [],
+      "smallTargets": [],
+      "landmarks": {
+        "header": 1,
+        "main": 1,
+        "footer": 1
+      },
+      "assemblyStage": "0",
+      "activeStageText": "01 Площадка"
+    },
+    "mobile320": {
+      "status": "complete",
+      "title": "Модульные здания под ключ по России — Ависта Модуль",
+      "viewport": {
+        "width": 320,
+        "height": 568,
+        "clientWidth": 320
+      },
+      "scrollWidth": 320,
+      "documentHeight": 5496,
+      "h1Count": 1,
+      "h1Visible": true,
+      "h1Box": {
+        "top": 142,
+        "right": 304,
+        "bottom": 335.6875,
+        "left": 16,
+        "width": 288,
+        "height": 193.6875
+      },
+      "primaryCtaVisible": true,
+      "primaryCtaBox": {
+        "top": 451.625,
+        "right": 304,
+        "bottom": 499.625,
+        "left": 16,
+        "width": 288,
+        "height": 48
+      },
+      "primaryCtaText": "Получить КП за 1 рабочий день",
+      "ctaQualifierVisible": true,
+      "ctaQualifierBox": {
+        "top": 506.8125,
+        "right": 304,
+        "bottom": 524.28125,
+        "left": 16,
+        "width": 288,
+        "height": 17.46875
+      },
+      "ctaQualifierText": "После получения основных исходных данных.",
+      "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+      "overflowElements": [],
+      "brokenImages": [],
+      "intrinsicImageDefects": [],
+      "missingLabels": [],
+      "smallTargets": [],
+      "landmarks": {
+        "header": 1,
+        "main": 1,
+        "footer": 1
+      },
+      "assemblyStage": "0",
+      "activeStageText": "01 Площадка"
+    }
+  },
+  "reducedMotion": {
+    "metrics": {
+      "status": "complete",
+      "title": "Модульные здания под ключ по России — Ависта Модуль",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "clientWidth": 390
+      },
+      "scrollWidth": 390,
+      "documentHeight": 5451,
+      "h1Count": 1,
+      "h1Visible": true,
+      "h1Box": {
+        "top": 186.390625,
+        "right": 366.609375,
+        "bottom": 451.890625,
+        "left": 23.390625,
+        "width": 343.21875,
+        "height": 265.5
+      },
+      "primaryCtaVisible": true,
+      "primaryCtaBox": {
+        "top": 611.078125,
+        "right": 366.609375,
+        "bottom": 663.078125,
+        "left": 23.390625,
+        "width": 343.21875,
+        "height": 52
+      },
+      "primaryCtaText": "Получить КП за 1 рабочий день",
+      "ctaQualifierVisible": true,
+      "ctaQualifierBox": {
+        "top": 670.265625,
+        "right": 366.609375,
+        "bottom": 687.734375,
+        "left": 23.390625,
+        "width": 343.21875,
+        "height": 17.46875
+      },
+      "ctaQualifierText": "После получения основных исходных данных.",
+      "canonical": "https://a-modul.ru/modulnye-zdaniya/",
+      "overflowElements": [],
+      "brokenImages": [],
+      "intrinsicImageDefects": [],
+      "missingLabels": [],
+      "smallTargets": [],
+      "landmarks": {
+        "header": 1,
+        "main": 1,
+        "footer": 1
+      },
+      "assemblyStage": "3",
+      "activeStageText": "04 Запуск"
+    },
+    "state": {
+      "preference": true,
+      "stage": "3",
+      "completeVisible": true,
+      "playLabel": "Итог показан →"
+    }
+  },
+  "runtimeDefects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "assertions": [],
+  "pass": true
+}

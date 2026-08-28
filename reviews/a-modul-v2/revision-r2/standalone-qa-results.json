@@ -1,0 +1,51 @@
+{
+  "file": "C:\\Users\\Admin\\Desktop\\lab-silence-a-modul-direct-v2\\apps\\a-modul\\standalone\\a-modul-direct.html",
+  "fileUrl": "file:///C:/Users/Admin/Desktop/lab-silence-a-modul-direct-v2/apps/a-modul/standalone/a-modul-direct.html",
+  "embedded": {
+    "generatedAvif": true,
+    "fonts": true,
+    "russiaMap": true,
+    "officialProof": true
+  },
+  "desktop": {
+    "title": "Модульные здания под ключ по России — Ависта Модуль",
+    "h1Count": 1,
+    "h1Visible": true,
+    "primaryCtaVisible": true,
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "imageCount": 25,
+    "mapImages": 1,
+    "finderPresent": true,
+    "factoryTabs": 6,
+    "publishedProjects": 4,
+    "clientProofPresent": true,
+    "projectTeam": 4,
+    "finalCtaPresent": true,
+    "brokenImages": []
+  },
+  "mobile": {
+    "title": "Модульные здания под ключ по России — Ависта Модуль",
+    "h1Count": 1,
+    "h1Visible": true,
+    "primaryCtaVisible": true,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "imageCount": 25,
+    "mapImages": 1,
+    "finderPresent": true,
+    "factoryTabs": 6,
+    "publishedProjects": 4,
+    "clientProofPresent": true,
+    "projectTeam": 4,
+    "finalCtaPresent": true,
+    "brokenImages": []
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  },
+  "pass": true
+}

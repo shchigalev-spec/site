@@ -1,0 +1,337 @@
+{
+  "capturedAt": "2026-08-27T18:39:06.463Z",
+  "range": 868,
+  "samples": [
+    {
+      "stage": 0,
+      "progress": 0,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 0,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 0,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 0,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 0,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 1,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 3,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 4,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 6,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0
+    },
+    {
+      "stage": 0,
+      "progress": 8,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0.065873
+    },
+    {
+      "stage": 0,
+      "progress": 10,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0.235772
+    },
+    {
+      "stage": 0,
+      "progress": 12,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0.442427
+    },
+    {
+      "stage": 0,
+      "progress": 14,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0.633356
+    },
+    {
+      "stage": 0,
+      "progress": 16,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0.773261
+    },
+    {
+      "stage": 0,
+      "progress": 17,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "veilOpacity": 0.84808
+    },
+    {
+      "stage": 1,
+      "progress": 19,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.854724
+    },
+    {
+      "stage": 1,
+      "progress": 20,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.807131
+    },
+    {
+      "stage": 1,
+      "progress": 21,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.729086
+    },
+    {
+      "stage": 1,
+      "progress": 22,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.637217
+    },
+    {
+      "stage": 1,
+      "progress": 23,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.542285
+    },
+    {
+      "stage": 1,
+      "progress": 24,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.450962
+    },
+    {
+      "stage": 1,
+      "progress": 24,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.367102
+    },
+    {
+      "stage": 1,
+      "progress": 25,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.29266
+    },
+    {
+      "stage": 1,
+      "progress": 26,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.228335
+    },
+    {
+      "stage": 1,
+      "progress": 26,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.174028
+    },
+    {
+      "stage": 1,
+      "progress": 27,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.129156
+    },
+    {
+      "stage": 1,
+      "progress": 27,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.0928719
+    },
+    {
+      "stage": 1,
+      "progress": 28,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "veilOpacity": 0.0642049
+    }
+  ],
+  "maxProgressDelta": 2,
+  "maxVeilDelta": 0.206655,
+  "maxVisiblePlates": 1,
+  "minVeilAtSwap": 0.854724,
+  "stageSwaps": 1,
+  "progressiveFrames": 21,
+  "pageFacts": {
+    "horizontalOverflow": false,
+    "brokenImages": []
+  },
+  "reducedMotion": {
+    "preference": true,
+    "stage": 3,
+    "progress": 100,
+    "visiblePlates": 1,
+    "veilOpacity": 0
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  }
+}

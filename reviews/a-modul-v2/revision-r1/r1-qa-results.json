@@ -1,0 +1,631 @@
+{
+  "capturedAt": "2026-08-26T13:38:07.428Z",
+  "base": "http://127.0.0.1:5175",
+  "routeStatuses": {
+    "/modulnye-zdaniya/": 200,
+    "/vahtovye-poselki/": 200,
+    "/modulnye-ofisy-abk/": 200,
+    "/modulnye-obshchezhitiya/": 200,
+    "/privacy-policy/": 200,
+    "/robots.txt": 200,
+    "/sitemap.xml": 200
+  },
+  "desktop": {
+    "clientWidth": 1440,
+    "scrollWidth": 1440,
+    "documentHeight": 19286,
+    "h1Visible": true,
+    "primaryCtaVisible": true,
+    "h1Count": 1,
+    "h1Lines": 3,
+    "heroCopyCaptionOverlap": 0,
+    "images": [
+      {
+        "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+        "complete": true,
+        "naturalWidth": 68
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-bim-site-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1600
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-logistics-road-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-factory-metal-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+        "complete": true,
+        "naturalWidth": 68
+      }
+    ]
+  },
+  "desktop1920": {
+    "clientWidth": 1920,
+    "scrollWidth": 1920,
+    "documentHeight": 21032,
+    "h1Visible": true,
+    "primaryCtaVisible": true,
+    "h1Count": 1,
+    "h1Lines": 3,
+    "heroCopyCaptionOverlap": 0,
+    "images": [
+      {
+        "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+        "complete": true,
+        "naturalWidth": 68
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-desktop.avif",
+        "complete": true,
+        "naturalWidth": 1920
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-bim-site-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-logistics-road-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-factory-metal-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+        "complete": false,
+        "naturalWidth": 0
+      },
+      {
+        "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+        "complete": true,
+        "naturalWidth": 68
+      }
+    ]
+  },
+  "responsive": {
+    "mobile-320": {
+      "clientWidth": 320,
+      "scrollWidth": 320,
+      "documentHeight": 27904,
+      "h1Visible": true,
+      "primaryCtaVisible": true,
+      "h1Count": 1,
+      "h1Lines": 5,
+      "heroCopyCaptionOverlap": 0,
+      "images": [
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+          "complete": true,
+          "naturalWidth": 1920
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-bim-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-logistics-road-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-metal-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        }
+      ]
+    },
+    "mobile-390": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "documentHeight": 26484,
+      "h1Visible": true,
+      "primaryCtaVisible": true,
+      "h1Count": 1,
+      "h1Lines": 5,
+      "heroCopyCaptionOverlap": 0,
+      "images": [
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+          "complete": true,
+          "naturalWidth": 1920
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-bim-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-logistics-road-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-metal-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        }
+      ],
+      "mobileStageButtons": 3,
+      "stageAfterNext": 2
+    },
+    "intermediate-768": {
+      "clientWidth": 768,
+      "scrollWidth": 768,
+      "documentHeight": 22494,
+      "h1Visible": true,
+      "primaryCtaVisible": true,
+      "h1Count": 1,
+      "h1Lines": 4,
+      "heroCopyCaptionOverlap": 0,
+      "images": [
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-empty-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-foundations-desktop.avif",
+          "complete": true,
+          "naturalWidth": 1920
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-assembly-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-v2-operational-mobile.avif",
+          "complete": true,
+          "naturalWidth": 820
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-bim-site-desktop.avif",
+          "complete": true,
+          "naturalWidth": 1600
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-logistics-road-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-empty-site-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-partial-settlement-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-general-hero-operational-object-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-factory-metal-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/generated/a-modul-case-kamchatka-desktop.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "http://127.0.0.1:5175/brand/avista-logo-white.svg",
+          "complete": true,
+          "naturalWidth": 68
+        }
+      ]
+    }
+  },
+  "rangeSerialization": {
+    "miniBrief": "3–6 месяцев",
+    "fullForm": "3–6 месяцев"
+  },
+  "rangeAfterReload": {
+    "miniBrief": "3–6 месяцев",
+    "fullForm": "3–6 месяцев",
+    "formDataMiniBrief": "3–6 месяцев",
+    "formDataFullForm": "3–6 месяцев"
+  },
+  "commissioning": {
+    "nativeMonthInputs": 0,
+    "optionButtons": 5,
+    "exactSelects": 2,
+    "miniBriefValue": "2027-12",
+    "fullFormValue": "2027-12",
+    "exactYear": "2027"
+  },
+  "exactAfterReload": {
+    "miniBrief": "2027-12",
+    "fullForm": "2027-12",
+    "formDataMiniBrief": "2027-12",
+    "formDataFullForm": "2027-12"
+  },
+  "proof": {
+    "height": 707.625,
+    "facts": 6
+  },
+  "motionTrace": [
+    {
+      "name": "start",
+      "requestedProgress": 0,
+      "targetScrollY": 89,
+      "scrollY": 89,
+      "stage": 0,
+      "progress": 0,
+      "visiblePlate": "assembly__plate assembly__plate--empty visible"
+    },
+    {
+      "name": "foundations",
+      "requestedProgress": 0.32,
+      "targetScrollY": 366.76,
+      "scrollY": 367,
+      "stage": 1,
+      "progress": 32,
+      "visiblePlate": "assembly__plate assembly__plate--foundations visible"
+    },
+    {
+      "name": "assembly",
+      "requestedProgress": 0.62,
+      "targetScrollY": 627.16,
+      "scrollY": 627,
+      "stage": 2,
+      "progress": 62,
+      "visiblePlate": "assembly__plate assembly__plate--assembly visible"
+    },
+    {
+      "name": "end",
+      "requestedProgress": 0.96,
+      "targetScrollY": 922.28,
+      "scrollY": 922,
+      "stage": 3,
+      "progress": 96,
+      "visiblePlate": "assembly__plate assembly__plate--operational visible"
+    }
+  ],
+  "reducedMotion": {
+    "stage": 3,
+    "heroHeight": 912,
+    "heroPosition": "relative",
+    "assemblyPosition": "relative",
+    "scrollNote": "Итоговая стадия"
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  }
+}

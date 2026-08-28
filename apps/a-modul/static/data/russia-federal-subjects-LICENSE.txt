@@ -1,0 +1,7 @@
+Map of federal subjects of Russian Federation.svg
+
+Source: https://commons.wikimedia.org/wiki/File:Map_of_federal_subjects_of_Russian_Federation.svg
+Original: https://upload.wikimedia.org/wikipedia/commons/5/56/Map_of_federal_subjects_of_Russian_Federation.svg
+Authors credited on the source page: CrazyPhunk, Fremantleboy, Hardscarf, Chumwa
+Licence: Creative Commons Attribution-ShareAlike 3.0
+Local use: rendered in monochrome with separate planning overlays. See docs/A-MODUL-MAP-LICENSE.md.

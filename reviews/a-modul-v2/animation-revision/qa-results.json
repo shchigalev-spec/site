@@ -1,0 +1,129 @@
+{
+  "capturedAt": "2026-08-27T18:18:58.114Z",
+  "heroRange": 867,
+  "hero": {
+    "start": {
+      "stage": 0,
+      "progress": 0,
+      "opacities": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "transforms": [
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
+      ],
+      "scrollY": 89,
+      "heroTop": 0,
+      "heroHeight": 1779
+    },
+    "transitionOne": {
+      "stage": 1,
+      "progress": 27,
+      "opacities": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "transforms": [
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
+      ],
+      "scrollY": 332,
+      "heroTop": -243,
+      "heroHeight": 1779
+    },
+    "transitionTwo": {
+      "stage": 2,
+      "progress": 62,
+      "opacities": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "transforms": [
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
+      ],
+      "scrollY": 644,
+      "heroTop": -555,
+      "heroHeight": 1779
+    },
+    "finish": {
+      "stage": 3,
+      "progress": 94,
+      "opacities": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "transforms": [
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
+      ],
+      "scrollY": 921,
+      "heroTop": -832,
+      "heroHeight": 1779
+    }
+  },
+  "bimInitial": 0,
+  "bimAfterClick": 1,
+  "bimAfterWait": 1,
+  "bimButton": "Следующий этап: Модули\n→",
+  "seismicAuto": {
+    "active": true,
+    "signalAnimation": "quake-shock",
+    "copyAnimation": "quake-copy",
+    "signalDuration": "4.8s",
+    "copyDuration": "4.8s",
+    "iterationCount": "infinite",
+    "replayButtons": 0
+  },
+  "quakeStart": [
+    83.40000000334769,
+    83.40000000334769,
+    83.40000000334769,
+    83.40000000334769,
+    83.40000000334769,
+    83.40000000334769
+  ],
+  "quakeAdvance": [
+    383.32600000334696,
+    383.32600000334696,
+    383.32600000334696,
+    383.32600000334696,
+    383.32600000334696,
+    383.32600000334696
+  ],
+  "pageFacts": {
+    "externalMainSiteLinks": 0,
+    "horizontalOverflow": false,
+    "brokenImages": []
+  },
+  "reducedMotion": {
+    "preference": true,
+    "heroStage": 3,
+    "bimStage": 6,
+    "quakeActive": false,
+    "replayButtons": 0
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  }
+}

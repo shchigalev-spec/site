@@ -1,0 +1,749 @@
+{
+  "capturedAt": "2026-08-27T19:20:34.850Z",
+  "routeStatuses": {
+    "/modulnye-zdaniya/": 200,
+    "/vahtovye-poselki/": 200,
+    "/modulnye-ofisy-abk/": 200,
+    "/modulnye-obshchezhitiya/": 200
+  },
+  "results": {
+    "1920x900:/modulnye-zdaniya/": {
+      "viewport": {
+        "width": 1920,
+        "height": 900
+      },
+      "headerHeight": 89,
+      "horizontalOverflow": false,
+      "sections": [
+        {
+          "selector": ".brief",
+          "id": "project-brief",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".evidence",
+          "id": "evidence",
+          "height": 748,
+          "available": 811,
+          "headroom": 63,
+          "fits": true
+        },
+        {
+          "selector": ".published-projects",
+          "id": "published-projects",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".configurator",
+          "id": "configurator",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".client-proof",
+          "id": "client-proof",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".logistics",
+          "id": "logistics",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".finder",
+          "id": "finder",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".project-team",
+          "id": "project-team",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".factory",
+          "id": "factory",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".price-scope",
+          "id": "price-scope",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".dominant-case",
+          "id": "case",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".seismic-proof",
+          "id": "seismic",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".proposal-process",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".final-cta",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        }
+      ],
+      "brokenImages": []
+    },
+    "1920x900:/vahtovye-poselki/": {
+      "viewport": {
+        "width": 1920,
+        "height": 900
+      },
+      "headerHeight": 89,
+      "horizontalOverflow": false,
+      "sections": [
+        {
+          "selector": ".brief",
+          "id": "project-brief",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".evidence",
+          "id": "",
+          "height": 748,
+          "available": 811,
+          "headroom": 63,
+          "fits": true
+        },
+        {
+          "selector": ".configurator",
+          "id": "configurator",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".logistics",
+          "id": "logistics",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".project-team",
+          "id": "project-team",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".factory",
+          "id": "factory",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".price-scope",
+          "id": "price-scope",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".dominant-case",
+          "id": "case",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".seismic-proof",
+          "id": "seismic",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".proposal-process",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-visuals",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        }
+      ],
+      "brokenImages": []
+    },
+    "1920x900:/modulnye-ofisy-abk/": {
+      "viewport": {
+        "width": 1920,
+        "height": 900
+      },
+      "headerHeight": 89,
+      "horizontalOverflow": false,
+      "sections": [
+        {
+          "selector": ".brief",
+          "id": "project-brief",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".evidence",
+          "id": "",
+          "height": 748,
+          "available": 811,
+          "headroom": 63,
+          "fits": true
+        },
+        {
+          "selector": ".factory",
+          "id": "factory",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".price-scope",
+          "id": "price-scope",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".proposal-process",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-case",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-visuals",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        }
+      ],
+      "brokenImages": []
+    },
+    "1920x900:/modulnye-obshchezhitiya/": {
+      "viewport": {
+        "width": 1920,
+        "height": 900
+      },
+      "headerHeight": 89,
+      "horizontalOverflow": false,
+      "sections": [
+        {
+          "selector": ".brief",
+          "id": "project-brief",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".evidence",
+          "id": "",
+          "height": 748,
+          "available": 811,
+          "headroom": 63,
+          "fits": true
+        },
+        {
+          "selector": ".logistics",
+          "id": "logistics",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".price-scope",
+          "id": "price-scope",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".proposal-process",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-case",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-visuals",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        }
+      ],
+      "brokenImages": []
+    },
+    "1440x900:/modulnye-zdaniya/": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "headerHeight": 89,
+      "horizontalOverflow": false,
+      "sections": [
+        {
+          "selector": ".brief",
+          "id": "project-brief",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".evidence",
+          "id": "evidence",
+          "height": 748,
+          "available": 811,
+          "headroom": 63,
+          "fits": true
+        },
+        {
+          "selector": ".published-projects",
+          "id": "published-projects",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".configurator",
+          "id": "configurator",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".client-proof",
+          "id": "client-proof",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".logistics",
+          "id": "logistics",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".finder",
+          "id": "finder",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".project-team",
+          "id": "project-team",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".factory",
+          "id": "factory",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".price-scope",
+          "id": "price-scope",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".dominant-case",
+          "id": "case",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".seismic-proof",
+          "id": "seismic",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".proposal-process",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".final-cta",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        }
+      ],
+      "brokenImages": []
+    },
+    "1440x900:/vahtovye-poselki/": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "headerHeight": 89,
+      "horizontalOverflow": false,
+      "sections": [
+        {
+          "selector": ".brief",
+          "id": "project-brief",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".evidence",
+          "id": "",
+          "height": 748,
+          "available": 811,
+          "headroom": 63,
+          "fits": true
+        },
+        {
+          "selector": ".configurator",
+          "id": "configurator",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".logistics",
+          "id": "logistics",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".project-team",
+          "id": "project-team",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".factory",
+          "id": "factory",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".price-scope",
+          "id": "price-scope",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".dominant-case",
+          "id": "case",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".seismic-proof",
+          "id": "seismic",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".proposal-process",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-visuals",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        }
+      ],
+      "brokenImages": []
+    },
+    "1440x900:/modulnye-ofisy-abk/": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "headerHeight": 89,
+      "horizontalOverflow": false,
+      "sections": [
+        {
+          "selector": ".brief",
+          "id": "project-brief",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".evidence",
+          "id": "",
+          "height": 748,
+          "available": 811,
+          "headroom": 63,
+          "fits": true
+        },
+        {
+          "selector": ".factory",
+          "id": "factory",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".price-scope",
+          "id": "price-scope",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".proposal-process",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-case",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-visuals",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        }
+      ],
+      "brokenImages": []
+    },
+    "1440x900:/modulnye-obshchezhitiya/": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "headerHeight": 89,
+      "horizontalOverflow": false,
+      "sections": [
+        {
+          "selector": ".brief",
+          "id": "project-brief",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".evidence",
+          "id": "",
+          "height": 748,
+          "available": 811,
+          "headroom": 63,
+          "fits": true
+        },
+        {
+          "selector": ".logistics",
+          "id": "logistics",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".price-scope",
+          "id": "price-scope",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".proposal-process",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-case",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        },
+        {
+          "selector": ".route-visuals",
+          "id": "",
+          "height": 812,
+          "available": 811,
+          "headroom": -1,
+          "fits": true
+        }
+      ],
+      "brokenImages": []
+    }
+  },
+  "mobile": {
+    "horizontalOverflow": false,
+    "h1Visible": true,
+    "brokenImages": []
+  },
+  "configuratorStress": {
+    "controls": {
+      "clientHeight": 585,
+      "scrollHeight": 585,
+      "overflowY": "visible",
+      "hasInternalScroll": false
+    },
+    "output": {
+      "clientHeight": 585,
+      "scrollHeight": 585,
+      "overflowY": "visible",
+      "hasInternalScroll": false
+    }
+  },
+  "failedSections": [],
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  }
+}

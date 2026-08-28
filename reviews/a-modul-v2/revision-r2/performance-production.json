@@ -1,0 +1,35 @@
+{
+  "environment": "cold local production preview, Chromium, unthrottled",
+  "navigation": {
+    "responseEnd": 209.5,
+    "domContentLoaded": 923.7999999970198,
+    "loadEvent": 1038.5
+  },
+  "webVitals": {
+    "lcp": 1108,
+    "cls": 0.0014971890145760996,
+    "totalBlockingTime": 37,
+    "maxObservedEventDuration": null,
+    "interactionToNextPaintProxy": 153.89999999850988
+  },
+  "paint": {
+    "first-paint": 852,
+    "first-contentful-paint": 852
+  },
+  "requestChain": {
+    "resourceCount": 31,
+    "imageCount": 6,
+    "transferredBytes": 1073374,
+    "decodedBodyBytes": 1352685
+  },
+  "longTasks": [
+    {
+      "startTime": 1040.8999999985099,
+      "duration": 87
+    }
+  ],
+  "observedEvents": [],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "pass": true
+}

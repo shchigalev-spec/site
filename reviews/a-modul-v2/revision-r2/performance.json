@@ -1,0 +1,12 @@
+{
+  "navigation": {
+    "domContentLoaded": 519.3000000007451,
+    "loadEvent": 703.3999999985099,
+    "responseEnd": 71.39999999850988,
+    "transferSize": 162701
+  },
+  "resources": 147,
+  "transferredBytes": 6438996,
+  "decodedBodyBytes": 6396096,
+  "images": 26
+}

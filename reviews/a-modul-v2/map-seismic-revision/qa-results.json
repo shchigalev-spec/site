@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-08-27T11:34:59.208Z",
+  "mapHeights": [
+    1014,
+    1014,
+    1014,
+    1014,
+    1014,
+    1014,
+    1014
+  ],
+  "mapFacts": {
+    "visibleLicenseLabels": 0,
+    "horizontalOverflow": false
+  },
+  "seismicFacts": {
+    "active": true,
+    "signalAnimation": "quake-shock",
+    "copyAnimation": "quake-copy",
+    "iterationCount": "infinite",
+    "replayButtons": 0,
+    "hasTripleAmplitude": true
+  },
+  "inactiveAfterExit": true,
+  "activeAfterReentry": true,
+  "reducedMotion": {
+    "preference": true,
+    "active": false,
+    "animations": 0
+  },
+  "defects": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "brokenImages": []
+  }
+}
