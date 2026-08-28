@@ -5,7 +5,6 @@
   import ClientReviews from '$lib/components/ClientReviews.svelte';
   import PublishedProjects from '$lib/components/PublishedProjects.svelte';
   import ProjectTeam from '$lib/components/ProjectTeam.svelte';
-  import PriceScope from '$lib/components/PriceScope.svelte';
   import ProofCase from '$lib/components/ProofCase.svelte';
   import SiteHeader from '$lib/components/SiteHeader.svelte';
   import SiteFooter from '$lib/components/SiteFooter.svelte';
@@ -89,7 +88,6 @@
   <ObjectConfigurator />
   <ClientReviews />
   <ProjectTeam />
-  <PriceScope />
   <ProofCase mode="seismic" />
   <FaqSection faq={data.route.faq} />
   <ProposalProcess />

@@ -11,7 +11,6 @@
   import ShiftLogic from '$lib/components/ShiftLogic.svelte';
   import ObjectConfigurator from '$lib/components/ObjectConfigurator.svelte';
   import ProjectTeam from '$lib/components/ProjectTeam.svelte';
-  import PriceScope from '$lib/components/PriceScope.svelte';
   import ProofCase from '$lib/components/ProofCase.svelte';
   import { evidenceFacts } from '$lib/content/facts';
   import { publicContacts, publicSiteOrigin } from '$lib/content/facts';
@@ -73,7 +72,6 @@
     <ShiftLogic />
     <ObjectConfigurator />
     <ProjectTeam />
-    <PriceScope />
     <ProofCase mode="seismic" />
   {:else}
     <RoutePlanner kind={data.route.key === 'office' ? 'office' : 'dorm'} />
@@ -81,7 +79,6 @@
     <div class="route-case__visual"><picture><source media="(max-width: 720px)" srcset={`/generated/${data.route.caseImage}-mobile.avif`} type="image/avif" /><source media="(max-width: 720px)" srcset={`/generated/${data.route.caseImage}-mobile.webp`} type="image/webp" /><source srcset={`/generated/${data.route.caseImage}-desktop.avif`} type="image/avif" /><img src={`/generated/${data.route.caseImage}-desktop.webp`} width="1600" height="900" alt={data.route.caseImageAlt} loading="lazy" /></picture></div>
     <div class="route-case__copy"><p class="eyebrow">Релевантный контур</p><h2 id="route-case-title">{data.route.caseTitle}</h2><p>{data.route.caseIntro}</p><ul>{#each data.route.caseFacts as fact}<li>{fact}</li>{/each}</ul><a class="button button--ghost" href="#project-brief">Обсудить похожую задачу</a></div>
     </section>
-    <PriceScope />
   {/if}
   <FaqSection faq={data.route.faq} />
   <ProposalProcess />

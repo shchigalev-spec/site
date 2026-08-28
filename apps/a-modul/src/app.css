@@ -519,24 +519,6 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
 .factory__detail p, .factory__note { margin: 0; color: #c6bfc9; line-height: 1.55; }
 .factory__note { font-size: .78rem; }
 
-.price-scope { color: var(--graphite); background: var(--warm); }
-.price-scope .eyebrow { color: var(--purple); }
-.price-scope__risks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-light); }
-.price-scope__risks article { display: grid; min-width: 0; min-height: 15rem; align-content: start; gap: .9rem; padding: 1.4rem clamp(1rem, 2.4vw, 2.5rem); border-right: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
-.price-scope__risks article:last-child { border-right: 0; }
-.price-scope__risks span { color: var(--magenta); font-family: 'IBM Plex Mono', monospace; font-size: .65rem; }
-.price-scope__risks h3 { max-width: 18ch; margin: 1.4rem 0 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.25rem, 1.65vw, 1.75rem); font-weight: 500; line-height: 1.08; letter-spacing: -.025em; }
-.price-scope__risks p { margin: 0; color: #5d5760; font-size: .88rem; line-height: 1.5; }
-.price-scope__chain { display: grid; grid-template-columns: minmax(9rem, .25fr) minmax(0, 1fr); gap: 2rem; align-items: center; padding: 1.25rem clamp(1.25rem, 5vw, 5.5rem); border-bottom: 1px solid var(--line-light); }
-.price-scope__chain .mono-label { color: var(--purple); }
-.price-scope__chain p { display: flex; min-width: 0; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; margin: 0; }
-.price-scope__chain strong { font-size: .92rem; font-weight: 500; }
-.price-scope__chain i { color: var(--magenta); font-style: normal; }
-.price-scope__footer { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: center; padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 5vw, 5.5rem); }
-.price-scope__footer > div { display: grid; max-width: 45rem; gap: .65rem; }
-.price-scope__footer .mono-label { color: var(--purple); }
-.price-scope__footer p { margin: 0; color: #5d5760; line-height: 1.55; }
-
 .dominant-case { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(24rem, .85fr); color: var(--warm); background: var(--graphite); }
 .dominant-case__visual { position: relative; min-height: 58rem; overflow: hidden; }
 .dominant-case__visual picture, .dominant-case__visual img { width: 100%; height: 100%; }
@@ -699,12 +681,6 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
   .route-visuals__visual { min-height: 36rem; }
   .route-visuals__tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .route-visuals__tabs [role='tabpanel'] { grid-column: 1 / -1; }
-  .price-scope__risks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .price-scope__risks article { min-height: 13rem; }
-  .price-scope__risks article:nth-child(even) { border-right: 0; }
-  .price-scope__chain { grid-template-columns: 1fr; gap: .75rem; }
-  .price-scope__footer { grid-template-columns: 1fr; }
-  .price-scope__footer .button { justify-self: start; }
   .milestone-boundary { grid-template-columns: 1fr; }
   .proposal-process ol { grid-template-columns: repeat(2, minmax(0, 1fr)); overflow-x: visible; }
   .proposal-process li:nth-child(even) { border-right: 0; }
@@ -768,10 +744,6 @@ h3 { margin: 0; font-family: 'Geologica', sans-serif; font-size: clamp(1.7rem, 2
   .factory__facts p { min-height: 5rem; border-right: 0; border-bottom: 1px solid var(--line-dark); }
   .factory__copy, .dominant-case__copy { padding: 4rem 1.25rem; }
   .factory__stages { grid-template-columns: 1fr 1fr; }
-  .price-scope__risks { grid-template-columns: 1fr; padding-inline: 1.25rem; border-top: 0; }
-  .price-scope__risks article { min-height: 0; padding: 1.25rem 0; border-right: 0; border-top: 1px solid var(--line-light); }
-  .price-scope__risks h3 { margin-top: .5rem; }
-  .price-scope__chain { padding-inline: 1.25rem; }
   .dominant-case__copy dl div { grid-template-columns: 1fr; gap: .35rem; }
   .seismic-proof { min-height: 38rem; }
   .visualization-label { font-size: .7rem; }
@@ -1368,20 +1340,12 @@ html, body { overflow-x: clip; }
   .seismic-proof__copy > p:not(.eyebrow) { margin-top: 1rem; }
   .seismic-proof__copy > span { margin-top: 1.35rem; }
 
-  .price-scope {
-    min-height: var(--chapter-screen);
-  }
   .proposal-process {
     min-height: 0;
   }
   .proposal-process .chapter__heading {
     padding-block: 1.35rem;
   }
-  .price-scope .chapter__heading { padding-block: 1.25rem; }
-  .price-scope__risks article { min-height: 10.5rem; padding-block: 1rem; }
-  .price-scope__risks h3 { margin-top: .65rem; }
-  .price-scope__chain { padding-block: .8rem; }
-  .price-scope__footer { gap: 1.5rem; padding-block: 1rem; }
   .proposal-process li { min-height: 8rem; gap: 1rem; padding: .9rem 1rem; }
 
   .faq summary { min-height: 4rem; padding-block: 1rem; }
