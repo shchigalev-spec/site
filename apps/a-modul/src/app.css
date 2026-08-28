@@ -1742,16 +1742,22 @@ html, body { overflow-x: clip; }
 }
 
 @media (min-width: 1121px) and (max-height: 960px) {
-  .client-proof__body { grid-template-rows: minmax(0, 1fr); }
-  .client-proof__logos li { min-height: 0; padding: clamp(1rem, 2.5vh, 2rem); }
-  .client-proof__logos img { width: min(17rem, 82%); max-height: min(10rem, 18vh); }
+  .client-proof {
+    display: block;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+  .client-proof__body { display: block; }
+  .client-proof__logos { grid-template-rows: repeat(2, 10rem); }
+  .client-proof__logos li { min-height: 10rem; padding: 1rem 1.5rem; }
+  .client-proof__logos img { width: min(14rem, 78%); max-height: 7rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero { height: auto; min-height: calc(100svh - 5.5rem); }
   .hero__copy,
   .assembly { position: relative; top: 0; height: calc(100svh - 5.5rem); }
-  .assembly__reveal { clip-path: inset(0); opacity: 1; }
-  .assembly__measure span,
-  .assembly__structure i { width: 100%; transform: none; }
+  .assembly__plate { opacity: 0 !important; }
+  .assembly__plate:last-of-type { opacity: 1 !important; }
 }

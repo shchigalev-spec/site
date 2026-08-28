@@ -1,10 +1,34 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  const stages = [
+    'a-modul-general-hero-v3-stakeout',
+    'a-modul-general-hero-v2-foundations',
+    'a-modul-general-hero-v2-assembly',
+    'a-modul-general-hero-v2-operational'
+  ] as const;
+
   let root = $state<HTMLElement>();
   let progress = $state(0);
   let reducedMotion = $state(false);
   let frame = 0;
+
+  function smoothstep(value: number) {
+    const next = Math.max(0, Math.min(1, value));
+    return next * next * (3 - 2 * next);
+  }
+
+  let activeStage = $derived(Math.min(3, Math.round(progress * 3)));
+  let plateOpacities = $derived.by(() => {
+    const position = Math.min(3, progress * 3);
+    const segment = Math.min(2, Math.floor(position));
+    const blend = smoothstep(position - segment);
+    return stages.map((_, index) => {
+      if (index === segment) return 1 - blend;
+      if (index === segment + 1) return blend;
+      return 0;
+    });
+  });
 
   function update() {
     frame = 0;
@@ -48,26 +72,18 @@
   bind:this={root}
   class="assembly assembly--continuous"
   data-progress={Math.round(progress * 100)}
-  style={`--assembly-progress:${progress}; --assembly-reveal:${100 - progress * 100}%;`}
-  aria-label="Постепенное раскрытие готового модульного объекта по мере прокрутки"
+  data-stage={activeStage}
+  aria-label="Четыре стадии запуска модульного объекта плавно сменяются по мере прокрутки"
 >
   <div class="assembly__viewport">
-    <picture class="assembly__base" aria-hidden="true">
-      <source media="(max-width: 820px)" type="image/avif" srcset="/generated/a-modul-general-hero-v2-empty-mobile.avif" />
-      <source media="(max-width: 820px)" type="image/webp" srcset="/generated/a-modul-general-hero-v2-empty-mobile.webp" />
-      <source type="image/avif" srcset="/generated/a-modul-general-hero-v2-empty-desktop.avif" />
-      <img src="/generated/a-modul-general-hero-v2-empty-desktop.webp" width="1600" height="900" alt="" fetchpriority="high" />
-    </picture>
-    <div class="assembly__reveal" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 820px)" type="image/avif" srcset="/generated/a-modul-general-hero-v2-operational-mobile.avif" />
-        <source media="(max-width: 820px)" type="image/webp" srcset="/generated/a-modul-general-hero-v2-operational-mobile.webp" />
-        <source type="image/avif" srcset="/generated/a-modul-general-hero-v2-operational-desktop.avif" />
-        <img src="/generated/a-modul-general-hero-v2-operational-desktop.webp" width="1600" height="900" alt="" />
+    {#each stages as stage, index}
+      <picture class="assembly__plate" style={`opacity:${plateOpacities[index]}`} aria-hidden="true">
+        <source media="(max-width: 820px)" type="image/avif" srcset={`/generated/${stage}-mobile.avif`} />
+        <source media="(max-width: 820px)" type="image/webp" srcset={`/generated/${stage}-mobile.webp`} />
+        <source type="image/avif" srcset={`/generated/${stage}-desktop.avif`} />
+        <img src={`/generated/${stage}-desktop.webp`} width="1600" height="900" alt="" fetchpriority={index === 0 ? 'high' : 'auto'} />
       </picture>
-      <div class="assembly__structure" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
-    </div>
+    {/each}
     <div class="assembly__wash" aria-hidden="true"></div>
-    <div class="assembly__measure" aria-hidden="true"><span></span><i></i><i></i></div>
   </div>
 </figure>

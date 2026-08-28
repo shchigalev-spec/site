@@ -51,7 +51,7 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Визуализация завершённого модульного комплекса с благоустроенным двором и связанными входами" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preload" as="image" href="/generated/a-modul-general-hero-v2-empty-mobile.avif" type="image/avif" media="(max-width: 820px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/generated/a-modul-general-hero-v3-stakeout-mobile.avif" type="image/avif" media="(max-width: 820px)" fetchpriority="high" />
   {@html jsonLdMarkup(schema)}
 </svelte:head>
 

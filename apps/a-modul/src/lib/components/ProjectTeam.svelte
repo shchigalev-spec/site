@@ -4,7 +4,7 @@
       name: 'Скородумов Евгений Юрьевич',
       role: 'Управляющий «Ависта Модуль Инжиниринг»',
       scope: 'Общий контур проекта и управленческие решения',
-      image: '/official/team-skorodumov.webp'
+      image: '/official/team-skorodumov-light.jpg'
     },
     {
       name: 'Питунин Антон Николаевич',
