@@ -132,6 +132,7 @@
     checked = true;
     commitProjectTransfer();
     trackEvent('hero_brief_complete', { mode: $projectContext.mode, object_type: briefObjectType, region: briefRegion });
+    window.location.hash = 'full-brief';
     requestAnimationFrame(() => document.getElementById('full-brief-title')?.focus({ preventScroll: true }));
     document.getElementById('full-brief')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }

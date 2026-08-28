@@ -49,7 +49,7 @@
 
   <div class="configurator__workspace">
     <form class="configurator__controls" onsubmit={(event) => event.preventDefault()}>
-      <fieldset>
+      <fieldset class="configurator__type">
         <legend>01 / Тип объекта</legend>
         <div class="choice-grid choice-grid--types">
           {#each objectTypeDefinitions as item}
@@ -59,7 +59,7 @@
       </fieldset>
 
       {#if currentType && $projectContext.objectType === 'service'}
-        <fieldset>
+        <fieldset class="configurator__metric">
           <legend>02 / Основа масштаба</legend>
           <div class="choice-grid choice-grid--metric">
             {#each [['area', 'Площадь'], ['people', 'Персонал']] as option}
@@ -67,9 +67,13 @@
             {/each}
           </div>
         </fieldset>
+      {:else}
+        <fieldset class="configurator__metric configurator__placeholder" aria-hidden="true">
+          <legend>02 / Основа масштаба</legend>
+        </fieldset>
       {/if}
 
-      {#if currentType}<fieldset>
+      {#if currentType}<fieldset class="configurator__capacity">
         <legend>{$projectContext.objectType === 'service' ? '03' : '02'} / {metricLabel($projectContext.metric)}</legend>
         <div class="choice-grid choice-grid--capacity">
           {#each capacityOptions as item}
@@ -91,7 +95,7 @@
         </select>
       </label>{/if}
 
-      {#if currentType}<fieldset>
+      {#if currentType}<fieldset class="configurator__zones">
         <legend>{$projectContext.objectType === 'service' ? '05' : '04'} / Функциональные зоны</legend>
         <div class="zone-grid">
           {#each currentType.zones as zone}
@@ -122,7 +126,7 @@
           <div class="output__missing"><span>Нужно уточнить</span><p>{missingInputs.join(', ')}.</p></div>
           <p class="output__next"><span>Следующий шаг</span>{currentType.next}</p>
         </div>
-        <a class="button button--primary" href="#full-brief" onclick={complete}>Передать контур в полную заявку</a>
+        <a class="button button--primary" href="#project-brief" onclick={complete}>Передать контур в заявку</a>
       {:else}
         <div class="output__index"><span>Предварительный контур</span><strong>00<small> функций зафиксировано</small></strong></div>
         <h3>Сначала выберите тип объекта.</h3>

@@ -10,9 +10,7 @@
   import RouteVisualSequence from '$lib/components/RouteVisualSequence.svelte';
   import ShiftLogic from '$lib/components/ShiftLogic.svelte';
   import ObjectConfigurator from '$lib/components/ObjectConfigurator.svelte';
-  import LogisticsMap from '$lib/components/LogisticsMap.svelte';
   import ProjectTeam from '$lib/components/ProjectTeam.svelte';
-  import FactorySequence from '$lib/components/FactorySequence.svelte';
   import PriceScope from '$lib/components/PriceScope.svelte';
   import ProofCase from '$lib/components/ProofCase.svelte';
   import { evidenceFacts } from '$lib/content/facts';
@@ -74,18 +72,14 @@
   {#if data.route.key === 'shift'}
     <ShiftLogic />
     <ObjectConfigurator />
-    <LogisticsMap />
-    <ProofCase mode="case" />
     <ProjectTeam />
-    <FactorySequence />
     <PriceScope />
     <ProofCase mode="seismic" />
   {:else}
     <RoutePlanner kind={data.route.key === 'office' ? 'office' : 'dorm'} />
-    {#if data.route.key === 'office'}<FactorySequence />{:else}<LogisticsMap />{/if}
     <section class="route-case chapter" aria-labelledby="route-case-title">
-    <div class="route-case__visual"><picture><source media="(max-width: 720px)" srcset={`/generated/${data.route.caseImage}-mobile.avif`} type="image/avif" /><source media="(max-width: 720px)" srcset={`/generated/${data.route.caseImage}-mobile.webp`} type="image/webp" /><source srcset={`/generated/${data.route.caseImage}-desktop.avif`} type="image/avif" /><img src={`/generated/${data.route.caseImage}-desktop.webp`} width="1600" height="900" alt={data.route.caseImageAlt} loading="lazy" /></picture><span class="visualization-label">{data.route.caseVisualLabel}</span></div>
-    <div class="route-case__copy"><p class="eyebrow">Релевантный контур</p><h2 id="route-case-title">{data.route.caseTitle}</h2><p>{data.route.caseIntro}</p><ul>{#each data.route.caseFacts as fact}<li>{fact}</li>{/each}</ul><a class="button button--ghost" href="#full-brief">Обсудить похожую задачу</a></div>
+    <div class="route-case__visual"><picture><source media="(max-width: 720px)" srcset={`/generated/${data.route.caseImage}-mobile.avif`} type="image/avif" /><source media="(max-width: 720px)" srcset={`/generated/${data.route.caseImage}-mobile.webp`} type="image/webp" /><source srcset={`/generated/${data.route.caseImage}-desktop.avif`} type="image/avif" /><img src={`/generated/${data.route.caseImage}-desktop.webp`} width="1600" height="900" alt={data.route.caseImageAlt} loading="lazy" /></picture></div>
+    <div class="route-case__copy"><p class="eyebrow">Релевантный контур</p><h2 id="route-case-title">{data.route.caseTitle}</h2><p>{data.route.caseIntro}</p><ul>{#each data.route.caseFacts as fact}<li>{fact}</li>{/each}</ul><a class="button button--ghost" href="#project-brief">Обсудить похожую задачу</a></div>
     </section>
     <PriceScope />
   {/if}

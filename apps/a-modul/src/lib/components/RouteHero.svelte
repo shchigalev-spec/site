@@ -28,6 +28,5 @@
       </div>
       <a class="button button--ghost" href={diagnosisHref(page.url, 'tender')} onclick={() => trackEvent('tender_start', { route: route.key })}>Пригласить в тендер</a>
     </div>
-    <div class="hero__context"><span>Регион проекта</span><strong>{regionLabel}</strong></div>
   </div>
 </section>

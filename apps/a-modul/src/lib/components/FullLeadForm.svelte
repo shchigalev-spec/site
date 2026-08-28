@@ -264,7 +264,7 @@
 <section class="full-brief" id="full-brief" aria-labelledby="full-brief-title">
   <div class="full-brief__intro">
     <p class="eyebrow">{tender ? 'Тендерный контур' : mode === 'leasing' ? 'Проект и лизинговая схема' : 'Полная заявка'}</p>
-    <h2 id="full-brief-title" tabindex="-1">{tender ? 'Передайте параметры тендера.' : 'Дадим заявке инженерный контекст.'}</h2>
+    <h2 id="full-brief-title" tabindex="-1">{tender ? 'Параметры тендера.' : 'Параметры заявки.'}</h2>
     <p>{tender ? 'Название процедуры, срок подачи, регион и исходные файлы попадут в отдельный тендерный сценарий.' : 'Не обязательно знать всё: укажите численность или площадь, а недостающие параметры менеджер уточнит после отправки.'}</p>
     {#if typeLabel}<p class="full-brief__leasing">Контекст рекламного запроса: <strong>{typeLabel}</strong>.</p>{/if}
     {#if mode === 'leasing'}<p class="full-brief__leasing">Возможна поставка в лизинг. Условия зависят от проекта и лизинговой компании.</p>{/if}

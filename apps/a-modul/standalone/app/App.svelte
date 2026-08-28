@@ -4,10 +4,7 @@
   import ObjectConfigurator from '$lib/components/ObjectConfigurator.svelte';
   import ClientReviews from '$lib/components/ClientReviews.svelte';
   import PublishedProjects from '$lib/components/PublishedProjects.svelte';
-  import LogisticsMap from '$lib/components/LogisticsMap.svelte';
-  import ProjectFinder from '$lib/components/ProjectFinder.svelte';
   import ProjectTeam from '$lib/components/ProjectTeam.svelte';
-  import FactorySequence from '$lib/components/FactorySequence.svelte';
   import PriceScope from '$lib/components/PriceScope.svelte';
   import ProofCase from '$lib/components/ProofCase.svelte';
   import SiteHeader from '$lib/components/SiteHeader.svelte';
@@ -42,10 +39,6 @@
         </div>
         <a class="button button--ghost" href={diagnosisHref(page.url, 'tender')} onclick={() => trackEvent('tender_start', { route: 'general' })}>Пригласить в тендер</a>
       </div>
-      <div class="hero__context">
-        <span>Регион проекта</span>
-        <strong>{data.regionLabel}</strong>
-      </div>
     </div>
 
     <div id="assembly" class="hero__visual">
@@ -72,7 +65,6 @@
         <source type="image/avif" srcset="/generated/a-modul-general-hero-v2-operational-desktop.avif" />
         <img src="/generated/a-modul-general-hero-v2-operational-desktop.webp" width="1920" height="1080" alt="Визуализация работающего модульного комплекса в северном регионе" loading="lazy" />
       </picture>
-      <span class="visualization-label">Концептуальная визуализация объекта</span>
     </div>
     <div class="evidence__body">
       <div class="evidence__heading">
@@ -96,12 +88,9 @@
 
   <ObjectConfigurator />
   <ClientReviews />
-  <LogisticsMap />
-  <ProjectFinder />
   <ProjectTeam />
-  <FactorySequence />
   <PriceScope />
-  <ProofCase />
+  <ProofCase mode="seismic" />
   <FaqSection faq={data.route.faq} />
   <ProposalProcess />
   <FullLeadForm initialObjectType={data.initialObjectType} initialRegion={data.initialRegion} typeLabel={data.typeLabel} initialMode={data.initialMode} />
